@@ -257,6 +257,8 @@ Dated, one line each, in date order (newest at the bottom). A line that was late
 
 - 2026-11-18 — **Docs move into git** (Ruggero: "do it yourself"): the RSG folder becomes the private repo `ruggeroloda/rsg-docs` (snapshot commit first, edits after); the claude.ai project keeps only generated copies of `README.md` + `claude/ROADMAP.md`; my memory keeps preferences + a pointer, not a status log; every session ends with a close-out (runbook, decision line, roadmap, DONE handovers, push). Replaces the 17 Nov "project docs = copies of the Mac files" rule. Theme deploy history moved out of the runbook into `theme/logs/DEPLOYS.md`.
 
+- 2026-11-18 — Root `CLAUDE.md` holds Ruggero's RSG working rules (loads in every session that attaches the repo); claude.ai project instructions tell every new chat to attach `rsg-docs`, read README + ROADMAP and close out with `rsg-close-out`.
+
 ## Open questions (decide, then move above)
 - Later (DFS): a worker that finds **local list prices** (rrp_gb, rrp_de…) for about 2 years of shoes, so non-US offers can be price-filtered. Builds on `theme/MSRP-LOCAL-PRICING-BRIEF.md` (2026-06-24 decision).
 - Email platform: MailerLite vs EmailOctopus vs Listmonk + Amazon SES (after list cleanup).
