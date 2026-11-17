@@ -1,0 +1,296 @@
+phone    slots=1 filled=0 adsjs=yes bodyclasses=9 adthrive=[adthrive-device-phone] ok  https://www.runningshoesguru.com/
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+desktop  slots=1 filled=0 adsjs=yes bodyclasses=9 adthrive=[adthrive-device-desktop] ok  https://www.runningshoesguru.com/
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+phone    slots=8 filled=0 adsjs=yes bodyclasses=7 adthrive=[adthrive-device-phone] ok  https://www.runningshoesguru.com/reviews/road/asics-gel-cumulus-28-review/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-lg-8>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-5 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-6 adthrive-ad-cls <col-lg-8>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular reviews_road-templ>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+desktop  slots=9 filled=0 adsjs=yes bodyclasses=7 adthrive=[adthrive-device-desktop] ok  https://www.runningshoesguru.com/reviews/road/asics-gel-cumulus-28-review/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-lg-8>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-5 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-6 adthrive-ad-cls <col-lg-8>
+      adthrive-sidebar adthrive-sidebar-9 adthrive-ad-cls adthrive <DIV>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular reviews_road-templ>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+phone    slots=11 filled=0 adsjs=yes bodyclasses=7 adthrive=[adthrive-device-phone] ok  https://www.runningshoesguru.com/reviews/trail/brooks-cascadia-19-review/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-lg-8>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <col-lg-8>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-5 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-6 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-7 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-8 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-9 adthrive-ad-cls <col-lg-8>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular reviews_trail-temp>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+desktop  slots=12 filled=0 adsjs=yes bodyclasses=7 adthrive=[adthrive-device-desktop] ok  https://www.runningshoesguru.com/reviews/trail/brooks-cascadia-19-review/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-lg-8>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <col-lg-8>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-5 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-6 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-7 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-8 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-9 adthrive-ad-cls <col-lg-8>
+      adthrive-sidebar adthrive-sidebar-9 adthrive-ad-cls adthrive <DIV>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular reviews_trail-temp>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+phone    slots=9 filled=0 adsjs=yes bodyclasses=7 adthrive=[adthrive-device-phone] ok  https://www.runningshoesguru.com/reviews/training/reebok-nano-x4-review/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-lg-8>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <col-lg-8>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-5 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-6 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-7 adthrive-ad-cls <col-lg-8>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular reviews_training-t>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+desktop  slots=9 filled=0 adsjs=yes bodyclasses=7 adthrive=[adthrive-device-desktop] ok  https://www.runningshoesguru.com/reviews/training/reebok-nano-x4-review/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-lg-8>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <col-lg-8>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-5 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-6 adthrive-ad-cls <col-lg-8>
+      adthrive-sidebar adthrive-sidebar-9 adthrive-ad-cls adthrive <DIV>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular reviews_training-t>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+phone    slots=8 filled=0 adsjs=yes bodyclasses=7 adthrive=[adthrive-device-phone] ok  https://www.runningshoesguru.com/reviews/gps/garmin-forerunner-165/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-5 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-6 adthrive-ad-cls <col-lg-8>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular reviews_gps-templa>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+desktop  slots=7 filled=0 adsjs=yes bodyclasses=7 adthrive=[adthrive-device-desktop] ok  https://www.runningshoesguru.com/reviews/gps/garmin-forerunner-165/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <review-sections>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <review-sections>
+      adthrive-sidebar adthrive-sidebar-9 adthrive-ad-cls adthrive <DIV>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular reviews_gps-templa>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+phone    slots=2 filled=0 adsjs=yes bodyclasses=7 adthrive=[adthrive-device-phone] ok  https://www.runningshoesguru.com/review/hoka-speedgoat-5-review/
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular review-template-de>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+desktop  slots=2 filled=0 adsjs=yes bodyclasses=7 adthrive=[adthrive-device-desktop] ok  https://www.runningshoesguru.com/review/hoka-speedgoat-5-review/
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular review-template-de>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+phone    slots=6 filled=0 adsjs=yes bodyclasses=7 adthrive=[adthrive-device-phone] ok  https://www.runningshoesguru.com/comparison/brooks-glycerin-23-vs-asics-nimbus-28/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-sm-12 col-md-10 col-lg-8>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <col-sm-12 col-md-10 col-lg-8>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <col-sm-12 col-md-10 col-lg-8>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <col-sm-12 col-md-10 col-lg-8>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular comparison-templat>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+desktop  slots=7 filled=0 adsjs=yes bodyclasses=7 adthrive=[adthrive-device-desktop] ok  https://www.runningshoesguru.com/comparison/brooks-glycerin-23-vs-asics-nimbus-28/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-sm-12 col-md-10 col-lg-8>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <col-sm-12 col-md-10 col-lg-8>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <col-sm-12 col-md-10 col-lg-8>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <col-sm-12 col-md-10 col-lg-8>
+      adthrive-content adthrive-content-5 adthrive-ad-cls <col-sm-12 col-md-10 col-lg-8>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular comparison-templat>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+phone    slots=7 filled=0 adsjs=yes bodyclasses=7 adthrive=[adthrive-device-phone] ok  https://www.runningshoesguru.com/comparison/hoka-clifton-vs-hoka-bondi/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-sm-12 col-md-10 col-lg-8>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <col-sm-12 col-md-10 col-lg-8>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <col-sm-12 col-md-10 col-lg-8>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <col-sm-12 col-md-10 col-lg-8>
+      adthrive-content adthrive-content-5 adthrive-ad-cls <col-sm-12 col-md-10 col-lg-8>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular comparison-templat>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+desktop  slots=7 filled=0 adsjs=yes bodyclasses=7 adthrive=[adthrive-device-desktop] ok  https://www.runningshoesguru.com/comparison/hoka-clifton-vs-hoka-bondi/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-sm-12 col-md-10 col-lg-8>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <col-sm-12 col-md-10 col-lg-8>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <col-sm-12 col-md-10 col-lg-8>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <col-sm-12 col-md-10 col-lg-8>
+      adthrive-content adthrive-content-5 adthrive-ad-cls <col-sm-12 col-md-10 col-lg-8>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular comparison-templat>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+phone    slots=4 filled=0 adsjs=yes bodyclasses=7 adthrive=[adthrive-device-phone] ok  https://www.runningshoesguru.com/guide/best-puma-running-shoes/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-lg-8>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <col-lg-8>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular guide-template-def>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+desktop  slots=11 filled=0 adsjs=yes bodyclasses=7 adthrive=[adthrive-device-desktop] ok  https://www.runningshoesguru.com/guide/best-puma-running-shoes/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-lg-8>
+      adthrive-sidebar adthrive-sidebar-9 adthrive-ad-cls adthrive <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-10 adthrive-ad-cls adthriv <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-11 adthrive-ad-cls adthriv <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-12 adthrive-ad-cls adthriv <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-13 adthrive-ad-cls adthriv <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-14 adthrive-ad-cls adthriv <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-15 adthrive-ad-cls adthriv <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-16 adthrive-ad-cls adthriv <rp-sticky-sb-wrapper>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular guide-template-def>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+phone    slots=4 filled=0 adsjs=yes bodyclasses=7 adthrive=[adthrive-device-phone] ok  https://www.runningshoesguru.com/top/puma-running-shoes/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-lg-8>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <col-lg-8>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular top-template-defau>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+desktop  slots=12 filled=0 adsjs=yes bodyclasses=7 adthrive=[adthrive-device-desktop] ok  https://www.runningshoesguru.com/top/puma-running-shoes/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-lg-8>
+      adthrive-sidebar adthrive-sidebar-9 adthrive-ad-cls adthrive <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-10 adthrive-ad-cls adthriv <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-11 adthrive-ad-cls adthriv <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-12 adthrive-ad-cls adthriv <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-13 adthrive-ad-cls adthriv <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-14 adthrive-ad-cls adthriv <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-15 adthrive-ad-cls adthriv <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-16 adthrive-ad-cls adthriv <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-17 adthrive-ad-cls adthriv <rp-sticky-sb-wrapper>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular top-template-defau>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+phone    slots=11 filled=0 adsjs=yes bodyclasses=7 adthrive=[adthrive-device-phone] ok  https://www.runningshoesguru.com/content/ultimate-guide-polar-gps-watches/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-5 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-6 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-7 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-8 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-9 adthrive-ad-cls <easy-reading>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular content-template-d>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+desktop  slots=11 filled=0 adsjs=yes bodyclasses=7 adthrive=[adthrive-device-desktop] ok  https://www.runningshoesguru.com/content/ultimate-guide-polar-gps-watches/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-5 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-6 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-7 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-8 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-9 adthrive-ad-cls <easy-reading>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular content-template-d>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+phone    slots=6 filled=0 adsjs=yes bodyclasses=8 adthrive=[adthrive-device-phone] ok  https://www.runningshoesguru.com/2025/12/nike-structure-plus-first-look-zoomx-finally-comes-to-stability/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <easy-reading>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular post-template-defa>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+desktop  slots=7 filled=0 adsjs=yes bodyclasses=8 adthrive=[adthrive-device-desktop] ok  https://www.runningshoesguru.com/2025/12/nike-structure-plus-first-look-zoomx-finally-comes-to-stability/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <easy-reading>
+      adthrive-content adthrive-content-5 adthrive-ad-cls <easy-reading>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular post-template-defa>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+phone    slots=6 filled=0 adsjs=yes bodyclasses=8 adthrive=[adthrive-device-phone] ok  https://www.runningshoesguru.com/reviews/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <col-lg-9>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular page-template page>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+desktop  slots=10 filled=0 adsjs=yes bodyclasses=8 adthrive=[adthrive-device-desktop] ok  https://www.runningshoesguru.com/reviews/
+      adthrive-sidebar adthrive-sidebar-9 adthrive-ad-cls adthrive <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-10 adthrive-ad-cls adthriv <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-11 adthrive-ad-cls adthriv <rp-sticky-sb-wrapper>
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-5 adthrive-ad-cls <col-lg-9>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular page-template page>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+phone    slots=6 filled=0 adsjs=yes bodyclasses=8 adthrive=[adthrive-device-phone] ok  https://www.runningshoesguru.com/reviews/asics/all/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <col-lg-9>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular page-template page>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+desktop  slots=10 filled=0 adsjs=yes bodyclasses=8 adthrive=[adthrive-device-desktop] ok  https://www.runningshoesguru.com/reviews/asics/all/
+      adthrive-sidebar adthrive-sidebar-9 adthrive-ad-cls adthrive <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-10 adthrive-ad-cls adthriv <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-11 adthrive-ad-cls adthriv <rp-sticky-sb-wrapper>
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-5 adthrive-ad-cls <col-lg-9>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular page-template page>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+phone    slots=6 filled=0 adsjs=yes bodyclasses=8 adthrive=[adthrive-device-phone] ok  https://www.runningshoesguru.com/reviews/all/cushioning/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <col-lg-9>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular page-template page>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+desktop  slots=10 filled=0 adsjs=yes bodyclasses=8 adthrive=[adthrive-device-desktop] ok  https://www.runningshoesguru.com/reviews/all/cushioning/
+      adthrive-sidebar adthrive-sidebar-9 adthrive-ad-cls adthrive <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-10 adthrive-ad-cls adthriv <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-11 adthrive-ad-cls adthriv <rp-sticky-sb-wrapper>
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-5 adthrive-ad-cls <col-lg-9>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular page-template page>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+phone    slots=6 filled=0 adsjs=yes bodyclasses=8 adthrive=[adthrive-device-phone] ok  https://www.runningshoesguru.com/reviews/nike/pegasus/
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <col-lg-9>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular page-template page>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+desktop  slots=10 filled=0 adsjs=yes bodyclasses=8 adthrive=[adthrive-device-desktop] ok  https://www.runningshoesguru.com/reviews/nike/pegasus/
+      adthrive-sidebar adthrive-sidebar-9 adthrive-ad-cls adthrive <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-10 adthrive-ad-cls adthriv <rp-sticky-sidebar>
+      adthrive-sidebar adthrive-sidebar-11 adthrive-ad-cls adthriv <rp-sticky-sb-wrapper>
+      adthrive-content adthrive-content-1 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-2 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-3 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-4 adthrive-ad-cls <col-lg-9>
+      adthrive-content adthrive-content-5 adthrive-ad-cls <col-lg-9>
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular page-template page>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+phone    slots=2 filled=0 adsjs=yes bodyclasses=3 adthrive=[adthrive-device-phone] ok  https://www.runningshoesguru.com/blog/
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <blog wp-theme-rsg_2022 adthriv>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+desktop  slots=2 filled=0 adsjs=yes bodyclasses=3 adthrive=[adthrive-device-desktop] ok  https://www.runningshoesguru.com/blog/
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <blog wp-theme-rsg_2022 adthriv>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+phone    slots=2 filled=0 adsjs=yes bodyclasses=6 adthrive=[adthrive-device-phone] ok  https://www.runningshoesguru.com/author/brandonlaw/
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <archive author author-brandonl>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+desktop  slots=2 filled=0 adsjs=yes bodyclasses=6 adthrive=[adthrive-device-desktop] ok  https://www.runningshoesguru.com/author/brandonlaw/
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <archive author author-brandonl>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+phone    slots=2 filled=0 adsjs=yes bodyclasses=8 adthrive=[adthrive-device-phone] ok  https://www.runningshoesguru.com/best-running-shoes-wizard/
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular page-template page>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+desktop  slots=2 filled=0 adsjs=yes bodyclasses=8 adthrive=[adthrive-device-desktop] ok  https://www.runningshoesguru.com/best-running-shoes-wizard/
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular page-template page>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+phone    slots=2 filled=0 adsjs=yes bodyclasses=8 adthrive=[adthrive-device-phone] ok  https://www.runningshoesguru.com/contact-us/
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular page-template page>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+desktop  slots=2 filled=0 adsjs=yes bodyclasses=8 adthrive=[adthrive-device-desktop] ok  https://www.runningshoesguru.com/contact-us/
+      adthrive-footer adthrive-footer-1 adthrive-ad-cls adthrive-f <wp-singular page-template page>
+      adthrive-video-stickyoutstream adthrive-video-stickyoutstrea <adthrive-sticky-outstream adth>
+phone    slots=0 filled=0 adsjs=yes bodyclasses=4 adthrive=[adthrive-disable-all adthrive-device-phone] ok  https://www.runningshoesguru.com/this-page-does-not-exist-rsg-404/
+      
+desktop  slots=0 filled=0 adsjs=yes bodyclasses=4 adthrive=[adthrive-disable-all adthrive-device-desktop] ok  https://www.runningshoesguru.com/this-page-does-not-exist-rsg-404/
+      

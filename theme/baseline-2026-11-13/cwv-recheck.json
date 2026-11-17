@@ -1,0 +1,445 @@
+{
+ "run_utc": "2026-11-13 16:46:04",
+ "note": "CLS/LCP lab check on live, phone 390 + desktop 1366, fonts real (Typekit allowed) and Typekit blocked.\nAds, analytics, YouTube blocked (no impressions, no GA hits); the price-box view/click beacons are answered\nlocally with 299, so nothing is written to the click/view log. One page load at a time, 2 s pause (edge 429 above ~1.5 req/s).\nusage: python3 cwv.py OUT.json URL...   (lab numbers, no throttling: compare templates/runs, not against field CWV)",
+ "pages": {
+  "https://www.runningshoesguru.com/reviews/nike/pegasus/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 488,
+    "fcp": 704,
+    "load": 1747,
+    "lcp": {
+     "t": 704,
+     "el": "p",
+     "url": "",
+     "size": 68210
+    },
+    "cls_load": 0.0514,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0514,
+    "top_shifts": [
+     {
+      "t": 1762,
+      "v": 0.0496,
+      "n": [
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "t": 1742,
+      "v": 0.0017,
+      "n": [
+       "",
+       "",
+       ""
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 385,
+    "fcp": 584,
+    "load": 661,
+    "lcp": {
+     "t": 584,
+     "el": "p",
+     "url": "",
+     "size": 68210
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 458,
+    "fcp": 692,
+    "load": 1485,
+    "lcp": {
+     "t": 692,
+     "el": "h1.page-title",
+     "url": "",
+     "size": 124656
+    },
+    "cls_load": 0.3061,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.3061,
+    "top_shifts": [
+     {
+      "t": 1503,
+      "v": 0.3061,
+      "n": [
+       "div.panel.w-100",
+       "",
+       "div.row"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 466,
+    "fcp": 692,
+    "load": 786,
+    "lcp": {
+     "t": 692,
+     "el": "h1.page-title",
+     "url": "",
+     "size": 124656
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/reviews/brooks/ghost/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 450,
+    "fcp": 648,
+    "load": 1609,
+    "lcp": {
+     "t": 648,
+     "el": "p",
+     "url": "",
+     "size": 102388
+    },
+    "cls_load": 0.0887,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0887,
+    "top_shifts": [
+     {
+      "t": 1623,
+      "v": 0.0887,
+      "n": [
+       "",
+       "",
+       ""
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 559,
+    "fcp": 772,
+    "load": 846,
+    "lcp": {
+     "t": 772,
+     "el": "p",
+     "url": "",
+     "size": 102388
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 461,
+    "fcp": 768,
+    "load": 1776,
+    "lcp": {
+     "t": 768,
+     "el": "h1.page-title",
+     "url": "",
+     "size": 123984
+    },
+    "cls_load": 0.0101,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0101,
+    "top_shifts": [
+     {
+      "t": 1791,
+      "v": 0.0101,
+      "n": [
+       "",
+       "div",
+       ""
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 192,
+    "fcp": 380,
+    "load": 478,
+    "lcp": {
+     "t": 412,
+     "el": "h1.page-title",
+     "url": "",
+     "size": 123984
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/best-running-shoes-wizard/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 530,
+    "fcp": 684,
+    "load": 1642,
+    "lcp": {
+     "t": 704,
+     "el": "p",
+     "url": "",
+     "size": 29465
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 8,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 401,
+    "fcp": 560,
+    "load": 668,
+    "lcp": {
+     "t": 572,
+     "el": "p",
+     "url": "",
+     "size": 29465
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 466,
+    "fcp": 680,
+    "load": 1547,
+    "lcp": {
+     "t": 1596,
+     "el": "div#wizard_parallax.loaded",
+     "url": "unningshoesguru.com/wp-content/themes/rsg_2022/images/wizard2020/bg_shoenew2.png",
+     "size": 102284
+    },
+    "cls_load": 0.0002,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0002,
+    "top_shifts": [
+     {
+      "t": 1562,
+      "v": 0.0002,
+      "n": [
+       "div"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 405,
+    "fcp": 600,
+    "load": 708,
+    "lcp": {
+     "t": 752,
+     "el": "div#wizard_parallax.loaded",
+     "url": "unningshoesguru.com/wp-content/themes/rsg_2022/images/wizard2020/bg_shoenew2.png",
+     "size": 102284
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/review/hoka-speedgoat-5-review/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 608,
+    "fcp": 812,
+    "load": 1791,
+    "lcp": {
+     "t": 812,
+     "el": "div.inverted-block.main-img-full-width",
+     "url": "ingshoesguru.com/wp-content/uploads/2022/08/HOKA-Speedgoat-5-pic-06-480x285.jpeg",
+     "size": 136800
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 518,
+    "fcp": 752,
+    "load": 849,
+    "lcp": {
+     "t": 752,
+     "el": "div.inverted-block.main-img-full-width",
+     "url": "ingshoesguru.com/wp-content/uploads/2022/08/HOKA-Speedgoat-5-pic-06-480x285.jpeg",
+     "size": 136800
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 563,
+    "fcp": 848,
+    "load": 1670,
+    "lcp": {
+     "t": 1844,
+     "el": "div.inverted-block.main-img-full-width",
+     "url": "ngshoesguru.com/wp-content/uploads/2022/08/HOKA-Speedgoat-5-pic-06-1280x760.jpeg",
+     "size": 721248
+    },
+    "cls_load": 0.0002,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0002,
+    "top_shifts": [
+     {
+      "t": 1697,
+      "v": 0.0002,
+      "n": [
+       "div"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 436,
+    "fcp": 704,
+    "load": 782,
+    "lcp": {
+     "t": 912,
+     "el": "div.inverted-block.main-img-full-width",
+     "url": "ngshoesguru.com/wp-content/uploads/2022/08/HOKA-Speedgoat-5-pic-06-1280x760.jpeg",
+     "size": 721248
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   }
+  }
+ }
+}

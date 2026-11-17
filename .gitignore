@@ -1,0 +1,26 @@
+# RSG docs repo — what stays OUT of git
+# Secrets: never in git (they live in _private/, server .env files and 1Password)
+_private/
+theme/.credentials-local.md
+theme/.ssh-rocket-key
+*.pem
+*.key
+.env
+.env.*
+*key.txt
+# Code repos with their own git history
+theme/rsg_2022/
+dfs/app/
+# Scratch and bulky binaries
+_work/
+**/_work/
+theme/baseline-*/shots/
+dfs/legacy-snapshot/
+*.tgz
+*.tar.gz
+*.zip
+# Mac / editor noise
+.DS_Store
+**/.DS_Store
+# Saved page captures (contain old third-party keys, e.g. ip-api)
+theme/schema-pass/rich-results-test/*-full.html

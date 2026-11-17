@@ -1,0 +1,2535 @@
+{
+ "run_utc": "2026-11-13 16:31:25",
+ "note": "CLS/LCP lab check on live, phone 390 + desktop 1366, fonts real (Typekit allowed) and Typekit blocked.\nAds, analytics, YouTube blocked (no impressions, no GA hits); the price-box view/click beacons are answered\nlocally with 299, so nothing is written to the click/view log. One page load at a time, 2 s pause (edge 429 above ~1.5 req/s).\nusage: python3 cwv.py OUT.json URL...   (lab numbers, no throttling: compare templates/runs, not against field CWV)",
+ "pages": {
+  "https://www.runningshoesguru.com/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 544,
+    "fcp": 804,
+    "load": 1532,
+    "lcp": {
+     "t": 804,
+     "el": "h1.block-title.text-center",
+     "url": "",
+     "size": 25854
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 8,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 980,
+    "fcp": 1212,
+    "load": 1236,
+    "lcp": {
+     "t": 1212,
+     "el": "h1.block-title.text-center",
+     "url": "",
+     "size": 25854
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 553,
+    "fcp": 872,
+    "load": 2029,
+    "lcp": {
+     "t": 872,
+     "el": "div#homepage-header-2020.inverted-block",
+     "url": ".runningshoesguru.com/wp-content/themes/rsg_2022/images/home-2020/test2_2022.jpg",
+     "size": 116920
+    },
+    "cls_load": 0.0002,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0002,
+    "top_shifts": [
+     {
+      "t": 2042,
+      "v": 0.0002,
+      "n": [
+       "div"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 498,
+    "fcp": 764,
+    "load": 813,
+    "lcp": {
+     "t": 764,
+     "el": "div#homepage-header-2020.inverted-block",
+     "url": ".runningshoesguru.com/wp-content/themes/rsg_2022/images/home-2020/test2_2022.jpg",
+     "size": 116920
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/reviews/road/asics-gel-cumulus-28-review/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 416,
+    "fcp": 656,
+    "load": 1611,
+    "lcp": {
+     "t": 728,
+     "el": "img.full-image",
+     "url": "ingshoesguru.com/wp-content/uploads/2026/05/ASICS-Gel-Cumulus-28-12-560x410.jpeg",
+     "size": 94899
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0042,
+    "top_shifts": [
+     {
+      "t": 4538,
+      "v": 0.0008,
+      "n": [
+       "span.btn.btn-warning",
+       "button.navbar-toggle.collapsed"
+      ]
+     },
+     {
+      "t": 4505,
+      "v": 0.0003,
+      "n": [
+       "span.btn.btn-warning",
+       "button.navbar-toggle.collapsed"
+      ]
+     },
+     {
+      "t": 4438,
+      "v": 0.0002,
+      "n": [
+       "button.navbar-toggle.collapsed",
+       "span.btn.btn-warning"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 645,
+    "fcp": 868,
+    "load": 1038,
+    "lcp": {
+     "t": 1024,
+     "el": "img.full-image",
+     "url": "ingshoesguru.com/wp-content/uploads/2026/05/ASICS-Gel-Cumulus-28-12-560x410.jpeg",
+     "size": 94899
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0.0042,
+    "top_shifts": [
+     {
+      "t": 3970,
+      "v": 0.0007,
+      "n": [
+       "span.btn.btn-warning",
+       "button.navbar-toggle.collapsed"
+      ]
+     },
+     {
+      "t": 3937,
+      "v": 0.0003,
+      "n": [
+       "span.btn.btn-warning",
+       "button.navbar-toggle.collapsed"
+      ]
+     },
+     {
+      "t": 3954,
+      "v": 0.0003,
+      "n": [
+       "span.btn.btn-warning",
+       "button.navbar-toggle.collapsed"
+      ]
+     }
+    ],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 211,
+    "fcp": 468,
+    "load": 1285,
+    "lcp": {
+     "t": 556,
+     "el": "img.full-image",
+     "url": "ingshoesguru.com/wp-content/uploads/2026/05/ASICS-Gel-Cumulus-28-12-560x410.jpeg",
+     "size": 219347
+    },
+    "cls_load": 0.0007,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0096,
+    "top_shifts": [
+     {
+      "t": 5617,
+      "v": 0.002,
+      "n": [
+       "div.col.small"
+      ]
+     },
+     {
+      "t": 5600,
+      "v": 0.0011,
+      "n": [
+       "div.col.small"
+      ]
+     },
+     {
+      "t": 5633,
+      "v": 0.001,
+      "n": [
+       "div.col.small"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 572,
+    "fcp": 808,
+    "load": 921,
+    "lcp": {
+     "t": 848,
+     "el": "img.full-image",
+     "url": "ingshoesguru.com/wp-content/uploads/2026/05/ASICS-Gel-Cumulus-28-12-560x410.jpeg",
+     "size": 219347
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0.0089,
+    "top_shifts": [
+     {
+      "t": 5257,
+      "v": 0.002,
+      "n": [
+       "div.col.small"
+      ]
+     },
+     {
+      "t": 5240,
+      "v": 0.0017,
+      "n": [
+       "div.col.small"
+      ]
+     },
+     {
+      "t": 4290,
+      "v": 0.0008,
+      "n": [
+       "div.col.small"
+      ]
+     }
+    ],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/reviews/trail/brooks-cascadia-19-review/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 523,
+    "fcp": 712,
+    "load": 1616,
+    "lcp": {
+     "t": 756,
+     "el": "img.full-image",
+     "url": "nningshoesguru.com/wp-content/uploads/2025/11/Brooks-Cascadia-19-15-560x410.jpeg",
+     "size": 94899
+    },
+    "cls_load": 0.0001,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0043,
+    "top_shifts": [
+     {
+      "t": 4543,
+      "v": 0.0007,
+      "n": [
+       "span.btn.btn-warning",
+       "button.navbar-toggle.collapsed"
+      ]
+     },
+     {
+      "t": 4510,
+      "v": 0.0003,
+      "n": [
+       "span.btn.btn-warning",
+       "button.navbar-toggle.collapsed"
+      ]
+     },
+     {
+      "t": 4443,
+      "v": 0.0002,
+      "n": [
+       "button.navbar-toggle.collapsed",
+       "span.btn.btn-warning"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 478,
+    "fcp": 700,
+    "load": 788,
+    "lcp": {
+     "t": 792,
+     "el": "img.full-image",
+     "url": "nningshoesguru.com/wp-content/uploads/2025/11/Brooks-Cascadia-19-15-560x410.jpeg",
+     "size": 94899
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0.0043,
+    "top_shifts": [
+     {
+      "t": 3718,
+      "v": 0.0008,
+      "n": [
+       "span.btn.btn-warning",
+       "button.navbar-toggle.collapsed"
+      ]
+     },
+     {
+      "t": 3686,
+      "v": 0.0003,
+      "n": [
+       "span.btn.btn-warning",
+       "button.navbar-toggle.collapsed"
+      ]
+     },
+     {
+      "t": 3619,
+      "v": 0.0002,
+      "n": [
+       "span.btn.btn-warning",
+       "button.navbar-toggle.collapsed"
+      ]
+     }
+    ],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 509,
+    "fcp": 720,
+    "load": 1638,
+    "lcp": {
+     "t": 820,
+     "el": "img.full-image",
+     "url": "nningshoesguru.com/wp-content/uploads/2025/11/Brooks-Cascadia-19-15-560x410.jpeg",
+     "size": 219347
+    },
+    "cls_load": 0.0007,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0096,
+    "top_shifts": [
+     {
+      "t": 6595,
+      "v": 0.0019,
+      "n": [
+       "div.col.small"
+      ]
+     },
+     {
+      "t": 6579,
+      "v": 0.0016,
+      "n": [
+       "div.col.small"
+      ]
+     },
+     {
+      "t": 5128,
+      "v": 0.0008,
+      "n": [
+       "div.col.small"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 649,
+    "fcp": 900,
+    "load": 987,
+    "lcp": {
+     "t": 940,
+     "el": "img.full-image",
+     "url": "nningshoesguru.com/wp-content/uploads/2025/11/Brooks-Cascadia-19-15-560x410.jpeg",
+     "size": 219347
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0.0091,
+    "top_shifts": [
+     {
+      "t": 5947,
+      "v": 0.0018,
+      "n": [
+       "div.col.small"
+      ]
+     },
+     {
+      "t": 5964,
+      "v": 0.0017,
+      "n": [
+       "div.col.small"
+      ]
+     },
+     {
+      "t": 4498,
+      "v": 0.0008,
+      "n": [
+       "div.col.small"
+      ]
+     }
+    ],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/reviews/training/reebok-nano-x4-review/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 399,
+    "fcp": 584,
+    "load": 1580,
+    "lcp": {
+     "t": 716,
+     "el": "img.full-image",
+     "url": "w.runningshoesguru.com/wp-content/uploads/2024/04/Reebok-Nano-X4-11-560x410.jpeg",
+     "size": 94899
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0043,
+    "top_shifts": [
+     {
+      "t": 4515,
+      "v": 0.0008,
+      "n": [
+       "span.btn.btn-warning",
+       "button.navbar-toggle.collapsed"
+      ]
+     },
+     {
+      "t": 4482,
+      "v": 0.0003,
+      "n": [
+       "span.btn.btn-warning",
+       "button.navbar-toggle.collapsed"
+      ]
+     },
+     {
+      "t": 4499,
+      "v": 0.0003,
+      "n": [
+       "span.btn.btn-warning",
+       "button.navbar-toggle.collapsed"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 470,
+    "fcp": 672,
+    "load": 827,
+    "lcp": {
+     "t": 792,
+     "el": "img.full-image",
+     "url": "w.runningshoesguru.com/wp-content/uploads/2024/04/Reebok-Nano-X4-11-560x410.jpeg",
+     "size": 94899
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0.0051,
+    "top_shifts": [
+     {
+      "t": 3754,
+      "v": 0.0013,
+      "n": [
+       "span.btn.btn-warning",
+       "span.rsg-dfs-p",
+       "button.navbar-toggle.collapsed"
+      ]
+     },
+     {
+      "t": 3737,
+      "v": 0.0004,
+      "n": [
+       "span.btn.btn-warning",
+       "span.rsg-dfs-p",
+       "button.navbar-toggle.collapsed"
+      ]
+     },
+     {
+      "t": 3721,
+      "v": 0.0003,
+      "n": [
+       "span.btn.btn-warning",
+       "span.rsg-dfs-p",
+       "button.navbar-toggle.collapsed"
+      ]
+     }
+    ],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 660,
+    "fcp": 912,
+    "load": 1823,
+    "lcp": {
+     "t": 976,
+     "el": "img.full-image",
+     "url": "w.runningshoesguru.com/wp-content/uploads/2024/04/Reebok-Nano-X4-11-560x410.jpeg",
+     "size": 219347
+    },
+    "cls_load": 0.0007,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0097,
+    "top_shifts": [
+     {
+      "t": 5776,
+      "v": 0.0023,
+      "n": [
+       "div.col.small"
+      ]
+     },
+     {
+      "t": 5760,
+      "v": 0.0015,
+      "n": [
+       "div.col.small"
+      ]
+     },
+     {
+      "t": 5193,
+      "v": 0.0008,
+      "n": [
+       "div.col.small"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 500,
+    "fcp": 692,
+    "load": 814,
+    "lcp": {
+     "t": 832,
+     "el": "img.full-image",
+     "url": "w.runningshoesguru.com/wp-content/uploads/2024/04/Reebok-Nano-X4-11-560x410.jpeg",
+     "size": 219347
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0.0091,
+    "top_shifts": [
+     {
+      "t": 4756,
+      "v": 0.0022,
+      "n": [
+       "div.col.small"
+      ]
+     },
+     {
+      "t": 4740,
+      "v": 0.0016,
+      "n": [
+       "div.col.small"
+      ]
+     },
+     {
+      "t": 4173,
+      "v": 0.0008,
+      "n": [
+       "div.col.small"
+      ]
+     }
+    ],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/reviews/gps/garmin-forerunner-165/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 497,
+    "fcp": 712,
+    "load": 1693,
+    "lcp": {
+     "t": 816,
+     "el": "img.full-image",
+     "url": "shoesguru.com/wp-content/uploads/2024/04/Garmin-Forerunner-165-14-2-560x410.jpeg",
+     "size": 94899
+    },
+    "cls_load": 0.0001,
+    "fonts_loaded": [
+     "proxima-nova"
+    ],
+    "cls_scroll": 0.0071,
+    "top_shifts": [
+     {
+      "t": 4690,
+      "v": 0.0037,
+      "n": [
+       "div.col-auto"
+      ]
+     },
+     {
+      "t": 4757,
+      "v": 0.0004,
+      "n": [
+       "div.col-auto"
+      ]
+     },
+     {
+      "t": 4557,
+      "v": 0.0002,
+      "n": [
+       "button.navbar-toggle.collapsed",
+       "div.col-auto"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 483,
+    "fcp": 708,
+    "load": 824,
+    "lcp": {
+     "t": 800,
+     "el": "img.full-image",
+     "url": "shoesguru.com/wp-content/uploads/2024/04/Garmin-Forerunner-165-14-2-560x410.jpeg",
+     "size": 94899
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb"
+    ],
+    "cls_scroll": 0.0071,
+    "top_shifts": [
+     {
+      "t": 3827,
+      "v": 0.0039,
+      "n": [
+       "div.col-auto"
+      ]
+     },
+     {
+      "t": 3894,
+      "v": 0.0004,
+      "n": [
+       "div.col-auto"
+      ]
+     },
+     {
+      "t": 3694,
+      "v": 0.0002,
+      "n": [
+       "button.navbar-toggle.collapsed",
+       "div.col-auto"
+      ]
+     }
+    ],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 495,
+    "fcp": 696,
+    "load": 1686,
+    "lcp": {
+     "t": 840,
+     "el": "img.full-image",
+     "url": "shoesguru.com/wp-content/uploads/2024/04/Garmin-Forerunner-165-14-2-560x410.jpeg",
+     "size": 219347
+    },
+    "cls_load": 0.0008,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0097,
+    "top_shifts": [
+     {
+      "t": 6758,
+      "v": 0.0021,
+      "n": [
+       "div.col.small"
+      ]
+     },
+     {
+      "t": 6741,
+      "v": 0.0013,
+      "n": [
+       "div.col.small"
+      ]
+     },
+     {
+      "t": 1706,
+      "v": 0.0008,
+      "n": [
+       "div",
+       "div.panel.small",
+       "span.d-lg-flex.align-items-center"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 555,
+    "fcp": 760,
+    "load": 880,
+    "lcp": {
+     "t": 852,
+     "el": "img.full-image",
+     "url": "shoesguru.com/wp-content/uploads/2024/04/Garmin-Forerunner-165-14-2-560x410.jpeg",
+     "size": 219347
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0.0089,
+    "top_shifts": [
+     {
+      "t": 5957,
+      "v": 0.002,
+      "n": [
+       "div.col.small"
+      ]
+     },
+     {
+      "t": 5941,
+      "v": 0.0013,
+      "n": [
+       "div.col.small"
+      ]
+     },
+     {
+      "t": 5974,
+      "v": 0.0009,
+      "n": [
+       "div.col.small"
+      ]
+     }
+    ],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/review/hoka-speedgoat-5-review/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 523,
+    "fcp": 784,
+    "load": 1729,
+    "lcp": {
+     "t": 908,
+     "el": "div.inverted-block.main-img-full-width",
+     "url": "ingshoesguru.com/wp-content/uploads/2022/08/HOKA-Speedgoat-5-pic-06-480x285.jpeg",
+     "size": 136800
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 434,
+    "fcp": 656,
+    "load": 729,
+    "lcp": {
+     "t": 656,
+     "el": "div.inverted-block.main-img-full-width",
+     "url": "ingshoesguru.com/wp-content/uploads/2022/08/HOKA-Speedgoat-5-pic-06-480x285.jpeg",
+     "size": 136800
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 230,
+    "fcp": 460,
+    "load": 1332,
+    "lcp": {
+     "t": 1544,
+     "el": "div.inverted-block.main-img-full-width",
+     "url": "ngshoesguru.com/wp-content/uploads/2022/08/HOKA-Speedgoat-5-pic-06-1280x760.jpeg",
+     "size": 721248
+    },
+    "cls_load": 0.0002,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0002,
+    "top_shifts": [
+     {
+      "t": 1350,
+      "v": 0.0002,
+      "n": [
+       "div"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 423,
+    "fcp": 700,
+    "load": 744,
+    "lcp": {
+     "t": 884,
+     "el": "div.inverted-block.main-img-full-width",
+     "url": "ngshoesguru.com/wp-content/uploads/2022/08/HOKA-Speedgoat-5-pic-06-1280x760.jpeg",
+     "size": 721248
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/comparison/brooks-glycerin-23-vs-asics-nimbus-28/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 520,
+    "fcp": 756,
+    "load": 1617,
+    "lcp": {
+     "t": 820,
+     "el": "img",
+     "url": "wp-content/uploads/2026/04/comparison_50263_50237_50068__clipping_ma-768x432.jpg",
+     "size": 72720
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 537,
+    "fcp": 768,
+    "load": 808,
+    "lcp": {
+     "t": 812,
+     "el": "img",
+     "url": "wp-content/uploads/2026/04/comparison_50263_50237_50068__clipping_ma-768x432.jpg",
+     "size": 72720
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 496,
+    "fcp": 732,
+    "load": 1729,
+    "lcp": {
+     "t": 816,
+     "el": "img",
+     "url": "uru.com/wp-content/uploads/2026/04/comparison_50263_50237_50068__clipping_ma.jpg",
+     "size": 167900
+    },
+    "cls_load": 0.0002,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0002,
+    "top_shifts": [
+     {
+      "t": 1745,
+      "v": 0.0002,
+      "n": [
+       "div"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 456,
+    "fcp": 688,
+    "load": 766,
+    "lcp": {
+     "t": 772,
+     "el": "img",
+     "url": "uru.com/wp-content/uploads/2026/04/comparison_50263_50237_50068__clipping_ma.jpg",
+     "size": 167900
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/comparison/hoka-clifton-vs-hoka-bondi/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 503,
+    "fcp": 700,
+    "load": 1635,
+    "lcp": {
+     "t": 832,
+     "el": "img",
+     "url": "wp-content/uploads/2025/04/comparison_28982_48843_48375__clipping_ma-768x432.jpg",
+     "size": 72720
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 530,
+    "fcp": 732,
+    "load": 863,
+    "lcp": {
+     "t": 820,
+     "el": "img",
+     "url": "wp-content/uploads/2025/04/comparison_28982_48843_48375__clipping_ma-768x432.jpg",
+     "size": 72720
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 386,
+    "fcp": 624,
+    "load": 1613,
+    "lcp": {
+     "t": 676,
+     "el": "img",
+     "url": "uru.com/wp-content/uploads/2025/04/comparison_28982_48843_48375__clipping_ma.jpg",
+     "size": 215350
+    },
+    "cls_load": 0.0002,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0002,
+    "top_shifts": [
+     {
+      "t": 1627,
+      "v": 0.0002,
+      "n": [
+       "div"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 597,
+    "fcp": 780,
+    "load": 884,
+    "lcp": {
+     "t": 868,
+     "el": "img",
+     "url": "uru.com/wp-content/uploads/2025/04/comparison_28982_48843_48375__clipping_ma.jpg",
+     "size": 215350
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/guide/best-puma-running-shoes/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 596,
+    "fcp": 824,
+    "load": 1748,
+    "lcp": {
+     "t": 824,
+     "el": "img.attachment-post-thumbnail.size-post-thumbnail",
+     "url": "://www.runningshoesguru.com/wp-content/uploads/2024/02/puma-running-768x403.jpeg",
+     "size": 68040
+    },
+    "cls_load": 0.0104,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "proxima-nova"
+    ],
+    "cls_scroll": 0.0104,
+    "top_shifts": [
+     {
+      "t": 1777,
+      "v": 0.0104,
+      "n": [
+       "",
+       ""
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 487,
+    "fcp": 712,
+    "load": 767,
+    "lcp": {
+     "t": 712,
+     "el": "img.attachment-post-thumbnail.size-post-thumbnail",
+     "url": "://www.runningshoesguru.com/wp-content/uploads/2024/02/puma-running-768x403.jpeg",
+     "size": 68040
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 513,
+    "fcp": 704,
+    "load": 1660,
+    "lcp": {
+     "t": 704,
+     "el": "img.attachment-post-thumbnail.size-post-thumbnail",
+     "url": "://www.runningshoesguru.com/wp-content/uploads/2024/02/puma-running-768x403.jpeg",
+     "size": 279590
+    },
+    "cls_load": 0.0003,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0003,
+    "top_shifts": [
+     {
+      "t": 1691,
+      "v": 0.0003,
+      "n": [
+       "div",
+       "",
+       ""
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 390,
+    "fcp": 600,
+    "load": 656,
+    "lcp": {
+     "t": 600,
+     "el": "img.attachment-post-thumbnail.size-post-thumbnail",
+     "url": "://www.runningshoesguru.com/wp-content/uploads/2024/02/puma-running-768x403.jpeg",
+     "size": 279590
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/top/puma-running-shoes/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 577,
+    "fcp": 796,
+    "load": 1648,
+    "lcp": {
+     "t": 796,
+     "el": "h1",
+     "url": "",
+     "size": 74475
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "proxima-nova"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 546,
+    "fcp": 780,
+    "load": 894,
+    "lcp": {
+     "t": 780,
+     "el": "h1",
+     "url": "",
+     "size": 74475
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 523,
+    "fcp": 744,
+    "load": 1605,
+    "lcp": {
+     "t": 744,
+     "el": "img.attachment-post-thumbnail.size-post-thumbnail",
+     "url": "shoesguru.com/wp-content/uploads/2025/09/Puma-Running-Shoes-in-2025-768x432.jpeg",
+     "size": 251850
+    },
+    "cls_load": 0.0003,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0003,
+    "top_shifts": [
+     {
+      "t": 1635,
+      "v": 0.0003,
+      "n": [
+       "div",
+       ""
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 569,
+    "fcp": 776,
+    "load": 879,
+    "lcp": {
+     "t": 776,
+     "el": "img.attachment-post-thumbnail.size-post-thumbnail",
+     "url": "shoesguru.com/wp-content/uploads/2025/09/Puma-Running-Shoes-in-2025-768x432.jpeg",
+     "size": 251850
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/content/ultimate-guide-polar-gps-watches/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 442,
+    "fcp": 692,
+    "load": 1742,
+    "lcp": {
+     "t": 708,
+     "el": "img",
+     "url": "ttps://www.runningshoesguru.com/wp-content/uploads/2019/08/pjimage22-920x544.jpg",
+     "size": 76320
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 8,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 576,
+    "fcp": 828,
+    "load": 949,
+    "lcp": {
+     "t": 828,
+     "el": "img",
+     "url": "ttps://www.runningshoesguru.com/wp-content/uploads/2019/08/pjimage22-920x544.jpg",
+     "size": 76320
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 746,
+    "fcp": 1020,
+    "load": 2028,
+    "lcp": {
+     "t": 1020,
+     "el": "img",
+     "url": "ttps://www.runningshoesguru.com/wp-content/uploads/2019/08/pjimage22-920x544.jpg",
+     "size": 316480
+    },
+    "cls_load": 0.0002,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0002,
+    "top_shifts": [
+     {
+      "t": 2049,
+      "v": 0.0002,
+      "n": [
+       "div"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 499,
+    "fcp": 736,
+    "load": 751,
+    "lcp": {
+     "t": 736,
+     "el": "img",
+     "url": "ttps://www.runningshoesguru.com/wp-content/uploads/2019/08/pjimage22-920x544.jpg",
+     "size": 316480
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/2025/12/nike-structure-plus-first-look-zoomx-finally-comes-to-stability/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 544,
+    "fcp": 736,
+    "load": 1655,
+    "lcp": {
+     "t": 984,
+     "el": "img",
+     "url": "com/wp-content/uploads/2025/12/008_nike-structure-plus-mens-1-Large-920x544.jpeg",
+     "size": 76680
+    },
+    "cls_load": 0.0239,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0239,
+    "top_shifts": [
+     {
+      "t": 1674,
+      "v": 0.0239,
+      "n": [
+       "",
+       "",
+       ""
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 341,
+    "fcp": 540,
+    "load": 658,
+    "lcp": {
+     "t": 540,
+     "el": "img",
+     "url": "com/wp-content/uploads/2025/12/008_nike-structure-plus-mens-1-Large-920x544.jpeg",
+     "size": 76680
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 496,
+    "fcp": 700,
+    "load": 1763,
+    "lcp": {
+     "t": 700,
+     "el": "img",
+     "url": "com/wp-content/uploads/2025/12/008_nike-structure-plus-mens-1-Large-920x544.jpeg",
+     "size": 331200
+    },
+    "cls_load": 0.0002,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0002,
+    "top_shifts": [
+     {
+      "t": 1777,
+      "v": 0.0002,
+      "n": [
+       "div"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 486,
+    "fcp": 684,
+    "load": 754,
+    "lcp": {
+     "t": 684,
+     "el": "img",
+     "url": "com/wp-content/uploads/2025/12/008_nike-structure-plus-mens-1-Large-920x544.jpeg",
+     "size": 331200
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/reviews/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 484,
+    "fcp": 684,
+    "load": 1501,
+    "lcp": {
+     "t": 684,
+     "el": "img.attachment-medium.size-medium",
+     "url": "com/wp-content/uploads/2026/05/asics-gel-cumulus-28-white-background-633x474.png",
+     "size": 64680
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 392,
+    "fcp": 600,
+    "load": 689,
+    "lcp": {
+     "t": 600,
+     "el": "img.attachment-medium.size-medium",
+     "url": "com/wp-content/uploads/2026/05/asics-gel-cumulus-28-white-background-633x474.png",
+     "size": 64680
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 405,
+    "fcp": 584,
+    "load": 1424,
+    "lcp": {
+     "t": 584,
+     "el": "h1.page-title",
+     "url": "",
+     "size": 69078
+    },
+    "cls_load": 0.0002,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0002,
+    "top_shifts": [
+     {
+      "t": 1440,
+      "v": 0.0002,
+      "n": [
+       "div"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 534,
+    "fcp": 748,
+    "load": 848,
+    "lcp": {
+     "t": 748,
+     "el": "h1.page-title",
+     "url": "",
+     "size": 69078
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/reviews/asics/all/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 438,
+    "fcp": 624,
+    "load": 1601,
+    "lcp": {
+     "t": 624,
+     "el": "p",
+     "url": "",
+     "size": 93534
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "proxima-nova"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 412,
+    "fcp": 608,
+    "load": 665,
+    "lcp": {
+     "t": 608,
+     "el": "p",
+     "url": "",
+     "size": 93534
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 541,
+    "fcp": 752,
+    "load": 1680,
+    "lcp": {
+     "t": 752,
+     "el": "h1.page-title",
+     "url": "",
+     "size": 117600
+    },
+    "cls_load": 0.0002,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0002,
+    "top_shifts": [
+     {
+      "t": 1698,
+      "v": 0.0002,
+      "n": [
+       "div"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 451,
+    "fcp": 648,
+    "load": 712,
+    "lcp": {
+     "t": 648,
+     "el": "h1.page-title",
+     "url": "",
+     "size": 117600
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/reviews/asics/all/page/2/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 328,
+    "fcp": 544,
+    "load": 1496,
+    "lcp": {
+     "t": 544,
+     "el": "p",
+     "url": "",
+     "size": 93534
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 424,
+    "fcp": 636,
+    "load": 704,
+    "lcp": {
+     "t": 636,
+     "el": "p",
+     "url": "",
+     "size": 93534
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 442,
+    "fcp": 660,
+    "load": 1536,
+    "lcp": {
+     "t": 660,
+     "el": "h1.page-title",
+     "url": "",
+     "size": 117600
+    },
+    "cls_load": 0.0002,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0002,
+    "top_shifts": [
+     {
+      "t": 1562,
+      "v": 0.0002,
+      "n": [
+       "div"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 584,
+    "fcp": 840,
+    "load": 924,
+    "lcp": {
+     "t": 840,
+     "el": "h1.page-title",
+     "url": "",
+     "size": 117600
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/reviews/all/cushioning/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 610,
+    "fcp": 812,
+    "load": 1778,
+    "lcp": {
+     "t": 812,
+     "el": "p",
+     "url": "",
+     "size": 85680
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 622,
+    "fcp": 848,
+    "load": 897,
+    "lcp": {
+     "t": 848,
+     "el": "p",
+     "url": "",
+     "size": 85680
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 427,
+    "fcp": 612,
+    "load": 1635,
+    "lcp": {
+     "t": 612,
+     "el": "h1.page-title",
+     "url": "",
+     "size": 112896
+    },
+    "cls_load": 0.0002,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0002,
+    "top_shifts": [
+     {
+      "t": 1652,
+      "v": 0.0002,
+      "n": [
+       "div"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 471,
+    "fcp": 672,
+    "load": 742,
+    "lcp": {
+     "t": 672,
+     "el": "h1.page-title",
+     "url": "",
+     "size": 112896
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/reviews/nike/pegasus/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 496,
+    "fcp": 664,
+    "load": 1610,
+    "lcp": {
+     "t": 664,
+     "el": "p",
+     "url": "",
+     "size": 68210
+    },
+    "cls_load": 0.0514,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0514,
+    "top_shifts": [
+     {
+      "t": 1623,
+      "v": 0.0496,
+      "n": [
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "t": 1598,
+      "v": 0.0017,
+      "n": [
+       "",
+       "",
+       ""
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 579,
+    "fcp": 772,
+    "load": 837,
+    "lcp": {
+     "t": 772,
+     "el": "p",
+     "url": "",
+     "size": 68210
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 540,
+    "fcp": 760,
+    "load": 1753,
+    "lcp": {
+     "t": 760,
+     "el": "h1.page-title",
+     "url": "",
+     "size": 124656
+    },
+    "cls_load": 0.3061,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.3061,
+    "top_shifts": [
+     {
+      "t": 1767,
+      "v": 0.3061,
+      "n": [
+       "div.panel.w-100",
+       "",
+       "div.row"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 430,
+    "fcp": 636,
+    "load": 688,
+    "lcp": {
+     "t": 636,
+     "el": "h1.page-title",
+     "url": "",
+     "size": 124656
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 1,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/blog/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 540,
+    "fcp": 704,
+    "load": 1568,
+    "lcp": {
+     "t": 780,
+     "el": "img.panel-img.rsg-ph",
+     "url": "oesguru.com/wp-content/uploads/2014/12/Best-Running-GPS-Watches-2016-345x230.jpg",
+     "size": 79287
+    },
+    "cls_load": 0.0008,
+    "fonts_loaded": [
+     "proxima-nova"
+    ],
+    "cls_scroll": 0.0008,
+    "top_shifts": [
+     {
+      "t": 1579,
+      "v": 0.0008,
+      "n": [
+       ""
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 526,
+    "fcp": 724,
+    "load": 786,
+    "lcp": {
+     "t": 820,
+     "el": "img.panel-img.rsg-ph",
+     "url": "oesguru.com/wp-content/uploads/2014/12/Best-Running-GPS-Watches-2016-345x230.jpg",
+     "size": 79287
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 434,
+    "fcp": 668,
+    "load": 1492,
+    "lcp": {
+     "t": 716,
+     "el": "img.panel-img.rsg-ph",
+     "url": "oesguru.com/wp-content/uploads/2014/12/Best-Running-GPS-Watches-2016-345x230.jpg",
+     "size": 78600
+    },
+    "cls_load": 0.0003,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0003,
+    "top_shifts": [
+     {
+      "t": 1504,
+      "v": 0.0003,
+      "n": [
+       "div",
+       ""
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 528,
+    "fcp": 724,
+    "load": 753,
+    "lcp": {
+     "t": 804,
+     "el": "img.panel-img.rsg-ph",
+     "url": "oesguru.com/wp-content/uploads/2014/12/Best-Running-GPS-Watches-2016-345x230.jpg",
+     "size": 78600
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/author/brandonlaw/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 435,
+    "fcp": 636,
+    "load": 1597,
+    "lcp": {
+     "t": 636,
+     "el": "div",
+     "url": "",
+     "size": 58598
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 8,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 441,
+    "fcp": 620,
+    "load": 671,
+    "lcp": {
+     "t": 620,
+     "el": "div",
+     "url": "",
+     "size": 58598
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 513,
+    "fcp": 692,
+    "load": 1575,
+    "lcp": {
+     "t": 768,
+     "el": "img.panel-img.rsg-ph",
+     "url": "ingshoesguru.com/wp-content/uploads/2026/05/ASICS-Gel-Cumulus-28-12-345x230.jpeg",
+     "size": 78450
+    },
+    "cls_load": 0.0002,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0002,
+    "top_shifts": [
+     {
+      "t": 1592,
+      "v": 0.0002,
+      "n": [
+       "div"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 494,
+    "fcp": 684,
+    "load": 721,
+    "lcp": {
+     "t": 780,
+     "el": "img.panel-img.rsg-ph",
+     "url": "ingshoesguru.com/wp-content/uploads/2026/05/ASICS-Gel-Cumulus-28-12-345x230.jpeg",
+     "size": 78450
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/best-running-shoes-wizard/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 514,
+    "fcp": 760,
+    "load": 1695,
+    "lcp": {
+     "t": 760,
+     "el": "p",
+     "url": "",
+     "size": 29465
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 8,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 494,
+    "fcp": 688,
+    "load": 828,
+    "lcp": {
+     "t": 688,
+     "el": "p",
+     "url": "",
+     "size": 29465
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 551,
+    "fcp": 760,
+    "load": 1931,
+    "lcp": {
+     "t": 1972,
+     "el": "div#wizard_parallax.loaded",
+     "url": "unningshoesguru.com/wp-content/themes/rsg_2022/images/wizard2020/bg_shoenew2.png",
+     "size": 102284
+    },
+    "cls_load": 0.0002,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0002,
+    "top_shifts": [
+     {
+      "t": 1970,
+      "v": 0.0002,
+      "n": [
+       "div"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 321,
+    "fcp": 496,
+    "load": 601,
+    "lcp": {
+     "t": 628,
+     "el": "div#wizard_parallax.loaded",
+     "url": "unningshoesguru.com/wp-content/themes/rsg_2022/images/wizard2020/bg_shoenew2.png",
+     "size": 102284
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   }
+  },
+  "https://www.runningshoesguru.com/contact-us/": {
+   "390_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 446,
+    "fcp": 592,
+    "load": 1530,
+    "lcp": {
+     "t": 592,
+     "el": "p",
+     "url": "",
+     "size": 28674
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 8,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "390_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 357,
+    "fcp": 556,
+    "load": 718,
+    "lcp": {
+     "t": 556,
+     "el": "p",
+     "url": "",
+     "size": 28674
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "1366_real": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 534,
+    "fcp": 700,
+    "load": 1649,
+    "lcp": {
+     "t": 700,
+     "el": "p",
+     "url": "",
+     "size": 38880
+    },
+    "cls_load": 0.0002,
+    "fonts_loaded": [
+     "proxima-nova",
+     "source-sans-pro"
+    ],
+    "cls_scroll": 0.0002,
+    "top_shifts": [
+     {
+      "t": 1663,
+      "v": 0.0002,
+      "n": [
+       "div"
+      ]
+     }
+    ],
+    "typekit_req": 8,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   },
+   "1366_blocked": {
+    "status": 200,
+    "cache": "HIT",
+    "ttfb": 670,
+    "fcp": 860,
+    "load": 921,
+    "lcp": {
+     "t": 860,
+     "el": "p",
+     "url": "",
+     "size": 38880
+    },
+    "cls_load": 0,
+    "fonts_loaded": [
+     "proxima-nova-fb",
+     "source-sans-pro-fb"
+    ],
+    "cls_scroll": 0,
+    "top_shifts": [],
+    "typekit_req": 1,
+    "beacons_stubbed": 0,
+    "site_errors": []
+   }
+  }
+ }
+}

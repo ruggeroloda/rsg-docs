@@ -1,0 +1,117 @@
+# DFS (price engine) — runbook
+
+_Current state only. Thumbnails section updated 15 Nov ~10:15 UTC. Checked against rsg-dfs, rsgmedia and live WordPress on **11 Nov 2026 ~14:10 UTC**; re-checked 12 Nov ~08:40 UTC (code `9d6a0e0` = `main`, switches, 11 feeds and their times, crons, heartbeat OK, backup 03:15 done, UFW; test bench scheduler off / push → staging / GB hidden): no drift. Update this file in the same session as any change. Why things are as they are: `../DECISIONS.md`. How it was built: `archive/`._
+
+## What it does
+Downloads merchant feeds and searches Amazon, matches products to RSG's reviews, builds one price JSON per review and pushes it into WordPress (post meta `_rsg_prices`). The page shows the US offers in its HTML and a script swaps in the visitor's country. Live since 10 Nov 2026.
+
+## Where it runs
+| Part | Where | State (11 Nov) |
+|---|---|---|
+| **Production** | Hetzner **rsg-dfs** `135.181.110.157` (CAX11 ARM, 2 vCPU/4 GB/40 GB, Helsinki), Ubuntu 26.04, Docker 29.1 (`docker.io`), container `dfs` | Code `01e2c63` (= GitHub `main`, 15 Nov). Scheduler **on**, push **on** → www.runningshoesguru.com. Countries hidden: none |
+| Test bench | Hetzner **rsgmedia** `116.203.146.177`, container `dfs` | Code synced by rsync (no git; `01e2c63` code, 15 Nov). A copy of production's database for tests: `/data/prod.sqlite` (use with `-e DFS_DB=/data/prod.sqlite`; 15 Nov). Scheduler **off**, push **on** but target = **staging** (pushes only on "Run now"). GB hidden there |
+| WordPress side | Rocket.net live + staging | mu-plugins `rsg-dfs-receiver.php` (1.3.0), `rsg-dfs-clicks.php`; shop thumbnails in `wp-content/uploads/rsg-dfs/<hash>.webp` (live + staging); theme `includes/rsg-dfs-prices.php`, `css/rsg-dfs.css`, `js/rsg-dfs.js`, `images/merchants/`; option `rsg_prices_default=1`; user `dfs-push` (ID 115, role `rsg_dfs_pusher`); `_rsg_prices` on 429 reviews |
+| Old DFS (rollback) | Linode `45.33.39.133`; `dstudio` plugin still active on live | Feeds nothing since 10 Nov. Retired in Phase F (ROADMAP "Phase F") |
+
+Code: `dfs/app/` = GitHub `ruggeroloda/rsg-dfs` (private). Data: Docker volume `dfs_data` → `/data/dfs.sqlite`, raw files `/data/raw/<day>/`. Secrets: `~/dfs/.env` (mode 600) on each server; variable names in `app/.env.example`.
+
+## Access
+- SSH: `ssh -p 2222 ruggero@135.181.110.157` (rsg-dfs) / `…@116.203.146.177` (rsgmedia). Key only: Ruggero's 1Password key; Claude's standing key `_private/claude-hetzner-key`.
+- Screens (Shoes / Feeds / Prices): no login. The tunnel is the access control (the container publishes only on the host's 127.0.0.1:8090; sshd `PermitOpen` allows only that). A Host-header check (`DFS_WEB_HOSTS`) and a per-process form token block other web pages. Mac only: production `dfs/production/Open DFS production.command` → http://localhost:18091; test bench `hosting/hetzner/Open RSG server tools.command` → http://localhost:18090.
+- WordPress: Rocket.net SSH from the Mac only (`theme/.ssh-rocket-key`); the cloud shell can't reach Rocket.net.
+- GitHub: `dfs/app` pushes with the write deploy key `_private/github-rsg-dfs-deploy-key` (in the repo's `core.sshCommand`; port 22 worked 11 Nov, else use `ssh.github.com:443`). The server pulls with its own **read-only** key.
+
+## Daily schedule (UTC)
+| Time | Job | Push + purge? |
+|---|---|---|
+| 01:30 | Shoe list from WordPress (`/rsg-dfs/v1/shoes`): new reviews, list prices, renames | — |
+| 02:00 | Amazon US search: every active shoe × gender, 3 pages (~1,550 calls, ~45 min) | **yes** (~02:45) |
+| 03:15 | Server backup (cron) | — |
+| 04:30 | Reboot, only if a security update needs it | — |
+| 06:30 Zappos · 06:35 Hoka US · 06:45 RW DE · 06:50 RW US · 07:00 Nike DE · 07:05 Nike UK · 07:10 Hoka UK · 07:15 RW AU · 07:20 adidas AU | Download + match + rebuild | no (waits for 08:00) |
+| 08:00 · 14:00 · 20:00 | Amazon re-price of the ASIN pool (~600 calls, ~15 min) | **yes** |
+| 12:00 Nike US · 12:10 Puma US · 12:20 Puma UK | Download + match + rebuild | no (waits for 14:00) |
+| 22:00 | Price-history snapshot, then thumbnail clean-up (`wp_push.prune_images`, logged as job `images`) | — |
+| every 30 min | Heartbeat to healthchecks.io | — |
+| 1st of month 07:30 | Monthly health report email (first run 1 Dec) | — |
+
+A slot runs up to 3 h late (scheduler thread checks every 15 s); a failed run retries after 30 min, 3 tries. Slots missed while the switch was off are not caught up. File changes reach the site with the next Amazon push, so at most ~2 h later. A push re-sends every shoe whose JSON hash changed. Check times are part of the hash, so each Amazon slot re-pushes the ~315 shoes with Amazon offers (one full HTML purge, max 4 a day). The push note shows "real N" = shoes with real price/link changes (the 14:15 UTC push on 11 Nov set the baseline: "real 0, 317 no baseline"; counts start with the next push).
+
+## Switches and where settings live
+- DFS (`meta` table, on the Feeds/Prices screens): `scheduler` on/off, `wp_push` on/off ("Push now" always works), `countries_hidden` (Prices screen, "Countries on the site").
+- Feeds: table `feeds` (transport, format, column map, sub-ID, schedule, 70 % row guard, options such as stock and kids), edited on the Feeds screen with a 20-row preview. A feed names the `.env` variable for its secret, never the secret itself.
+- Shoes: table `shoes` (from WordPress, synced daily) + `rules` (origin auto/manual) + `blocks`; active and gender overrides on the Shoes screen. Copies of the last 14 WordPress lists: `/data/wp/shoes-<day>.json`.
+- Logos: table `merchant_logos` (live theme URLs, `?v=20261110`; RW AU + adidas AU `?v=20261115`).
+- WordPress: site option `rsg_prices_default=1` turns the box on; per page `?dfs=0|1` or post meta `_rsg_prices_on`.
+
+## How to change things
+- **Feed, rule, block, active/gender:** on the production screens. A rule saved there becomes `manual` and rebuilds never overwrite it ("Back to auto rule" resets it). Offers change at the next match run (or "Run now").
+- **New review or changed list price in WordPress:** picked up by the 01:30 UTC sync (production reads live, the test bench reads staging), priced by the 02:00 Amazon search and the morning feeds, on the site after the 02:45 or 08:15 push. Which reviews count: every published road/trail/training/`review` post with a legacy `ds_query`, plus every one published from 10 Nov 2026 (`RSG_DFS_NEW_FROM` in the receiver). A new shoe gets an automatic rule (brand + model) and the flag "new: check rule" on the Shoes screen: check its matches there. Empty `model` in WordPress → "no model in WordPress" (rule matches nothing). Brand/model changed → automatic rule rebuilt (manual rules untouched). Removed/unpublished → inactive. The sync is refused (failure email, nothing changed) if WordPress lists < 100 shoes or < 90 % of last time. Now: `docker exec dfs python -m dfs.shoes pull`.
+- **New merchant logo:** `app/tools/logos/optical.py` (in git; identical copy in `logos/optical/`; never hand-size), put the file in the theme's `images/merchants/`, deploy the theme (while theme `main` holds unreleased work, copy only the new PNG to live + staging by hand, as on 15 Nov), set the URL on the Prices screen, bump `?v=`.
+- **DFS code:** commit in `dfs/app` → push GitHub → test on rsgmedia (rsync `app/` without `.env`, `docker compose -f docker/compose.yml up -d --build`) → on rsg-dfs, with no job running (Feeds screen): `cd ~/dfs/app && git pull && docker compose -f docker/compose.yml up -d --build`. After a `.env` change: `up -d --force-recreate`. Log it in `logs/DEPLOY-LOG.md` (before 11 Nov: `logs/DEPLOY-LOG-STEP6.md`, `-STEP7.md`).
+- **Price box (theme files):** only in the theme repo `theme/rsg_2022/` (deploy with `deploy.sh`, see `theme/RUNBOOK.md`). `dfs/app/wordpress/theme/README.md` maps every DFS edit in the theme. After a change to `js/rsg-dfs.js` (or any CSS/JS), `deploy.sh` clears WP Rocket's minified copies (`wp-content/cache/min/`, which `rocket_clean_domain()` doesn't touch) and its used CSS, then purges everything, so pages regenerate pointing to fresh files. Rule (replaces the 10 Nov "copy over, never delete" lesson, which was about clearing without a purge): **never clear the minified copies without the full purge right after**, or edge-cached pages would point to deleted files. `rocket_clean_domain()` doesn't clear `cache/min`.
+- **mu-plugins:** `rsg-dfs-receiver.php` = `POST /wp-json/rsg-dfs/v1/prices/<post id>` (writes `_rsg_prices`), `GET /shoes` (the review list, no-store), `/purge` (Rocket.net `html` tag purge with the site token, max once a minute), `POST /image/<hash>` (one thumbnail: WebP only, ≤ 50 KB, ≤ 400 px, bytes must hash to the name; never overwritten) and `POST /images/prune` (deletes our thumbnails not in the DFS list and older than 30 days; refuses an empty list; reports missing files, which the DFS re-uploads); `rsg-dfs-clicks.php` (1.3.0, 13 Nov) = `/click` + `/view` logs + a footer script that logs every other affiliate link (box `gps`/`amzk`/`bought`/`text`/`go`, shop from the link host). Source `dfs/app/wordpress/*.php`, copied by hand to `wp-content/mu-plugins/` (staging first, back up the live file first). Live = staging = repo (receiver 1.3.0 md5 `bb5d278b…` checked 15 Nov; backup of receiver 1.2.0 in `~/rsg_deploy_backups/mu-rsg-dfs-receiver-20261115-091608/`).
+
+## Roll back
+- Thumbnails only: `git revert 18331cf` on rsg-dfs + rebuild + push (the JSON goes back to the shops' own links; files in `uploads/rsg-dfs/` can stay). Receiver: copy `~/rsg_deploy_backups/mu-rsg-dfs-receiver-20261115-091608/live.php` back (only after the DFS code is reverted: pushes need the image route).
+- Whole box (until Phase F): `wp option delete rsg_prices_default` + `wp cdn purge` → old dstudio boxes. Whether the old DFS on the Linode still runs its own nightly import was not checked after 10 Nov: check its last import before relying on this rollback. Per page: `?dfs=0` or meta `_rsg_prices_on='0'`.
+- Code: on rsg-dfs `git checkout <previous commit>` + the same compose command.
+- Stop updates: Feeds screen scheduler off and/or push off. The site keeps the last pushed prices; Amazon prices hide themselves once older than 24 h.
+- Data: restore from backup (`PRODUCTION-SERVER.md` → Restore). Rebuild the server in ~1 h: same file → Rebuild.
+
+## Alerts, monitoring, backups, retention
+- **Failure emails** (MailerSend API, sender newsletter@runningshoesguru.com, to Ruggero): failed or refused feed job, failed build or push; max 1 per feed/job per 6 h, 15 a day; manual runs never email. Links point to http://localhost:18091.
+- **Heartbeat** `/usr/local/bin/dfs-heartbeat.sh` → healthchecks.io check `rsg-dfs` (Ruggero's account; period 1 h, grace 7 h). Fails if the container is down, disk ≥ 80 %, Drive backup > 36 h old, scheduler off, or no ok job in 8 h. Test: `sudo DRYRUN=1 /usr/local/bin/dfs-heartbeat.sh` (11 Nov: OK).
+- **Monthly report** `/usr/local/bin/dfs-monthly-report.sh` (print only: `REPORT_PRINT=1`).
+- **Backups:** `/usr/local/bin/dfs-backup.sh` at 03:15: SQLite + `.env` + config, age-encrypted → `/var/backups/dfs` (7) + Google Drive `Server-Backups/servers/dfs` (30 days); Hetzner backups (7 daily). Log `/var/log/dfs-backup.log`. Private key only on the Mac (`_private/backup-age-key.txt`) and in 1Password.
+- **Kept for:** raw feed files 3 days; Amazon ASIN without a price drops out after 7 days; price history 730 days (since 7 Nov); WordPress click and view logs (`newguru_wp_rsg_clicks`, `newguru_wp_rsg_views`) **no limit yet** (ROADMAP "DFS simplification").
+- **Server upkeep:** unattended **security** updates only, reboot 04:30 if needed; UFW allows only 2222; fail2ban (sshd); container reaches the internet only (`dfs-firewall.service`). No Hetzner Cloud Firewall.
+
+## Rules in force (date = line in `../DECISIONS.md`)
+- Countries, merchants and shoes are configuration; scope comes from intent, not past revenue (5–6 Nov). Every published review with a `ds_query` started active; dead ones are switched off by hand ("no offers" flag) (6 Nov).
+- One container: Flask screens + scheduler thread (one job at a time) + SQLite. No n8n inside DFS, no Cloudflare dependency of its own (4, 7 Nov).
+- Prices live in WordPress post meta `_rsg_prices`, written only through the narrow REST route by the low-privilege user, via `update_post_meta` (modified date untouched); 16 KB cap, strict validation (6–7 Nov).
+- Page HTML = US offers (men + women) for bots, schema and no-JS. The script swaps the country (visitor's own choice, else Cloudflare trace, else US) and re-applies the Amazon 24 h rule. Schema = one USD `AggregateOffer` from the HTML's US offers, never swapped, no per-seller offers (7–8 Nov).
+- Countries on the site: US, DE, GB, AU (AU since 15 Nov: RW AU + adidas AU, ~78 shoes; the rest show "No offers" for AU). A country with no feed gets the US offers; a country with a feed but no offer for that shoe shows "No offers". No fallback to the server-side country when the trace fails (7, 10, 11 Nov).
+- Shoes outside DFS show nothing; DFS shoes with empty lists show "No offers". An inactive shoe keeps its last JSON (7–8 Nov).
+- Up to 4 offers per country × gender, one per merchant, cheapest first, ties alphabetical; "from" price (cheapest size); thumbnail on every offer (7–8 Nov).
+- Thumbnails (15 Nov): every non-Amazon shop image is our own copy: fetched once, light background flattened, trimmed, centred on white **192×144 WebP** q80 (~2 KB; 2× the biggest box thumbnail 96×72, sharp on retina), name = SHA-1 prefix (no purge ever needed), stored in the DFS database and pushed before the prices (a failed upload stops that push). **Amazon images are never copied** (Associates policy: links only, ≤ 24 h): Amazon's `images.primary.medium` link (160 px), renewed at every re-price. No usable image → the "no image" picture (`dfs/assets/no-image.webp`, drawn by `tools/images/no_image.py`). Failed sources retried after 24 h; sources unused 30 days dropped; files on the site deleted after 30 days unused. `alt=""` stays (shop + price are in the row's text).
+- Offer filter: drop offers > 1 % above the list price or below ~40 % of it. List price = WordPress `rrp_<cc>`, else the shop's own; with neither, keep the offer and mark it "no list price". WordPress owns list prices (21 Jun, 6 Nov).
+- Matching: rules built from WordPress metadata (brand alias + family + version); product name only, whole words, case-insensitive, hyphen = space; trademark marks ignored. Variant words make a different product (`VARIANTS` in `app/dfs/rulebuild.py`; per-shoe `allow_after`), and so do widths (wide/2E/4E/6E/narrow). Longer name wins. Kids, non-shoes, no-gender and out-of-stock rows are dropped (6–10 Nov).
+- Gender per offer from the feed, else from the name; each shoe "both" unless overridden (6–7 Nov).
+- Amazon: no ASIN pinning for shoes. Search + pool, prices only if checked < 24 h ago, untouched Amazon links, one tag per marketplace, "as of" time shown. Third-party sellers kept. `GetVariations` tested, not used (kept in reserve). Quota is not a constraint (~190k calls/day at Oct–Nov revenue) (6 Nov).
+- File feeds: a download is accepted only if the columns exist and it has ≥ 70 % of the last good row count; offers stay while the last accepted import is < 72 h old (7 Nov).
+- Push + purge only after the Amazon jobs; check times stay in the hash; one purge per batch; pacing 0.5 s, wait-and-retry on HTTP 429 (7, 11 Nov).
+- Links: direct affiliate links, `rel="sponsored nofollow"`, sub-ID `{page}-{box}-{country}` (CJ `sid`, Rakuten `u1`, AWIN `clickref`; RW fixed `from=guru`; Amazon untouched) (6–7 Nov).
+- Click and view logs: country codes only, no IP, user agent or cookie (8, 10 Nov).
+- Price history: one daily row per shoe × gender × country × merchant, kept 2 years. Deal signals: ≥ 20 % below list price (US only, no DE list prices); "low" = lowest in 90 days and ≥ 10 % below the 30-day median, needs 14 days of history (from ~21 Nov) (6–7 Nov).
+- Brand-level merchant exclusions from the old DFS are not carried over (6 Nov).
+- rsg-dfs runs the DFS only. Code reaches it only through GitHub after testing; its deploy key is read-only (9 Nov).
+- CJ needs paramiko 3.5.x (DSA host key) (6 Nov).
+- GPS reviews are not in DFS: a per-country "Check price on Amazon" button; DFS GPS prices (7b) dropped (10–11 Nov).
+- Logos: the optical set only; bump `?v=` on every logo change (8 Nov).
+
+## Known gaps and open items
+1. Phase F not done: old Linode running, `dstudio` active, `/go/` stub (`app/wordpress/go/index.php`: 301 to the page named in `referer=`) not live, network logins and MailerSend token not rotated (one token shared with the theme).
+2. Network sub-ID reports (AWIN Click References, CJ, Rakuten `u1`) waiting for the first commissions.
+3. Staging and live share Rocket.net `CDN_SITE_ID` 69650, so a staging purge **may** also clear live (not proven).
+4. Planned (ROADMAP "DFS simplification"): retire the test bench as a second running DFS, nightly settings dump to git, matcher fixture tests, view log sampled + retention. (ROADMAP "Amazon slot review"): ~18 Nov compare "real N" per Amazon slot, then drop a slot or keep 4.
+5. No local list prices outside the US for most shoes (almost no `rrp_de`/`rrp_gb`; RW DE has none), so many DE/GB offers aren't price-filtered. Planned: a worker that finds local list prices (DECISIONS 24 Jun + open question).
+6. Links in emails were meant to carry an "email" sub-ID (6 Nov); not built.
+7. Step 8 (more merchants): Asics US, Brooks/Mizuno (Impact), SportsShoes UK (Partnerize feeds broken; waiting for Visualsoft), CA. AU done 15 Nov (no AU list prices in WordPress: AU offers are not price-filtered). Later, if wanted: NZ/SG/MY/HK from the same RW AU file (`vat=<cc>`).
+
+## Accounts, networks and quotas
+- Affiliate networks: **Amazon Associates** (Creators API; US tag `AMAZON_US_PARTNER_TAG`; GPS buttons use GB `runshogur-21`, DE `runshogur01-21`, CA `runningsho053-20`, US/other `rsg-single-20`), **CJ** (Nike US, Puma US/UK; SFTP), **Rakuten** (Zappos, Hoka US; FTP), **AWIN** (Nike DE/UK, Hoka UK, adidas AU feed 118206; API key in the feed URL), **Running Warehouse** direct (public CSVs US/EU/AU, `from=guru`), Impact (Brooks/Mizuno, not yet used), AvantLink, Partnerize (SportsShoes, feeds broken).
+- **Amazon Creators API quota:** 1 call/day per $0.05 of shipped revenue in the previous 30 days (+1 call/s per $4,320), 8,640/day in the first 30 days; one getItems of 10 ASINs = one call; HTTP 429 when over; **no quota headers**, so DFS counts its own calls (table `api_calls`). At the Oct–Nov revenue (~$9.7k shipped) ≈ 190k calls/day; the DFS uses ~1,550 searches + ~1,800 re-price calls a day. **Access is revoked after 30 days without sales.**
+- **Amazon outside the US:** not available. The UK Associates account fails the Creators API eligibility bar (HTTP 403 `AssociateNotEligible` since ~5 Sep 2026; needs ~10 sales in 30 days); CA/DE/IT have no working setup. UK/DE prices come from the file feeds.
+- WordPress fields the DFS reads (through the shoe sync): `brands` taxonomy (brand), `model` (fallback `shoe_name`), `rrp_us|gb|de|au|ca` (list prices), legacy `ds_query` (scope only; matching rules live in DFS). Table prefix `newguru_wp_`.
+
+## Checks and tools
+- Data and switches: production screens; `docker exec -i dfs python - < app/tools/check_prices.py`.
+- Thumbnails: `docker exec dfs python -m dfs.images status` (counts, failed sources); `python -m dfs.images fetch <url> out.webp` (one image by hand); page check from any shell: `python3 app/tools/images/check_page.py <review URL> …` (every thumbnail loads, own copy or Amazon, bytes; exit 1 on a problem).
+- Live page checks: `app/tools/pricebox/` (`chk.js`, `val.js`, `sweep.py`, `cls.js`, `clicks.js` posts real beacons, so don't run it on live). They hard-code the staging address; run from the cloud shell (Playwright).
+- Click/view logs (live, from `~/public_html`): tables `newguru_wp_rsg_views` (ts, page_id, country shown, want, src c chosen / t trace / f failed / p pending, hdr = Cloudflare country, vis = first view of the visit) and `newguru_wp_rsg_clicks` (+ box, shoe, merchant, gender).
+  `wp db query "SELECT COUNT(*) views, SUM(vis) visits, SUM(want<>'' AND want<>hdr) mismatch, ROUND(100*SUM(src='f')/COUNT(*),1) trace_fail_pct FROM newguru_wp_rsg_views WHERE ts>='<from>'"`
+  `wp db query "SELECT merchant, country, COUNT(*) n FROM newguru_wp_rsg_clicks WHERE ts>='<from>' GROUP BY 1,2 ORDER BY n DESC"`
+  Mismatch = `want<>hdr` (a visitor's own choice is not a bug). Geo-cache measurement baseline: `GO-LIVE-2026-11-10.md`.
+- Server facts, restore, rebuild: `PRODUCTION-SERVER.md`. Old DFS: `ARCHITECTURE.md`, `DFS-ACCESS.md` (archive after Phase F).

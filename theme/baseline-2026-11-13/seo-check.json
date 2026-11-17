@@ -1,0 +1,4840 @@
+[
+ {
+  "age": null,
+  "cache": "HIT",
+  "canonical": [
+   "https://www.runningshoesguru.com/"
+  ],
+  "description": [
+   "Need running shoes advice? Reviews, buying guides and price comparison on all running shoes plus hundreds of opinions from other runners."
+  ],
+  "h1": 11,
+  "jsonld": [],
+  "ld_blocks": 0,
+  "ld_errors": [],
+  "ld_types": [],
+  "location": null,
+  "offers": [],
+  "og": {
+   "og:description": [
+    "Need running shoes advice? Reviews, buying guides and price comparison on all running shoes plus hundreds of opinions from other runners."
+   ],
+   "og:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2011/11/logo_white1-e1509785031312-1.png"
+   ],
+   "og:title": [
+    "Running Shoes Reviews and Buying Guide"
+   ],
+   "og:type": [
+    "website"
+   ],
+   "og:url": [
+    "https://www.runningshoesguru.com/"
+   ]
+  },
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "Running Shoes Reviews and Buying Guide | Running Shoes Guru",
+  "twitter": {
+   "twitter:card": [
+    "summary_large_image"
+   ],
+   "twitter:description": [
+    "Need running shoes advice? Reviews, buying guides and price comparison on all running shoes plus hundreds of opinions from other runners."
+   ],
+   "twitter:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2011/11/logo_white1-e1509785031312-1.png"
+   ],
+   "twitter:title": [
+    "Running Shoes Reviews and Buying Guide"
+   ]
+  },
+  "url": "https://www.runningshoesguru.com/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "MISS",
+  "canonical": [
+   "https://www.runningshoesguru.com/reviews/road/asics-gel-cumulus-28-review/"
+  ],
+  "description": [
+   "The ASICS Cumulus is a firm daily trainer with a stable ride for short or medium distance runs. It has a new FF Blast Max midsole however, it still has a flat ride without much energy return. I'm disappointed with the Cumulus 28\u2019 performance and I find it way too firm and too dull."
+  ],
+  "h1": 1,
+  "jsonld": [
+   [
+    {
+     "@context": "https://schema.org/",
+     "@id": "https://www.runningshoesguru.com/reviews/road/asics-gel-cumulus-28-review/",
+     "@type": "WebPage",
+     "breadcrumb": {
+      "@id": "https://www.runningshoesguru.com/reviews/road/asics-gel-cumulus-28-review/#breadcrumb"
+     },
+     "dateModified": "2026-05-10T15:37:42-04:00",
+     "datePublished": "2026-05-10T15:37:42-04:00",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@id": "https://www.runningshoesguru.com/#website",
+      "@type": "WebSite",
+      "name": "Running Shoes Guru",
+      "url": "https://www.runningshoesguru.com/"
+     },
+     "mainEntity": {
+      "@id": "https://www.runningshoesguru.com/reviews/road/asics-gel-cumulus-28-review/#review"
+     },
+     "name": "ASICS Gel Cumulus 28 Review",
+     "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.runningshoesguru.com/wp-content/uploads/2026/05/asics-gel-cumulus-28-white-background.png"
+     },
+     "url": "https://www.runningshoesguru.com/reviews/road/asics-gel-cumulus-28-review/"
+    },
+    {
+     "@context": "https://schema.org/",
+     "@id": "https://www.runningshoesguru.com/reviews/road/asics-gel-cumulus-28-review/#product",
+     "@type": "Product",
+     "additionalProperty": [
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Comfort",
+       "value": 7
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Build quality",
+       "value": 9
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Upper",
+       "value": 7
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Sole unit",
+       "value": 7
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Landing",
+       "value": 7
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Transition",
+       "value": 7
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Toe-off",
+       "value": 7
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Traction",
+       "value": 5
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Durability",
+       "value": 7
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Value / Price",
+       "value": 7
+      },
+      {
+       "@type": "PropertyValue",
+       "name": "Weight",
+       "unitText": "oz",
+       "value": 9
+      },
+      {
+       "@type": "PropertyValue",
+       "name": "Heel drop",
+       "unitText": "mm",
+       "value": 8
+      }
+     ],
+     "brand": {
+      "@type": "Brand",
+      "name": "Asics"
+     },
+     "category": "Running Shoes",
+     "description": "The ASICS Cumulus is a firm daily trainer with a stable ride for short or medium distance runs. It has a new FF Blast Max midsole however, it still has a flat ride without much energy return. I'm disappointed with the Cumulus 28\u2019 performance and I find it way too firm and too dull.",
+     "image": "https://www.runningshoesguru.com/wp-content/uploads/2026/05/asics-gel-cumulus-28-white-background.png",
+     "name": "Asics Gel Cumulus 28",
+     "offers": {
+      "@type": "AggregateOffer",
+      "highPrice": "144.95",
+      "lowPrice": "129.99",
+      "offerCount": "6",
+      "priceCurrency": "USD",
+      "url": "https://www.runningshoesguru.com/reviews/road/asics-gel-cumulus-28-review/"
+     },
+     "review": [
+      {
+       "@id": "https://www.runningshoesguru.com/reviews/road/asics-gel-cumulus-28-review/#review",
+       "@type": "Review",
+       "additionalProperty": [
+        {
+         "@type": "PropertyValue",
+         "name": "Sizing",
+         "propertyID": "size-fit",
+         "value": "Buy half size bigger"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Heel fit",
+         "propertyID": "size-fit",
+         "value": "Normal"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Midfoot fit",
+         "propertyID": "size-fit",
+         "value": "Normal"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Toebox fit",
+         "propertyID": "size-fit",
+         "value": "Tight"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Type of cushioning",
+         "propertyID": "cushioning-ride",
+         "value": "Responsive/balanced"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Amount of cushioning",
+         "propertyID": "cushioning-ride",
+         "value": "Medium cushioning"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Stability",
+         "propertyID": "cushioning-ride",
+         "value": "Very stable"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Flexibility",
+         "propertyID": "cushioning-ride",
+         "value": "Flexible"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Recommended usage",
+         "propertyID": "usage",
+         "value": "Daily training"
+        }
+       ],
+       "author": {
+        "@id": "https://www.runningshoesguru.com/author/brandonlaw/#person",
+        "@type": "Person",
+        "name": "Brandon Law",
+        "url": "https://www.runningshoesguru.com/author/brandonlaw/"
+       },
+       "dateModified": "2026-05-10T15:37:42-04:00",
+       "datePublished": "2026-05-10T15:37:42-04:00",
+       "headline": "Asics Gel Cumulus 28 Review",
+       "mainEntityOfPage": {
+        "@id": "https://www.runningshoesguru.com/reviews/road/asics-gel-cumulus-28-review/"
+       },
+       "negativeNotes": {
+        "@type": "ItemList",
+        "itemListElement": [
+         {
+          "@type": "ListItem",
+          "name": "Firm ride without much bounce",
+          "position": 1
+         },
+         {
+          "@type": "ListItem",
+          "name": "Below average grip",
+          "position": 2
+         },
+         {
+          "@type": "ListItem",
+          "name": "Narrow toe box",
+          "position": 3
+         }
+        ]
+       },
+       "positiveNotes": {
+        "@type": "ItemList",
+        "itemListElement": [
+         {
+          "@type": "ListItem",
+          "name": "Respectable weight for a daily trainer",
+          "position": 1
+         },
+         {
+          "@type": "ListItem",
+          "name": "High level of ground feel",
+          "position": 2
+         },
+         {
+          "@type": "ListItem",
+          "name": "Good foot lockdown",
+          "position": 3
+         },
+         {
+          "@type": "ListItem",
+          "name": "Good stability",
+          "position": 4
+         }
+        ]
+       },
+       "publisher": {
+        "@type": "Organization",
+        "alternateName": "RSG",
+        "email": "guru@runningshoesguru.com",
+        "foundingDate": "2009-04-01",
+        "legalName": "RSGMEDIA",
+        "logo": "https://www.runningshoesguru.com/wp-content/themes/rsg_2022/images/logo2020.svg",
+        "name": "Running Shoes Guru",
+        "sameAs": [
+         "https://www.facebook.com/runningshoesguru/",
+         "https://twitter.com/runningshoesgur/",
+         "https://www.instagram.com/runningshoesguru/",
+         "https://www.youtube.com/user/runningshoesguru"
+        ],
+        "url": "https://www.runningshoesguru.com/"
+       },
+       "reviewBody": "The ASICS Cumulus is a firm daily trainer with a stable ride for short or medium distance runs. It has a new FF Blast Max midsole however, it still has a flat ride without much energy return. I'm disappointed with the Cumulus 28\u2019 performance and I find it way too firm and too dull.",
+       "reviewRating": {
+        "@type": "Rating",
+        "bestRating": "10",
+        "ratingValue": "7.0",
+        "worstRating": "1"
+       }
+      }
+     ]
+    },
+    {
+     "@context": "https://schema.org/",
+     "@id": "https://www.runningshoesguru.com/reviews/road/asics-gel-cumulus-28-review/#breadcrumb",
+     "@type": "BreadcrumbList",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/",
+       "name": "Home",
+       "position": 1
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/reviews/",
+       "name": "Reviews",
+       "position": 2
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/reviews/road/asics-gel-cumulus-28-review/",
+       "name": "Asics Gel Cumulus 28 Review",
+       "position": 3
+      }
+     ]
+    },
+    {
+     "@context": "https://schema.org/",
+     "@type": "FAQPage",
+     "mainEntity": [
+      {
+       "@type": "Question",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you prefer firm trainers with plenty of ground feel, the Cumulus 28 will be right up your alley.\nIf you find the Nimbus and the Novablast too squishy and unstable, the Cumulus 28 feels significantly firmer and more stable."
+       },
+       "name": "Who should buy the Asics Gel Cumulus 28?"
+      },
+      {
+       "@type": "Question",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you\u2019re expecting a cloud-soft ride like its name suggests, you\u2019ll be disappointed in the Cumulus 28\u2019s firm ride.\nIf you enjoy energetic and bouncy rides, you\u2019ll find the Cumulus 28 ride too flat."
+       },
+       "name": "Who should not buy the Asics Gel Cumulus 28?"
+      }
+     ]
+    }
+   ]
+  ],
+  "ld_blocks": 1,
+  "ld_errors": [],
+  "ld_types": [
+   "WebPage",
+   "WebSite",
+   "ImageObject",
+   "Product",
+   "Brand",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "Review",
+   "Person",
+   "Organization",
+   "ItemList",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ItemList",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "Rating",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "AggregateOffer",
+   "BreadcrumbList",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "FAQPage",
+   "Question",
+   "Answer",
+   "Question",
+   "Answer"
+  ],
+  "location": null,
+  "offers": [
+   {
+    "@type": "AggregateOffer",
+    "highPrice": "144.95",
+    "lowPrice": "129.99",
+    "offerCount": "6",
+    "price": null,
+    "priceCurrency": "USD"
+   }
+  ],
+  "og": {
+   "article:modified_time": [
+    "2026-05-10T15:37:42-04:00"
+   ],
+   "article:published_time": [
+    "2026-05-10T15:37:42-04:00"
+   ],
+   "og:description": [
+    "The ASICS Cumulus is a firm daily trainer with a stable ride for short or medium distance runs. It has a new FF Blast Max midsole however, it still has a flat ride without much energy return. I'm disappointed with the Cumulus 28\u2019 performance and I find it way too firm and too dull."
+   ],
+   "og:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2026/05/ASICS-Gel-Cumulus-28-12.jpeg"
+   ],
+   "og:title": [
+    "ASICS Gel Cumulus 28 Review"
+   ],
+   "og:type": [
+    "article"
+   ],
+   "og:url": [
+    "https://www.runningshoesguru.com/reviews/road/asics-gel-cumulus-28-review/"
+   ]
+  },
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "ASICS Gel Cumulus 28 Review | Running Shoes Guru",
+  "twitter": {
+   "twitter:card": [
+    "summary_large_image"
+   ],
+   "twitter:description": [
+    "The ASICS Cumulus is a firm daily trainer with a stable ride for short or medium distance runs. It has a new FF Blast Max midsole however, it still has a flat ride without much energy return. I'm disappointed with the Cumulus 28\u2019 performance and I find it way too firm and too dull."
+   ],
+   "twitter:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2026/05/ASICS-Gel-Cumulus-28-12.jpeg"
+   ],
+   "twitter:title": [
+    "ASICS Gel Cumulus 28 Review"
+   ]
+  },
+  "url": "https://www.runningshoesguru.com/reviews/road/asics-gel-cumulus-28-review/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "HIT",
+  "canonical": [
+   "https://www.runningshoesguru.com/reviews/trail/brooks-cascadia-19-review/"
+  ],
+  "description": [
+   "The Brooks Cascadia 19 delivers a smooth, balanced, and surprisingly lively trail experience. It\u2019s protective, stable, and ready for anything from daily training to mid-distance races. Brooks brought the Cascadia back to form, and it\u2019s easily one of the best all-around trail shoes of the year."
+  ],
+  "h1": 1,
+  "jsonld": [
+   [
+    {
+     "@context": "https://schema.org/",
+     "@id": "https://www.runningshoesguru.com/reviews/trail/brooks-cascadia-19-review/",
+     "@type": "WebPage",
+     "breadcrumb": {
+      "@id": "https://www.runningshoesguru.com/reviews/trail/brooks-cascadia-19-review/#breadcrumb"
+     },
+     "dateModified": "2025-11-16T02:44:14-05:00",
+     "datePublished": "2025-11-09T04:17:05-05:00",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@id": "https://www.runningshoesguru.com/#website",
+      "@type": "WebSite",
+      "name": "Running Shoes Guru",
+      "url": "https://www.runningshoesguru.com/"
+     },
+     "mainEntity": {
+      "@id": "https://www.runningshoesguru.com/reviews/trail/brooks-cascadia-19-review/#review"
+     },
+     "name": "Brooks Cascadia 19 Review",
+     "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.runningshoesguru.com/wp-content/uploads/2025/11/brooks-cascadia-19-white-bg.png"
+     },
+     "url": "https://www.runningshoesguru.com/reviews/trail/brooks-cascadia-19-review/"
+    },
+    {
+     "@context": "https://schema.org/",
+     "@id": "https://www.runningshoesguru.com/reviews/trail/brooks-cascadia-19-review/#product",
+     "@type": "Product",
+     "additionalProperty": [
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Comfort",
+       "value": 10
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Build quality",
+       "value": 10
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Upper",
+       "value": 8
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Sole unit",
+       "value": 10
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Landing",
+       "value": 10
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Transition",
+       "value": 10
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Toe-off",
+       "value": 10
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Traction",
+       "value": 10
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Durability",
+       "value": 10
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Value / Price",
+       "value": 9
+      },
+      {
+       "@type": "PropertyValue",
+       "name": "Weight",
+       "unitText": "oz",
+       "value": 10.6
+      },
+      {
+       "@type": "PropertyValue",
+       "name": "Heel drop",
+       "unitText": "mm",
+       "value": 6
+      }
+     ],
+     "brand": {
+      "@type": "Brand",
+      "name": "Brooks"
+     },
+     "category": "Running Shoes",
+     "description": "The Brooks Cascadia 19 delivers a smooth, balanced, and surprisingly lively trail experience. It\u2019s protective, stable, and ready for anything from daily training to mid-distance races. Brooks brought the Cascadia back to form, and it\u2019s easily one of the best all-around trail shoes of the year.",
+     "image": "https://www.runningshoesguru.com/wp-content/uploads/2025/11/brooks-cascadia-19-white-bg.png",
+     "name": "Brooks Cascadia 19",
+     "offers": {
+      "@type": "AggregateOffer",
+      "highPrice": "89.95",
+      "lowPrice": "89.95",
+      "offerCount": "2",
+      "priceCurrency": "USD",
+      "url": "https://www.runningshoesguru.com/reviews/trail/brooks-cascadia-19-review/"
+     },
+     "review": [
+      {
+       "@id": "https://www.runningshoesguru.com/reviews/trail/brooks-cascadia-19-review/#review",
+       "@type": "Review",
+       "additionalProperty": [
+        {
+         "@type": "PropertyValue",
+         "name": "Sizing",
+         "propertyID": "size-fit",
+         "value": "True to size"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Heel fit",
+         "propertyID": "size-fit",
+         "value": "Normal"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Midfoot fit",
+         "propertyID": "size-fit",
+         "value": "Normal"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Toebox fit",
+         "propertyID": "size-fit",
+         "value": "Normal"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Type of cushioning",
+         "propertyID": "cushioning-ride",
+         "value": "Responsive/balanced"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Amount of cushioning",
+         "propertyID": "cushioning-ride",
+         "value": "Medium cushioning"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Stability",
+         "propertyID": "cushioning-ride",
+         "value": "Very stable"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Flexibility",
+         "propertyID": "cushioning-ride",
+         "value": "Medium"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Lugs",
+         "propertyID": "cushioning-ride",
+         "value": "Provide Traction"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Recommended usage",
+         "propertyID": "usage",
+         "value": "Road-to-trail"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Recommended usage",
+         "propertyID": "usage",
+         "value": "Trail racing"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Recommended usage",
+         "propertyID": "usage",
+         "value": "Technical"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Good for running",
+         "propertyID": "usage",
+         "value": "Technical trails"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Good for running",
+         "propertyID": "usage",
+         "value": "Rocky areas"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Good for running",
+         "propertyID": "usage",
+         "value": "Muddy areas"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Good for running",
+         "propertyID": "usage",
+         "value": "Through creeks and streams"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Good for running",
+         "propertyID": "usage",
+         "value": "Through snowy or icy sections"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Good for running",
+         "propertyID": "usage",
+         "value": "Dirt trails"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Good for running",
+         "propertyID": "usage",
+         "value": "Paved trails"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Good for running",
+         "propertyID": "usage",
+         "value": "Through grassy sections"
+        }
+       ],
+       "author": {
+        "@id": "https://www.runningshoesguru.com/author/jimcoulson/#person",
+        "@type": "Person",
+        "name": "Jim Coulson",
+        "url": "https://www.runningshoesguru.com/author/jimcoulson/"
+       },
+       "dateModified": "2025-11-16T02:44:14-05:00",
+       "datePublished": "2025-11-09T04:17:05-05:00",
+       "headline": "Brooks Cascadia 19 Review",
+       "mainEntityOfPage": {
+        "@id": "https://www.runningshoesguru.com/reviews/trail/brooks-cascadia-19-review/"
+       },
+       "negativeNotes": {
+        "@type": "ItemList",
+        "itemListElement": [
+         {
+          "@type": "ListItem",
+          "name": "Overly padded tongue retains moisture.",
+          "position": 1
+         },
+         {
+          "@type": "ListItem",
+          "name": "Slightly firm for those wanting a plush ultra-distance feel",
+          "position": 2
+         }
+        ]
+       },
+       "positiveNotes": {
+        "@type": "ItemList",
+        "itemListElement": [
+         {
+          "@type": "ListItem",
+          "name": "Smooth, balanced ride with excellent stability",
+          "position": 1
+         },
+         {
+          "@type": "ListItem",
+          "name": "Rock plate protection without stiffness",
+          "position": 2
+         },
+         {
+          "@type": "ListItem",
+          "name": "Sticky, confident traction on all surfaces",
+          "position": 3
+         },
+         {
+          "@type": "ListItem",
+          "name": "Comfortable and secure upper",
+          "position": 4
+         }
+        ]
+       },
+       "publisher": {
+        "@type": "Organization",
+        "alternateName": "RSG",
+        "email": "guru@runningshoesguru.com",
+        "foundingDate": "2009-04-01",
+        "legalName": "RSGMEDIA",
+        "logo": "https://www.runningshoesguru.com/wp-content/themes/rsg_2022/images/logo2020.svg",
+        "name": "Running Shoes Guru",
+        "sameAs": [
+         "https://www.facebook.com/runningshoesguru/",
+         "https://twitter.com/runningshoesgur/",
+         "https://www.instagram.com/runningshoesguru/",
+         "https://www.youtube.com/user/runningshoesguru"
+        ],
+        "url": "https://www.runningshoesguru.com/"
+       },
+       "reviewBody": "The Brooks Cascadia 19 delivers a smooth, balanced, and surprisingly lively trail experience. It\u2019s protective, stable, and ready for anything from daily training to mid-distance races. Brooks brought the Cascadia back to form, and it\u2019s easily one of the best all-around trail shoes of the year.",
+       "reviewRating": {
+        "@type": "Rating",
+        "bestRating": "10",
+        "ratingValue": "10.0",
+        "worstRating": "1"
+       }
+      }
+     ]
+    },
+    {
+     "@context": "https://schema.org/",
+     "@id": "https://www.runningshoesguru.com/reviews/trail/brooks-cascadia-19-review/#breadcrumb",
+     "@type": "BreadcrumbList",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/",
+       "name": "Home",
+       "position": 1
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/reviews/",
+       "name": "Reviews",
+       "position": 2
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/reviews/trail/brooks-cascadia-19-review/",
+       "name": "Brooks Cascadia 19 Review",
+       "position": 3
+      }
+     ]
+    },
+    {
+     "@context": "https://schema.org/",
+     "@type": "FAQPage",
+     "mainEntity": [
+      {
+       "@type": "Question",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trail runners who want a versatile, protective, and durable shoe that handles everything from rocky mountain routes to mellow forest singletrack. It\u2019s perfect for those seeking stability and comfort over long distances without giving up agility."
+       },
+       "name": "Who should buy the Brooks Cascadia 19?"
+      },
+      {
+       "@type": "Question",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Runners looking for a super-light, race-oriented trail shoe or maximum plush cushioning may prefer something like the Catamount 3 or Hoka Tecton X2. If you prioritize minimalism or high-speed responsiveness over protection and balance, this isn\u2019t your match."
+       },
+       "name": "Who should not buy the Brooks Cascadia 19?"
+      }
+     ]
+    }
+   ]
+  ],
+  "ld_blocks": 1,
+  "ld_errors": [],
+  "ld_types": [
+   "WebPage",
+   "WebSite",
+   "ImageObject",
+   "Product",
+   "Brand",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "Review",
+   "Person",
+   "Organization",
+   "ItemList",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ItemList",
+   "ListItem",
+   "ListItem",
+   "Rating",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "AggregateOffer",
+   "BreadcrumbList",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "FAQPage",
+   "Question",
+   "Answer",
+   "Question",
+   "Answer"
+  ],
+  "location": null,
+  "offers": [
+   {
+    "@type": "AggregateOffer",
+    "highPrice": "89.95",
+    "lowPrice": "89.95",
+    "offerCount": "2",
+    "price": null,
+    "priceCurrency": "USD"
+   }
+  ],
+  "og": {
+   "article:modified_time": [
+    "2025-11-16T02:44:14-05:00"
+   ],
+   "article:published_time": [
+    "2025-11-09T04:17:05-05:00"
+   ],
+   "og:description": [
+    "The Brooks Cascadia 19 delivers a smooth, balanced, and surprisingly lively trail experience. It\u2019s protective, stable, and ready for anything from daily training to mid-distance races. Brooks brought the Cascadia back to form, and it\u2019s easily one of the best all-around trail shoes of the year."
+   ],
+   "og:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2025/11/Brooks-Cascadia-19-15.jpeg"
+   ],
+   "og:title": [
+    "Brooks Cascadia 19 Review"
+   ],
+   "og:type": [
+    "article"
+   ],
+   "og:url": [
+    "https://www.runningshoesguru.com/reviews/trail/brooks-cascadia-19-review/"
+   ]
+  },
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "Brooks Cascadia 19 Review | Running Shoes Guru",
+  "twitter": {
+   "twitter:card": [
+    "summary_large_image"
+   ],
+   "twitter:description": [
+    "The Brooks Cascadia 19 delivers a smooth, balanced, and surprisingly lively trail experience. It\u2019s protective, stable, and ready for anything from daily training to mid-distance races. Brooks brought the Cascadia back to form, and it\u2019s easily one of the best all-around trail shoes of the year."
+   ],
+   "twitter:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2025/11/Brooks-Cascadia-19-15.jpeg"
+   ],
+   "twitter:title": [
+    "Brooks Cascadia 19 Review"
+   ]
+  },
+  "url": "https://www.runningshoesguru.com/reviews/trail/brooks-cascadia-19-review/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "MISS",
+  "canonical": [
+   "https://www.runningshoesguru.com/reviews/training/reebok-nano-x4-review/"
+  ],
+  "description": [
+   "The Reebok Nano x4 is a quality built daily gym training shoe that incorperates comfort, durability and support all in one! This shoe was great to train in day in and day out. Definatly is my go to trainer!"
+  ],
+  "h1": 1,
+  "jsonld": [
+   [
+    {
+     "@context": "https://schema.org/",
+     "@id": "https://www.runningshoesguru.com/reviews/training/reebok-nano-x4-review/",
+     "@type": "WebPage",
+     "breadcrumb": {
+      "@id": "https://www.runningshoesguru.com/reviews/training/reebok-nano-x4-review/#breadcrumb"
+     },
+     "dateModified": "2024-04-14T01:58:49-04:00",
+     "datePublished": "2024-04-14T01:58:49-04:00",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@id": "https://www.runningshoesguru.com/#website",
+      "@type": "WebSite",
+      "name": "Running Shoes Guru",
+      "url": "https://www.runningshoesguru.com/"
+     },
+     "mainEntity": {
+      "@id": "https://www.runningshoesguru.com/reviews/training/reebok-nano-x4-review/#review"
+     },
+     "name": "Reebok Nano X4 Review",
+     "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.runningshoesguru.com/wp-content/uploads/2024/04/reebok-nano-x4-white-bg.png"
+     },
+     "url": "https://www.runningshoesguru.com/reviews/training/reebok-nano-x4-review/"
+    },
+    {
+     "@context": "https://schema.org/",
+     "@id": "https://www.runningshoesguru.com/reviews/training/reebok-nano-x4-review/#product",
+     "@type": "Product",
+     "additionalProperty": [
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Comfort",
+       "value": 8
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Build quality",
+       "value": 9
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Upper",
+       "value": 8
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Sole unit",
+       "value": 8
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Landing",
+       "value": 9
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Transition",
+       "value": 9
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Toe-off",
+       "value": 6
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Traction",
+       "value": 8
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Durability",
+       "value": 10
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Value / Price",
+       "value": 6
+      },
+      {
+       "@type": "PropertyValue",
+       "name": "Weight",
+       "unitText": "oz",
+       "value": 11
+      },
+      {
+       "@type": "PropertyValue",
+       "name": "Heel drop",
+       "unitText": "mm",
+       "value": 7
+      }
+     ],
+     "brand": {
+      "@type": "Brand",
+      "name": "Reebok"
+     },
+     "category": "Running Shoes",
+     "description": "The Reebok Nano x4 is a quality built daily gym training shoe that incorperates comfort, durability and support all in one! This shoe was great to train in day in and day out. Definatly is my go to trainer!",
+     "image": "https://www.runningshoesguru.com/wp-content/uploads/2024/04/reebok-nano-x4-white-bg.png",
+     "name": "Reebok Nano X4",
+     "offers": {
+      "@type": "AggregateOffer",
+      "highPrice": "74.91",
+      "lowPrice": "69.99",
+      "offerCount": "2",
+      "priceCurrency": "USD",
+      "url": "https://www.runningshoesguru.com/reviews/training/reebok-nano-x4-review/"
+     },
+     "review": [
+      {
+       "@id": "https://www.runningshoesguru.com/reviews/training/reebok-nano-x4-review/#review",
+       "@type": "Review",
+       "additionalProperty": [
+        {
+         "@type": "PropertyValue",
+         "name": "Sizing",
+         "propertyID": "size-fit",
+         "value": "Buy half size bigger"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Heel fit",
+         "propertyID": "size-fit",
+         "value": "Normal"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Midfoot fit",
+         "propertyID": "size-fit",
+         "value": "Normal"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Toebox fit",
+         "propertyID": "size-fit",
+         "value": "Normal"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Amount of cushioning",
+         "propertyID": "cushioning-ride",
+         "value": "Medium cushioning"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Stability",
+         "propertyID": "cushioning-ride",
+         "value": "Very stable"
+        },
+        {
+         "@type": "PropertyValue",
+         "name": "Flexibility",
+         "propertyID": "cushioning-ride",
+         "value": "Medium"
+        }
+       ],
+       "author": {
+        "@id": "https://www.runningshoesguru.com/author/joshmcclurg/#person",
+        "@type": "Person",
+        "name": "Josh McClurg",
+        "url": "https://www.runningshoesguru.com/author/joshmcclurg/"
+       },
+       "dateModified": "2024-04-14T01:58:49-04:00",
+       "datePublished": "2024-04-14T01:58:49-04:00",
+       "headline": "Reebok Nano X4 Review",
+       "mainEntityOfPage": {
+        "@id": "https://www.runningshoesguru.com/reviews/training/reebok-nano-x4-review/"
+       },
+       "negativeNotes": {
+        "@type": "ItemList",
+        "itemListElement": [
+         {
+          "@type": "ListItem",
+          "name": "A tad pricey",
+          "position": 1
+         }
+        ]
+       },
+       "positiveNotes": {
+        "@type": "ItemList",
+        "itemListElement": [
+         {
+          "@type": "ListItem",
+          "name": "Comfortable and flexible",
+          "position": 1
+         },
+         {
+          "@type": "ListItem",
+          "name": "Durable long lasting shoe",
+          "position": 2
+         },
+         {
+          "@type": "ListItem",
+          "name": "7 color ways, whats not to love!",
+          "position": 3
+         }
+        ]
+       },
+       "publisher": {
+        "@type": "Organization",
+        "alternateName": "RSG",
+        "email": "guru@runningshoesguru.com",
+        "foundingDate": "2009-04-01",
+        "legalName": "RSGMEDIA",
+        "logo": "https://www.runningshoesguru.com/wp-content/themes/rsg_2022/images/logo2020.svg",
+        "name": "Running Shoes Guru",
+        "sameAs": [
+         "https://www.facebook.com/runningshoesguru/",
+         "https://twitter.com/runningshoesgur/",
+         "https://www.instagram.com/runningshoesguru/",
+         "https://www.youtube.com/user/runningshoesguru"
+        ],
+        "url": "https://www.runningshoesguru.com/"
+       },
+       "reviewBody": "The Reebok Nano x4 is a quality built daily gym training shoe that incorperates comfort, durability and support all in one! This shoe was great to train in day in and day out. Definatly is my go to trainer!",
+       "reviewRating": {
+        "@type": "Rating",
+        "bestRating": "10",
+        "ratingValue": "8.0",
+        "worstRating": "1"
+       }
+      }
+     ]
+    },
+    {
+     "@context": "https://schema.org/",
+     "@id": "https://www.runningshoesguru.com/reviews/training/reebok-nano-x4-review/#breadcrumb",
+     "@type": "BreadcrumbList",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/",
+       "name": "Home",
+       "position": 1
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/reviews/",
+       "name": "Reviews",
+       "position": 2
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/reviews/training/reebok-nano-x4-review/",
+       "name": "Reebok Nano X4 Review",
+       "position": 3
+      }
+     ]
+    },
+    {
+     "@context": "https://schema.org/",
+     "@type": "FAQPage",
+     "mainEntity": [
+      {
+       "@type": "Question",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anyone looking for a well designed and aesthetic gym shoe is the person who should grab this. Perfect for comfort and performance!"
+       },
+       "name": "Who should buy the Reebok Nano X4?"
+      },
+      {
+       "@type": "Question",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you are an avid runner, this shoe is not for you! Although short sprints work well, long distance is a no go for this shoe."
+       },
+       "name": "Who should not buy the Reebok Nano X4?"
+      }
+     ]
+    }
+   ]
+  ],
+  "ld_blocks": 1,
+  "ld_errors": [],
+  "ld_types": [
+   "WebPage",
+   "WebSite",
+   "ImageObject",
+   "Product",
+   "Brand",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "Review",
+   "Person",
+   "Organization",
+   "ItemList",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ItemList",
+   "ListItem",
+   "Rating",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "AggregateOffer",
+   "BreadcrumbList",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "FAQPage",
+   "Question",
+   "Answer",
+   "Question",
+   "Answer"
+  ],
+  "location": null,
+  "offers": [
+   {
+    "@type": "AggregateOffer",
+    "highPrice": "74.91",
+    "lowPrice": "69.99",
+    "offerCount": "2",
+    "price": null,
+    "priceCurrency": "USD"
+   }
+  ],
+  "og": {
+   "article:modified_time": [
+    "2024-04-14T01:58:49-04:00"
+   ],
+   "article:published_time": [
+    "2024-04-14T01:58:49-04:00"
+   ],
+   "og:description": [
+    "The Reebok Nano x4 is a quality built daily gym training shoe that incorperates comfort, durability and support all in one! This shoe was great to train in day in and day out. Definatly is my go to trainer!"
+   ],
+   "og:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2024/04/Reebok-Nano-X4-11.jpeg"
+   ],
+   "og:title": [
+    "Reebok Nano X4 Review"
+   ],
+   "og:type": [
+    "article"
+   ],
+   "og:url": [
+    "https://www.runningshoesguru.com/reviews/training/reebok-nano-x4-review/"
+   ]
+  },
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "Reebok Nano X4 Review | Running Shoes Guru",
+  "twitter": {
+   "twitter:card": [
+    "summary_large_image"
+   ],
+   "twitter:description": [
+    "The Reebok Nano x4 is a quality built daily gym training shoe that incorperates comfort, durability and support all in one! This shoe was great to train in day in and day out. Definatly is my go to trainer!"
+   ],
+   "twitter:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2024/04/Reebok-Nano-X4-11.jpeg"
+   ],
+   "twitter:title": [
+    "Reebok Nano X4 Review"
+   ]
+  },
+  "url": "https://www.runningshoesguru.com/reviews/training/reebok-nano-x4-review/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "MISS",
+  "canonical": [
+   "https://www.runningshoesguru.com/reviews/gps/garmin-forerunner-165/"
+  ],
+  "description": [
+   "The Garmin Forerunner 165 is not a hand-holding watch like the other models in the Forerunner range. This watch cares less about your recovery, less about the general data, and less about guiding you through a training plan."
+  ],
+  "h1": 1,
+  "jsonld": [
+   [
+    {
+     "@context": "https://schema.org/",
+     "@id": "https://www.runningshoesguru.com/reviews/gps/garmin-forerunner-165/",
+     "@type": "WebPage",
+     "breadcrumb": {
+      "@id": "https://www.runningshoesguru.com/reviews/gps/garmin-forerunner-165/#breadcrumb"
+     },
+     "dateModified": "2024-04-02T03:14:57-04:00",
+     "datePublished": "2024-04-02T03:14:57-04:00",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@id": "https://www.runningshoesguru.com/#website",
+      "@type": "WebSite",
+      "name": "Running Shoes Guru",
+      "url": "https://www.runningshoesguru.com/"
+     },
+     "mainEntity": {
+      "@id": "https://www.runningshoesguru.com/reviews/gps/garmin-forerunner-165/#review"
+     },
+     "name": "Garmin Forerunner 165",
+     "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.runningshoesguru.com/wp-content/uploads/2024/04/garmin-forerunner-165-white-bg.png"
+     },
+     "url": "https://www.runningshoesguru.com/reviews/gps/garmin-forerunner-165/"
+    },
+    {
+     "@context": "https://schema.org/",
+     "@id": "https://www.runningshoesguru.com/reviews/gps/garmin-forerunner-165/#product",
+     "@type": "Product",
+     "additionalProperty": [
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Comfort",
+       "value": 10
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Build quality",
+       "value": 8
+      },
+      {
+       "@type": "PropertyValue",
+       "maxValue": 10,
+       "minValue": 0,
+       "name": "Value / Price",
+       "value": 10
+      }
+     ],
+     "brand": {
+      "@type": "Brand",
+      "name": "Garmin"
+     },
+     "category": "GPS Running Watch",
+     "description": "The Garmin Forerunner 165 is very much Garmin\u2019s response to the Coros Pace 3. It is not a hand-holding watch like the other models in the Forerunner range. This watch cares less about your recovery, less about the general data, and less about guiding you through a training plan. But is begging to be channelled in a specific region of training with a copious amount of data fields readily to roll.",
+     "image": "https://www.runningshoesguru.com/wp-content/uploads/2024/04/garmin-forerunner-165-white-bg.png",
+     "name": "Garmin ForeRunner 165",
+     "review": [
+      {
+       "@id": "https://www.runningshoesguru.com/reviews/gps/garmin-forerunner-165/#review",
+       "@type": "Review",
+       "author": {
+        "@id": "https://www.runningshoesguru.com/author/louisewilkes/#person",
+        "@type": "Person",
+        "name": "Louise Wilkes",
+        "url": "https://www.runningshoesguru.com/author/louisewilkes/"
+       },
+       "dateModified": "2024-04-02T03:14:57-04:00",
+       "datePublished": "2024-04-02T03:14:57-04:00",
+       "headline": "Garmin ForeRunner 165 Review",
+       "mainEntityOfPage": {
+        "@id": "https://www.runningshoesguru.com/reviews/gps/garmin-forerunner-165/"
+       },
+       "negativeNotes": {
+        "@type": "ItemList",
+        "itemListElement": [
+         {
+          "@type": "ListItem",
+          "name": "Navigation",
+          "position": 1
+         },
+         {
+          "@type": "ListItem",
+          "name": "No training load information",
+          "position": 2
+         },
+         {
+          "@type": "ListItem",
+          "name": "Design feels childlike",
+          "position": 3
+         }
+        ]
+       },
+       "positiveNotes": {
+        "@type": "ItemList",
+        "itemListElement": [
+         {
+          "@type": "ListItem",
+          "name": "Lightweight",
+          "position": 1
+         },
+         {
+          "@type": "ListItem",
+          "name": "Heart rate reading accuracy",
+          "position": 2
+         },
+         {
+          "@type": "ListItem",
+          "name": "How specific you can be with data fields on the run",
+          "position": 3
+         }
+        ]
+       },
+       "publisher": {
+        "@type": "Organization",
+        "alternateName": "RSG",
+        "email": "guru@runningshoesguru.com",
+        "foundingDate": "2009-04-01",
+        "legalName": "RSGMEDIA",
+        "logo": "https://www.runningshoesguru.com/wp-content/themes/rsg_2022/images/logo2020.svg",
+        "name": "Running Shoes Guru",
+        "sameAs": [
+         "https://www.facebook.com/runningshoesguru/",
+         "https://twitter.com/runningshoesgur/",
+         "https://www.instagram.com/runningshoesguru/",
+         "https://www.youtube.com/user/runningshoesguru"
+        ],
+        "url": "https://www.runningshoesguru.com/"
+       },
+       "reviewBody": "The Garmin Forerunner 165 is very much Garmin\u2019s response to the Coros Pace 3. It is not a hand-holding watch like the other models in the Forerunner range. This watch cares less about your recovery, less about the general data, and less about guiding you through a training plan. But is begging to be channelled in a specific region of training with a copious amount of data fields readily to roll.",
+       "reviewRating": {
+        "@type": "Rating",
+        "bestRating": "10",
+        "ratingValue": "7.0",
+        "worstRating": "1"
+       }
+      }
+     ]
+    },
+    {
+     "@context": "https://schema.org/",
+     "@id": "https://www.runningshoesguru.com/reviews/gps/garmin-forerunner-165/#breadcrumb",
+     "@type": "BreadcrumbList",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/",
+       "name": "Home",
+       "position": 1
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/reviews/",
+       "name": "Reviews",
+       "position": 2
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/reviews/gps/garmin-forerunner-165/",
+       "name": "Garmin ForeRunner 165 Review",
+       "position": 3
+      }
+     ]
+    },
+    {
+     "@context": "https://schema.org/",
+     "@type": "FAQPage",
+     "mainEntity": [
+      {
+       "@type": "Question",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I think the 165 model will benefit the experienced runner or track runner so much more \u2013 someone in the know with very specific goals. \nThe fact I can get several different cadence stats on the watch face tells me this is a piece of kit designed to get the most out of a very niche performance target. The fact they have dropped the recovery/training load information also shows they\u2019re aiming for a runner who doesn\u2019t require a hand-holding to train optimally, but includes the likes of HRV in the morning report. It\u2019s short, sharp and to the point."
+       },
+       "name": "Who should buy the Garmin ForeRunner 165?"
+      },
+      {
+       "@type": "Question",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In my opinion, this will serve the everyday, keen runner fine, statistics-wise. But, like the Coros Pace 3, there is little to no hand-holding. You need to know what you want and tailor the watch to you \u2013 which means it is not for the beginner runner or anyone too keen to risk overtraining."
+       },
+       "name": "Who should not buy the Garmin ForeRunner 165?"
+      }
+     ]
+    }
+   ]
+  ],
+  "ld_blocks": 1,
+  "ld_errors": [],
+  "ld_types": [
+   "WebPage",
+   "WebSite",
+   "ImageObject",
+   "Product",
+   "Brand",
+   "PropertyValue",
+   "PropertyValue",
+   "PropertyValue",
+   "Review",
+   "Person",
+   "Organization",
+   "ItemList",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ItemList",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "Rating",
+   "BreadcrumbList",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "FAQPage",
+   "Question",
+   "Answer",
+   "Question",
+   "Answer"
+  ],
+  "location": null,
+  "offers": [],
+  "og": {
+   "article:modified_time": [
+    "2024-04-02T03:14:57-04:00"
+   ],
+   "article:published_time": [
+    "2024-04-02T03:14:57-04:00"
+   ],
+   "og:description": [
+    "The Garmin Forerunner 165 is not a hand-holding watch like the other models in the Forerunner range. This watch cares less about your recovery, less about the general data, and less about guiding you through a training plan."
+   ],
+   "og:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2024/04/Garmin-Forerunner-165-14-2.jpeg"
+   ],
+   "og:title": [
+    "Garmin Forerunner 165 Review"
+   ],
+   "og:type": [
+    "article"
+   ],
+   "og:url": [
+    "https://www.runningshoesguru.com/reviews/gps/garmin-forerunner-165/"
+   ]
+  },
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "Garmin Forerunner 165 Review | Running Shoes Guru",
+  "twitter": {
+   "twitter:card": [
+    "summary_large_image"
+   ],
+   "twitter:description": [
+    "The Garmin Forerunner 165 is not a hand-holding watch like the other models in the Forerunner range. This watch cares less about your recovery, less about the general data, and less about guiding you through a training plan."
+   ],
+   "twitter:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2024/04/Garmin-Forerunner-165-14-2.jpeg"
+   ],
+   "twitter:title": [
+    "Garmin Forerunner 165 Review"
+   ]
+  },
+  "url": "https://www.runningshoesguru.com/reviews/gps/garmin-forerunner-165/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "MISS",
+  "canonical": [
+   "https://www.runningshoesguru.com/review/hoka-speedgoat-5-review/"
+  ],
+  "description": [
+   "The Hoka Speedgoat 5 is an improvement upon what was already one of the best and most popular trail running shoes. Hoka maintained everything that worked in the past and added improvements such as a roomier upper, lighter midsole and grippier lugs. The best got even better."
+  ],
+  "h1": 14,
+  "jsonld": [],
+  "ld_blocks": 0,
+  "ld_errors": [],
+  "ld_types": [],
+  "location": null,
+  "offers": [],
+  "og": {
+   "article:modified_time": [
+    "2024-07-13T02:23:24-04:00"
+   ],
+   "article:published_time": [
+    "2022-08-07T00:07:49-04:00"
+   ],
+   "og:description": [
+    "The Hoka Speedgoat 5 is an improvement upon what was already one of the best and most popular trail running shoes. Hoka maintained everything that worked in the past and added improvements such as a roomier upper, lighter midsole and grippier lugs. The best got even better."
+   ],
+   "og:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2022/08/HOKA-Speedgoat-5-pic-06.jpeg"
+   ],
+   "og:title": [
+    "Hoka Speedgoat 5 Review"
+   ],
+   "og:type": [
+    "article"
+   ],
+   "og:url": [
+    "https://www.runningshoesguru.com/review/hoka-speedgoat-5-review/"
+   ]
+  },
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "Hoka Speedgoat 5 Review | Running Shoes Guru",
+  "twitter": {
+   "twitter:card": [
+    "summary_large_image"
+   ],
+   "twitter:description": [
+    "The Hoka Speedgoat 5 is an improvement upon what was already one of the best and most popular trail running shoes. Hoka maintained everything that worked in the past and added improvements such as a roomier upper, lighter midsole and grippier lugs. The best got even better."
+   ],
+   "twitter:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2022/08/HOKA-Speedgoat-5-pic-06.jpeg"
+   ],
+   "twitter:title": [
+    "Hoka Speedgoat 5 Review"
+   ]
+  },
+  "url": "https://www.runningshoesguru.com/review/hoka-speedgoat-5-review/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "MISS",
+  "canonical": [
+   "https://www.runningshoesguru.com/comparison/brooks-glycerin-23-vs-asics-nimbus-28/"
+  ],
+  "description": [
+   "The Glycerin and the Nimbus are two very popular max-cushioned trainers that have been around for a long time. Here we compare these two max-cushioned trainers."
+  ],
+  "h1": 6,
+  "jsonld": [
+   [
+    {
+     "@context": "https://schema.org/",
+     "@type": "Product",
+     "additionalProperty": [
+      {
+       "@type": "PropertyValue",
+       "name": "Weight",
+       "unitText": "oz",
+       "value": 10.9
+      },
+      {
+       "@type": "PropertyValue",
+       "name": "Heel drop",
+       "unitText": "mm",
+       "value": 8
+      }
+     ],
+     "brand": {
+      "@type": "Brand",
+      "name": "Brooks"
+     },
+     "category": "Running Shoes",
+     "image": "https://www.runningshoesguru.com/wp-content/uploads/2026/04/brooks-glycerin-23-_-white-background.png",
+     "name": "Brooks Glycerin 23",
+     "offers": {
+      "@type": "AggregateOffer",
+      "highPrice": "174.95",
+      "lowPrice": "125.25",
+      "offerCount": "6",
+      "priceCurrency": "USD",
+      "url": "https://www.runningshoesguru.com/reviews/road/brooks-glycerin-23-review/"
+     },
+     "url": "https://www.runningshoesguru.com/reviews/road/brooks-glycerin-23-review/"
+    },
+    {
+     "@context": "https://schema.org/",
+     "@type": "Product",
+     "additionalProperty": [
+      {
+       "@type": "PropertyValue",
+       "name": "Weight",
+       "unitText": "oz",
+       "value": 9.6
+      },
+      {
+       "@type": "PropertyValue",
+       "name": "Heel drop",
+       "unitText": "mm",
+       "value": 8
+      }
+     ],
+     "brand": {
+      "@type": "Brand",
+      "name": "Asics"
+     },
+     "category": "Running Shoes",
+     "image": "https://www.runningshoesguru.com/wp-content/uploads/2026/01/ASICS-Gel-Nimbus-28-5-10.png",
+     "name": "Asics Gel Nimbus 28",
+     "offers": {
+      "@type": "AggregateOffer",
+      "highPrice": "169.95",
+      "lowPrice": "124.95",
+      "offerCount": "6",
+      "priceCurrency": "USD",
+      "url": "https://www.runningshoesguru.com/reviews/road/asics-gel-nimbus-28-review/"
+     },
+     "url": "https://www.runningshoesguru.com/reviews/road/asics-gel-nimbus-28-review/"
+    },
+    {
+     "@context": "https://schema.org/",
+     "@type": "BreadcrumbList",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/",
+       "name": "Home",
+       "position": 1
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/comparison/",
+       "name": "Comparisons",
+       "position": 2
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/comparison/brooks-glycerin-23-vs-asics-nimbus-28/",
+       "name": "Brooks Glycerin 23 vs ASICS Nimbus 28",
+       "position": 3
+      }
+     ]
+    }
+   ]
+  ],
+  "ld_blocks": 1,
+  "ld_errors": [],
+  "ld_types": [
+   "Product",
+   "Brand",
+   "PropertyValue",
+   "PropertyValue",
+   "AggregateOffer",
+   "Product",
+   "Brand",
+   "PropertyValue",
+   "PropertyValue",
+   "AggregateOffer",
+   "BreadcrumbList",
+   "ListItem",
+   "ListItem",
+   "ListItem"
+  ],
+  "location": null,
+  "offers": [
+   {
+    "@type": "AggregateOffer",
+    "highPrice": "174.95",
+    "lowPrice": "125.25",
+    "offerCount": "6",
+    "price": null,
+    "priceCurrency": "USD"
+   },
+   {
+    "@type": "AggregateOffer",
+    "highPrice": "169.95",
+    "lowPrice": "124.95",
+    "offerCount": "6",
+    "price": null,
+    "priceCurrency": "USD"
+   }
+  ],
+  "og": {
+   "article:modified_time": [
+    "2026-06-28T08:41:39-04:00"
+   ],
+   "article:published_time": [
+    "2026-06-28T08:41:39-04:00"
+   ],
+   "og:description": [
+    "The Glycerin and the Nimbus are two very popular max-cushioned trainers that have been around for a long time. Here we compare these two max-cushioned trainers."
+   ],
+   "og:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2026/04/comparison_50263_50237_50068__clipping_ma.jpg"
+   ],
+   "og:title": [
+    "Brooks Glycerin 23 vs ASICS Nimbus 28"
+   ],
+   "og:type": [
+    "article"
+   ],
+   "og:url": [
+    "https://www.runningshoesguru.com/comparison/brooks-glycerin-23-vs-asics-nimbus-28/"
+   ]
+  },
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "Brooks Glycerin 23 vs ASICS Nimbus 28 | Running Shoes Guru",
+  "twitter": {
+   "twitter:card": [
+    "summary_large_image"
+   ],
+   "twitter:description": [
+    "The Glycerin and the Nimbus are two very popular max-cushioned trainers that have been around for a long time. Here we compare these two max-cushioned trainers."
+   ],
+   "twitter:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2026/04/comparison_50263_50237_50068__clipping_ma.jpg"
+   ],
+   "twitter:title": [
+    "Brooks Glycerin 23 vs ASICS Nimbus 28"
+   ]
+  },
+  "url": "https://www.runningshoesguru.com/comparison/brooks-glycerin-23-vs-asics-nimbus-28/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "MISS",
+  "canonical": [
+   "https://www.runningshoesguru.com/comparison/hoka-clifton-vs-hoka-bondi/"
+  ],
+  "description": [
+   "The Hoka One One Clifton 10 is an overly cushioned, lightweight daily trainer; the Hoka One One Bondi 9 is a max-cushioned, long-distance neutral trainer. Here we will be comparing the two shoes."
+  ],
+  "h1": 6,
+  "jsonld": [
+   [
+    {
+     "@context": "https://schema.org/",
+     "@type": "Product",
+     "additionalProperty": [
+      {
+       "@type": "PropertyValue",
+       "name": "Weight",
+       "unitText": "oz",
+       "value": 9.1
+      },
+      {
+       "@type": "PropertyValue",
+       "name": "Heel drop",
+       "unitText": "mm",
+       "value": 8
+      }
+     ],
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "bestRating": "5",
+      "ratingValue": "4.8",
+      "reviewCount": "3",
+      "worstRating": "1"
+     },
+     "brand": {
+      "@type": "Brand",
+      "name": "Hoka One One"
+     },
+     "category": "Running Shoes",
+     "image": "https://www.runningshoesguru.com/wp-content/uploads/2025/04/hoka-clifton-10-white-bg.png",
+     "name": "Hoka One One Clifton 10",
+     "offers": {
+      "@type": "AggregateOffer",
+      "highPrice": "143.00",
+      "lowPrice": "88.00",
+      "offerCount": "7",
+      "priceCurrency": "USD",
+      "url": "https://www.runningshoesguru.com/reviews/road/hoka-clifton-10-review/"
+     },
+     "url": "https://www.runningshoesguru.com/reviews/road/hoka-clifton-10-review/"
+    },
+    {
+     "@context": "https://schema.org/",
+     "@type": "Product",
+     "additionalProperty": [
+      {
+       "@type": "PropertyValue",
+       "name": "Weight",
+       "unitText": "oz",
+       "value": 9.3
+      },
+      {
+       "@type": "PropertyValue",
+       "name": "Heel drop",
+       "unitText": "mm",
+       "value": 5
+      }
+     ],
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "bestRating": "5",
+      "ratingValue": "3.3",
+      "reviewCount": "4",
+      "worstRating": "1"
+     },
+     "brand": {
+      "@type": "Brand",
+      "name": "Hoka One One"
+     },
+     "category": "Running Shoes",
+     "image": "https://www.runningshoesguru.com/wp-content/uploads/2025/02/hoka-bondi-9-white-background.png",
+     "name": "Hoka One One Bondi 9",
+     "offers": {
+      "@type": "AggregateOffer",
+      "highPrice": "146.93",
+      "lowPrice": "139.96",
+      "offerCount": "7",
+      "priceCurrency": "USD",
+      "url": "https://www.runningshoesguru.com/reviews/road/hoka-bondi-9-review/"
+     },
+     "url": "https://www.runningshoesguru.com/reviews/road/hoka-bondi-9-review/"
+    },
+    {
+     "@context": "https://schema.org/",
+     "@type": "BreadcrumbList",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/",
+       "name": "Home",
+       "position": 1
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/comparison/",
+       "name": "Comparisons",
+       "position": 2
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/comparison/hoka-clifton-vs-hoka-bondi/",
+       "name": "Hoka Clifton vs Hoka Bondi",
+       "position": 3
+      }
+     ]
+    }
+   ]
+  ],
+  "ld_blocks": 1,
+  "ld_errors": [],
+  "ld_types": [
+   "Product",
+   "Brand",
+   "PropertyValue",
+   "PropertyValue",
+   "AggregateRating",
+   "AggregateOffer",
+   "Product",
+   "Brand",
+   "PropertyValue",
+   "PropertyValue",
+   "AggregateRating",
+   "AggregateOffer",
+   "BreadcrumbList",
+   "ListItem",
+   "ListItem",
+   "ListItem"
+  ],
+  "location": null,
+  "offers": [
+   {
+    "@type": "AggregateOffer",
+    "highPrice": "143.00",
+    "lowPrice": "88.00",
+    "offerCount": "7",
+    "price": null,
+    "priceCurrency": "USD"
+   },
+   {
+    "@type": "AggregateOffer",
+    "highPrice": "146.93",
+    "lowPrice": "139.96",
+    "offerCount": "7",
+    "price": null,
+    "priceCurrency": "USD"
+   }
+  ],
+  "og": {
+   "article:modified_time": [
+    "2025-04-27T11:25:52-04:00"
+   ],
+   "article:published_time": [
+    "2020-04-22T03:05:24-04:00"
+   ],
+   "og:description": [
+    "The Hoka One One Clifton 10 is an overly cushioned, lightweight daily trainer; the Hoka One One Bondi 9 is a max-cushioned, long-distance neutral trainer. Here we will be comparing the two shoes."
+   ],
+   "og:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2025/04/comparison_28982_48843_48375__clipping_ma.jpg"
+   ],
+   "og:title": [
+    "Hoka Clifton vs Hoka Bondi"
+   ],
+   "og:type": [
+    "article"
+   ],
+   "og:url": [
+    "https://www.runningshoesguru.com/comparison/hoka-clifton-vs-hoka-bondi/"
+   ]
+  },
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "Hoka Clifton vs Hoka Bondi | Running Shoes Guru",
+  "twitter": {
+   "twitter:card": [
+    "summary_large_image"
+   ],
+   "twitter:description": [
+    "The Hoka One One Clifton 10 is an overly cushioned, lightweight daily trainer; the Hoka One One Bondi 9 is a max-cushioned, long-distance neutral trainer. Here we will be comparing the two shoes."
+   ],
+   "twitter:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2025/04/comparison_28982_48843_48375__clipping_ma.jpg"
+   ],
+   "twitter:title": [
+    "Hoka Clifton vs Hoka Bondi"
+   ]
+  },
+  "url": "https://www.runningshoesguru.com/comparison/hoka-clifton-vs-hoka-bondi/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "MISS",
+  "canonical": [
+   "https://www.runningshoesguru.com/guide/best-puma-running-shoes/"
+  ],
+  "description": [
+   "It's not always easy for runners to choose the best Puma running shoe for them. Here is Puma\u2019s lineup, with our selection of the best shoes for different runners and usage."
+  ],
+  "h1": 1,
+  "jsonld": [
+   [
+    {
+     "@context": "https://schema.org/",
+     "@id": "https://www.runningshoesguru.com/guide/best-puma-running-shoes/#article",
+     "@type": "Article",
+     "author": {
+      "@id": "https://www.runningshoesguru.com/author/brandonlaw/",
+      "@type": "Person",
+      "name": "Brandon Law",
+      "url": "https://www.runningshoesguru.com/author/brandonlaw/"
+     },
+     "dateModified": "2024-08-28T16:13:12-04:00",
+     "datePublished": "2024-02-29T03:51:44-05:00",
+     "headline": "Best Puma Running Shoes",
+     "image": "https://www.runningshoesguru.com/wp-content/uploads/2024/02/puma-running-633x332.jpeg",
+     "mainEntity": {
+      "@id": "https://www.runningshoesguru.com/guide/best-puma-running-shoes/#itemlist",
+      "@type": "ItemList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "item": {
+         "@type": "Product",
+         "additionalProperty": [
+          {
+           "@type": "PropertyValue",
+           "name": "Weight",
+           "unitText": "oz",
+           "value": 9.5
+          },
+          {
+           "@type": "PropertyValue",
+           "name": "Heel drop",
+           "unitText": "mm",
+           "value": 10
+          }
+         ],
+         "aggregateRating": {
+          "@type": "AggregateRating",
+          "bestRating": "5",
+          "ratingValue": "4.5",
+          "reviewCount": "4",
+          "worstRating": "1"
+         },
+         "award": "Best Daily Trainer",
+         "brand": {
+          "@type": "Brand",
+          "name": "Puma"
+         },
+         "category": "Running Shoes",
+         "image": "https://www.runningshoesguru.com/wp-content/uploads/2024/07/PUMA-Deviate-Nitro-3-white-background.png",
+         "name": "Puma Deviate Nitro 3",
+         "offers": {
+          "@type": "AggregateOffer",
+          "highPrice": "160.00",
+          "lowPrice": "71.95",
+          "offerCount": "5",
+          "priceCurrency": "USD",
+          "url": "https://www.runningshoesguru.com/reviews/road/puma-deviate-nitro-3-review/"
+         },
+         "review": [
+          {
+           "@type": "Review",
+           "author": {
+            "@type": "Person",
+            "name": "Justin Alpaugh",
+            "url": "https://www.runningshoesguru.com/author/justinalpaugh/"
+           },
+           "datePublished": "2024-08-17T02:39:39-04:00",
+           "reviewBody": "The Puma Deviate Nitro 3 is a do it all shoe. There are not many flaws found in the Nitro 3. A comfortable ride that is meant for the miles both in training and on race day!",
+           "reviewRating": {
+            "@type": "Rating",
+            "bestRating": "10",
+            "ratingValue": "9.0",
+            "worstRating": "1"
+           }
+          }
+         ],
+         "url": "https://www.runningshoesguru.com/reviews/road/puma-deviate-nitro-3-review/"
+        },
+        "name": "Puma Deviate Nitro 3",
+        "position": 1
+       },
+       {
+        "@type": "ListItem",
+        "item": {
+         "@type": "Product",
+         "additionalProperty": [
+          {
+           "@type": "PropertyValue",
+           "name": "Weight",
+           "unitText": "oz",
+           "value": 9.6
+          },
+          {
+           "@type": "PropertyValue",
+           "name": "Heel drop",
+           "unitText": "mm",
+           "value": 10
+          }
+         ],
+         "aggregateRating": {
+          "@type": "AggregateRating",
+          "bestRating": "5",
+          "ratingValue": "3.8",
+          "reviewCount": "2",
+          "worstRating": "1"
+         },
+         "award": "Best Supportive Trainer",
+         "brand": {
+          "@type": "Brand",
+          "name": "Puma"
+         },
+         "category": "Running Shoes",
+         "image": "https://www.runningshoesguru.com/wp-content/uploads/2023/07/puma-foreverrun-nitro.png",
+         "name": "Puma ForeverRun Nitro",
+         "offers": {
+          "@type": "AggregateOffer",
+          "highPrice": "117.99",
+          "lowPrice": "63.95",
+          "offerCount": "3",
+          "priceCurrency": "USD",
+          "url": "https://www.runningshoesguru.com/reviews/road/puma-foreverrun-nitro-review-2/"
+         },
+         "review": [
+          {
+           "@type": "Review",
+           "author": {
+            "@type": "Person",
+            "name": "Kristin Lassen",
+            "url": "https://www.runningshoesguru.com/author/kristinlassen/"
+           },
+           "datePublished": "2023-07-06T02:55:15-04:00",
+           "reviewBody": "The PUMA ForeverRun Nitro is a joy to run in: the perfect combination of softness, spring and support in the sole and a comfortable feel, particularly underfoot and around a generously padded heel. This is a top option for daily training, short or long.",
+           "reviewRating": {
+            "@type": "Rating",
+            "bestRating": "10",
+            "ratingValue": "10.0",
+            "worstRating": "1"
+           }
+          }
+         ],
+         "url": "https://www.runningshoesguru.com/reviews/road/puma-foreverrun-nitro-review-2/"
+        },
+        "name": "Puma ForeverRun Nitro",
+        "position": 2
+       },
+       {
+        "@type": "ListItem",
+        "item": {
+         "@type": "Product",
+         "additionalProperty": [
+          {
+           "@type": "PropertyValue",
+           "name": "Weight",
+           "unitText": "oz",
+           "value": 10.7
+          },
+          {
+           "@type": "PropertyValue",
+           "name": "Heel drop",
+           "unitText": "mm",
+           "value": 9
+          }
+         ],
+         "aggregateRating": {
+          "@type": "AggregateRating",
+          "bestRating": "5",
+          "ratingValue": "4.3",
+          "reviewCount": "2",
+          "worstRating": "1"
+         },
+         "award": "Best Max Cushioned",
+         "brand": {
+          "@type": "Brand",
+          "name": "Puma"
+         },
+         "category": "Running Shoes",
+         "image": "https://www.runningshoesguru.com/wp-content/uploads/2024/04/puma-magnify-nitro-2-white-background.png",
+         "name": "Puma Magnify Nitro 2",
+         "offers": {
+          "@type": "AggregateOffer",
+          "highPrice": "64.95",
+          "lowPrice": "64.90",
+          "offerCount": "2",
+          "priceCurrency": "USD",
+          "url": "https://www.runningshoesguru.com/reviews/road/puma-magnify-nitro-2-review/"
+         },
+         "review": [
+          {
+           "@type": "Review",
+           "author": {
+            "@type": "Person",
+            "name": "Larry Lam",
+            "url": "https://www.runningshoesguru.com/author/larrylam/"
+           },
+           "datePublished": "2024-04-16T03:53:35-04:00",
+           "reviewBody": "The Puma Magnify Nitro is a max cushioned shoe that can be an all-around shoe for most runners. It\u2019s not the softest or most plush shoe in the max cushion category but it is a very smooth shoe that helps make paces feel faster while also having awesome grip on the road. The redesigned upper in this shoe helps wrap your foot around some softness, although it\u2019s still not as plush as other max cushioned shoes on the market.",
+           "reviewRating": {
+            "@type": "Rating",
+            "bestRating": "10",
+            "ratingValue": "9.0",
+            "worstRating": "1"
+           }
+          }
+         ],
+         "url": "https://www.runningshoesguru.com/reviews/road/puma-magnify-nitro-2-review/"
+        },
+        "name": "Puma Magnify Nitro 2",
+        "position": 3
+       },
+       {
+        "@type": "ListItem",
+        "item": {
+         "@type": "Product",
+         "additionalProperty": [
+          {
+           "@type": "PropertyValue",
+           "name": "Weight",
+           "unitText": "oz",
+           "value": 9.17
+          },
+          {
+           "@type": "PropertyValue",
+           "name": "Heel drop",
+           "unitText": "mm",
+           "value": 10
+          }
+         ],
+         "aggregateRating": {
+          "@type": "AggregateRating",
+          "bestRating": "5",
+          "ratingValue": "4.2",
+          "reviewCount": "3",
+          "worstRating": "1"
+         },
+         "award": "Best Lightweight Trainer",
+         "brand": {
+          "@type": "Brand",
+          "name": "Puma"
+         },
+         "category": "Running Shoes",
+         "image": "https://www.runningshoesguru.com/wp-content/uploads/2024/04/puma-velocity-nitro-3-white-bg.png",
+         "name": "Puma Velocity Nitro 3",
+         "offers": {
+          "@type": "AggregateOffer",
+          "highPrice": "91.99",
+          "lowPrice": "54.85",
+          "offerCount": "3",
+          "priceCurrency": "USD",
+          "url": "https://www.runningshoesguru.com/reviews/road/puma-velocity-nitro-3-review/"
+         },
+         "review": [
+          {
+           "@type": "Review",
+           "author": {
+            "@type": "Person",
+            "name": "Justin Alpaugh",
+            "url": "https://www.runningshoesguru.com/author/justinalpaugh/"
+           },
+           "datePublished": "2024-04-06T09:27:23-04:00",
+           "reviewBody": "The Puma Velocity Nitro 3 is a do it all type of shoe with the benefit of having a very affordable price point. Light enough for speed work, cushioned enough for long runs, and nothing extraordinary for easy runs. The fit is a bit narrow but yet it is quite comfortable.",
+           "reviewRating": {
+            "@type": "Rating",
+            "bestRating": "10",
+            "ratingValue": "8.0",
+            "worstRating": "1"
+           }
+          }
+         ],
+         "url": "https://www.runningshoesguru.com/reviews/road/puma-velocity-nitro-3-review/"
+        },
+        "name": "Puma Velocity Nitro 3",
+        "position": 4
+       },
+       {
+        "@type": "ListItem",
+        "item": {
+         "@type": "Product",
+         "additionalProperty": [
+          {
+           "@type": "PropertyValue",
+           "name": "Weight",
+           "unitText": "oz",
+           "value": 9.6
+          },
+          {
+           "@type": "PropertyValue",
+           "name": "Heel drop",
+           "unitText": "mm",
+           "value": 4
+          }
+         ],
+         "award": "Best for Trails",
+         "brand": {
+          "@type": "Brand",
+          "name": "Puma"
+         },
+         "category": "Running Shoes",
+         "image": "https://www.runningshoesguru.com/wp-content/uploads/2023/09/puma-voyage-nitro-3.png",
+         "name": "Puma Voyage Nitro 3",
+         "offers": {
+          "@type": "AggregateOffer",
+          "highPrice": "117.99",
+          "lowPrice": "64.95",
+          "offerCount": "2",
+          "priceCurrency": "USD",
+          "url": "https://www.runningshoesguru.com/reviews/trail/puma-voyage-nitro-3-review/"
+         },
+         "review": [
+          {
+           "@type": "Review",
+           "author": {
+            "@type": "Person",
+            "name": "Jeremy Yoder",
+            "url": "https://www.runningshoesguru.com/author/jeremyyoder/"
+           },
+           "datePublished": "2023-09-28T01:11:49-04:00",
+           "reviewBody": "The Voyage NITRO 3 are redesigned, lighter and filled with Puma technology.  They are an optimal all-weather, all-season trainer with plenty of cushion and grip to tackle any type of terrain you may encounter.",
+           "reviewRating": {
+            "@type": "Rating",
+            "bestRating": "10",
+            "ratingValue": "8.0",
+            "worstRating": "1"
+           }
+          }
+         ],
+         "url": "https://www.runningshoesguru.com/reviews/trail/puma-voyage-nitro-3-review/"
+        },
+        "name": "Puma Voyage Nitro 3",
+        "position": 5
+       },
+       {
+        "@type": "ListItem",
+        "item": {
+         "@type": "Product",
+         "additionalProperty": [
+          {
+           "@type": "PropertyValue",
+           "name": "Weight",
+           "unitText": "oz",
+           "value": 6.9
+          },
+          {
+           "@type": "PropertyValue",
+           "name": "Heel drop",
+           "unitText": "mm",
+           "value": 8
+          }
+         ],
+         "aggregateRating": {
+          "@type": "AggregateRating",
+          "bestRating": "5",
+          "ratingValue": "4.5",
+          "reviewCount": "3",
+          "worstRating": "1"
+         },
+         "award": "Best Racing Shoes",
+         "brand": {
+          "@type": "Brand",
+          "name": "Puma"
+         },
+         "category": "Running Shoes",
+         "image": "https://www.runningshoesguru.com/wp-content/uploads/2024/06/PUMA-Deviate-Nitro-Elite-3-white-background.png",
+         "name": "Puma Deviate Nitro Elite 3",
+         "offers": {
+          "@type": "AggregateOffer",
+          "highPrice": "194.95",
+          "lowPrice": "139.95",
+          "offerCount": "2",
+          "priceCurrency": "USD",
+          "url": "https://www.runningshoesguru.com/reviews/road/puma-deviate-nitro-elite-3-review/"
+         },
+         "review": [
+          {
+           "@type": "Review",
+           "author": {
+            "@type": "Person",
+            "name": "Brandon Law",
+            "url": "https://www.runningshoesguru.com/author/brandonlaw/"
+           },
+           "datePublished": "2024-08-15T19:50:52-04:00",
+           "reviewBody": "The PUMA Deviate Nitro Elite 3 is a good racer which performs a variety of distances and paces well. It has a new TPU midsole that allows it to retain its cushioning over long distances however it doesn't feel as fast as other racers due to its lack of rebound and a prominent forefoot rocker. Version 3 has a thicker midsole but is still lighter than version 2. It also has a steeper carbon plate that makes it feel faster but its price has risen sharply by $30.",
+           "reviewRating": {
+            "@type": "Rating",
+            "bestRating": "10",
+            "ratingValue": "8.0",
+            "worstRating": "1"
+           }
+          }
+         ],
+         "url": "https://www.runningshoesguru.com/reviews/road/puma-deviate-nitro-elite-3-review/"
+        },
+        "name": "Puma Deviate Nitro Elite 3",
+        "position": 6
+       }
+      ],
+      "itemListOrder": "https://schema.org/ItemListOrderDescending",
+      "numberOfItems": 6
+     },
+     "mainEntityOfPage": {
+      "@id": "https://www.runningshoesguru.com/guide/best-puma-running-shoes/"
+     },
+     "publisher": {
+      "@id": "https://www.runningshoesguru.com/#organization",
+      "@type": "Organization",
+      "alternateName": "RSG",
+      "contactPoint": {
+       "@type": "ContactPoint",
+       "contactType": "customer service",
+       "url": "https://www.runningshoesguru.com/contact-us/"
+      },
+      "description": "Founded in 2009, Running Shoes Guru is the place to go for independent, unbiased, expert reviews on running shoes and GPS running watches.",
+      "email": "guru@runningshoesguru.com",
+      "foundingDate": "2009-04-01",
+      "knowsAbout": [
+       "Running shoes",
+       "Running shoe reviews",
+       "GPS running watches",
+       "Running gear",
+       "Running"
+      ],
+      "legalName": "RSGMEDIA",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://www.runningshoesguru.com/wp-content/themes/rsg_2022/images/logo2020.svg"
+      },
+      "name": "Running Shoes Guru",
+      "sameAs": [
+       "https://www.facebook.com/runningshoesguru/",
+       "https://twitter.com/runningshoesgur/",
+       "https://www.instagram.com/runningshoesguru/",
+       "https://www.youtube.com/user/runningshoesguru"
+      ],
+      "slogan": "Independent, unbiased, expert running shoe reviews since 2009.",
+      "url": "https://www.runningshoesguru.com/"
+     }
+    },
+    {
+     "@context": "https://schema.org/",
+     "@type": "BreadcrumbList",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/",
+       "name": "Home",
+       "position": 1
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/guide/",
+       "name": "Guides",
+       "position": 2
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/guide/best-puma-running-shoes/",
+       "name": "Best Puma Running Shoes",
+       "position": 3
+      }
+     ]
+    },
+    {
+     "@context": "https://schema.org/",
+     "@type": "FAQPage",
+     "mainEntity": [
+      {
+       "@type": "Question",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Puma stepped up their game in true running shoes in the past 5 years or so. They work with top level athletes and their NITRO foam has been proved extremely well received by runners all around the world."
+       },
+       "name": "Are PUMA good running shoes?"
+      }
+     ]
+    }
+   ]
+  ],
+  "ld_blocks": 1,
+  "ld_errors": [],
+  "ld_types": [
+   "Article",
+   "Person",
+   "Organization",
+   "ContactPoint",
+   "ImageObject",
+   "ItemList",
+   "ListItem",
+   "Product",
+   "Brand",
+   "PropertyValue",
+   "PropertyValue",
+   "AggregateRating",
+   "AggregateOffer",
+   "Review",
+   "Rating",
+   "Person",
+   "ListItem",
+   "Product",
+   "Brand",
+   "PropertyValue",
+   "PropertyValue",
+   "AggregateRating",
+   "AggregateOffer",
+   "Review",
+   "Rating",
+   "Person",
+   "ListItem",
+   "Product",
+   "Brand",
+   "PropertyValue",
+   "PropertyValue",
+   "AggregateRating",
+   "AggregateOffer",
+   "Review",
+   "Rating",
+   "Person",
+   "ListItem",
+   "Product",
+   "Brand",
+   "PropertyValue",
+   "PropertyValue",
+   "AggregateRating",
+   "AggregateOffer",
+   "Review",
+   "Rating",
+   "Person",
+   "ListItem",
+   "Product",
+   "Brand",
+   "PropertyValue",
+   "PropertyValue",
+   "AggregateOffer",
+   "Review",
+   "Rating",
+   "Person",
+   "ListItem",
+   "Product",
+   "Brand",
+   "PropertyValue",
+   "PropertyValue",
+   "AggregateRating",
+   "AggregateOffer",
+   "Review",
+   "Rating",
+   "Person",
+   "BreadcrumbList",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "FAQPage",
+   "Question",
+   "Answer"
+  ],
+  "location": null,
+  "offers": [
+   {
+    "@type": "AggregateOffer",
+    "highPrice": "160.00",
+    "lowPrice": "71.95",
+    "offerCount": "5",
+    "price": null,
+    "priceCurrency": "USD"
+   },
+   {
+    "@type": "AggregateOffer",
+    "highPrice": "117.99",
+    "lowPrice": "63.95",
+    "offerCount": "3",
+    "price": null,
+    "priceCurrency": "USD"
+   },
+   {
+    "@type": "AggregateOffer",
+    "highPrice": "64.95",
+    "lowPrice": "64.90",
+    "offerCount": "2",
+    "price": null,
+    "priceCurrency": "USD"
+   },
+   {
+    "@type": "AggregateOffer",
+    "highPrice": "91.99",
+    "lowPrice": "54.85",
+    "offerCount": "3",
+    "price": null,
+    "priceCurrency": "USD"
+   },
+   {
+    "@type": "AggregateOffer",
+    "highPrice": "117.99",
+    "lowPrice": "64.95",
+    "offerCount": "2",
+    "price": null,
+    "priceCurrency": "USD"
+   },
+   {
+    "@type": "AggregateOffer",
+    "highPrice": "194.95",
+    "lowPrice": "139.95",
+    "offerCount": "2",
+    "price": null,
+    "priceCurrency": "USD"
+   }
+  ],
+  "og": {
+   "article:modified_time": [
+    "2024-08-28T16:13:12-04:00"
+   ],
+   "article:published_time": [
+    "2024-02-29T03:51:44-05:00"
+   ],
+   "og:description": [
+    "It's not always easy for runners to choose the best Puma running shoe for them. Here is Puma\u2019s lineup, with our selection of the best shoes for different runners and usage."
+   ],
+   "og:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2024/02/puma-running.jpeg"
+   ],
+   "og:title": [
+    "Best Puma Running Shoes (August 2024)"
+   ],
+   "og:type": [
+    "article"
+   ],
+   "og:url": [
+    "https://www.runningshoesguru.com/guide/best-puma-running-shoes/"
+   ]
+  },
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "Best Puma Running Shoes (August 2024) | Running Shoes Guru",
+  "twitter": {
+   "twitter:card": [
+    "summary_large_image"
+   ],
+   "twitter:description": [
+    "It's not always easy for runners to choose the best Puma running shoe for them. Here is Puma\u2019s lineup, with our selection of the best shoes for different runners and usage."
+   ],
+   "twitter:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2024/02/puma-running.jpeg"
+   ],
+   "twitter:title": [
+    "Best Puma Running Shoes (August 2024)"
+   ]
+  },
+  "url": "https://www.runningshoesguru.com/guide/best-puma-running-shoes/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "MISS",
+  "canonical": [
+   "https://www.runningshoesguru.com/top/puma-running-shoes/"
+  ],
+  "description": [
+   "Confused by Puma's Nitro foam lineup? We break down 6 key models, from the workhorse Deviate to the race-day Fast-R. Find out which Puma shoe truly fits your running goals, stride, and budget. Your expert guide is here."
+  ],
+  "h1": 1,
+  "jsonld": [
+   [
+    {
+     "@context": "https://schema.org/",
+     "@id": "https://www.runningshoesguru.com/top/puma-running-shoes/#article",
+     "@type": "Article",
+     "author": {
+      "@id": "https://www.runningshoesguru.com/author/ruggero/",
+      "@type": "Person",
+      "name": "Ruggero Loda",
+      "url": "https://www.runningshoesguru.com/author/ruggero/"
+     },
+     "dateModified": "2025-09-07T04:22:44-04:00",
+     "datePublished": "2025-09-07T04:18:57-04:00",
+     "headline": "Decoding the Puma Running Lineup: How to Choose the Right Shoe for You",
+     "image": "https://www.runningshoesguru.com/wp-content/uploads/2025/09/Puma-Running-Shoes-in-2025-633x356.jpeg",
+     "mainEntity": {
+      "@id": "https://www.runningshoesguru.com/top/puma-running-shoes/#itemlist",
+      "@type": "ItemList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "item": {
+         "@type": "Product",
+         "additionalProperty": [
+          {
+           "@type": "PropertyValue",
+           "name": "Weight",
+           "unitText": "oz",
+           "value": 9.5
+          },
+          {
+           "@type": "PropertyValue",
+           "name": "Heel drop",
+           "unitText": "mm",
+           "value": 10
+          }
+         ],
+         "aggregateRating": {
+          "@type": "AggregateRating",
+          "bestRating": "5",
+          "ratingValue": "4.5",
+          "reviewCount": "4",
+          "worstRating": "1"
+         },
+         "award": "Best All-Rounder",
+         "brand": {
+          "@type": "Brand",
+          "name": "Puma"
+         },
+         "category": "Running Shoes",
+         "image": "https://www.runningshoesguru.com/wp-content/uploads/2024/07/PUMA-Deviate-Nitro-3-white-background.png",
+         "name": "Puma Deviate Nitro 3",
+         "offers": {
+          "@type": "AggregateOffer",
+          "highPrice": "160.00",
+          "lowPrice": "71.95",
+          "offerCount": "5",
+          "priceCurrency": "USD",
+          "url": "https://www.runningshoesguru.com/reviews/road/puma-deviate-nitro-3-review/"
+         },
+         "review": [
+          {
+           "@type": "Review",
+           "author": {
+            "@type": "Person",
+            "name": "Justin Alpaugh",
+            "url": "https://www.runningshoesguru.com/author/justinalpaugh/"
+           },
+           "datePublished": "2024-08-17T02:39:39-04:00",
+           "reviewBody": "The Puma Deviate Nitro 3 is a do it all shoe. There are not many flaws found in the Nitro 3. A comfortable ride that is meant for the miles both in training and on race day!",
+           "reviewRating": {
+            "@type": "Rating",
+            "bestRating": "10",
+            "ratingValue": "9.0",
+            "worstRating": "1"
+           }
+          }
+         ],
+         "url": "https://www.runningshoesguru.com/reviews/road/puma-deviate-nitro-3-review/"
+        },
+        "name": "Puma Deviate Nitro 3",
+        "position": 1
+       },
+       {
+        "@type": "ListItem",
+        "item": {
+         "@type": "Product",
+         "additionalProperty": [
+          {
+           "@type": "PropertyValue",
+           "name": "Weight",
+           "unitText": "oz",
+           "value": 10.3
+          },
+          {
+           "@type": "PropertyValue",
+           "name": "Heel drop",
+           "unitText": "mm",
+           "value": 10
+          }
+         ],
+         "award": "Best for Stability",
+         "brand": {
+          "@type": "Brand",
+          "name": "Puma"
+         },
+         "category": "Running Shoes",
+         "image": "https://www.runningshoesguru.com/wp-content/uploads/2025/04/puma-foreverrun-nitro-2-white-bg.png",
+         "name": "Puma ForeverRun Nitro 2",
+         "offers": {
+          "@type": "AggregateOffer",
+          "highPrice": "144.99",
+          "lowPrice": "64.95",
+          "offerCount": "6",
+          "priceCurrency": "USD",
+          "url": "https://www.runningshoesguru.com/reviews/road/puma-foreverrun-nitro-2-review/"
+         },
+         "review": [
+          {
+           "@type": "Review",
+           "author": {
+            "@type": "Person",
+            "name": "Brandon Law",
+            "url": "https://www.runningshoesguru.com/author/brandonlaw/"
+           },
+           "datePublished": "2025-04-26T05:15:35-04:00",
+           "reviewBody": "The PUMA ForeverRun Nitro 2 is a light stability daily trainer with a firm ride that\u2019s best suited to short or middle-distance runs. It provides a stable ride with its wide base, stout heel clip and firmer outer midsole rim. Unlike other stability trainers, it doesn\u2019t have a prominent arch sensation but it does force your rearfoot to not roll inward which may cause some discomfort if you\u2019re not used to guidance. Version 2 has picked up some weight but has a new softer, circular knit upper.",
+           "reviewRating": {
+            "@type": "Rating",
+            "bestRating": "10",
+            "ratingValue": "6.0",
+            "worstRating": "1"
+           }
+          }
+         ],
+         "url": "https://www.runningshoesguru.com/reviews/road/puma-foreverrun-nitro-2-review/"
+        },
+        "name": "Puma ForeverRun Nitro 2",
+        "position": 2
+       },
+       {
+        "@type": "ListItem",
+        "item": {
+         "@type": "Product",
+         "additionalProperty": [
+          {
+           "@type": "PropertyValue",
+           "name": "Weight",
+           "unitText": "oz",
+           "value": 9.3
+          },
+          {
+           "@type": "PropertyValue",
+           "name": "Heel drop",
+           "unitText": "mm",
+           "value": 10
+          }
+         ],
+         "award": "Most Comfortable",
+         "brand": {
+          "@type": "Brand",
+          "name": "Puma"
+         },
+         "category": "Running Shoes",
+         "image": "https://www.runningshoesguru.com/wp-content/uploads/2025/09/puma-magnify-nitro-3-white-background.png",
+         "name": "Puma Magnify Nitro 3",
+         "offers": {
+          "@type": "AggregateOffer",
+          "highPrice": "160.00",
+          "lowPrice": "99.95",
+          "offerCount": "6",
+          "priceCurrency": "USD",
+          "url": "https://www.runningshoesguru.com/reviews/road/puma-magnify-nitro-3-review/"
+         },
+         "review": [
+          {
+           "@type": "Review",
+           "author": {
+            "@type": "Person",
+            "name": "Kristin Lassen",
+            "url": "https://www.runningshoesguru.com/author/kristinlassen/"
+           },
+           "datePublished": "2025-09-06T14:15:17-04:00",
+           "reviewBody": "The Puma Magnify NITRO\u2122 3 is a cushioned, neutral running shoe built to provide ultimate comfort, which it does, both while running and for all-day wear. I enjoy the Magnify NITRO for long runs, tempo runs, and easy runs but choose another shoe for speedwork on the track.",
+           "reviewRating": {
+            "@type": "Rating",
+            "bestRating": "10",
+            "ratingValue": "9.0",
+            "worstRating": "1"
+           }
+          }
+         ],
+         "url": "https://www.runningshoesguru.com/reviews/road/puma-magnify-nitro-3-review/"
+        },
+        "name": "Puma Magnify Nitro 3",
+        "position": 3
+       },
+       {
+        "@type": "ListItem",
+        "item": {
+         "@type": "Product",
+         "additionalProperty": [
+          {
+           "@type": "PropertyValue",
+           "name": "Weight",
+           "unitText": "oz",
+           "value": 10.2
+          },
+          {
+           "@type": "PropertyValue",
+           "name": "Heel drop",
+           "unitText": "mm",
+           "value": 8
+          }
+         ],
+         "aggregateRating": {
+          "@type": "AggregateRating",
+          "bestRating": "5",
+          "ratingValue": "4.0",
+          "reviewCount": "5",
+          "worstRating": "1"
+         },
+         "award": "Best Max Cushioning",
+         "brand": {
+          "@type": "Brand",
+          "name": "Puma"
+         },
+         "category": "Running Shoes",
+         "image": "https://www.runningshoesguru.com/wp-content/uploads/2024/09/puma-magmax-nitro-white-background.png",
+         "name": "Puma MagMax Nitro",
+         "offers": {
+          "@type": "AggregateOffer",
+          "highPrice": "99.88",
+          "lowPrice": "94.95",
+          "offerCount": "3",
+          "priceCurrency": "USD",
+          "url": "https://www.runningshoesguru.com/reviews/road/puma-magmax-nitro-review/"
+         },
+         "review": [
+          {
+           "@type": "Review",
+           "author": {
+            "@type": "Person",
+            "name": "Brandon Law",
+            "url": "https://www.runningshoesguru.com/author/brandonlaw/"
+           },
+           "datePublished": "2024-09-18T05:49:00-04:00",
+           "reviewBody": "The PUMA MagMax Nitro is a good maximalist trainer for easy or recovery runs. It has a soft, moderately bouncy ride which is very supportive; however its narrow midfoot might cause a poking arch sensation if you have flat feet. It doesn\u2019t have as much versatility as competitors like the Superblast due to its weight and it\u2019s priced about $20 too high.",
+           "reviewRating": {
+            "@type": "Rating",
+            "bestRating": "10",
+            "ratingValue": "7.0",
+            "worstRating": "1"
+           }
+          }
+         ],
+         "url": "https://www.runningshoesguru.com/reviews/road/puma-magmax-nitro-review/"
+        },
+        "name": "Puma MagMax Nitro",
+        "position": 4
+       },
+       {
+        "@type": "ListItem",
+        "item": {
+         "@type": "Product",
+         "additionalProperty": [
+          {
+           "@type": "PropertyValue",
+           "name": "Weight",
+           "unitText": "oz",
+           "value": 6.9
+          },
+          {
+           "@type": "PropertyValue",
+           "name": "Heel drop",
+           "unitText": "mm",
+           "value": 8
+          }
+         ],
+         "aggregateRating": {
+          "@type": "AggregateRating",
+          "bestRating": "5",
+          "ratingValue": "4.5",
+          "reviewCount": "3",
+          "worstRating": "1"
+         },
+         "award": "Best Racing Shoe",
+         "brand": {
+          "@type": "Brand",
+          "name": "Puma"
+         },
+         "category": "Running Shoes",
+         "image": "https://www.runningshoesguru.com/wp-content/uploads/2024/06/PUMA-Deviate-Nitro-Elite-3-white-background.png",
+         "name": "Puma Deviate Nitro Elite 3",
+         "offers": {
+          "@type": "AggregateOffer",
+          "highPrice": "194.95",
+          "lowPrice": "139.95",
+          "offerCount": "2",
+          "priceCurrency": "USD",
+          "url": "https://www.runningshoesguru.com/reviews/road/puma-deviate-nitro-elite-3-review/"
+         },
+         "review": [
+          {
+           "@type": "Review",
+           "author": {
+            "@type": "Person",
+            "name": "Brandon Law",
+            "url": "https://www.runningshoesguru.com/author/brandonlaw/"
+           },
+           "datePublished": "2024-08-15T19:50:52-04:00",
+           "reviewBody": "The PUMA Deviate Nitro Elite 3 is a good racer which performs a variety of distances and paces well. It has a new TPU midsole that allows it to retain its cushioning over long distances however it doesn't feel as fast as other racers due to its lack of rebound and a prominent forefoot rocker. Version 3 has a thicker midsole but is still lighter than version 2. It also has a steeper carbon plate that makes it feel faster but its price has risen sharply by $30.",
+           "reviewRating": {
+            "@type": "Rating",
+            "bestRating": "10",
+            "ratingValue": "8.0",
+            "worstRating": "1"
+           }
+          }
+         ],
+         "url": "https://www.runningshoesguru.com/reviews/road/puma-deviate-nitro-elite-3-review/"
+        },
+        "name": "Puma Deviate Nitro Elite 3",
+        "position": 5
+       },
+       {
+        "@type": "ListItem",
+        "item": {
+         "@type": "Product",
+         "additionalProperty": [
+          {
+           "@type": "PropertyValue",
+           "name": "Weight",
+           "unitText": "oz",
+           "value": 6
+          },
+          {
+           "@type": "PropertyValue",
+           "name": "Heel drop",
+           "unitText": "mm",
+           "value": 8
+          }
+         ],
+         "aggregateRating": {
+          "@type": "AggregateRating",
+          "bestRating": "5",
+          "ratingValue": "5.0",
+          "reviewCount": "1",
+          "worstRating": "1"
+         },
+         "award": "The Absolute Fastest",
+         "brand": {
+          "@type": "Brand",
+          "name": "Puma"
+         },
+         "category": "Running Shoes",
+         "image": "https://www.runningshoesguru.com/wp-content/uploads/2025/05/puma-fast-r-nitro-elite-3-white-background.png",
+         "name": "Puma Fast-R Nitro Elite 3",
+         "offers": {
+          "@type": "AggregateOffer",
+          "highPrice": "300.00",
+          "lowPrice": "199.96",
+          "offerCount": "6",
+          "priceCurrency": "USD",
+          "url": "https://www.runningshoesguru.com/reviews/road/puma-fast-r-nitro-elite-3-review/"
+         },
+         "review": [
+          {
+           "@type": "Review",
+           "author": {
+            "@type": "Person",
+            "name": "Brandon Law",
+            "url": "https://www.runningshoesguru.com/author/brandonlaw/"
+           },
+           "datePublished": "2025-05-19T05:32:45-04:00",
+           "reviewBody": "The PUMA Fast-R Nitro Elite 3 is a good racer with a fast ride but it requires you to have very good running form due to its instability. For most runners, it\u2019s only suitable for half marathons or shorter races. Version 3 is noticeably lighter and more nimble than its predecessor but it costs $40 more and is not as durable or as stable.",
+           "reviewRating": {
+            "@type": "Rating",
+            "bestRating": "10",
+            "ratingValue": "7.0",
+            "worstRating": "1"
+           }
+          }
+         ],
+         "url": "https://www.runningshoesguru.com/reviews/road/puma-fast-r-nitro-elite-3-review/"
+        },
+        "name": "Puma Fast-R Nitro Elite 3",
+        "position": 6
+       }
+      ],
+      "itemListOrder": "https://schema.org/ItemListOrderDescending",
+      "numberOfItems": 6
+     },
+     "mainEntityOfPage": {
+      "@id": "https://www.runningshoesguru.com/top/puma-running-shoes/"
+     },
+     "publisher": {
+      "@id": "https://www.runningshoesguru.com/#organization",
+      "@type": "Organization",
+      "alternateName": "RSG",
+      "contactPoint": {
+       "@type": "ContactPoint",
+       "contactType": "customer service",
+       "url": "https://www.runningshoesguru.com/contact-us/"
+      },
+      "description": "Founded in 2009, Running Shoes Guru is the place to go for independent, unbiased, expert reviews on running shoes and GPS running watches.",
+      "email": "guru@runningshoesguru.com",
+      "foundingDate": "2009-04-01",
+      "knowsAbout": [
+       "Running shoes",
+       "Running shoe reviews",
+       "GPS running watches",
+       "Running gear",
+       "Running"
+      ],
+      "legalName": "RSGMEDIA",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://www.runningshoesguru.com/wp-content/themes/rsg_2022/images/logo2020.svg"
+      },
+      "name": "Running Shoes Guru",
+      "sameAs": [
+       "https://www.facebook.com/runningshoesguru/",
+       "https://twitter.com/runningshoesgur/",
+       "https://www.instagram.com/runningshoesguru/",
+       "https://www.youtube.com/user/runningshoesguru"
+      ],
+      "slogan": "Independent, unbiased, expert running shoe reviews since 2009.",
+      "url": "https://www.runningshoesguru.com/"
+     }
+    },
+    {
+     "@context": "https://schema.org/",
+     "@type": "BreadcrumbList",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/",
+       "name": "Home",
+       "position": 1
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/top/",
+       "name": "Best Running Shoes",
+       "position": 2
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/top/puma-running-shoes/",
+       "name": "Decoding the Puma Running Lineup: How to Choose the Right Shoe for You",
+       "position": 3
+      }
+     ]
+    }
+   ]
+  ],
+  "ld_blocks": 1,
+  "ld_errors": [],
+  "ld_types": [
+   "Article",
+   "Person",
+   "Organization",
+   "ContactPoint",
+   "ImageObject",
+   "ItemList",
+   "ListItem",
+   "Product",
+   "Brand",
+   "PropertyValue",
+   "PropertyValue",
+   "AggregateRating",
+   "AggregateOffer",
+   "Review",
+   "Rating",
+   "Person",
+   "ListItem",
+   "Product",
+   "Brand",
+   "PropertyValue",
+   "PropertyValue",
+   "AggregateOffer",
+   "Review",
+   "Rating",
+   "Person",
+   "ListItem",
+   "Product",
+   "Brand",
+   "PropertyValue",
+   "PropertyValue",
+   "AggregateOffer",
+   "Review",
+   "Rating",
+   "Person",
+   "ListItem",
+   "Product",
+   "Brand",
+   "PropertyValue",
+   "PropertyValue",
+   "AggregateRating",
+   "AggregateOffer",
+   "Review",
+   "Rating",
+   "Person",
+   "ListItem",
+   "Product",
+   "Brand",
+   "PropertyValue",
+   "PropertyValue",
+   "AggregateRating",
+   "AggregateOffer",
+   "Review",
+   "Rating",
+   "Person",
+   "ListItem",
+   "Product",
+   "Brand",
+   "PropertyValue",
+   "PropertyValue",
+   "AggregateRating",
+   "AggregateOffer",
+   "Review",
+   "Rating",
+   "Person",
+   "BreadcrumbList",
+   "ListItem",
+   "ListItem",
+   "ListItem"
+  ],
+  "location": null,
+  "offers": [
+   {
+    "@type": "AggregateOffer",
+    "highPrice": "160.00",
+    "lowPrice": "71.95",
+    "offerCount": "5",
+    "price": null,
+    "priceCurrency": "USD"
+   },
+   {
+    "@type": "AggregateOffer",
+    "highPrice": "144.99",
+    "lowPrice": "64.95",
+    "offerCount": "6",
+    "price": null,
+    "priceCurrency": "USD"
+   },
+   {
+    "@type": "AggregateOffer",
+    "highPrice": "160.00",
+    "lowPrice": "99.95",
+    "offerCount": "6",
+    "price": null,
+    "priceCurrency": "USD"
+   },
+   {
+    "@type": "AggregateOffer",
+    "highPrice": "99.88",
+    "lowPrice": "94.95",
+    "offerCount": "3",
+    "price": null,
+    "priceCurrency": "USD"
+   },
+   {
+    "@type": "AggregateOffer",
+    "highPrice": "194.95",
+    "lowPrice": "139.95",
+    "offerCount": "2",
+    "price": null,
+    "priceCurrency": "USD"
+   },
+   {
+    "@type": "AggregateOffer",
+    "highPrice": "300.00",
+    "lowPrice": "199.96",
+    "offerCount": "6",
+    "price": null,
+    "priceCurrency": "USD"
+   }
+  ],
+  "og": {
+   "article:modified_time": [
+    "2025-09-07T04:22:44-04:00"
+   ],
+   "article:published_time": [
+    "2025-09-07T04:18:57-04:00"
+   ],
+   "og:description": [
+    "Confused by Puma's Nitro foam lineup? We break down 6 key models, from the workhorse Deviate to the race-day Fast-R. Find out which Puma shoe truly fits your running goals, stride, and budget. Your expert guide is here."
+   ],
+   "og:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2025/09/Puma-Running-Shoes-in-2025.jpeg"
+   ],
+   "og:title": [
+    "Decoding the Puma Running Lineup: How to Choose the Right Shoe for You"
+   ],
+   "og:type": [
+    "article"
+   ],
+   "og:url": [
+    "https://www.runningshoesguru.com/top/puma-running-shoes/"
+   ]
+  },
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "Decoding the Puma Running Lineup: How to Choose the Right Shoe for You | Running Shoes Guru",
+  "twitter": {
+   "twitter:card": [
+    "summary_large_image"
+   ],
+   "twitter:description": [
+    "Confused by Puma's Nitro foam lineup? We break down 6 key models, from the workhorse Deviate to the race-day Fast-R. Find out which Puma shoe truly fits your running goals, stride, and budget. Your expert guide is here."
+   ],
+   "twitter:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2025/09/Puma-Running-Shoes-in-2025.jpeg"
+   ],
+   "twitter:title": [
+    "Decoding the Puma Running Lineup: How to Choose the Right Shoe for You"
+   ]
+  },
+  "url": "https://www.runningshoesguru.com/top/puma-running-shoes/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "MISS",
+  "canonical": [
+   "https://www.runningshoesguru.com/content/ultimate-guide-polar-gps-watches/"
+  ],
+  "description": [
+   "Which Polar GPS watch is best for you? Which is best for running or triathlon? Find out in our full Polar GPS Watches guide."
+  ],
+  "h1": 1,
+  "jsonld": [],
+  "ld_blocks": 0,
+  "ld_errors": [],
+  "ld_types": [],
+  "location": null,
+  "offers": [],
+  "og": {
+   "article:modified_time": [
+    "2020-06-26T03:57:02-04:00"
+   ],
+   "article:published_time": [
+    "2019-08-31T16:59:36-04:00"
+   ],
+   "og:description": [
+    "Which Polar GPS watch is best for you? Which is best for running or triathlon? Find out in our full Polar GPS Watches guide."
+   ],
+   "og:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2019/08/pjimage22.jpg"
+   ],
+   "og:title": [
+    "The Ultimate Guide to Polar GPS Running Watches"
+   ],
+   "og:type": [
+    "article"
+   ],
+   "og:url": [
+    "https://www.runningshoesguru.com/content/ultimate-guide-polar-gps-watches/"
+   ]
+  },
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "The Ultimate Guide to Polar GPS Running Watches | Running Shoes Guru",
+  "twitter": {
+   "twitter:card": [
+    "summary_large_image"
+   ],
+   "twitter:description": [
+    "Which Polar GPS watch is best for you? Which is best for running or triathlon? Find out in our full Polar GPS Watches guide."
+   ],
+   "twitter:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2019/08/pjimage22.jpg"
+   ],
+   "twitter:title": [
+    "The Ultimate Guide to Polar GPS Running Watches"
+   ]
+  },
+  "url": "https://www.runningshoesguru.com/content/ultimate-guide-polar-gps-watches/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "MISS",
+  "canonical": [
+   "https://www.runningshoesguru.com/2025/12/nike-structure-plus-first-look-zoomx-finally-comes-to-stability/"
+  ],
+  "description": [
+   "First look at the Nike Structure Plus: ZoomX foam finally meets stability. Discover specs, release dates, and how it fits Nike\u2019s new 2026 running lineup."
+  ],
+  "h1": 1,
+  "jsonld": [],
+  "ld_blocks": 0,
+  "ld_errors": [],
+  "ld_types": [],
+  "location": null,
+  "offers": [],
+  "og": {
+   "article:modified_time": [
+    "2025-12-07T04:03:49-05:00"
+   ],
+   "article:published_time": [
+    "2025-12-07T04:03:49-05:00"
+   ],
+   "og:description": [
+    "First look at the Nike Structure Plus: ZoomX foam finally meets stability. Discover specs, release dates, and how it fits Nike\u2019s new 2026 running lineup."
+   ],
+   "og:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2025/12/008_nike-structure-plus-mens-1-Large.jpeg"
+   ],
+   "og:title": [
+    "Nike Structure Plus First Look: ZoomX Finally Comes to Stability"
+   ],
+   "og:type": [
+    "article"
+   ],
+   "og:url": [
+    "https://www.runningshoesguru.com/2025/12/nike-structure-plus-first-look-zoomx-finally-comes-to-stability/"
+   ]
+  },
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "Nike Structure Plus First Look: ZoomX Finally Comes to Stability | Running Shoes Guru",
+  "twitter": {
+   "twitter:card": [
+    "summary_large_image"
+   ],
+   "twitter:description": [
+    "First look at the Nike Structure Plus: ZoomX foam finally meets stability. Discover specs, release dates, and how it fits Nike\u2019s new 2026 running lineup."
+   ],
+   "twitter:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2025/12/008_nike-structure-plus-mens-1-Large.jpeg"
+   ],
+   "twitter:title": [
+    "Nike Structure Plus First Look: ZoomX Finally Comes to Stability"
+   ]
+  },
+  "url": "https://www.runningshoesguru.com/2025/12/nike-structure-plus-first-look-zoomx-finally-comes-to-stability/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "HIT",
+  "canonical": [
+   "https://www.runningshoesguru.com/reviews/"
+  ],
+  "description": [
+   "The best Running Shoes Reviews on the internet! Our testers run and analyze all the latest shoes - and you can read hundreds of feedback from our readers!"
+  ],
+  "h1": 1,
+  "jsonld": [
+   [
+    {
+     "@context": "https://schema.org/",
+     "@id": "https://www.runningshoesguru.com/reviews/#collection",
+     "@type": "CollectionPage",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Running Shoes Guru",
+      "url": "https://www.runningshoesguru.com/"
+     },
+     "mainEntity": {
+      "@id": "https://www.runningshoesguru.com/reviews/#itemlist",
+      "@type": "ItemList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "name": "Asics Gel Cumulus 28",
+        "position": 1,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-gel-cumulus-28-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Nike Pegasus 42",
+        "position": 2,
+        "url": "https://www.runningshoesguru.com/reviews/road/nike-pegasus-42-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Brooks Glycerin 23",
+        "position": 3,
+        "url": "https://www.runningshoesguru.com/reviews/road/brooks-glycerin-23-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Saucony Ride 19",
+        "position": 4,
+        "url": "https://www.runningshoesguru.com/reviews/road/saucony-ride-19-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Nike Structure Plus",
+        "position": 5,
+        "url": "https://www.runningshoesguru.com/reviews/road/nike-structure-plus-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Asics Gel Nimbus 28",
+        "position": 6,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-gel-nimbus-28-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Brooks Adrenaline GTS 25",
+        "position": 7,
+        "url": "https://www.runningshoesguru.com/reviews/road/brooks-adrenaline-gts-25-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Puma PUMA MagMax Nitro 2",
+        "position": 8,
+        "url": "https://www.runningshoesguru.com/reviews/road/puma-magmax-nitro-2-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Brooks Hyperion 3",
+        "position": 9,
+        "url": "https://www.runningshoesguru.com/reviews/road/brooks-hyperion-3-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "ON Cloudflow 5",
+        "position": 10,
+        "url": "https://www.runningshoesguru.com/reviews/road/on-cloudflow-5-review/"
+       }
+      ],
+      "numberOfItems": 10
+     },
+     "name": "Running Shoes Reviews",
+     "publisher": {
+      "@id": "https://www.runningshoesguru.com/#organization",
+      "@type": "Organization",
+      "alternateName": "RSG",
+      "contactPoint": {
+       "@type": "ContactPoint",
+       "contactType": "customer service",
+       "url": "https://www.runningshoesguru.com/contact-us/"
+      },
+      "description": "Founded in 2009, Running Shoes Guru is the place to go for independent, unbiased, expert reviews on running shoes and GPS running watches.",
+      "email": "guru@runningshoesguru.com",
+      "foundingDate": "2009-04-01",
+      "knowsAbout": [
+       "Running shoes",
+       "Running shoe reviews",
+       "GPS running watches",
+       "Running gear",
+       "Running"
+      ],
+      "legalName": "RSGMEDIA",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://www.runningshoesguru.com/wp-content/themes/rsg_2022/images/logo2020.svg"
+      },
+      "name": "Running Shoes Guru",
+      "sameAs": [
+       "https://www.facebook.com/runningshoesguru/",
+       "https://twitter.com/runningshoesgur/",
+       "https://www.instagram.com/runningshoesguru/",
+       "https://www.youtube.com/user/runningshoesguru"
+      ],
+      "slogan": "Independent, unbiased, expert running shoe reviews since 2009.",
+      "url": "https://www.runningshoesguru.com/"
+     },
+     "url": "https://www.runningshoesguru.com/reviews/"
+    },
+    {
+     "@context": "https://schema.org/",
+     "@type": "BreadcrumbList",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/",
+       "name": "Home",
+       "position": 1
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/reviews/",
+       "name": "Reviews",
+       "position": 2
+      }
+     ]
+    }
+   ]
+  ],
+  "ld_blocks": 1,
+  "ld_errors": [],
+  "ld_types": [
+   "CollectionPage",
+   "WebSite",
+   "Organization",
+   "ContactPoint",
+   "ImageObject",
+   "ItemList",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "BreadcrumbList",
+   "ListItem",
+   "ListItem"
+  ],
+  "location": null,
+  "offers": [],
+  "og": {
+   "og:description": [
+    "The best Running Shoes Reviews on the internet! Our testers run and analyze all the latest shoes - and you can read hundreds of feedback from our readers!"
+   ],
+   "og:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2020/02/running-shoes-reviews.jpg"
+   ],
+   "og:title": [
+    "1366 Running Shoes Reviews (November 2026)"
+   ],
+   "og:type": [
+    "website"
+   ],
+   "og:url": [
+    "https://www.runningshoesguru.com/reviews/"
+   ]
+  },
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "1366 Running Shoes Reviews (November 2026) | Running Shoes Guru",
+  "twitter": {
+   "twitter:card": [
+    "summary_large_image"
+   ],
+   "twitter:description": [
+    "The best Running Shoes Reviews on the internet! Our testers run and analyze all the latest shoes - and you can read hundreds of feedback from our readers!"
+   ],
+   "twitter:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2020/02/running-shoes-reviews.jpg"
+   ],
+   "twitter:title": [
+    "1366 Running Shoes Reviews (November 2026)"
+   ]
+  },
+  "url": "https://www.runningshoesguru.com/reviews/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "HIT",
+  "canonical": [
+   "https://www.runningshoesguru.com/reviews/asics/all/"
+  ],
+  "description": [
+   "Asics is the Japanese giant of running shoes. The Asics name is an acronym of the latin motto Anima Sana in Corpore Sano which is Healty Mind in a Healty Body. Founded in 1949 by Kirachiro Onitsuka. Asics makes some of the most popular running shoes worldwide, from the cushioned Cumulus and Nimbus to the stability Kayano and GT series. Asics' lineup of running shoes is impressive: being the focus sport for the company, they have plenty of options to fit many different runners."
+  ],
+  "h1": 1,
+  "jsonld": [
+   [
+    {
+     "@context": "https://schema.org/",
+     "@id": "https://www.runningshoesguru.com/reviews/asics/all/#collection",
+     "@type": "CollectionPage",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Running Shoes Guru",
+      "url": "https://www.runningshoesguru.com/"
+     },
+     "mainEntity": {
+      "@id": "https://www.runningshoesguru.com/reviews/asics/all/#itemlist",
+      "@type": "ItemList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "name": "Asics Gel Cumulus 28",
+        "position": 1,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-gel-cumulus-28-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Asics Gel Nimbus 28",
+        "position": 2,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-gel-nimbus-28-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Asics MEGABLAST",
+        "position": 3,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-megablast-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Asics SONICBLAST",
+        "position": 4,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-sonicblast-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Asics Gel Kayano 32",
+        "position": 5,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-gel-kayano-32-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Asics METASPEED Edge Tokyo",
+        "position": 6,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-metaspeed-edge-tokyo-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Asics Metaspeed Sky Tokyo",
+        "position": 7,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-metaspeed-sky-tokyo-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Asics Gel Cumulus 27",
+        "position": 8,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-gel-cumulus-27-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Asics S4+ Yogiri",
+        "position": 9,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-s4-yogiri-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Asics Trabuco Max 4",
+        "position": 10,
+        "url": "https://www.runningshoesguru.com/reviews/trail/asics-trabuco-max-4-review-plenty-comfort-for-moderate-trails/"
+       }
+      ],
+      "numberOfItems": 10
+     },
+     "name": "Asics Running Shoes Reviews",
+     "publisher": {
+      "@id": "https://www.runningshoesguru.com/#organization",
+      "@type": "Organization",
+      "alternateName": "RSG",
+      "contactPoint": {
+       "@type": "ContactPoint",
+       "contactType": "customer service",
+       "url": "https://www.runningshoesguru.com/contact-us/"
+      },
+      "description": "Founded in 2009, Running Shoes Guru is the place to go for independent, unbiased, expert reviews on running shoes and GPS running watches.",
+      "email": "guru@runningshoesguru.com",
+      "foundingDate": "2009-04-01",
+      "knowsAbout": [
+       "Running shoes",
+       "Running shoe reviews",
+       "GPS running watches",
+       "Running gear",
+       "Running"
+      ],
+      "legalName": "RSGMEDIA",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://www.runningshoesguru.com/wp-content/themes/rsg_2022/images/logo2020.svg"
+      },
+      "name": "Running Shoes Guru",
+      "sameAs": [
+       "https://www.facebook.com/runningshoesguru/",
+       "https://twitter.com/runningshoesgur/",
+       "https://www.instagram.com/runningshoesguru/",
+       "https://www.youtube.com/user/runningshoesguru"
+      ],
+      "slogan": "Independent, unbiased, expert running shoe reviews since 2009.",
+      "url": "https://www.runningshoesguru.com/"
+     },
+     "url": "https://www.runningshoesguru.com/reviews/asics/all/"
+    },
+    {
+     "@context": "https://schema.org/",
+     "@type": "BreadcrumbList",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/",
+       "name": "Home",
+       "position": 1
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/reviews/",
+       "name": "Reviews",
+       "position": 2
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/reviews/asics/all/",
+       "name": "Asics",
+       "position": 3
+      }
+     ]
+    }
+   ]
+  ],
+  "ld_blocks": 1,
+  "ld_errors": [],
+  "ld_types": [
+   "CollectionPage",
+   "WebSite",
+   "Organization",
+   "ContactPoint",
+   "ImageObject",
+   "ItemList",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "BreadcrumbList",
+   "ListItem",
+   "ListItem",
+   "ListItem"
+  ],
+  "location": null,
+  "offers": [],
+  "og": {
+   "og:description": [
+    "Asics is the Japanese giant of running shoes. The Asics name is an acronym of the latin motto \"Anima Sana in Corpore Sano\" which is \"Healty Mind in a Healty Body\". Founded in 1949 by Kirachiro Onitsuka. Asics makes some of the most popular running shoes worldwide, from the cushioned Cumulus and Nimbus to the stability Kayano and GT series. Asics' lineup of running shoes is impressive: being the focus sport for the company, they have plenty of options to fit many different runners."
+   ],
+   "og:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2020/02/running-shoes-reviews.jpg"
+   ],
+   "og:title": [
+    "197 Asics Running Shoes Reviews (November 2026)"
+   ],
+   "og:type": [
+    "website"
+   ],
+   "og:url": [
+    "https://www.runningshoesguru.com/reviews/"
+   ]
+  },
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "197 Asics Running Shoes Reviews (November 2026) | Running Shoes Guru",
+  "twitter": {
+   "twitter:card": [
+    "summary_large_image"
+   ],
+   "twitter:description": [
+    "Asics is the Japanese giant of running shoes. The Asics name is an acronym of the latin motto \"Anima Sana in Corpore Sano\" which is \"Healty Mind in a Healty Body\". Founded in 1949 by Kirachiro Onitsuka. Asics makes some of the most popular running shoes worldwide, from the cushioned Cumulus and Nimbus to the stability Kayano and GT series. Asics' lineup of running shoes is impressive: being the focus sport for the company, they have plenty of options to fit many different runners."
+   ],
+   "twitter:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2020/02/running-shoes-reviews.jpg"
+   ],
+   "twitter:title": [
+    "197 Asics Running Shoes Reviews (November 2026)"
+   ]
+  },
+  "url": "https://www.runningshoesguru.com/reviews/asics/all/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "MISS",
+  "canonical": [
+   "https://www.runningshoesguru.com/reviews/asics/all/page/2/"
+  ],
+  "description": [
+   "Asics is the Japanese giant of running shoes. The Asics name is an acronym of the latin motto Anima Sana in Corpore Sano which is Healty Mind in a Healty Body. Founded in 1949 by Kirachiro Onitsuka. Asics makes some of the most popular running shoes worldwide, from the cushioned Cumulus and Nimbus to the stability Kayano and GT series. Asics' lineup of running shoes is impressive: being the focus sport for the company, they have plenty of options to fit many different runners."
+  ],
+  "h1": 1,
+  "jsonld": [
+   [
+    {
+     "@context": "https://schema.org/",
+     "@id": "https://www.runningshoesguru.com/reviews/asics/all/#collection",
+     "@type": "CollectionPage",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Running Shoes Guru",
+      "url": "https://www.runningshoesguru.com/"
+     },
+     "mainEntity": {
+      "@id": "https://www.runningshoesguru.com/reviews/asics/all/#itemlist",
+      "@type": "ItemList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "name": "Asics Gel Nimbus 27",
+        "position": 1,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-gel-nimbus-27-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Asics Gel-Contend 9",
+        "position": 2,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-gel-contend-9-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Asics GT 2000 13",
+        "position": 3,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-gt-2000-13-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Asics Novablast 5",
+        "position": 4,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-novablast-5-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Asics GlideRide Max",
+        "position": 5,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-glideride-max-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Asics Noosa Tri 16",
+        "position": 6,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-noosa-tri-16-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Asics GT 1000 13",
+        "position": 7,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-gt-1000-13-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Asics Magic Speed 4",
+        "position": 8,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-magic-speed-4-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Asics Fuji Lite 5",
+        "position": 9,
+        "url": "https://www.runningshoesguru.com/reviews/trail/asics-fuji-lite-5-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Asics Gel Kayano 31",
+        "position": 10,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-gel-kayano-31-review/"
+       }
+      ],
+      "numberOfItems": 10
+     },
+     "name": "Asics Running Shoes Reviews",
+     "publisher": {
+      "@id": "https://www.runningshoesguru.com/#organization",
+      "@type": "Organization",
+      "alternateName": "RSG",
+      "contactPoint": {
+       "@type": "ContactPoint",
+       "contactType": "customer service",
+       "url": "https://www.runningshoesguru.com/contact-us/"
+      },
+      "description": "Founded in 2009, Running Shoes Guru is the place to go for independent, unbiased, expert reviews on running shoes and GPS running watches.",
+      "email": "guru@runningshoesguru.com",
+      "foundingDate": "2009-04-01",
+      "knowsAbout": [
+       "Running shoes",
+       "Running shoe reviews",
+       "GPS running watches",
+       "Running gear",
+       "Running"
+      ],
+      "legalName": "RSGMEDIA",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://www.runningshoesguru.com/wp-content/themes/rsg_2022/images/logo2020.svg"
+      },
+      "name": "Running Shoes Guru",
+      "sameAs": [
+       "https://www.facebook.com/runningshoesguru/",
+       "https://twitter.com/runningshoesgur/",
+       "https://www.instagram.com/runningshoesguru/",
+       "https://www.youtube.com/user/runningshoesguru"
+      ],
+      "slogan": "Independent, unbiased, expert running shoe reviews since 2009.",
+      "url": "https://www.runningshoesguru.com/"
+     },
+     "url": "https://www.runningshoesguru.com/reviews/asics/all/"
+    },
+    {
+     "@context": "https://schema.org/",
+     "@type": "BreadcrumbList",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/",
+       "name": "Home",
+       "position": 1
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/reviews/",
+       "name": "Reviews",
+       "position": 2
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/reviews/asics/all/",
+       "name": "Asics",
+       "position": 3
+      }
+     ]
+    }
+   ]
+  ],
+  "ld_blocks": 1,
+  "ld_errors": [],
+  "ld_types": [
+   "CollectionPage",
+   "WebSite",
+   "Organization",
+   "ContactPoint",
+   "ImageObject",
+   "ItemList",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "BreadcrumbList",
+   "ListItem",
+   "ListItem",
+   "ListItem"
+  ],
+  "location": null,
+  "offers": [],
+  "og": {
+   "og:description": [
+    "Asics is the Japanese giant of running shoes. The Asics name is an acronym of the latin motto \"Anima Sana in Corpore Sano\" which is \"Healty Mind in a Healty Body\". Founded in 1949 by Kirachiro Onitsuka. Asics makes some of the most popular running shoes worldwide, from the cushioned Cumulus and Nimbus to the stability Kayano and GT series. Asics' lineup of running shoes is impressive: being the focus sport for the company, they have plenty of options to fit many different runners."
+   ],
+   "og:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2020/02/running-shoes-reviews.jpg"
+   ],
+   "og:title": [
+    "197 Asics Running Shoes Reviews (November 2026) - Page 2"
+   ],
+   "og:type": [
+    "website"
+   ],
+   "og:url": [
+    "https://www.runningshoesguru.com/reviews/"
+   ]
+  },
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "197 Asics Running Shoes Reviews (November 2026) - Page 2 | Running Shoes Guru",
+  "twitter": {
+   "twitter:card": [
+    "summary_large_image"
+   ],
+   "twitter:description": [
+    "Asics is the Japanese giant of running shoes. The Asics name is an acronym of the latin motto \"Anima Sana in Corpore Sano\" which is \"Healty Mind in a Healty Body\". Founded in 1949 by Kirachiro Onitsuka. Asics makes some of the most popular running shoes worldwide, from the cushioned Cumulus and Nimbus to the stability Kayano and GT series. Asics' lineup of running shoes is impressive: being the focus sport for the company, they have plenty of options to fit many different runners."
+   ],
+   "twitter:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2020/02/running-shoes-reviews.jpg"
+   ],
+   "twitter:title": [
+    "197 Asics Running Shoes Reviews (November 2026) - Page 2"
+   ]
+  },
+  "url": "https://www.runningshoesguru.com/reviews/asics/all/page/2/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "MISS",
+  "canonical": [
+   "https://www.runningshoesguru.com/reviews/all/cushioning/"
+  ],
+  "description": [
+   "Cushioned running shoes make up one of the largest segments of the running shoe market. Most cushioned shoes fall somewhere in the middle of the spectrum of available options: more cushioning than minimal models, but without major support or corrective elements. Meant for runners that have little to no pronation, cushioned running shoes provide protection and shock absorption with little to no additional support for strong pronators or issues like exceptionally high or low arches."
+  ],
+  "h1": 1,
+  "jsonld": [
+   [
+    {
+     "@context": "https://schema.org/",
+     "@id": "https://www.runningshoesguru.com/reviews/all/cushioning/#collection",
+     "@type": "CollectionPage",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Running Shoes Guru",
+      "url": "https://www.runningshoesguru.com/"
+     },
+     "mainEntity": {
+      "@id": "https://www.runningshoesguru.com/reviews/all/cushioning/#itemlist",
+      "@type": "ItemList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "name": "Asics Gel Cumulus 28",
+        "position": 1,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-gel-cumulus-28-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Nike Pegasus 42",
+        "position": 2,
+        "url": "https://www.runningshoesguru.com/reviews/road/nike-pegasus-42-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Brooks Glycerin 23",
+        "position": 3,
+        "url": "https://www.runningshoesguru.com/reviews/road/brooks-glycerin-23-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Saucony Ride 19",
+        "position": 4,
+        "url": "https://www.runningshoesguru.com/reviews/road/saucony-ride-19-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Asics Gel Nimbus 28",
+        "position": 5,
+        "url": "https://www.runningshoesguru.com/reviews/road/asics-gel-nimbus-28-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Puma PUMA MagMax Nitro 2",
+        "position": 6,
+        "url": "https://www.runningshoesguru.com/reviews/road/puma-magmax-nitro-2-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "ON Cloudflow 5",
+        "position": 7,
+        "url": "https://www.runningshoesguru.com/reviews/road/on-cloudflow-5-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Hoka One One Mach X 3",
+        "position": 8,
+        "url": "https://www.runningshoesguru.com/reviews/road/hoka-mach-x-3-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Saucony Triumph 23",
+        "position": 9,
+        "url": "https://www.runningshoesguru.com/reviews/road/saucony-triumph-23-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "New Balance Fresh Foam X More v6",
+        "position": 10,
+        "url": "https://www.runningshoesguru.com/reviews/road/new-balance-fresh-foam-x-more-v6-review/"
+       }
+      ],
+      "numberOfItems": 10
+     },
+     "name": "Cushioning Running Shoes Reviews",
+     "publisher": {
+      "@id": "https://www.runningshoesguru.com/#organization",
+      "@type": "Organization",
+      "alternateName": "RSG",
+      "contactPoint": {
+       "@type": "ContactPoint",
+       "contactType": "customer service",
+       "url": "https://www.runningshoesguru.com/contact-us/"
+      },
+      "description": "Founded in 2009, Running Shoes Guru is the place to go for independent, unbiased, expert reviews on running shoes and GPS running watches.",
+      "email": "guru@runningshoesguru.com",
+      "foundingDate": "2009-04-01",
+      "knowsAbout": [
+       "Running shoes",
+       "Running shoe reviews",
+       "GPS running watches",
+       "Running gear",
+       "Running"
+      ],
+      "legalName": "RSGMEDIA",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://www.runningshoesguru.com/wp-content/themes/rsg_2022/images/logo2020.svg"
+      },
+      "name": "Running Shoes Guru",
+      "sameAs": [
+       "https://www.facebook.com/runningshoesguru/",
+       "https://twitter.com/runningshoesgur/",
+       "https://www.instagram.com/runningshoesguru/",
+       "https://www.youtube.com/user/runningshoesguru"
+      ],
+      "slogan": "Independent, unbiased, expert running shoe reviews since 2009.",
+      "url": "https://www.runningshoesguru.com/"
+     },
+     "url": "https://www.runningshoesguru.com/reviews/all/cushioning/"
+    },
+    {
+     "@context": "https://schema.org/",
+     "@type": "BreadcrumbList",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/",
+       "name": "Home",
+       "position": 1
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/reviews/",
+       "name": "Reviews",
+       "position": 2
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/reviews/all/cushioning/",
+       "name": "Cushioning",
+       "position": 3
+      }
+     ]
+    }
+   ]
+  ],
+  "ld_blocks": 1,
+  "ld_errors": [],
+  "ld_types": [
+   "CollectionPage",
+   "WebSite",
+   "Organization",
+   "ContactPoint",
+   "ImageObject",
+   "ItemList",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "BreadcrumbList",
+   "ListItem",
+   "ListItem",
+   "ListItem"
+  ],
+  "location": null,
+  "offers": [],
+  "og": {
+   "og:description": [
+    "Cushioned running shoes make up one of the largest segments of the running shoe market. Most cushioned shoes fall somewhere in the middle of the spectrum of available options: more cushioning than minimal models, but without major support or corrective elements. Meant for runners that have little to no pronation, cushioned running shoes provide protection and shock absorption with little to no additional support for strong pronators or issues like exceptionally high or low arches."
+   ],
+   "og:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2020/02/running-shoes-reviews.jpg"
+   ],
+   "og:title": [
+    "584 Cushioning Running Shoes Reviews (November 2026)"
+   ],
+   "og:type": [
+    "website"
+   ],
+   "og:url": [
+    "https://www.runningshoesguru.com/reviews/"
+   ]
+  },
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "584 Cushioning Running Shoes Reviews (November 2026) | Running Shoes Guru",
+  "twitter": {
+   "twitter:card": [
+    "summary_large_image"
+   ],
+   "twitter:description": [
+    "Cushioned running shoes make up one of the largest segments of the running shoe market. Most cushioned shoes fall somewhere in the middle of the spectrum of available options: more cushioning than minimal models, but without major support or corrective elements. Meant for runners that have little to no pronation, cushioned running shoes provide protection and shock absorption with little to no additional support for strong pronators or issues like exceptionally high or low arches."
+   ],
+   "twitter:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2020/02/running-shoes-reviews.jpg"
+   ],
+   "twitter:title": [
+    "584 Cushioning Running Shoes Reviews (November 2026)"
+   ]
+  },
+  "url": "https://www.runningshoesguru.com/reviews/all/cushioning/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "MISS",
+  "canonical": [
+   "https://www.runningshoesguru.com/reviews/nike/pegasus/"
+  ],
+  "description": [
+   "The Nike Pegasus is one of the longest-standing running shoe franchises and one of the absolute best-sellers in the Nike lineup of running shoes. It is a mid-priced neutral trainer that is suitable for runners of all levels, from the beginner to the advanced. Main competitor of the Nike Pegasus are shoes such as the Brooks Ghost or the Saucony Ride."
+  ],
+  "h1": 1,
+  "jsonld": [
+   [
+    {
+     "@context": "https://schema.org/",
+     "@id": "https://www.runningshoesguru.com/reviews/nike/pegasus/#collection",
+     "@type": "CollectionPage",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Running Shoes Guru",
+      "url": "https://www.runningshoesguru.com/"
+     },
+     "mainEntity": {
+      "@id": "https://www.runningshoesguru.com/reviews/nike/pegasus/#itemlist",
+      "@type": "ItemList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "name": "Nike Pegasus 42",
+        "position": 1,
+        "url": "https://www.runningshoesguru.com/reviews/road/nike-pegasus-42-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Nike Pegasus Premium",
+        "position": 2,
+        "url": "https://www.runningshoesguru.com/reviews/road/nike-pegasus-premium-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Nike Pegasus Plus",
+        "position": 3,
+        "url": "https://www.runningshoesguru.com/reviews/road/nike-pegasus-plus-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Nike Pegasus Trail 5",
+        "position": 4,
+        "url": "https://www.runningshoesguru.com/reviews/trail/nike-pegasus-trail-5-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Nike Pegasus 41",
+        "position": 5,
+        "url": "https://www.runningshoesguru.com/reviews/road/nike-pegasus-41-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Nike Air Zoom Pegasus 40",
+        "position": 6,
+        "url": "https://www.runningshoesguru.com/reviews/road/nike-air-zoom-pegasus-40-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Nike React Pegasus Trail 4",
+        "position": 7,
+        "url": "https://www.runningshoesguru.com/reviews/trail/nike-react-pegasus-trail-4-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Nike Pegasus Turbo Next Nature",
+        "position": 8,
+        "url": "https://www.runningshoesguru.com/reviews/road/nike-pegasus-turbo-next-nature-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Nike Pegasus Trail 3",
+        "position": 9,
+        "url": "https://www.runningshoesguru.com/review/nike-pegasus-trail-3-review/"
+       },
+       {
+        "@type": "ListItem",
+        "name": "Nike Air Zoom Pegasus 39",
+        "position": 10,
+        "url": "https://www.runningshoesguru.com/2022/05/nike-air-zoom-pegasus-39-review/"
+       }
+      ],
+      "numberOfItems": 10
+     },
+     "name": "Nike Pegasus Running Shoes Reviews",
+     "publisher": {
+      "@id": "https://www.runningshoesguru.com/#organization",
+      "@type": "Organization",
+      "alternateName": "RSG",
+      "contactPoint": {
+       "@type": "ContactPoint",
+       "contactType": "customer service",
+       "url": "https://www.runningshoesguru.com/contact-us/"
+      },
+      "description": "Founded in 2009, Running Shoes Guru is the place to go for independent, unbiased, expert reviews on running shoes and GPS running watches.",
+      "email": "guru@runningshoesguru.com",
+      "foundingDate": "2009-04-01",
+      "knowsAbout": [
+       "Running shoes",
+       "Running shoe reviews",
+       "GPS running watches",
+       "Running gear",
+       "Running"
+      ],
+      "legalName": "RSGMEDIA",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://www.runningshoesguru.com/wp-content/themes/rsg_2022/images/logo2020.svg"
+      },
+      "name": "Running Shoes Guru",
+      "sameAs": [
+       "https://www.facebook.com/runningshoesguru/",
+       "https://twitter.com/runningshoesgur/",
+       "https://www.instagram.com/runningshoesguru/",
+       "https://www.youtube.com/user/runningshoesguru"
+      ],
+      "slogan": "Independent, unbiased, expert running shoe reviews since 2009.",
+      "url": "https://www.runningshoesguru.com/"
+     },
+     "url": "https://www.runningshoesguru.com/reviews/nike/pegasus/"
+    },
+    {
+     "@context": "https://schema.org/",
+     "@type": "BreadcrumbList",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/",
+       "name": "Home",
+       "position": 1
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/reviews/",
+       "name": "Reviews",
+       "position": 2
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/reviews/nike/all/",
+       "name": "Nike",
+       "position": 3
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.runningshoesguru.com/reviews/nike/pegasus/",
+       "name": "Pegasus",
+       "position": 4
+      }
+     ]
+    }
+   ]
+  ],
+  "ld_blocks": 1,
+  "ld_errors": [],
+  "ld_types": [
+   "CollectionPage",
+   "WebSite",
+   "Organization",
+   "ContactPoint",
+   "ImageObject",
+   "ItemList",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "BreadcrumbList",
+   "ListItem",
+   "ListItem",
+   "ListItem",
+   "ListItem"
+  ],
+  "location": null,
+  "offers": [],
+  "og": {
+   "og:description": [
+    "The Nike Pegasus is one of the longest-standing running shoe franchises and one of the absolute best-sellers in the Nike lineup of running shoes. It is a mid-priced neutral trainer that is suitable for runners of all levels, from the beginner to the advanced. Main competitor of the Nike Pegasus are shoes such as the Brooks Ghost or the Saucony Ride."
+   ],
+   "og:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2020/02/running-shoes-reviews.jpg"
+   ],
+   "og:title": [
+    "23 Nike Pegasus Running Shoes Reviews (November 2026)"
+   ],
+   "og:type": [
+    "website"
+   ],
+   "og:url": [
+    "https://www.runningshoesguru.com/reviews/"
+   ]
+  },
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "23 Nike Pegasus Running Shoes Reviews (November 2026) | Running Shoes Guru",
+  "twitter": {
+   "twitter:card": [
+    "summary_large_image"
+   ],
+   "twitter:description": [
+    "The Nike Pegasus is one of the longest-standing running shoe franchises and one of the absolute best-sellers in the Nike lineup of running shoes. It is a mid-priced neutral trainer that is suitable for runners of all levels, from the beginner to the advanced. Main competitor of the Nike Pegasus are shoes such as the Brooks Ghost or the Saucony Ride."
+   ],
+   "twitter:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2020/02/running-shoes-reviews.jpg"
+   ],
+   "twitter:title": [
+    "23 Nike Pegasus Running Shoes Reviews (November 2026)"
+   ]
+  },
+  "url": "https://www.runningshoesguru.com/reviews/nike/pegasus/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "HIT",
+  "canonical": [
+   "https://www.runningshoesguru.com/blog/"
+  ],
+  "description": [
+   "Running shoes advice? Reviews, buying guides and price comparison on the best running shoes plus hundreds of opinions from other runners."
+  ],
+  "h1": 1,
+  "jsonld": [],
+  "ld_blocks": 0,
+  "ld_errors": [],
+  "ld_types": [],
+  "location": null,
+  "offers": [],
+  "og": {},
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "Real Runners, Real Reviews | Running Shoes Guru",
+  "twitter": {},
+  "url": "https://www.runningshoesguru.com/blog/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "MISS",
+  "canonical": [
+   "https://www.runningshoesguru.com/author/brandonlaw/"
+  ],
+  "description": [
+   "Brandon is a South African marathoner based in Malaysia, where the humidity is high and his shoe rotation is even higher. He\u2019s a runner with a full-blown addiction to running shoes. Most people buy shoes to run\u2014Brandon runs to justify buying more shoes. If there\u2019s a new drop, he\u2019s probably already\u2026"
+  ],
+  "h1": 1,
+  "jsonld": [],
+  "ld_blocks": 0,
+  "ld_errors": [],
+  "ld_types": [],
+  "location": null,
+  "offers": [],
+  "og": {},
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "Brandon Law | Running Shoes Guru",
+  "twitter": {},
+  "url": "https://www.runningshoesguru.com/author/brandonlaw/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "HIT",
+  "canonical": [
+   "https://www.runningshoesguru.com/best-running-shoes-wizard/"
+  ],
+  "description": [
+   "The best running shoe is simply the one that is most suited to your unique body and bio-dynamics. We can help you narrow the choice."
+  ],
+  "h1": 2,
+  "jsonld": [],
+  "ld_blocks": 0,
+  "ld_errors": [],
+  "ld_types": [],
+  "location": null,
+  "offers": [],
+  "og": {
+   "og:description": [
+    "The best running shoe is simply the one that is most suited to your unique body and bio-dynamics. We can help you narrow the choice."
+   ],
+   "og:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2012/09/shutterstock_271337105.jpg"
+   ],
+   "og:title": [
+    "Find the Perfect Running Shoe: Running Shoe Finder"
+   ],
+   "og:type": [
+    "website"
+   ],
+   "og:url": [
+    "https://www.runningshoesguru.com/best-running-shoes-wizard/"
+   ]
+  },
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "Find the Perfect Running Shoe: Running Shoe Finder | Running Shoes Guru",
+  "twitter": {
+   "twitter:card": [
+    "summary_large_image"
+   ],
+   "twitter:description": [
+    "The best running shoe is simply the one that is most suited to your unique body and bio-dynamics. We can help you narrow the choice."
+   ],
+   "twitter:image": [
+    "https://www.runningshoesguru.com/wp-content/uploads/2012/09/shutterstock_271337105.jpg"
+   ],
+   "twitter:title": [
+    "Find the Perfect Running Shoe: Running Shoe Finder"
+   ]
+  },
+  "url": "https://www.runningshoesguru.com/best-running-shoes-wizard/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "MISS",
+  "canonical": [
+   "https://www.runningshoesguru.com/contact-us/"
+  ],
+  "description": [
+   "Want to get in touch with the team at Running Shoes Guru? This is the place."
+  ],
+  "h1": 1,
+  "jsonld": [],
+  "ld_blocks": 0,
+  "ld_errors": [],
+  "ld_types": [],
+  "location": null,
+  "offers": [],
+  "og": {
+   "og:description": [
+    "Want to get in touch with the team at Running Shoes Guru? This is the place."
+   ],
+   "og:title": [
+    "Contact Us"
+   ],
+   "og:type": [
+    "website"
+   ],
+   "og:url": [
+    "https://www.runningshoesguru.com/contact-us/"
+   ]
+  },
+  "robots": [
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 200,
+  "title": "Contact Us | Running Shoes Guru",
+  "twitter": {
+   "twitter:card": [
+    "summary_large_image"
+   ],
+   "twitter:description": [
+    "Want to get in touch with the team at Running Shoes Guru? This is the place."
+   ],
+   "twitter:title": [
+    "Contact Us"
+   ]
+  },
+  "url": "https://www.runningshoesguru.com/contact-us/",
+  "x_robots": null
+ },
+ {
+  "age": null,
+  "cache": "BYPASS",
+  "canonical": [],
+  "description": null,
+  "h1": 1,
+  "jsonld": [],
+  "ld_blocks": 0,
+  "ld_errors": [],
+  "ld_types": [],
+  "location": null,
+  "offers": [],
+  "og": {},
+  "robots": [
+   "noindex,follow",
+   "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  ],
+  "status": 404,
+  "title": "Nothing found for  This-page-does-not-exist-rsg",
+  "twitter": {},
+  "url": "https://www.runningshoesguru.com/this-page-does-not-exist-rsg/",
+  "x_robots": null
+ }
+]

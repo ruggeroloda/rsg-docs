@@ -1,0 +1,51 @@
+# Roadmap
+
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18 (after the 13–17 Nov run: reskin, analytics, homepage, lists, guides, hub, list images; all live)._
+
+## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
+| When | Item | Area | Next step |
+|---|---|---|---|
+| now | **Price-box step 3** went live with the homepage deploy (17 Nov 07:20 UTC) without its own "deploy to live" | theme | Ruggero: keep or roll back (`theme/NEXT-SESSION-PRICE-BOXES-2026-11-16.md` step 3; rollback = the step's own files from tag `live-20261116-153059`) |
+| now | **Phase F: retire the old DFS** (planned from ~17 Nov) | dfs / hosting | `dfs/PLAN-STEP7.md`: no callers 7 days, `/go/` stub, strip `[ds]` from 76 old posts, deactivate `dstudio` (+ its 2 cron hooks), power off 1 week, cancel ($29/mo); Linode Managed monitor + `dfs-mon` off; `uploads/dfs-images-cache` (498 MB) after |
+| now | PHP weekly digest 16 Nov: **66 fatals** in 7 days, 352 distinct warnings | theme | Sort real fatals from WP-CLI false alarms (`theme/AFTER-GO-LIVE-2026-11-15.md` item 6) |
+| ~18 Nov | Amazon slot review | dfs | "real N" per slot → drop the weakest slot or keep 4 (dropping 08:00 delays the morning feed changes to ~14:15) |
+| ~18 Nov | Geo / edge-share measurement (geo rule off since 11 Nov) | hosting / dfs | Rocket.net edge share vs baseline 68.6 % (`dfs/GO-LIVE-2026-11-10.md`); then page-view log sampled + retention |
+| ~22 Nov | Reskin 7-day watch ends | theme | Search Console, clicks per 1,000 views, Raptive RPM (`theme/AFTER-GO-LIVE-2026-11-15.md`) |
+| ~22 Nov | **Old-article prune (D5)** | content | `content/ARTICLES-PRUNE-PLAN-2026-11-15.md`; needs a fresh Search Console export. Decide whether it waits until after Black Friday |
+| ~24 Nov | Homepage re-check (a week to breathe) | theme | Shorter desktop hero kept in reserve (`theme/HOMEPAGE-BUILD-2026-11-17.md`) |
+| 25 Nov | Rocket.net charges $1,000 (Business annual) | hosting | Check the invoice and the credit for the unused Expert time (`hosting/RUNBOOK.md` Open 1) |
+| 26 Nov | Delete the site-pass backups on Rocket.net (`~/rsg_deploy_backups/site-cleanup-*-20261112-*`, ~500 MB) | hosting | — |
+| 27–30 Nov | **Black Friday → Cyber Monday** | all | Freeze rule to decide (what may still go live that week) |
+| ~30 Nov | Old click/view logs vs Umami: 2-week parallel run ends | analytics | Compare, then switch the old logs off or sample them |
+
+## Now / next (not dated)
+| # | Item | Area | Next step |
+|---|---|---|---|
+| 1 | **Rotate exposed keys**: AWS ×3, Facebook, Google, AWeber, ip-api (theme `SECRETS.md`), Rocket SSH key, MailerLite, MailerSend (one token per system), network logins in the DFS `.env` | all | Ruggero revokes at the providers; Claude swaps them on the servers (incl. the `.env.bak-*` copies) |
+| 2 | **SEO checklist** (`theme/SEO-AUDIT-2026-11-17.md`, tracker sheet linked there) | theme / content | Ruggero works through it: 1.3 year in the best-list title (decide), then 2.1 the 39 outdated comparisons (read the newer review's verdict before swapping) |
+| 3 | After-go-live leftovers (`theme/AFTER-GO-LIVE-2026-11-15.md`) | theme | GPS listing at `/reviews/gps/`; mega-menu keep/cut (46 links); price card 288 px; related cards use full-size cut-out PNGs; Rich Results test on a live review/comparison/author page; C1/C2 now that Raptive re-mapped reviews + comparisons (16 Nov); front-end modernization (`theme/MODERN-WEB-GUIDANCE-2026-11-15.md`) |
+| 4 | Site search | theme | Proposal: `theme/SITE-SEARCH-IDEAS-2026-11-17.md` (save real visitors' search terms; plugin vs own code open) |
+| 5 | Bank import → self-hosted n8n, then cancel n8n Cloud (€24/mo) | automations | Needs the working flow export from n8n Cloud + what failed |
+| 6 | Email list cleanup, then platform decision | email | Define active = opened/clicked in 12 months → re-engagement → remove. Sign-up mechanism to change (idea: monthly contest) |
+| 7 | DFS simplification: test bench as a stopped copy of production, nightly settings dump to git, matcher fixture tests | dfs | — |
+
+## Bigger stages
+| # | Item | Area | Next step |
+|---|---|---|---|
+| 11 | **Theme rebuild, in place and incremental** — reskin live 15 Nov; homepage, `/top/`, guides, `/reviews/` hub rebuilt 17 Nov | theme | Left: widgets (after Phase F), remaining `rsg-core` items (`theme/RSG-CORE-AUDIT-2026-11-11.md`; remove `RSG_get_country_code`), listings' intro texts, Shoe Finder (weak: improve a lot or keep low-key) |
+| 12 | **Content & distribution restart** — the review-format research is also what the review template waits for | content | `content/README.md` |
+| 13 | DFS step 8: more merchants (Asics US, Brooks/Mizuno via Impact, SportsShoes UK via Partnerize once Visualsoft fixes the feeds, CA; RW NZ/SG/MY/HK; AU done 15 Nov) | dfs | Waiting for Visualsoft |
+| 14 | WP Rocket page cache on, after the DFS/theme/migration work; the DFS purge must also clear it | theme / hosting | Measure TTFB on cache misses before/after |
+| 15 | Analytics next steps | analytics | Umami 1-day flags from ~22 Nov, 7-day from ~7 Dec; outside data (networks, Amazon, Raptive) later; unattended analyst only when Ruggero asks (`analytics/README.md`) |
+
+## Small / waiting
+- **Alt-text test** (live 11 Nov): read Search Console for the 10 test vs 10 control reviews ~9 Dec (4 weeks) and ~23 Dec (6 weeks): `theme/ALT-TEXT-TEST-2026-11.md`. The result decides "AI alt text at upload".
+- Network sub-ID checks (AWIN Click References, CJ/Rakuten) at the first commissions.
+- Theme backlog: comparison redesign batch 2 (waits for verdict copy), quiz results page + the price-drop-alert copy (build or cut), SEO backlog, local list prices (`theme/MSRP-LOCAL-PRICING-BRIEF.md`), orange-button contrast, shoe spec typos case by case.
+- Make: merge the 3 insert scenarios (write via `acf`), port accounting, then cancel Make.
+- Delete rollback copies on rsgmedia (~20 Nov); SiteGround DNS leftovers; old Drive folders `Backups/servers` + `Backups/sites` (after 11 Dec, keep `Backups/nas`).
+- Close the remove.bg account (its API ends 1 Dec 2026).
+- Umami admin password and the `rsg_analyst` password into 1Password, then delete `_private/umami-admin.txt` (`analytics/README.md` Open 5).
+- Resubmit the sitemap in Search Console (Ruggero).
+- Comment notifications: reader reply emails only if comments matter after the content restart.
+- Theme repo housekeeping (needs delete permission on the folder): `git worktree prune` (stale `rsgwork-newest` from 15 Nov) and remove `.git/stale-locks-20261117/`.

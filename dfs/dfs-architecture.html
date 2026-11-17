@@ -1,0 +1,159 @@
+<title>DFS Architecture</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: engineering sheet — two schematics (now / after), then change table, plan, and fixes list */
+:root{
+  --bg:#F3F5F6; --surface:#FFFFFF; --fg:#16212B; --muted:#5A6874; --line:#C3CCD3;
+  --accent:#0B7A83; --accent-soft:#E2F2F3; --warn:#A35E00; --dead:#9AA5AE; --db:#EEF1F4;
+  --ok:#2E7D3A; --crit:#B3261E;
+  --display:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1317; --surface:#151C22; --fg:#E3EAF0; --muted:#93A1AD; --line:#2E3A44;
+  --accent:#43B9C3; --accent-soft:#12303A; --warn:#E3A24A; --dead:#56636E; --db:#1A232B;
+  --ok:#6BC07A; --crit:#F08279; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1317; --surface:#151C22; --fg:#E3EAF0; --muted:#93A1AD; --line:#2E3A44;
+  --accent:#43B9C3; --accent-soft:#12303A; --warn:#E3A24A; --dead:#56636E; --db:#1A232B;
+  --ok:#6BC07A; --crit:#F08279; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.55}
+.wrap{max-width:1160px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:40px}
+header{display:grid;gap:8px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,40px);line-height:1.1;margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-weight:600;font-size:22px;margin:0;text-wrap:balance}
+.lede{max-width:68ch;color:var(--muted);margin:0}
+section{display:grid;gap:14px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.tag{font-family:var(--mono);font-size:12px;padding:2px 8px;border-radius:4px;border:1px solid var(--line);color:var(--muted)}
+.tag.acc{border-color:var(--accent);color:var(--accent)}
+.sheet{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow-x:auto}
+.sheet svg{display:block;width:100%;min-width:900px;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.sw{width:22px;height:0;border-top:2px solid var(--fg)}
+.sw.fb{border-top:2px dashed var(--accent)}
+.sw.dead{width:14px;height:10px;border:1.5px dashed var(--dead);border-radius:2px}
+.sw.new{width:14px;height:10px;border:1.5px solid var(--accent);background:var(--accent-soft);border-radius:2px}
+
+/* svg */
+svg text{font-family:var(--body)}
+.colh{font-family:var(--mono);font-size:12px;letter-spacing:.06em;fill:var(--muted);font-weight:500}
+.colh.acc,.bt.acc{fill:var(--accent)}
+.box{fill:var(--surface);stroke:var(--line);stroke-width:1.2}
+.box.db{fill:var(--db)}
+.box.dead{fill:none;stroke:var(--dead);stroke-dasharray:5 4}
+.box.newb{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.6}
+.srv{fill:none;stroke:var(--fg);stroke-width:1.6}
+.srv.new{stroke:var(--accent)}
+.ext{fill:none;stroke:var(--line);stroke-width:1.4}
+.ext2{fill:var(--bg);stroke:var(--line);stroke-width:1.2}
+.bt{font-size:14px;font-weight:600;fill:var(--fg)}
+.bt.sm{font-size:13px}
+.bt.dim{fill:var(--muted)}
+.bs{font-size:12.5px;fill:var(--muted)}
+.bn{font-family:var(--mono);font-size:12px;fill:var(--fg)}
+.bw{font-size:12.5px;fill:var(--warn);font-weight:500}
+.lbl{font-family:var(--mono);font-size:11px;fill:var(--accent)}
+.flow{fill:none;stroke:var(--fg);stroke-width:1.4}
+.flow.fb{stroke:var(--accent);stroke-dasharray:5 4}
+.ahp{fill:var(--fg)}
+
+/* tables & lists */
+.tbl{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:600;white-space:nowrap}
+td.after{color:var(--fg)}
+td.now{color:var(--muted)}
+code{font-family:var(--mono);font-size:.88em;background:var(--db);padding:1px 5px;border-radius:4px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;align-items:start}
+.cols > *{min-width:0}
+ol.plan{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+ol.plan li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line)}
+ol.plan li:last-child{border-bottom:0}
+ol.plan li::before{content:counter(s);font-family:var(--mono);font-size:13px;width:26px;height:26px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--accent);color:var(--accent)}
+ol.plan b{display:block}
+ol.plan span{color:var(--muted);font-size:14px}
+ul.fix{margin:0;padding:0;list-style:none;display:grid;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+ul.fix li{display:grid;grid-template-columns:76px 1fr;gap:12px;padding:11px 16px;border-bottom:1px solid var(--line);font-size:14px}
+ul.fix li:last-child{border-bottom:0}
+.sev{font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;align-self:start;padding:2px 6px;border-radius:4px;text-align:center}
+.sev.crit{color:var(--crit);border:1px solid var(--crit)}
+.sev.warn{color:var(--warn);border:1px solid var(--warn)}
+.sev.info{color:var(--muted);border:1px solid var(--line)}
+footer{font-size:13px;color:var(--muted)}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Datafeed Studio · RSG price engine</div>
+    <h1>DFS architecture: today and after the upgrade</h1>
+    <p class="lede">DFS pulls merchant feeds every night, stores the offers, and gives RunningShoesGuru its prices and click tracking. The upgrade keeps the feed engine and moves price delivery from live API calls to nightly static files.</p>
+  </header>
+
+  <section>
+    <div class="sec-head"><h2>Today</h2><span class="tag">Linode · measured 4 Nov 2026</span></div>
+    <div class="sheet"><svg viewBox="0 0 1120 600" role="img" aria-label="Current DFS architecture"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ahp" d="M0,0 L10,5 L0,10 z"/></marker></defs><text class="colh" x="16" y="30">MERCHANT FEEDS</text><rect class="box" x="16" y="48" width="250" height="74" rx="6"/><text class="bt sm" x="28" y="68">Amazon · Creators API</text><text class="bs" x="28" y="85">US + UK live, CA frozen</text><text class="bw" x="28" y="102">DE + IT empty</text><text class="bn" x="28" y="119">24k rows</text><rect class="box" x="16" y="132" width="250" height="74" rx="6"/><text class="bt sm" x="28" y="152">Rakuten · FTP</text><text class="bs" x="28" y="169">Zappos, Asics, Hoka</text><text class="bs" x="28" y="186">Zappos alone: 765k rows</text><text class="bn" x="28" y="203">805k rows</text><rect class="box" x="16" y="216" width="250" height="74" rx="6"/><text class="bt sm" x="28" y="236">AWIN · HTTP</text><text class="bs" x="28" y="253">Nike UK/DE/IT, Under Armour,</text><text class="bs" x="28" y="270">Hoka UK</text><text class="bn" x="28" y="287">307k rows</text><rect class="box" x="16" y="300" width="250" height="74" rx="6"/><text class="bt sm" x="28" y="320">CJ · SFTP</text><text class="bs" x="28" y="337">Nike US, Puma US + UK</text><text class="bn" x="28" y="354">227k rows</text><rect class="box" x="16" y="384" width="250" height="74" rx="6"/><text class="bt sm" x="28" y="404">Running Warehouse · HTTP</text><text class="bs" x="28" y="421">13 country feeds (US, AU, EU…)</text><text class="bn" x="28" y="438">16k rows</text><rect class="box" x="16" y="468" width="250" height="74" rx="6"/><text class="bt sm" x="28" y="488">Impact + AvantLink · FTP/HTTP</text><text class="bs" x="28" y="505">Mizuno, Brooks, Running Room CA,</text><text class="bs" x="28" y="522">Salomon</text><text class="bn" x="28" y="539">34k rows</text><text class="bs" x="16" y="566">36 feeds import daily.</text><text class="bs" x="16" y="583">46 more are failed, suspended or unused.</text><rect class="srv" x="300" y="20" width="480" height="560" rx="10"/><text class="colh" x="320" y="44">LINODE · dfs.runningshoesguru.com</text><text class="bs" x="320" y="63">4 vCPU · 8 GB · Ubuntu 18.04 · PHP 7.4 · MySQL 8.0 · Apache · ~$70/mo</text><rect class="box" x="340" y="86" width="420" height="54" rx="6"/><text class="bt" x="352" y="106">03:00 + 03:30  Amazon fetch</text><text class="bs" x="352" y="123">Creators API scripts write one CSV per marketplace</text><rect class="box" x="340" y="152" width="420" height="66" rx="6"/><text class="bt" x="352" y="172">06:00  import.php  (17 min)</text><text class="bs" x="352" y="189">download each feed → map columns (parsers + filters)</text><text class="bs" x="352" y="206">→ build temp table → swap it in as products</text><rect class="box db" x="340" y="232" width="420" height="80" rx="6"/><text class="bt" x="352" y="252">MySQL  dfs  ·  MyISAM, latin1</text><text class="bs" x="352" y="269">products: 1.4M rows, 1.9 GB  (rebuilt daily)</text><text class="bs" x="352" y="286">product_hits: 7.8M clicks, 1.9 GB</text><text class="bs" x="352" y="303">datafeeds 82 · parsers 33 · filters 10</text><rect class="box" x="340" y="326" width="420" height="54" rx="6"/><text class="bt" x="352" y="346">/api/v1/products</text><text class="bs" x="352" y="363">keyword search → JSON offers, one country per call</text><rect class="box" x="340" y="392" width="420" height="54" rx="6"/><text class="bt" x="352" y="412">index.php?id=…  click redirect</text><text class="bs" x="352" y="429">add tracking → log to product_hits → send to merchant</text><rect class="box dead" x="340" y="470" width="420" height="90" rx="6"/><text class="bt dim" x="352" y="490">On the box but unused</text><text class="bs" x="352" y="507">Storefront themes (PHPTAL) · phpMyAdmin in web root</text><text class="bs" x="352" y="524">Grafana + InfluxDB + Nagios (~430 MB RAM)</text><text class="bs" x="352" y="541">1.1 GB page cache, purged daily 05:00</text><path class="flow" d="M266,85 H300 V113 H340" marker-end="url(#ah)"/><path class="flow nm" d="M266,169 H288"/><path class="flow nm" d="M266,253 H288"/><path class="flow nm" d="M266,337 H288"/><path class="flow nm" d="M266,421 H288"/><path class="flow nm" d="M266,505 H288"/><path class="flow nm" d="M288,169 V505"/><path class="flow" d="M288,185 H340" marker-end="url(#ah)"/><path class="flow" d="M550,140 V152" marker-end="url(#ah)"/><path class="flow" d="M550,218 V232" marker-end="url(#ah)"/><path class="flow" d="M550,312 V326" marker-end="url(#ah)"/><rect class="ext" x="820" y="20" width="284" height="256" rx="10"/><text class="colh" x="836" y="44">WORDPRESS · Rocket.net</text><text class="bs" x="836" y="63">rsg_2022 theme + dstudio plugin</text><rect class="box" x="840" y="78" width="248" height="40" rx="6"/><text class="bt sm" x="852" y="98">export.cvs  (shoe list, hourly)</text><rect class="box" x="840" y="130" width="248" height="78" rx="6"/><text class="bt sm" x="852" y="150">Price boxes</text><text class="bs" x="852" y="167">call DFS on the server, for</text><text class="bs" x="852" y="184">men + women × every box × country</text><text class="bw" x="852" y="201">≈48,600 calls in 15 h today</text><rect class="box" x="840" y="220" width="248" height="42" rx="6"/><text class="bt sm" x="852" y="240">/go/  click bouncer</text><path class="flow fb" d="M840,98 H760" marker-end="url(#ah)"/><text class="lbl" x="800" y="88" text-anchor="middle">shoe list</text><path class="flow" d="M760,353 H800 V169 H840" marker-end="url(#ah)"/><path class="flow" d="M840,241 H815 V419 H760" marker-end="url(#ah)"/><rect class="ext2" x="820" y="320" width="284" height="54" rx="6"/><text class="bt" x="832" y="340">Cloudflare</text><text class="bs" x="832" y="357">page cache split per country</text><rect class="ext2" x="820" y="418" width="284" height="54" rx="6"/><text class="bt" x="832" y="438">Visitor&#x27;s browser</text><text class="bs" x="832" y="455">gets prices baked into the HTML</text><path class="flow" d="M962,276 V320" marker-end="url(#ah)"/><path class="flow" d="M962,374 V418" marker-end="url(#ah)"/></svg></div>
+    <div class="legend"><span><i class="sw"></i>data flow</span><span><i class="sw fb"></i>shoe list sent back to DFS</span><span><i class="sw dead"></i>unused</span></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>After the upgrade</h2><span class="tag acc">Hetzner CX23 · proposed</span></div>
+    <div class="sheet"><svg viewBox="0 0 1120 640" role="img" aria-label="Target DFS architecture"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ahp" d="M0,0 L10,5 L0,10 z"/></marker></defs><text class="colh" x="16" y="30">MERCHANT FEEDS</text><rect class="box" x="16" y="48" width="250" height="74" rx="6"/><text class="bt sm" x="28" y="68">Amazon · Creators API</text><text class="bs" x="28" y="85">US + UK live, CA frozen</text><text class="bw" x="28" y="102">DE + IT empty</text><text class="bn" x="28" y="119">24k rows</text><rect class="box" x="16" y="132" width="250" height="74" rx="6"/><text class="bt sm" x="28" y="152">Rakuten · FTP</text><text class="bs" x="28" y="169">Zappos, Asics, Hoka</text><text class="bs" x="28" y="186">Zappos alone: 765k rows</text><text class="bn" x="28" y="203">805k rows</text><rect class="box" x="16" y="216" width="250" height="74" rx="6"/><text class="bt sm" x="28" y="236">AWIN · HTTP</text><text class="bs" x="28" y="253">Nike UK/DE/IT, Under Armour,</text><text class="bs" x="28" y="270">Hoka UK</text><text class="bn" x="28" y="287">307k rows</text><rect class="box" x="16" y="300" width="250" height="74" rx="6"/><text class="bt sm" x="28" y="320">CJ · SFTP</text><text class="bs" x="28" y="337">Nike US, Puma US + UK</text><text class="bn" x="28" y="354">227k rows</text><rect class="box" x="16" y="384" width="250" height="74" rx="6"/><text class="bt sm" x="28" y="404">Running Warehouse · HTTP</text><text class="bs" x="28" y="421">13 country feeds (US, AU, EU…)</text><text class="bn" x="28" y="438">16k rows</text><rect class="box" x="16" y="468" width="250" height="74" rx="6"/><text class="bt sm" x="28" y="488">Impact + AvantLink · FTP/HTTP</text><text class="bs" x="28" y="505">Mizuno, Brooks, Running Room CA,</text><text class="bs" x="28" y="522">Salomon</text><text class="bn" x="28" y="539">34k rows</text><text class="bs" x="16" y="566">Same feeds, same parsers.</text><text class="bs" x="16" y="583">Fix or drop the failed ones later.</text><rect class="srv new" x="300" y="20" width="480" height="606" rx="10"/><text class="colh acc" x="320" y="44">HETZNER CX23 · dfs (new)</text><text class="bs" x="320" y="63">2 vCPU · 4 GB · Ubuntu 24.04 · PHP 8.3 · MariaDB 10.11 · Nginx · ~€7/mo</text><rect class="box" x="340" y="86" width="420" height="54" rx="6"/><text class="bt" x="352" y="106">03:00 + 03:30  Amazon fetch</text><text class="bs" x="352" y="123">same scripts, fixed for PHP 8.3</text><rect class="box" x="340" y="152" width="420" height="66" rx="6"/><text class="bt" x="352" y="172">06:00  import.php</text><text class="bs" x="352" y="189">same parsers + filters · SFTP library upgraded</text><text class="bs" x="352" y="206">table swap kept, now on InnoDB</text><rect class="box db" x="340" y="232" width="420" height="66" rx="6"/><text class="bt" x="352" y="252">MariaDB  ·  InnoDB, utf8mb4</text><text class="bs" x="352" y="269">products ~1.4M rows (brand filter can cut ~70% later)</text><text class="bs" x="352" y="286">clicks older than 12 months archived to a file</text><rect class="box" x="340" y="312" width="420" height="54" rx="6"/><text class="bt" x="352" y="332">click.php</text><text class="bs" x="352" y="349">standalone, hardened · logs click → send to merchant</text><rect class="box newb" x="340" y="380" width="420" height="66" rx="6"/><text class="bt acc" x="352" y="400">06:45  price export   NEW</text><text class="bs" x="352" y="417">each shoe in export.cvs × men/women × 17 countries</text><text class="bs" x="352" y="434">→ prices/{shoe}.json with a generated_at timestamp</text><rect class="box" x="340" y="460" width="420" height="40" rx="6"/><text class="bt sm" x="352" y="480">Admin  ·  only through an SSH tunnel</text><rect class="box dead" x="340" y="514" width="420" height="94" rx="6"/><text class="bt dim" x="352" y="534">Removed</text><text class="bs" x="352" y="551">/api/v1 live search (nothing calls it anymore)</text><text class="bs" x="352" y="568">Storefront themes · phpMyAdmin · info.php</text><text class="bs" x="352" y="585">Grafana / InfluxDB / Nagios · page cache files</text><path class="flow" d="M266,85 H300 V113 H340" marker-end="url(#ah)"/><path class="flow nm" d="M266,169 H288"/><path class="flow nm" d="M266,253 H288"/><path class="flow nm" d="M266,337 H288"/><path class="flow nm" d="M266,421 H288"/><path class="flow nm" d="M266,505 H288"/><path class="flow nm" d="M288,169 V505"/><path class="flow" d="M288,185 H340" marker-end="url(#ah)"/><path class="flow" d="M550,140 V152" marker-end="url(#ah)"/><path class="flow" d="M550,218 V232" marker-end="url(#ah)"/><rect class="ext" x="820" y="20" width="284" height="248" rx="10"/><text class="colh" x="836" y="44">WORDPRESS · Rocket.net</text><text class="bs" x="836" y="63">rsg_2022 theme, price boxes rewritten</text><rect class="box" x="840" y="78" width="248" height="40" rx="6"/><text class="bt sm" x="852" y="98">export.cvs  (unchanged)</text><rect class="box" x="840" y="130" width="248" height="78" rx="6"/><text class="bt sm" x="852" y="150">Price boxes</text><text class="bs" x="852" y="167">one page for every country</text><text class="bs" x="852" y="184">default US price in the HTML</text><text class="bs" x="852" y="201">+ &quot;Prices as of …&quot; stamp</text><rect class="box" x="840" y="220" width="248" height="36" rx="6"/><text class="bt sm" x="852" y="240">/go/  → new click.php</text><path class="flow fb" d="M840,98 H760" marker-end="url(#ah)"/><text class="lbl" x="800" y="88" text-anchor="middle">shoe list</text><path class="flow" d="M840,238 H805 V339 H760" marker-end="url(#ah)"/><rect class="ext2" x="820" y="380" width="284" height="66" rx="6"/><text class="bt" x="832" y="400">Cloudflare</text><text class="bs" x="832" y="417">caches each page once</text><text class="bs" x="832" y="434">+ every prices/{shoe}.json</text><path class="flow" d="M760,413 H820" marker-end="url(#ah)"/><text class="lbl" x="790" y="406" text-anchor="middle">JSON</text><rect class="ext2" x="820" y="490" width="284" height="96" rx="6"/><text class="bt" x="832" y="510">Visitor&#x27;s browser</text><text class="bs" x="832" y="527">reads its country from /cdn-cgi/trace</text><text class="bs" x="832" y="544">loads prices/{shoe}.json</text><text class="bs" x="832" y="561">swaps in the local price</text><path class="flow" d="M962,268 V380" marker-end="url(#ah)"/><path class="flow" d="M962,446 V490" marker-end="url(#ah)"/></svg></div>
+    <div class="legend"><span><i class="sw"></i>data flow</span><span><i class="sw fb"></i>shoe list sent back to DFS</span><span><i class="sw new"></i>new</span><span><i class="sw dead"></i>removed</span></div>
+  </section>
+
+  <section>
+    <h2>What changes</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Part</th><th>Today</th><th>After</th></tr></thead>
+      <tbody>
+        <tr><td>Server</td><td class="now">Linode 4 vCPU / 8 GB, ~$70/mo. Load 0.2–0.4, 1.2 GB RAM used</td><td class="after">Hetzner CX23 2 vCPU / 4 GB, ~€7.25/mo incl. VAT</td></tr>
+        <tr><td>OS and runtime</td><td class="now">Ubuntu 18.04, PHP 7.4, MySQL 8.0, Apache. All out of support</td><td class="after">Ubuntu 24.04, PHP 8.3, MariaDB 10.11, Nginx</td></tr>
+        <tr><td>Price delivery</td><td class="now">WordPress calls <code>/api/v1</code> for every box × gender × visitor country</td><td class="after">Nightly <code>prices/{shoe}.json</code>. The browser picks the visitor's country</td></tr>
+        <tr><td>Page cache</td><td class="now">Split per country</td><td class="after">One cached page for everyone</td></tr>
+        <tr><td>Click tracking</td><td class="now"><code>index.php?id=</code> loads the whole app</td><td class="after">Standalone <code>click.php</code>, same logging</td></tr>
+        <tr><td>Database</td><td class="now">MyISAM, latin1, 7.8M click rows kept forever</td><td class="after">InnoDB, utf8mb4, old clicks archived</td></tr>
+        <tr><td>Feed downloads</td><td class="now">SFTP library from the PHP 4/5 era, thousands of warnings per run</td><td class="after">phpseclib 3</td></tr>
+        <tr><td>Admin</td><td class="now">Public, phpMyAdmin in the web root, root login by password</td><td class="after">SSH key only, admin through a tunnel</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <div class="cols">
+    <section>
+      <h2>Upgrade plan</h2>
+      <ol class="plan">
+        <li><div><b>PHP 8.3 code fixes</b><span>32 compatibility errors, SFTP library, click path. Tested locally against a copy of the feed config.</span></div></li>
+        <li><div><b>Build the CX23</b><span>Ubuntu 24.04, Nginx, PHP 8.3, MariaDB. Move the database to InnoDB and UTF-8.</span></div></li>
+        <li><div><b>Run imports in parallel</b><span>New server imports the same feeds while Linode stays live. Compare row counts per feed.</span></div></li>
+        <li><div><b>Price export + click.php</b><span>Nightly JSON per shoe, all countries, with a timestamp.</span></div></li>
+        <li><div><b>Theme change on staging</b><span>Price boxes read the JSON, default US price in the HTML, "Prices as of" stamp, replacement for <code>[dfscat]</code>.</span></div></li>
+        <li><div><b>Switch over</b><span>Compare prices old vs new, point WordPress and <code>/go/</code> at the new server, cancel Linode after two weeks.</span></div></li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Found during the audit</h2>
+      <ul class="fix">
+        <li><span class="sev warn">Fix</span><div>The click redirect still contains a <code>create_function</code> branch, removed in PHP 8. No parser uses it today, so it can simply be deleted.</div></li>
+        <li><span class="sev crit">Blocker</span><div>The bundled SFTP library predates PHP 7 and already throws warnings on every CJ download.</div></li>
+        <li><span class="sev warn">Fix</span><div>Amazon DE and IT are empty and CA is frozen. Only US and UK pull live prices.</div></li>
+        <li><span class="sev warn">Fix</span><div>The <code>[dfscat]</code> shortcode sends raw SQL to DFS. It needs a replacement in the theme.</div></li>
+        <li><span class="sev warn">Fix</span><div>Amazon requires a date/time stamp next to prices refreshed less often than hourly.</div></li>
+        <li><span class="sev warn">Fix</span><div>Root SSH login by password. Credentials are also stored in plain text in the project notes.</div></li>
+        <li><span class="sev info">Note</span><div>46 of 82 feeds are failed, suspended or never set up. Zappos alone is 55% of all rows.</div></li>
+        <li><span class="sev info">Note</span><div>The API is now called from <code>65.181.124.237</code>, not the IP in the notes. <code>/go/</code> has the DFS IP hard-coded.</div></li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>Figures measured on the live Linode server and the DFS database, 4 Nov 2026. Hetzner prices from the Hetzner console.</footer>
+</div>

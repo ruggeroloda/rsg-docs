@@ -1,0 +1,12 @@
+#!/bin/bash
+# Add a row to the analyst's change log (rsg.change_log). 16 Nov 2026.
+#   rsg-changelog-add KIND SOURCE REF TITLE   (details on stdin, may be empty)
+#   KIND: deploy content seo ads hosting dfs tracking email external season
+set -euo pipefail
+[ $# -eq 4 ] || { echo "usage: rsg-changelog-add KIND SOURCE REF TITLE  (details on stdin)" >&2; exit 2; }
+details=$(cat || true)
+docker exec -i postgres psql -U rsg_analyst -d umami -v ON_ERROR_STOP=1 -qtA \
+  -v kind="$1" -v src="$2" -v ref="$3" -v title="$4" -v details="$details" <<'SQL'
+INSERT INTO rsg.change_log (at, kind, source, ref, title, details)
+VALUES (now(), :'kind', :'src', nullif(:'ref', ''), :'title', nullif(:'details', '')) RETURNING id;
+SQL

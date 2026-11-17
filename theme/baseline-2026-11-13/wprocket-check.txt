@@ -1,0 +1,8 @@
+WP Rocket on live, 13 Nov 2026 ~16:35 UTC (SSH, Mac shell)
+Settings: Remove Unused CSS on, minify CSS + JS on; concatenation, defer, delay JS, lazyload, CDN, preload off.
+Used-CSS table: 2,524 completed, 3 failed (old 2013/2014/2021 posts: SaaS submit/timeout), 2 in progress. wp-content/cache/min: 34 files (632 KB), used-css 11 MB.
+Edge copies of the 21 sample pages (all HIT): 20 have inline used CSS (24-47 KB) and every /cache/min/ file they reference exists on disk.
+Exception: /reviews/nike/pegasus/ (family listing) has no used CSS and no minified files: it loads full base.css + bootstrap.css + swipebox.css.
+Same at a fresh origin render without query string (/reviews/brooks/ghost/ too) and on staging; no used-CSS row for any family URL (27 family terms).
+Not excluded by URI/cookie/query-string rules; not is_404/is_search by the main query. Root cause not found yet (next: WP_ROCKET_DEBUG on staging).
+Note: ?cb= renders are never optimized by WP Rocket (query string), so fresh-origin checks with ?cb= don't show used CSS.

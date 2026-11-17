@@ -1,0 +1,2 @@
+-- Superseded 16 Nov 2026: the bot filter is now the table rsg.session_quality, built nightly by ../metrics/metrics_build.py
+-- (rules and points there; see analytics/README.md "Metrics layer"). This file is kept only so old notes still resolve.
