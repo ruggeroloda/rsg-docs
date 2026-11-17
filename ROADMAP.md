@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18 (after the 13–17 Nov run: reskin, analytics, homepage, lists, guides, hub, list images; all live)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18, docs moved into git (after the 13–17 Nov run: reskin, analytics, homepage, lists, guides, hub, list images; all live)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -48,4 +48,3 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 - Umami admin password and the `rsg_analyst` password into 1Password, then delete `_private/umami-admin.txt` (`analytics/README.md` Open 5).
 - Resubmit the sitemap in Search Console (Ruggero).
 - Comment notifications: reader reply emails only if comments matter after the content restart.
-- Theme repo housekeeping (needs delete permission on the folder): `git worktree prune` (stale `rsgwork-newest` from 15 Nov) and remove `.git/stale-locks-20261117/`.

@@ -1,6 +1,6 @@
 # RSG — project primer
 
-_Last updated 2026-11-18._ **Start every RSG session here**, then read `ROADMAP.md` and the `RUNBOOK.md` of the workstream you work on. That's all you need for the current state.
+_Last updated 2026-11-18._ **Start every RSG session here** (after `git pull`), then read `ROADMAP.md` and the `RUNBOOK.md` of the workstream you work on. That's all you need for the current state.
 
 **What this is:** the relaunch of RunningShoesGuru.com: cut running costs, modernise the stack, restart content on a small budget. Traffic is ~10 % of what it was (GA4 ~160k page views / 30 days, Nov 2026); revenue = Raptive ads + affiliate (mostly Amazon) + deals emails.
 
@@ -35,5 +35,7 @@ Monitoring: healthchecks.io `rsg-dfs` (price engine) and `rsg-site` (site + back
 - Keep `~/Documents` out of iCloud sync (it breaks every path).
 - Folders: each workstream keeps its runbook, briefs and handovers at its top level; `logs/` = deploy logs, `_work/` = scratch, `archive/` / `_archive/` = superseded (kept, not deleted).
 - Claude may purge the Rocket.net cache after a deploy.
-- **Docs live on the Mac** (`~/Documents/claude/projects/rsg/`): it is the one complete set. Project docs are copies of the Mac files, same paths (`DECISIONS.md`, `ROADMAP.md`, `CONTEXT.md` sit under `claude/` in the project). A chat that writes a project doc writes the Mac file in the same session; without the Mac it writes the project doc, says so in its handover, and the next Mac session copies it down. A handover whose work is done gets a **DONE** line at the top the day it ships. **Exception:** `DECISIONS.md` and `theme/RUNBOOK.md` are too large for a chat to copy into the project, so the project holds older copies of those two (12 Nov): for those, read the Mac files.
+- **Docs = the private git repo `ruggeroloda/rsg-docs`** (this folder). On the Mac it is `~/Documents/claude/projects/rsg/`; a session without the Mac (e.g. started on the phone) clones it from GitHub. **Start of a session:** `git pull`. **End of a session (close-out):** runbook of the system you changed, one line in `DECISIONS.md` per decision, `ROADMAP.md`, handovers whose work shipped get a **DONE** line (or move to the workstream's `archive/`), then `git commit` + `git push`, then copy `README.md` and `ROADMAP.md` to the claude.ai project. Code lives in its own repos (`rsg-theme`, `rsg-dfs`); secrets never go in git (`.gitignore`).
+- **The claude.ai project holds generated copies only**: `README.md` and `claude/ROADMAP.md`, refreshed at close-out. Never edit docs in the project; the repo is the only place docs change.
+- **One chat per code repo at a time.** A second chat on the same repo works in its own `git worktree` and deploys only its own commits.
 - **Change log for the analyst:** anything that reaches the live site, ads, hosting, DFS, tracking or email gets a row in `rsg.change_log` in the same session. Theme/rsg-core live deploys are recorded by `deploy.sh`; everything else: `echo "details" | ssh -p 2222 ruggero@116.203.146.177 "rsg-changelog-add KIND claude REF 'Title'"` (KIND: deploy content seo ads hosting dfs tracking email external season). Planned items: see `analytics/README.md` "Notebook".
