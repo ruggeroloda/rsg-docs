@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18 07:45 UTC (lists + guides picks table and why lines live)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18 08:10 UTC (list button "Why we like it" live; shops drawer per pick proposed)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -43,6 +43,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 ## Small / waiting
 - **Alt-text test** (live 11 Nov): read Search Console for the 10 test vs 10 control reviews ~9 Dec (4 weeks) and ~23 Dec (6 weeks): `theme/ALT-TEXT-TEST-2026-11.md`. The result decides "AI alt text at upload".
 - Network sub-ID checks (AWIN Click References, CJ/Rakuten) at the first commissions.
+- List picks: "Compare N shops" drawer per pick (proposal on the design canvas, `theme/LISTS-TOP-2026-11-18.md`): waiting for Ruggero. NL/BE have no DFS shops (all Amazon "Check price"): Running Warehouse EU to NL/BE is a DFS item.
 - List data (`theme/LISTS-TOP-2026-11-18.md` "Open"): Evo SL plate field, "Hoka One One" name, Metaspeed same link men/women, long list intros (Puma, heavy runners).
 - Theme backlog: comparison redesign batch 2 (waits for verdict copy), quiz results page + the price-drop-alert copy (build or cut), SEO backlog, local list prices (`theme/MSRP-LOCAL-PRICING-BRIEF.md`), orange-button contrast, shoe spec typos case by case.
 - Make: merge the 3 insert scenarios (write via `acf`), port accounting, then cancel Make.

@@ -270,6 +270,7 @@ Dated, one line each, in date order (newest at the bottom). A line that was late
 - 2026-11-18 — **/top/ + guides top of page**: no hero photo, one trust line under the byline, picks table (photo, category, one-line why, specs, small bib, price + "Why it won" button), no TOC, "How to pick" below the sections, no users rating at the top (Ruggero). `theme/LISTS-TOP-2026-11-18.md`
 - 2026-11-18 — **Why line = first sentence of the pick's Team review** (Ruggero: "we have the field"); fallback custom "In short", then the review verdict. Reasons put first in 6 team reviews + 5 new team reviews on the beginners guide (Claude drafts; Ruggero: "deploy to live"). `theme/LISTS-TOP-2026-11-18.md`
 - 2026-11-18 — **List Article schema image = full-size list image** (1600x900; was the 633 px copy), since the hero is no longer printed. `theme/LISTS-TOP-2026-11-18.md`
+- 2026-11-18 — **List picks button "Why we like it"** (was "Why it won"; Ruggero). `theme/LISTS-TOP-2026-11-18.md`
 - 2026-11-18 — Geo / edge-share measurement moved to after Black Friday (Ruggero: deploys and purges this week aren't normal traffic). SearchWP not bought (yearly $199+); Ruggero reads up on Relevanssi (`theme/SITE-SEARCH-IDEAS-2026-11-17.md`).
 
 ## Open questions (decide, then move above)
