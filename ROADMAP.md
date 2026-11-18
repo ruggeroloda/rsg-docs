@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18 08:25 UTC (Impact feeds tested on the DFS test bench)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18 08:45 UTC (Impact US + Running Room CA live)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -36,13 +36,14 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 |---|---|---|---|
 | 11 | **Theme rebuild, in place and incremental** — reskin live 15 Nov; homepage, `/top/`, guides, `/reviews/` hub rebuilt 17 Nov; list/guide top of page (picks table) 18 Nov | theme | Left: widgets (after Phase F), remaining `rsg-core` items (`theme/RSG-CORE-AUDIT-2026-11-11.md`; remove `RSG_get_country_code`), listings' intro texts, Shoe Finder (weak: improve a lot or keep low-key) |
 | 12 | **Content & distribution restart** — the review-format research is also what the review template waits for | content | `content/README.md` |
-| 13 | DFS step 8: more merchants. Done: AU (15 Nov), RW EU FR/IT/ES/IE/GR/SE + Nike IT (18 Nov) | dfs | **Impact (Brooks, Mizuno, adidas, New Balance US) ready on the test bench 18 Nov: waits for "deploy to live"** (+ logos; Brooks thumbnails blocked by its site: "no image" unless solved; `dfs/logs/DEPLOY-LOG.md` Step 8b). **Next:** Running Room CA, Asics US (Rakuten, old DFS feed 86, file `40996_2333397_mp.txt.gz`); later RW NZ/SG/MY/HK; SportsShoes UK waits for Visualsoft. Done 18 Nov: no local offer → "Check price" Amazon search in the visitor's own store (live). |
+| 13 | DFS step 8: more merchants. Done: AU (15 Nov), RW EU FR/IT/ES/IE/GR/SE + Nike IT, Impact US (Brooks, Mizuno, adidas, New Balance), Running Room CA (18 Nov) | dfs | **Next:** Asics US (Rakuten, old DFS feed 86, file `40996_2333397_mp.txt.gz`); later RW NZ/SG/MY/HK; SportsShoes UK waits for Visualsoft. Done 18 Nov: no local offer → "Check price" Amazon search in the visitor's own store (live). |
 | 14 | WP Rocket page cache on, after the DFS/theme/migration work; the DFS purge must also clear it | theme / hosting | Measure TTFB on cache misses before/after |
 | 15 | Analytics next steps | analytics | Umami 1-day flags from ~22 Nov, 7-day from ~7 Dec; outside data (networks, Amazon, Raptive) later; unattended analyst only when Ruggero asks (`analytics/README.md`) |
 
 ## Small / waiting
 - **Alt-text test** (live 11 Nov): read Search Console for the 10 test vs 10 control reviews ~9 Dec (4 weeks) and ~23 Dec (6 weeks): `theme/ALT-TEXT-TEST-2026-11.md`. The result decides "AI alt text at upload".
-- Network sub-ID checks (AWIN Click References, CJ/Rakuten) at the first commissions.
+- Network sub-ID checks (AWIN Click References, CJ/Rakuten, Impact `subId1`, AvantLink `ctc`) at the first commissions.
+- Brooks US thumbnails: brooksrunning.com refuses server image requests (403), so Brooks offers show "no image" (live 18 Nov). Options if it matters: another image source per shoe, or ask Brooks/Impact.
 - List picks: "Compare N shops" drawer per pick (proposal on the design canvas, `theme/LISTS-TOP-2026-11-18.md`): waiting for Ruggero. NL/BE have no DFS shops (all Amazon "Check price"): Running Warehouse EU to NL/BE is a DFS item.
 - List data (`theme/LISTS-TOP-2026-11-18.md` "Open"): Evo SL plate field, "Hoka One One" name, Metaspeed same link men/women, long list intros (Puma, heavy runners).
 - Theme backlog: comparison redesign batch 2 (waits for verdict copy), quiz results page + the price-drop-alert copy (build or cut), SEO backlog, local list prices (`theme/MSRP-LOCAL-PRICING-BRIEF.md`), orange-button contrast, shoe spec typos case by case.

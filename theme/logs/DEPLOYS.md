@@ -50,3 +50,4 @@ _One line per live deploy, from the git tags in `rsg_2022`. What each change doe
 | `live-20261118-062703` | `b7ab7d8` | Price boxes: no local offer -> 'Check price' Amazon search in the visitor's own store (GB/IE/CA/EU also when the country has no data); includes `df41069` guides archive brand links |
 | `live-20261118-070424` | `be9db00` | deploy.sh overwrite guard; also: price copies for one screen width only (`286c0e7`), `/guide/` heading 'Reviews by brand' (`ee7838b`), lists + guides picks table (lists chat, `bb8072c`) |
 | `live-20261118-080605` | `cebd1d7` | List picks button "Why we like it" (was "Why it won"); right-now intro wording to match (content) |
+| `live-20261118-083347` | `1340c13` | Merchant logos Brooks, Mizuno, New Balance, Running Room (DFS step 8; new files only, `--no-purge`) |
