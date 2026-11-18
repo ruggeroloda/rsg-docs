@@ -34,6 +34,7 @@ Notebook: `rsg.finding` #5 (`search:zero_results|home`). Ruggero 17 Nov: no hurr
 7. **Search analytics loop:** human-only searches (joined to Umami), zero-result report in the analyst's weekly.
 
 ## Engine options
+- **Checked 18 Nov:** SearchWP is yearly, not lifetime: Standard $99 first year then $199/yr; metrics + redirects need Pro ($199, then $399/yr); an expired licence keeps working without updates. Claude's view: not worth it at ~24 searches/day. **Relevanssi** (free, wordpress.org): fuzzy partial-word matching, "Did you mean?" from successful searches, a search log; better spelling correction is Premium. Ruggero is reading up on Relevanssi.
 - **SearchWP in WordPress** (paid, ~$99+/yr): fastest to ship; stays on Rocket.net/MySQL; limited for ideas 4–5.
 - **Self-hosted Typesense or Meilisearch on rsgmedia** (Docker, like Umami), WordPress pushes posts on save (like DFS): typo tolerance, facets, hybrid/semantic, NL search (Typesense). Adds a dependency (fallback to WP search).
 - **Postgres already on rsgmedia** (full text + pg_trgm + pgvector): no new service; NL/AI parts built by hand.

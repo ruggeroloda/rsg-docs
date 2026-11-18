@@ -63,7 +63,7 @@ Source: Googlebot-style audit of the live Pegasus 42 review (16 Nov). The page r
 - Raptive slots: staging = live (phone 10, desktop 11). `extractcheck.py`: same as live. WP Rocket used CSS on the optimised staging page keeps the dialog, backdrop, `:has()`, bar, card, toc and shops rules.
 - No JS errors on reviews (road, trail, training), comparison, top list, old review, phone + desktop.
 
-**Possible follow-up (not done):** the comparison pages' desktop sidebar pair card (`rsg_prices_card_pair`) duplicates the two best prices the same way; same `<template>` treatment if wanted.
+**Follow-up DONE — live 18 Nov 2026 (`286c0e7`, `live-20261118-070424`):** the comparison sidebar pair card and every other one-width copy now use `rsg_prices_defer_mq()` (`RUNBOOK.md` Price UI). Ruggero 18 Nov: step 3 kept.
 
 **Must stay identical (checked):** `data-spot` / `data-place` / `data-dfs-box` / `data-tag` / `data-page`, sub-IDs, Amazon tags per spot, opener in `drawer_open` / `shop_click`, Raptive markers (`rsg-page-*`, `.rsg-content`, `.rsg-text`, `.rsg-sidebar`).
 

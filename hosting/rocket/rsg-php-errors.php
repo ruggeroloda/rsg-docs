@@ -12,6 +12,9 @@ function rsg_pe_dir() {
 	return preg_match( '#^(/home/[^/]+)/#', ABSPATH, $m ) ? $m[1] . '/rsg-logs' : WP_CONTENT_DIR . '/../../rsg-logs';
 }
 function rsg_pe_file() { return rsg_pe_dir() . '/php-errors-' . rsg_pe_env() . '.log'; }
+// WP-CLI runs (our own scripts, wp eval) log to their own file, so they never reach the summary, the rsg-php check
+// or the weekly digest (18 Nov 2026: one wp eval typo counted as a site fatal on 15 Nov).
+function rsg_pe_cli_file() { return rsg_pe_dir() . '/php-errors-' . rsg_pe_env() . '-cli.log'; }
 
 ( function () {
 	$dir = rsg_pe_dir();
@@ -19,7 +22,7 @@ function rsg_pe_file() { return rsg_pe_dir() . '/php-errors-' . rsg_pe_env() . '
 	if ( is_dir( $dir ) && is_writable( $dir ) ) {
 		@ini_set( 'log_errors', '1' );
 		@ini_set( 'log_errors_max_len', '2048' );
-		@ini_set( 'error_log', rsg_pe_file() );
+		@ini_set( 'error_log', PHP_SAPI === 'cli' ? rsg_pe_cli_file() : rsg_pe_file() );
 		if ( PHP_SAPI !== 'cli' ) @ini_set( 'display_errors', '0' );
 		// Fatal errors are logged by PHP itself, every time. Warnings/notices repeat on every render of the old
 		// theme (~35 lines/s at first): log each distinct one (type + file + line) once per hour only. "Seen" marks
@@ -111,7 +114,9 @@ add_action( 'rsg_pe_daily', function () {
 	// Weekly digest on Mondays (live only), before rotating.
 	if ( gmdate( 'N' ) === '1' && rsg_pe_env() === 'live' ) rsg_pe_send_digest();
 	// Rotate when over 5 MB: keep one older file (.1).
-	if ( is_readable( $f ) && filesize( $f ) > 5 * 1048576 ) { @rename( $f, $f . '.1' ); }
+	foreach ( array( $f, rsg_pe_cli_file() ) as $f ) {
+		if ( is_readable( $f ) && filesize( $f ) > 5 * 1048576 ) { @rename( $f, $f . '.1' ); }
+	}
 } );
 
 function rsg_pe_digest_text( $days = 7 ) {

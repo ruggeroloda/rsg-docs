@@ -28,7 +28,7 @@ _Reskin live since 15 Nov 2026 14:30 UTC (`4ac5ef4`, tag `live-20261115-143049`)
 3. Raptive mail + re-map to the new markers; then C1/C2 (`HTML-AUDIT-RESKIN-2026-11-15.md`; C2 brings the comparison subtitle back for text extractors).
 4. Mega-menu editorial keep/cut (46 links newly visible to Google; all are clean 200 pages).
 5. Price card 288 px (last pass).
-6. `rsg-php`: ignore fatals from WP-CLI scripts (12:10 UTC false alarm today).
+6. ~~`rsg-php`: ignore fatals from WP-CLI scripts (12:10 UTC false alarm today).~~ **DONE — live 18 Nov** (WP-CLI errors go to their own `-cli.log`).
 7. Related-review cards use full-size cut-out PNGs (400–580 KB each, lazy-loaded): serve a small size.
 8. Guides/top-list template (extracts 2/17 and 2/19 items, same as before).
 9. Rich Results test (live URL) on one review, one comparison and one author page.

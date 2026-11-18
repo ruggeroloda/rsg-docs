@@ -1,15 +1,15 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18, docs moved into git (after the 13–17 Nov run: reskin, analytics, homepage, lists, guides, hub, list images; all live)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18 07:15 UTC (one-width price copies, fatals, deploy guard live)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
 |---|---|---|---|
-| now | **Price-box step 3** went live with the homepage deploy (17 Nov 07:20 UTC) without its own "deploy to live" | theme | Ruggero: keep or roll back (`theme/NEXT-SESSION-PRICE-BOXES-2026-11-16.md` step 3; rollback = the step's own files from tag `live-20261116-153059`) |
 | now | **Phase F: retire the old DFS** (planned from ~17 Nov) | dfs / hosting | `dfs/PLAN-STEP7.md`: no callers 7 days, `/go/` stub, strip `[ds]` from 76 old posts, deactivate `dstudio` (+ its 2 cron hooks), power off 1 week, cancel ($29/mo); Linode Managed monitor + `dfs-mon` off; `uploads/dfs-images-cache` (498 MB) after |
-| now | PHP weekly digest 16 Nov: **66 fatals** in 7 days, 352 distinct warnings | theme | Sort real fatals from WP-CLI false alarms (`theme/AFTER-GO-LIVE-2026-11-15.md` item 6) |
+| now | **PHP warnings cleanup**: fatals solved 18 Nov (0 real since 15 Nov); 394 distinct warnings left in ~25 theme files | theme | Fix the ~100 'read on null/false' first, then the rest, one template per batch on staging with byte-identical HTML; timing vs Black Friday to decide (Ruggero) |
+| now | **DFS fresh price check** (Ruggero 18 Nov: last check 10–11 Nov) | dfs | Old vs new on ~30 shoes, links land, per-country offers; merchant moves are in the DFS chat |
+| now | **Australia: running/sport retailers** (Ruggero 18 Nov) | dfs | List AU running retailers, then their affiliate programs (Nike AU, Sportitude, The Iconic are dead ends) |
 | ~18 Nov | Amazon slot review | dfs | "real N" per slot → drop the weakest slot or keep 4 (dropping 08:00 delays the morning feed changes to ~14:15) |
-| ~18 Nov | Geo / edge-share measurement (geo rule off since 11 Nov) | hosting / dfs | Rocket.net edge share vs baseline 68.6 % (`dfs/GO-LIVE-2026-11-10.md`); then page-view log sampled + retention |
 | ~22 Nov | Reskin 7-day watch ends | theme | Search Console, clicks per 1,000 views, Raptive RPM (`theme/AFTER-GO-LIVE-2026-11-15.md`) |
 | ~22 Nov | **Old-article prune (D5)** | content | `content/ARTICLES-PRUNE-PLAN-2026-11-15.md`; needs a fresh Search Console export. Decide whether it waits until after Black Friday |
 | ~24 Nov | Homepage re-check (a week to breathe) | theme | Shorter desktop hero kept in reserve (`theme/HOMEPAGE-BUILD-2026-11-17.md`) |
@@ -17,6 +17,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 | 26 Nov | Delete the site-pass backups on Rocket.net (`~/rsg_deploy_backups/site-cleanup-*-20261112-*`, ~500 MB) | hosting | — |
 | 27–30 Nov | **Black Friday → Cyber Monday** | all | Freeze rule to decide (what may still go live that week) |
 | ~30 Nov | Old click/view logs vs Umami: 2-week parallel run ends | analytics | Compare, then switch the old logs off or sample them |
+| after 30 Nov | Geo / edge-share measurement (geo rule off since 11 Nov; moved by Ruggero 18 Nov: deploy week isn't normal traffic) | hosting / dfs | Rocket.net edge share vs baseline 68.6 % (`dfs/GO-LIVE-2026-11-10.md`); then page-view log sampled + retention |
 
 ## Now / next (not dated)
 | # | Item | Area | Next step |
@@ -24,7 +25,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 | 1 | **Rotate exposed keys**: AWS ×3, Facebook, Google, AWeber, ip-api (theme `SECRETS.md`), Rocket SSH key, MailerLite, MailerSend (one token per system), network logins in the DFS `.env` | all | Ruggero revokes at the providers; Claude swaps them on the servers (incl. the `.env.bak-*` copies) |
 | 2 | **SEO checklist** (`theme/SEO-AUDIT-2026-11-17.md`, tracker sheet linked there) | theme / content | Ruggero works through it: 1.3 year in the best-list title (decide), then 2.1 the 39 outdated comparisons (read the newer review's verdict before swapping) |
 | 3 | After-go-live leftovers (`theme/AFTER-GO-LIVE-2026-11-15.md`) | theme | GPS listing at `/reviews/gps/`; mega-menu keep/cut (46 links); price card 288 px; related cards use full-size cut-out PNGs; Rich Results test on a live review/comparison/author page; C1/C2 now that Raptive re-mapped reviews + comparisons (16 Nov); front-end modernization (`theme/MODERN-WEB-GUIDANCE-2026-11-15.md`) |
-| 4 | Site search | theme | Proposal: `theme/SITE-SEARCH-IDEAS-2026-11-17.md` (save real visitors' search terms; plugin vs own code open) |
+| 4 | Site search | theme | `theme/SITE-SEARCH-IDEAS-2026-11-17.md`: SearchWP not bought; Ruggero reads up on Relevanssi (free); version-aware zero results + rich autocomplete are own code either way |
 | 5 | Bank import → self-hosted n8n, then cancel n8n Cloud (€24/mo) | automations | Needs the working flow export from n8n Cloud + what failed |
 | 6 | Email list cleanup, then platform decision | email | Define active = opened/clicked in 12 months → re-engagement → remove. Sign-up mechanism to change (idea: monthly contest) |
 | 7 | DFS simplification: test bench as a stopped copy of production, nightly settings dump to git, matcher fixture tests | dfs | — |

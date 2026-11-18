@@ -8,7 +8,7 @@ _Last updated 2026-11-18._ **Start every RSG session here** (after `git pull`), 
 | Workstream | Runbook (current state) | Status 18 Nov |
 |---|---|---|
 | Price engine (DFS) | `dfs/RUNBOOK.md` | Live since 10 Nov on rsg-dfs (US, DE, GB, AU); old Linode retires in Phase F (due now) |
-| WordPress site + theme | `theme/RUNBOOK.md` | Reskin live 15 Nov; homepage, `/top/`, guides, `/reviews/` hub, list images live 17 Nov; live = staging = GitHub `main` |
+| WordPress site + theme | `theme/RUNBOOK.md` | Reskin live 15 Nov; homepage, `/top/`, guides, `/reviews/` hub, list images live 17 Nov; one-width price copies + lists picks table + deploy guard live 18 Nov; live = staging = GitHub `main` (`be9db00`) |
 | Hosting, backups, DNS | `hosting/RUNBOOK.md` | Rocket.net Business annual since 12 Nov ($1,000 on 25 Nov); bot challenge on 2 networks since 16 Nov |
 | rsgmedia server (n8n, Stargrid) | `hosting/hetzner/RUNBOOK.md` | Hardened, backed up |
 | Automations (n8n, Make) | `automations/RUNBOOK.md` | Bank import still on paid n8n Cloud |
