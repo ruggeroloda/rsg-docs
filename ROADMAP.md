@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18 18:15 UTC (review top on phones live; idea: price bar later in the scroll)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18 20:20 UTC (non-US click gap downgraded: UK buys at Amazon, money is US)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -52,7 +52,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 - List data (`theme/LISTS-TOP-2026-11-18.md` "Open"): Evo SL plate field, "Hoka One One" name, Metaspeed same link men/women, long list intros (Puma, heavy runners).
 - **Phone price bar: show it later in the scroll** (Ruggero 18 Nov, idea only, not to act on yet): after the review-header change and the bar G watch, test switching the header to the price bar further down the page, with a small animation that draws attention. Measure against bar G as it is.
 - "Check price" wording in the other price spots (phone block `mob`, sidebar card `rail`, drawer) vs "No local price" / "Search Amazon" in the phone bar: Ruggero to decide whether to align (`theme/PHONE-BAR-G-2026-11-18.md`).
-- **Non-US click gap** (17 Nov, humans): US 84 shop clicks / 792 visits; GB 2 / 244, AU 2 / 175, CA 8 / 143 despite local shops. Investigate (spots seen, offers shown, merchants) before Black Friday.
+- **Non-US clicks, low priority** (17 Nov, humans): US 84 shop clicks / 792 visits; GB 2 / 244, AU 2 / 175, CA 8 / 143. Ruggero 18 Nov: UK visitors always bought mostly at Amazon ("no Amazon, no sales") and the money comes from the US, so GB is not a gap and this is no longer a pre-Black Friday item. AU/CA only if a cheap cause shows up.
 - Bots left after rules v3: CN/SG/HK visits with normal screens and > 0 s (~165/day, 0 clicks); a country rule is the next step if they matter (`analytics/README.md`).
 - Theme backlog: verdict/"Buy if" box on the ~130 comparisons outside the 39 refreshes (decision 18 Nov), quiz results page + the price-drop-alert copy (build or cut), SEO backlog, local list prices (`theme/MSRP-LOCAL-PRICING-BRIEF.md`), orange-button contrast, shoe spec typos case by case.
 - Make: merge the 3 insert scenarios (write via `acf`), port accounting, then cancel Make.

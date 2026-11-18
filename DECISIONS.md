@@ -284,6 +284,7 @@ Dated, one line each, in date order (newest at the bottom). A line that was late
 - 2026-11-18 — **Review top on phones: title, swipeable photos, bib next to the summary, trust block** (Ruggero chose it on the design canvas; "deploy to live" 18:03 UTC). Photos obviously swipeable: next photo peeks, dots, n / N, one nudge per session. Desktop unchanged. `theme/REVIEW-TOP-PHONE-2026-11-18.md`.
 - 2026-11-18 — **Shipped during the phone price bar G watch** (Ruggero: no reason to keep a worse version a week; the window before Black Friday was today or after 30 Nov). The ~25 Nov watch now reads bar G + review top together; if numbers drop, revert the review top first.
 - 2026-11-18 — **Verdict keeps its first sentence although the hero summary repeats it** (Ruggero: the summary is the verdict's first sentence and a good succinct summary; cutting it would leave verdicts opening mid-thought). "No ratings yet" no longer shown.
+- 2026-11-18 — **Non-US click gap dropped as a pre-Black Friday item** (Ruggero: UK visitors always bought mostly at Amazon, "no Amazon no sales"; "my money comes from USA anyway"). Low GB shop clicks are normal, not a gap.
 
 ## Open questions (decide, then move above)
 - Later (DFS): a worker that finds **local list prices** (rrp_gb, rrp_de…) for about 2 years of shoes, so non-US offers can be price-filtered. Builds on `theme/MSRP-LOCAL-PRICING-BRIEF.md` (2026-06-24 decision).
