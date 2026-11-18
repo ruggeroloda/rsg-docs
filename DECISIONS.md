@@ -259,6 +259,8 @@ Dated, one line each, in date order (newest at the bottom). A line that was late
 
 - 2026-11-18 — Root `CLAUDE.md` holds Ruggero's RSG working rules (loads in every session that attaches the repo); claude.ai project instructions tell every new chat to attach `rsg-docs`, read README + ROADMAP and close out with `rsg-close-out`.
 
+- 2026-11-18 — **DFS step 8 live** (Ruggero: "deploy to live"): Running Warehouse EU per country (FR, IT, ES, IE, GR, SE; Norway out, prices without VAT) + Nike IT. Impact: add Brooks, Mizuno, adidas, New Balance (2 %: go live, measure, renegotiate); skip Under Armour (US/UK) and NOBULL. Running Room CA: add, then judge by how many prices it finds. Amazon UK/CA API: returns by itself at 10 sales in 30 days. `dfs/logs/DEPLOY-LOG.md`.
+
 ## Open questions (decide, then move above)
 - Later (DFS): a worker that finds **local list prices** (rrp_gb, rrp_de…) for about 2 years of shoes, so non-US offers can be price-filtered. Builds on `theme/MSRP-LOCAL-PRICING-BRIEF.md` (2026-06-24 decision).
 - Email platform: MailerLite vs EmailOctopus vs Listmonk + Amazon SES (after list cleanup).
