@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18 08:10 UTC (list button "Why we like it" live; shops drawer per pick proposed)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18 08:25 UTC (Impact feeds tested on the DFS test bench)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -36,7 +36,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 |---|---|---|---|
 | 11 | **Theme rebuild, in place and incremental** — reskin live 15 Nov; homepage, `/top/`, guides, `/reviews/` hub rebuilt 17 Nov; list/guide top of page (picks table) 18 Nov | theme | Left: widgets (after Phase F), remaining `rsg-core` items (`theme/RSG-CORE-AUDIT-2026-11-11.md`; remove `RSG_get_country_code`), listings' intro texts, Shoe Finder (weak: improve a lot or keep low-key) |
 | 12 | **Content & distribution restart** — the review-format research is also what the review template waits for | content | `content/README.md` |
-| 13 | DFS step 8: more merchants. Done: AU (15 Nov), RW EU FR/IT/ES/IE/GR/SE + Nike IT (18 Nov) | dfs | **Next:** Impact (Brooks, Mizuno, adidas, New Balance), then Running Room CA, Asics US; later RW NZ/SG/MY/HK; SportsShoes UK waits for Visualsoft. Done 18 Nov: no local offer → "Check price" Amazon search in the visitor's own store (live). |
+| 13 | DFS step 8: more merchants. Done: AU (15 Nov), RW EU FR/IT/ES/IE/GR/SE + Nike IT (18 Nov) | dfs | **Impact (Brooks, Mizuno, adidas, New Balance US) ready on the test bench 18 Nov: waits for "deploy to live"** (+ logos; Brooks thumbnails blocked by its site: "no image" unless solved; `dfs/logs/DEPLOY-LOG.md` Step 8b). **Next:** Running Room CA, Asics US (Rakuten, old DFS feed 86, file `40996_2333397_mp.txt.gz`); later RW NZ/SG/MY/HK; SportsShoes UK waits for Visualsoft. Done 18 Nov: no local offer → "Check price" Amazon search in the visitor's own store (live). |
 | 14 | WP Rocket page cache on, after the DFS/theme/migration work; the DFS purge must also clear it | theme / hosting | Measure TTFB on cache misses before/after |
 | 15 | Analytics next steps | analytics | Umami 1-day flags from ~22 Nov, 7-day from ~7 Dec; outside data (networks, Amazon, Raptive) later; unattended analyst only when Ruggero asks (`analytics/README.md`) |
 

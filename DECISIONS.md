@@ -272,6 +272,7 @@ Dated, one line each, in date order (newest at the bottom). A line that was late
 - 2026-11-18 — **List Article schema image = full-size list image** (1600x900; was the 633 px copy), since the hero is no longer printed. `theme/LISTS-TOP-2026-11-18.md`
 - 2026-11-18 — **List picks button "Why we like it"** (was "Why it won"; Ruggero). `theme/LISTS-TOP-2026-11-18.md`
 - 2026-11-18 — Geo / edge-share measurement moved to after Black Friday (Ruggero: deploys and purges this week aren't normal traffic). SearchWP not bought (yearly $199+); Ruggero reads up on Relevanssi (`theme/SITE-SEARCH-IDEAS-2026-11-17.md`).
+- 2026-11-18 — Impact feeds (Claude, test bench; go-live needs Ruggero's "deploy to live"): Brooks, Mizuno, adidas (DataFeedWatch catalogue), New Balance US; widths a feed shows only in the SKU/name are dropped by a per-feed `drop` rule; adidas Evo SL EXO/Woven and Brooks Ghost Max L are variants. `dfs/logs/DEPLOY-LOG.md` (Step 8b).
 
 ## Open questions (decide, then move above)
 - Later (DFS): a worker that finds **local list prices** (rrp_gb, rrp_de…) for about 2 years of shoes, so non-US offers can be price-filtered. Builds on `theme/MSRP-LOCAL-PRICING-BRIEF.md` (2026-06-24 decision).
