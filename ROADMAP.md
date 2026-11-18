@@ -13,6 +13,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 | ~22 Nov | Reskin 7-day watch ends | theme | Search Console, clicks per 1,000 views, Raptive RPM (`theme/AFTER-GO-LIVE-2026-11-15.md`) |
 | ~25 Nov | Phone price bar G: 7-day watch | theme | `stick` clicks per view and drawer opens (Umami `shop_click`, `drawer_open`) vs the week before; Raptive RPM on reviews (`theme/PHONE-BAR-G-2026-11-18.md`) |
 | ~25 Nov | Lists/guides picks table: 7-day watch | theme | Raptive RPM and ads per view on the 5 lists (2 top ad candidates fewer), `header_card` clicks per view vs before (`theme/LISTS-TOP-2026-11-18.md`) |
+| after ~25 Nov | **Lists/guides new shoe box** (on staging 18 Nov, `c76b521`) | theme | Ruggero reviews staging; then live on the daily trainers guide only, compare 1–2 weeks vs the other 4 lists (shop clicks/visit, review clicks, Search Console), then roll out (`theme/LISTS-TOP-2026-11-18.md`) |
 | ~22 Nov | **Old-article prune (D5)** | content | `content/ARTICLES-PRUNE-PLAN-2026-11-15.md`; needs a fresh Search Console export. Decide whether it waits until after Black Friday |
 | ~24 Nov | Homepage re-check (a week to breathe) | theme | Shorter desktop hero kept in reserve (`theme/HOMEPAGE-BUILD-2026-11-17.md`) |
 | 25 Nov | Rocket.net charges $1,000 (Business annual) | hosting | Check the invoice and the credit for the unused Expert time (`hosting/RUNBOOK.md` Open 1) |
