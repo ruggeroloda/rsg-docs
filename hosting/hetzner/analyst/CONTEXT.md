@@ -25,7 +25,7 @@ and say so in the report._
 |---|---|
 | `price_card` | Sidebar price card (desktop; also the comparison pair card) |
 | `price_block` | Phone price block (in the content, phones) |
-| `sticky_bar` | Phone sticky price bar (bottom of the screen; Raptive ads may cover it) |
+| `sticky_bar` | Phone price bar fixed at the top of reviews after scrolling (design G since 18 Nov 10:16 UTC: shoe name + "Jump to", price + shop, "All N prices" opens the drawer, "See deal"; before: navy one-row bar, 0.3 % clicks per seen) |
 | `drawer` | "Compare N shops" drawer (`opener` = what opened it) |
 | `full_list` | Full price list at the bottom of a review |
 | `mini_table` | Mini comparison table in a review |
