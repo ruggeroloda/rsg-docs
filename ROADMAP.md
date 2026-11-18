@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18 07:15 UTC (one-width price copies, fatals, deploy guard live)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18 07:45 UTC (lists + guides picks table and why lines live)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -11,6 +11,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 | now | **Australia: running/sport retailers** (Ruggero 18 Nov) | dfs | List AU running retailers, then their affiliate programs (Nike AU, Sportitude, The Iconic are dead ends) |
 | ~18 Nov | Amazon slot review | dfs | "real N" per slot → drop the weakest slot or keep 4 (dropping 08:00 delays the morning feed changes to ~14:15) |
 | ~22 Nov | Reskin 7-day watch ends | theme | Search Console, clicks per 1,000 views, Raptive RPM (`theme/AFTER-GO-LIVE-2026-11-15.md`) |
+| ~25 Nov | Lists/guides picks table: 7-day watch | theme | Raptive RPM and ads per view on the 5 lists (2 top ad candidates fewer), `header_card` clicks per view vs before (`theme/LISTS-TOP-2026-11-18.md`) |
 | ~22 Nov | **Old-article prune (D5)** | content | `content/ARTICLES-PRUNE-PLAN-2026-11-15.md`; needs a fresh Search Console export. Decide whether it waits until after Black Friday |
 | ~24 Nov | Homepage re-check (a week to breathe) | theme | Shorter desktop hero kept in reserve (`theme/HOMEPAGE-BUILD-2026-11-17.md`) |
 | 25 Nov | Rocket.net charges $1,000 (Business annual) | hosting | Check the invoice and the credit for the unused Expert time (`hosting/RUNBOOK.md` Open 1) |
@@ -33,7 +34,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 ## Bigger stages
 | # | Item | Area | Next step |
 |---|---|---|---|
-| 11 | **Theme rebuild, in place and incremental** — reskin live 15 Nov; homepage, `/top/`, guides, `/reviews/` hub rebuilt 17 Nov | theme | Left: widgets (after Phase F), remaining `rsg-core` items (`theme/RSG-CORE-AUDIT-2026-11-11.md`; remove `RSG_get_country_code`), listings' intro texts, Shoe Finder (weak: improve a lot or keep low-key) |
+| 11 | **Theme rebuild, in place and incremental** — reskin live 15 Nov; homepage, `/top/`, guides, `/reviews/` hub rebuilt 17 Nov; list/guide top of page (picks table) 18 Nov | theme | Left: widgets (after Phase F), remaining `rsg-core` items (`theme/RSG-CORE-AUDIT-2026-11-11.md`; remove `RSG_get_country_code`), listings' intro texts, Shoe Finder (weak: improve a lot or keep low-key) |
 | 12 | **Content & distribution restart** — the review-format research is also what the review template waits for | content | `content/README.md` |
 | 13 | DFS step 8: more merchants. Done: AU (15 Nov), RW EU FR/IT/ES/IE/GR/SE + Nike IT (18 Nov) | dfs | **Next:** Impact (Brooks, Mizuno, adidas, New Balance), then Running Room CA, Asics US; later RW NZ/SG/MY/HK; SportsShoes UK waits for Visualsoft. Done 18 Nov: no local offer → "Check price" Amazon search in the visitor's own store (live). |
 | 14 | WP Rocket page cache on, after the DFS/theme/migration work; the DFS purge must also clear it | theme / hosting | Measure TTFB on cache misses before/after |
@@ -42,6 +43,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 ## Small / waiting
 - **Alt-text test** (live 11 Nov): read Search Console for the 10 test vs 10 control reviews ~9 Dec (4 weeks) and ~23 Dec (6 weeks): `theme/ALT-TEXT-TEST-2026-11.md`. The result decides "AI alt text at upload".
 - Network sub-ID checks (AWIN Click References, CJ/Rakuten) at the first commissions.
+- List data (`theme/LISTS-TOP-2026-11-18.md` "Open"): Evo SL plate field, "Hoka One One" name, Metaspeed same link men/women, long list intros (Puma, heavy runners).
 - Theme backlog: comparison redesign batch 2 (waits for verdict copy), quiz results page + the price-drop-alert copy (build or cut), SEO backlog, local list prices (`theme/MSRP-LOCAL-PRICING-BRIEF.md`), orange-button contrast, shoe spec typos case by case.
 - Make: merge the 3 insert scenarios (write via `acf`), port accounting, then cancel Make.
 - Delete rollback copies on rsgmedia (~20 Nov); SiteGround DNS leftovers; old Drive folders `Backups/servers` + `Backups/sites` (after 11 Dec, keep `Backups/nas`).
