@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18 10:25 UTC (phone price bar G live)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18 11:35 UTC (phone price bar G live; bot rules v3)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -48,6 +48,8 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 - List picks: "Compare N shops" drawer per pick (proposal on the design canvas, `theme/LISTS-TOP-2026-11-18.md`): waiting for Ruggero. NL/BE have no DFS shops (all Amazon "Check price"): Running Warehouse EU to NL/BE is a DFS item.
 - List data (`theme/LISTS-TOP-2026-11-18.md` "Open"): Evo SL plate field, "Hoka One One" name, Metaspeed same link men/women, long list intros (Puma, heavy runners).
 - "Check price" wording in the other price spots (phone block `mob`, sidebar card `rail`, drawer) vs "No local price" / "Search Amazon" in the phone bar: Ruggero to decide whether to align (`theme/PHONE-BAR-G-2026-11-18.md`).
+- **Non-US click gap** (17 Nov, humans): US 84 shop clicks / 792 visits; GB 2 / 244, AU 2 / 175, CA 8 / 143 despite local shops. Investigate (spots seen, offers shown, merchants) before Black Friday.
+- Bots left after rules v3: CN/SG/HK visits with normal screens and > 0 s (~165/day, 0 clicks); a country rule is the next step if they matter (`analytics/README.md`).
 - Theme backlog: comparison redesign batch 2 (waits for verdict copy), quiz results page + the price-drop-alert copy (build or cut), SEO backlog, local list prices (`theme/MSRP-LOCAL-PRICING-BRIEF.md`), orange-button contrast, shoe spec typos case by case.
 - Make: merge the 3 insert scenarios (write via `acf`), port accounting, then cancel Make.
 - Delete rollback copies on rsgmedia (~20 Nov); SiteGround DNS leftovers; old Drive folders `Backups/servers` + `Backups/sites` (after 11 Dec, keep `Backups/nas`).
