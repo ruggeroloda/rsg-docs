@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18 17:45 UTC (lists/guides shoe box live)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18 18:15 UTC (review top on phones live; idea: price bar later in the scroll)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -11,7 +11,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 | now | **Australia: running/sport retailers** (Ruggero 18 Nov) | dfs | List AU running retailers, then their affiliate programs (Nike AU, Sportitude, The Iconic are dead ends) |
 | ~18 Nov | Amazon slot review | dfs | "real N" per slot → drop the weakest slot or keep 4 (dropping 08:00 delays the morning feed changes to ~14:15) |
 | ~22 Nov | Reskin 7-day watch ends | theme | Search Console, clicks per 1,000 views, Raptive RPM (`theme/AFTER-GO-LIVE-2026-11-15.md`) |
-| ~25 Nov | Phone price bar G: 7-day watch | theme | `stick` clicks per view and drawer opens (Umami `shop_click`, `drawer_open`) vs the week before; Raptive RPM on reviews (`theme/PHONE-BAR-G-2026-11-18.md`) |
+| ~25 Nov | Phone price bar G + review top on phones: 7-day watch (bar from 18 Nov 10:16 UTC, review top from 18:03 UTC: read together) | theme | `stick` clicks per view and drawer opens (Umami `shop_click`, `drawer_open`) vs the week before; Raptive RPM on reviews; `gallery_swipe` per phone review view (`theme/PHONE-BAR-G-2026-11-18.md`, `theme/REVIEW-TOP-PHONE-2026-11-18.md`). If numbers drop: revert the review top first |
 | ~25 Nov | Lists/guides picks table: 7-day watch | theme | Raptive RPM and ads per view on the 5 lists (2 top ad candidates fewer), `header_card` clicks per view vs before (`theme/LISTS-TOP-2026-11-18.md`) |
 | ~2 Dec | Lists/guides new shoe box (live 18 Nov 17:31 UTC, all 5 lists): watch | theme | Search Console position + clicks of the 5 lists vs the 2 weeks before; "Read the full review" clicks from lists (`theme/LISTS-TOP-2026-11-18.md`) |
 | ~22 Nov | **Old-article prune (D5)** | content | `content/ARTICLES-PRUNE-PLAN-2026-11-15.md`; needs a fresh Search Console export. Decide whether it waits until after Black Friday |
@@ -50,6 +50,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 - Vomero 18 review: list price field $155 vs its text $150 (Ruggero to confirm). Cumulus 28 review: heel 42 mm in the specs vs 38.5 mm in the text (left).
 - List picks: "Compare N shops" drawer per pick (proposal on the design canvas, `theme/LISTS-TOP-2026-11-18.md`): waiting for Ruggero. NL/BE have no DFS shops (all Amazon "Check price"): Running Warehouse EU to NL/BE is a DFS item.
 - List data (`theme/LISTS-TOP-2026-11-18.md` "Open"): Evo SL plate field, "Hoka One One" name, Metaspeed same link men/women, long list intros (Puma, heavy runners).
+- **Phone price bar: show it later in the scroll** (Ruggero 18 Nov, idea only, not to act on yet): after the review-header change and the bar G watch, test switching the header to the price bar further down the page, with a small animation that draws attention. Measure against bar G as it is.
 - "Check price" wording in the other price spots (phone block `mob`, sidebar card `rail`, drawer) vs "No local price" / "Search Amazon" in the phone bar: Ruggero to decide whether to align (`theme/PHONE-BAR-G-2026-11-18.md`).
 - **Non-US click gap** (17 Nov, humans): US 84 shop clicks / 792 visits; GB 2 / 244, AU 2 / 175, CA 8 / 143 despite local shops. Investigate (spots seen, offers shown, merchants) before Black Friday.
 - Bots left after rules v3: CN/SG/HK visits with normal screens and > 0 s (~165/day, 0 clicks); a country rule is the next step if they matter (`analytics/README.md`).
