@@ -52,3 +52,4 @@ _One line per live deploy, from the git tags in `rsg_2022`. What each change doe
 | `live-20261118-080605` | `cebd1d7` | List picks button "Why we like it" (was "Why it won"); right-now intro wording to match (content) |
 | `live-20261118-083347` | `1340c13` | Merchant logos Brooks, Mizuno, New Balance, Running Room (DFS step 8; new files only, `--no-purge`) |
 | `live-20261118-101624` | `655a4e0` | Phone price bar design G (name + Jump to row, reading line, price + at shop, All N prices, See deal; No local price + Search Amazon); staging `staging-20261118-101054`; Ruggero: "make it go to staging, then deploy live once you did your checks" |
+| `live-20261118-173122` | `c76b521` | Lists + guides: new shoe box in the category sections (`template-parts/list-shoe-box.php`, CSS 3.6; copied review blocks removed); staging `staging-20261118-171651`; Ruggero: "deploy to live" (all 5 lists at once, not the one-list test) |

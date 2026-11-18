@@ -280,6 +280,7 @@ Dated, one line each, in date order (newest at the bottom). A line that was late
 - 2026-11-18 — **Verdict + "Buy if" box kept and added to every comparison** (Ruggero; the June pilot measured the whole redesign, not the box). Written with each refresh; the other ~130 comparisons later.
 - 2026-11-18 — **SEO checklist 2.2 (versions in comparison titles) dropped** (Ruggero: "I don't think it's right"). Row removed from the tracker sheet.
 - 2026-11-18 — **Review spec fields follow the review text** where they disagree (Ruggero: "text is more accurate"); fixed during each comparison refresh.
+- 2026-11-18 — **Lists + guides: new shoe box, all 5 lists live at once** (Ruggero: "i believe it's much better", "deploy to live"). Category sections keep only list-specific text first (Why it won = team review), 3 pros/cons, facts and a button to the review; the copies of the review (In short, who should buy, specs, rating breakdown) are gone. No one-list test: traffic too small to measure; watch Search Console instead. Ruggero: deploy nothing else to live unless discussed explicitly.
 
 ## Open questions (decide, then move above)
 - Later (DFS): a worker that finds **local list prices** (rrp_gb, rrp_de…) for about 2 years of shoes, so non-US offers can be price-filtered. Builds on `theme/MSRP-LOCAL-PRICING-BRIEF.md` (2026-06-24 decision).
