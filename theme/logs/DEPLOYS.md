@@ -47,3 +47,4 @@ _One line per live deploy, from the git tags in `rsg_2022`. What each change doe
 | `live-20261117-105515` | `11d3061` | /reviews/ cards: permalink from the card's own ID |
 | `live-20261117-212319` | `4c796d1` | Homepage hero: rotate daily through the 5 newest reviews (switch 02:00 UTC, shown after the morning Amazon purge); label 'Recent review' |
 | `live-20261117-224059` | `b651a25` | Homepage hero: the review's featured image (same photo rule as the rest of the site) |
+| `live-20261118-062703` | `b7ab7d8` | Price boxes: no local offer -> 'Check price' Amazon search in the visitor's own store (GB/IE/CA/EU also when the country has no data); includes `df41069` guides archive brand links |

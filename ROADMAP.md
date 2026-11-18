@@ -34,7 +34,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 |---|---|---|---|
 | 11 | **Theme rebuild, in place and incremental** — reskin live 15 Nov; homepage, `/top/`, guides, `/reviews/` hub rebuilt 17 Nov | theme | Left: widgets (after Phase F), remaining `rsg-core` items (`theme/RSG-CORE-AUDIT-2026-11-11.md`; remove `RSG_get_country_code`), listings' intro texts, Shoe Finder (weak: improve a lot or keep low-key) |
 | 12 | **Content & distribution restart** — the review-format research is also what the review template waits for | content | `content/README.md` |
-| 13 | DFS step 8: more merchants. Done: AU (15 Nov), RW EU FR/IT/ES/IE/GR/SE + Nike IT (18 Nov) | dfs | **Next:** Impact (Brooks, Mizuno, adidas, New Balance), then Running Room CA, Asics US; later RW NZ/SG/MY/HK; SportsShoes UK waits for Visualsoft. **Open design:** what a country with a feed shows on reviews without a local offer (today "No offers"; options: US prices, or a local Amazon "Check price" button) |
+| 13 | DFS step 8: more merchants. Done: AU (15 Nov), RW EU FR/IT/ES/IE/GR/SE + Nike IT (18 Nov) | dfs | **Next:** Impact (Brooks, Mizuno, adidas, New Balance), then Running Room CA, Asics US; later RW NZ/SG/MY/HK; SportsShoes UK waits for Visualsoft. Done 18 Nov: no local offer → "Check price" Amazon search in the visitor's own store (live). |
 | 14 | WP Rocket page cache on, after the DFS/theme/migration work; the DFS purge must also clear it | theme / hosting | Measure TTFB on cache misses before/after |
 | 15 | Analytics next steps | analytics | Umami 1-day flags from ~22 Nov, 7-day from ~7 Dec; outside data (networks, Amazon, Raptive) later; unattended analyst only when Ruggero asks (`analytics/README.md`) |
 
