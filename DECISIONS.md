@@ -274,6 +274,7 @@ Dated, one line each, in date order (newest at the bottom). A line that was late
 - 2026-11-18 — Geo / edge-share measurement moved to after Black Friday (Ruggero: deploys and purges this week aren't normal traffic). SearchWP not bought (yearly $199+); Ruggero reads up on Relevanssi (`theme/SITE-SEARCH-IDEAS-2026-11-17.md`).
 - 2026-11-18 — Impact feeds (live 18 Nov, Ruggero "set it all up, deploy to live"; Brooks thumbnails show "no image"): Brooks, Mizuno, adidas (DataFeedWatch catalogue), New Balance US; widths a feed shows only in the SKU/name are dropped by a per-feed `drop` rule; adidas Evo SL EXO/Woven and Brooks Ghost Max L are variants. `dfs/logs/DEPLOY-LOG.md` (Step 8b).
 - 2026-11-18 — **Running Room CA live** (Ruggero: "set it all up, deploy to live"): AvantLink feed 301697 (275153 is the same file); Canada gets local CAD offers on 90 reviews, Amazon.ca "Check price" on the rest. Only standard widths kept. `dfs/logs/DEPLOY-LOG.md` (Step 8c).
+- 2026-11-18 — **Phone price bar redesigned (design G), live** (Ruggero chose G from 7 variants; "deploy live once you did your checks"): shoe name + "Jump to" row, price + "at shop", "All N prices", "See deal"; no local price: "No local price" + "Search Amazon". `theme/PHONE-BAR-G-2026-11-18.md`
 
 ## Open questions (decide, then move above)
 - Later (DFS): a worker that finds **local list prices** (rrp_gb, rrp_de…) for about 2 years of shoes, so non-US offers can be price-filtered. Builds on `theme/MSRP-LOCAL-PRICING-BRIEF.md` (2026-06-24 decision).
