@@ -13,7 +13,7 @@ _Last updated 2026-11-18._ **Start every RSG session here** (after `git pull`), 
 | rsgmedia server (n8n, Stargrid) | `hosting/hetzner/RUNBOOK.md` | Hardened, backed up |
 | Automations (n8n, Make) | `automations/RUNBOOK.md` | Bank import still on paid n8n Cloud |
 | Email | `email/RUNBOOK.md` | List cleanup, then platform decision |
-| Content | `content/README.md` | Idea stage; old-article prune ~22 Nov; SEO checklist with Ruggero |
+| Content | `content/README.md` | Idea stage; old-article prune ~22 Nov; SEO checklist with Ruggero: comparison refresh 5 of 39 live 18 Nov |
 | Costs | `costs/COSTS.md` | Register |
 | Analytics + analyst | `analytics/README.md` | Umami live 16 Nov; analyst metrics + notebook on rsgmedia; Ruggero asks for the analysis in the project (not scheduled) |
 

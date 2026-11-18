@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18 11:35 UTC (phone price bar G live; bot rules v3)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-18 16:30 UTC (comparison refresh: 5 of 39 live)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -25,7 +25,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 | # | Item | Area | Next step |
 |---|---|---|---|
 | 1 | **Rotate exposed keys**: AWS ×3, Facebook, Google, AWeber, ip-api (theme `SECRETS.md`), Rocket SSH key, MailerLite, MailerSend (one token per system), network logins in the DFS `.env` | all | Ruggero revokes at the providers; Claude swaps them on the servers (incl. the `.env.bak-*` copies) |
-| 2 | **SEO checklist** (`theme/SEO-AUDIT-2026-11-17.md`, tracker sheet linked there) | theme / content | Ruggero works through it: 1.3 year in the best-list title (decide), then 2.1 the 39 outdated comparisons (read the newer review's verdict before swapping) |
+| 2 | **SEO checklist** (`theme/SEO-AUDIT-2026-11-17.md`, tracker sheet linked there) | theme / content | 2.1 outdated comparisons: #1–#5 live 18 Nov, max 5 a day, next #6 Cumulus vs Novablast (rewrite from the 3 reviews + verdict/"Buy if" box, staging → Ruggero reads → live; process in the audit doc "2.1"). 1.3 year in the best-list title still open (Ruggero) |
 | 3 | After-go-live leftovers (`theme/AFTER-GO-LIVE-2026-11-15.md`) | theme | GPS listing at `/reviews/gps/`; mega-menu keep/cut (46 links); price card 288 px; related cards use full-size cut-out PNGs; Rich Results test on a live review/comparison/author page; C1/C2 now that Raptive re-mapped reviews + comparisons (16 Nov); front-end modernization (`theme/MODERN-WEB-GUIDANCE-2026-11-15.md`) |
 | 4 | Site search | theme | `theme/SITE-SEARCH-IDEAS-2026-11-17.md`: SearchWP not bought; Ruggero reads up on Relevanssi (free); version-aware zero results + rich autocomplete are own code either way |
 | 5 | Bank import → self-hosted n8n, then cancel n8n Cloud (€24/mo) | automations | Needs the working flow export from n8n Cloud + what failed |
@@ -45,12 +45,14 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 - **Alt-text test** (live 11 Nov): read Search Console for the 10 test vs 10 control reviews ~9 Dec (4 weeks) and ~23 Dec (6 weeks): `theme/ALT-TEXT-TEST-2026-11.md`. The result decides "AI alt text at upload".
 - Network sub-ID checks (AWIN Click References, CJ/Rakuten, Impact `subId1`, AvantLink `ctc`) at the first commissions.
 - Brooks US thumbnails: brooksrunning.com refuses server image requests (403), so Brooks offers show "no image" (live 18 Nov). Options if it matters: another image source per shoe, or ask Brooks/Impact.
+- Review cut-out photos uploaded before 5 Nov were not cropped by Pixian (remove.bg era): list the uneven ones and re-crop (18 Nov: Adrenaline GTS 25 cropped by hand; Nimbus 28 has uneven margins).
+- Vomero 18 review: list price field $155 vs its text $150 (Ruggero to confirm). Cumulus 28 review: heel 42 mm in the specs vs 38.5 mm in the text (left).
 - List picks: "Compare N shops" drawer per pick (proposal on the design canvas, `theme/LISTS-TOP-2026-11-18.md`): waiting for Ruggero. NL/BE have no DFS shops (all Amazon "Check price"): Running Warehouse EU to NL/BE is a DFS item.
 - List data (`theme/LISTS-TOP-2026-11-18.md` "Open"): Evo SL plate field, "Hoka One One" name, Metaspeed same link men/women, long list intros (Puma, heavy runners).
 - "Check price" wording in the other price spots (phone block `mob`, sidebar card `rail`, drawer) vs "No local price" / "Search Amazon" in the phone bar: Ruggero to decide whether to align (`theme/PHONE-BAR-G-2026-11-18.md`).
 - **Non-US click gap** (17 Nov, humans): US 84 shop clicks / 792 visits; GB 2 / 244, AU 2 / 175, CA 8 / 143 despite local shops. Investigate (spots seen, offers shown, merchants) before Black Friday.
 - Bots left after rules v3: CN/SG/HK visits with normal screens and > 0 s (~165/day, 0 clicks); a country rule is the next step if they matter (`analytics/README.md`).
-- Theme backlog: comparison redesign batch 2 (waits for verdict copy), quiz results page + the price-drop-alert copy (build or cut), SEO backlog, local list prices (`theme/MSRP-LOCAL-PRICING-BRIEF.md`), orange-button contrast, shoe spec typos case by case.
+- Theme backlog: verdict/"Buy if" box on the ~130 comparisons outside the 39 refreshes (decision 18 Nov), quiz results page + the price-drop-alert copy (build or cut), SEO backlog, local list prices (`theme/MSRP-LOCAL-PRICING-BRIEF.md`), orange-button contrast, shoe spec typos case by case.
 - Make: merge the 3 insert scenarios (write via `acf`), port accounting, then cancel Make.
 - Delete rollback copies on rsgmedia (~20 Nov); SiteGround DNS leftovers; old Drive folders `Backups/servers` + `Backups/sites` (after 11 Dec, keep `Backups/nas`).
 - Close the remove.bg account (its API ends 1 Dec 2026).
