@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-19 11:50 UTC (byline date on refreshed comparisons: placement of the "What changed" note agreed)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-19 15:40 UTC (site search routing + listings reskin live; watches added)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -14,6 +14,8 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 | ~25 Nov | Phone price bar G + review top on phones: 7-day watch (bar from 18 Nov 10:16 UTC, review top from 18:03 UTC: read together) | theme | `stick` clicks per view and drawer opens (Umami `shop_click`, `drawer_open`) vs the week before; Raptive RPM on reviews; `gallery_swipe` per phone review view (`theme/PHONE-BAR-G-2026-11-18.md`, `theme/REVIEW-TOP-PHONE-2026-11-18.md`). If numbers drop: revert the review top first |
 | ~25 Nov | Lists/guides picks table: 7-day watch | theme | Raptive RPM and ads per view on the 5 lists (2 top ad candidates fewer), `header_card` clicks per view vs before (`theme/LISTS-TOP-2026-11-18.md`) |
 | ~2 Dec | Lists/guides new shoe box (live 18 Nov 17:31 UTC, all 5 lists): watch | theme | Search Console position + clicks of the 5 lists vs the 2 weeks before; "Read the full review" clicks from lists (`theme/LISTS-TOP-2026-11-18.md`) |
+| ~26 Nov | **Site search: 7-day watch** (live 19 Nov 15:25 UTC) | theme | Umami `search_result` outcomes (none/nothing share; was 51 % zero results), searches per visit, review opens after a search; top `not_tested` lines = review backlog (Novablast 6, Endorphin Azura, Cloudmonster 3, Hyperboost, 1080 v15, Superblast 3, Triumph 24, Kayano 33). Then decide typo tolerance (`theme/SITE-SEARCH-ROUTING-2026-11-19.md`) |
+| ~3 Dec | **Listings reskin: watch** (live 19 Nov) | theme | Same table as the baseline (review opens 17 %, another listing 41 %, leave 36 %, shop click 1.1 %) + Raptive listing RPM after 2 weeks; if RPM drops without more review opens: ask Raptive for closer in-list ads (`theme/LISTINGS-RESKIN-2026-11-19.md`) |
 | ~22 Nov | **Old-article prune (D5)** | content | `content/ARTICLES-PRUNE-PLAN-2026-11-15.md`; needs a fresh Search Console export. Decide whether it waits until after Black Friday |
 | ~24 Nov | Homepage re-check (a week to breathe) | theme | Shorter desktop hero kept in reserve (`theme/HOMEPAGE-BUILD-2026-11-17.md`) |
 | ~26 Nov | **Byline date on refreshed pages**: Google (AI Mode card, 19 Nov) shows Winflo vs Pegasus as "4 Apr 2020" although the page has updated 18 Nov 2026 in byline, schema `dateModified` and `article:modified_time` (URL submitted in Search Console 18 Nov) | theme | Check the 5 refreshed comparisons in Google. If still 2020: top byline (same height) = "Updated 18 Nov 2026 · Originally published Apr 2020" (site date format, not xx/xx/xxxx), the updated date links to the bottom author note; that note gets a one-line "What changed: …" from a new field, shown only when filled (Ruggero 19 Nov: no extra space at the top). Staging first, mobile + desktop; extractcheck. No changelog page |
@@ -29,7 +31,6 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 | 1 | **Rotate exposed keys**: AWS ×3, Facebook, Google, AWeber, ip-api (theme `SECRETS.md`), Rocket SSH key, MailerLite, MailerSend (one token per system), network logins in the DFS `.env` | all | Ruggero revokes at the providers; Claude swaps them on the servers (incl. the `.env.bak-*` copies) |
 | 2 | **SEO checklist** (`theme/SEO-AUDIT-2026-11-17.md`, tracker sheet linked there) | theme / content | 2.1 outdated comparisons: #1–#5 live 18 Nov, max 5 a day, next #6 Cumulus vs Novablast (rewrite from the 3 reviews + verdict/"Buy if" box, staging → Ruggero reads → live; process in the audit doc "2.1"). 1.3 year in the best-list title still open (Ruggero) |
 | 3 | After-go-live leftovers (`theme/AFTER-GO-LIVE-2026-11-15.md`) | theme | GPS listing at `/reviews/gps/`; mega-menu keep/cut (46 links); price card 288 px; related cards use full-size cut-out PNGs; Rich Results test on a live review/comparison/author page; C1/C2 now that Raptive re-mapped reviews + comparisons (16 Nov); front-end modernization (`theme/MODERN-WEB-GUIDANCE-2026-11-15.md`) |
-| 4 | Site search | theme | `theme/SITE-SEARCH-IDEAS-2026-11-17.md`: SearchWP not bought; Ruggero reads up on Relevanssi (free); version-aware zero results + rich autocomplete are own code either way |
 | 5 | Bank import → self-hosted n8n, then cancel n8n Cloud (€24/mo) | automations | Needs the working flow export from n8n Cloud + what failed |
 | 6 | Email list cleanup, then platform decision | email | Define active = opened/clicked in 12 months → re-engagement → remove. Sign-up mechanism to change (idea: monthly contest) |
 | 7 | DFS simplification: test bench as a stopped copy of production, nightly settings dump to git, matcher fixture tests | dfs | — |
@@ -61,4 +62,6 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 - Close the remove.bg account (its API ends 1 Dec 2026).
 - Umami admin password and the `rsg_analyst` password into 1Password, then delete `_private/umami-admin.txt` (`analytics/README.md` Open 5).
 - Resubmit the sitemap in Search Console (Ruggero).
+- Listings cleanup (Ruggero to OK): unused `print_review_block_2020()` + `.rsg-rc` CSS, template leftovers, keyboard-safe filter menus (`theme/LISTINGS-RESKIN-2026-11-19.md` Open).
+- Push the theme tags `live-20261119-152531` + `staging-20261119-*` to GitHub from the Mac (the cloud proxy refuses tag pushes; `main` is pushed).
 - Comment notifications: reader reply emails only if comments matter after the content restart.

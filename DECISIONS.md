@@ -291,3 +291,6 @@ Dated, one line each, in date order (newest at the bottom). A line that was late
 - Later (DFS): a worker that finds **local list prices** (rrp_gb, rrp_de…) for about 2 years of shoes, so non-US offers can be price-filtered. Builds on `theme/MSRP-LOCAL-PRICING-BRIEF.md` (2026-06-24 decision).
 - Email platform: MailerLite vs EmailOctopus vs Listmonk + Amazon SES (after list cleanup).
 - Automations: Make scenarios → n8n or plain Python (after the bank import move).
+- 2026-11-19 — **Site search routing live** (Ruggero, "deploy to live"): shoe names → review / family / brand page or "not tested yet" + nearest older version; typo step parked, results-as-cards dropped, search edge cache stays 30 days. `theme/SITE-SEARCH-ROUTING-2026-11-19.md`
+- 2026-11-19 — **Families: no new families** (Ruggero): only his 27; tag the reviews of those families that lacked it (41 done, live), variants inside the family, no editor warning. `theme/SITE-SEARCH-ROUTING-2026-11-19.md`
+- 2026-11-19 — **Listings reskin live** (Ruggero): new card (test photo, summary, score box, price), filters as menus only (no chips), header + filters full width, right ad column, "Browse reviews" links. Accepted fewer in-list ads (desktop 9 → 6–7 spots) over 20 per page. `theme/LISTINGS-RESKIN-2026-11-19.md`

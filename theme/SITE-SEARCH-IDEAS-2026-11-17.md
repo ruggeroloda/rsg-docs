@@ -1,5 +1,7 @@
 # Site search — findings and ideas (17 Nov 2026)
 
+**DONE (in part) — live 19 Nov 2026 (`04479d8`, `live-20261119-152531`):** version-aware zero results and shoe-name routing, see `SITE-SEARCH-ROUTING-2026-11-19.md`. Not done: autocomplete, typo tolerance (parked), cache change (dropped).
+
 Notebook: `rsg.finding` #5 (`search:zero_results|home`). Ruggero 17 Nov: no hurry on the cache fix; wants ideas to make search much better.
 
 ## What we know (day 1 of the new homepage)
