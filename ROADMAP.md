@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-19 15:40 UTC (site search routing + listings reskin live; watches added)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-19 17:10 UTC (Rocket.net server stall reported; deploy.sh swaps files at the end)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -19,6 +19,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 | ~22 Nov | **Old-article prune (D5)** | content | `content/ARTICLES-PRUNE-PLAN-2026-11-15.md`; needs a fresh Search Console export. Decide whether it waits until after Black Friday |
 | ~24 Nov | Homepage re-check (a week to breathe) | theme | Shorter desktop hero kept in reserve (`theme/HOMEPAGE-BUILD-2026-11-17.md`) |
 | ~26 Nov | **Byline date on refreshed pages**: Google (AI Mode card, 19 Nov) shows Winflo vs Pegasus as "4 Apr 2020" although the page has updated 18 Nov 2026 in byline, schema `dateModified` and `article:modified_time` (URL submitted in Search Console 18 Nov) | theme | Check the 5 refreshed comparisons in Google. If still 2020: top byline (same height) = "Updated 18 Nov 2026 · Originally published Apr 2020" (site date format, not xx/xx/xxxx), the updated date links to the bottom author note; that note gets a one-line "What changed: …" from a new field, shown only when filled (Ruggero 19 Nov: no extra space at the top). Staging first, mobile + desktop; extractcheck. No changelog page |
+| ~21 Nov | **Rocket.net answer on the 19 Nov server stall** (10:40–10:44 UTC, emailed 19 Nov) | hosting | Read the answer (`hosting/RUNBOOK.md` Open 7); if stalls repeat, send them the new times |
 | 25 Nov | Rocket.net charges $1,000 (Business annual) | hosting | Check the invoice and the credit for the unused Expert time (`hosting/RUNBOOK.md` Open 1) |
 | 26 Nov | Delete the site-pass backups on Rocket.net (`~/rsg_deploy_backups/site-cleanup-*-20261112-*`, ~500 MB) | hosting | — |
 | 27–30 Nov | **Black Friday → Cyber Monday** | all | Freeze rule to decide (what may still go live that week) |
@@ -63,5 +64,5 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 - Umami admin password and the `rsg_analyst` password into 1Password, then delete `_private/umami-admin.txt` (`analytics/README.md` Open 5).
 - Resubmit the sitemap in Search Console (Ruggero).
 - Listings cleanup (Ruggero to OK): unused `print_review_block_2020()` + `.rsg-rc` CSS, template leftovers, keyboard-safe filter menus (`theme/LISTINGS-RESKIN-2026-11-19.md` Open).
-- Push the theme tags `live-20261119-152531` + `staging-20261119-*` to GitHub from the Mac (the cloud proxy refuses tag pushes; `main` is pushed).
+- Push the theme tags `live-20261119-152531` + `staging-20261119-*` to GitHub from the Mac Terminal (the cloud proxy refuses tag pushes and Claude's Mac shell has no GitHub key for `rsg-theme`; `main` is pushed, `d26aea5`).
 - Comment notifications: reader reply emails only if comments matter after the content restart.

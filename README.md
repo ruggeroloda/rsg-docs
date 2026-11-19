@@ -9,7 +9,7 @@ _Last updated 2026-11-19._ **Start every RSG session here** (after `git pull`), 
 |---|---|---|
 | Price engine (DFS) | `dfs/RUNBOOK.md` | Live since 10 Nov on rsg-dfs; 25 feeds, countries US, CA, GB, DE, FR, IT, ES, IE, GR, SE, AU (18 Nov: Impact US brand shops + Running Room CA); old Linode retires in Phase F (due now) |
 | WordPress site + theme | `theme/RUNBOOK.md` | Reskin live 15 Nov; homepage, `/top/`, guides, `/reviews/` hub, list images live 17 Nov; one-width price copies + lists picks table + deploy guard + phone price bar G + lists/guides shoe box + review top on phones live 18 Nov; site search routing + `/reviews/` listings reskin + 41 reviews tagged into families live 19 Nov; live = staging = GitHub `main` (`04479d8`) |
-| Hosting, backups, DNS | `hosting/RUNBOOK.md` | Rocket.net Business annual since 12 Nov ($1,000 on 25 Nov); bot challenge on 2 networks since 16 Nov |
+| Hosting, backups, DNS | `hosting/RUNBOOK.md` | Rocket.net Business annual since 12 Nov ($1,000 on 25 Nov); bot challenge on 2 networks since 16 Nov; server stall 19 Nov reported, waiting for their answer |
 | rsgmedia server (n8n, Stargrid) | `hosting/hetzner/RUNBOOK.md` | Hardened, backed up |
 | Automations (n8n, Make) | `automations/RUNBOOK.md` | Bank import still on paid n8n Cloud |
 | Email | `email/RUNBOOK.md` | List cleanup, then platform decision |
