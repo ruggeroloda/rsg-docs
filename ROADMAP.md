@@ -66,5 +66,4 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 - Umami admin password and the `rsg_analyst` password into 1Password, then delete `_private/umami-admin.txt` (`analytics/README.md` Open 5).
 - Resubmit the sitemap in Search Console (Ruggero).
 - Listings cleanup (Ruggero to OK): unused `print_review_block_2020()` + `.rsg-rc` CSS, template leftovers, keyboard-safe filter menus (`theme/LISTINGS-RESKIN-2026-11-19.md` Open).
-- Push the theme tags `live-20261119-152531` + `staging-20261119-*` to GitHub from the Mac Terminal (the cloud proxy refuses tag pushes and Claude's Mac shell has no GitHub key for `rsg-theme`; `main` is pushed, `d26aea5`).
 - Comment notifications: reader reply emails only if comments matter after the content restart.
