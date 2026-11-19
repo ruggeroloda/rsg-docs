@@ -4,7 +4,7 @@
 
 ## What changed (hub, brand, type, family listings + the search pages)
 - **Card** `rsg_review_card()`: test photo (240×180 desktop, full width on phones; cut-out only when no photo), name from the title, one-sentence summary from the Verdict field without "The X is" (`rsg_card_summary()`, 2nd sentence when the 1st is < 70 chars), specs line under the photo (weight · drop · tested by · date), expert score box, price button (box `card`), Read review. Tags: Latest version / Older version (only lines with 2+ reviews, from the search index), Editor's choice / Recommended. Root `div.panel.rsg-card` (not `<article>`: extractors keep only the first), hidden "Expert score: N/10" under the name.
-- **Page**: breadcrumb, same H1 and intro texts as before, full-width filter bar of menus only (Brand, Line on brand pages, Type, Find a shoe in this list — Ruggero: no chips), count line, list, 300 px+ right column from 1,140 px (empty: Raptive sticky sidebar), "Browse reviews" link block under the list (the old left column's links: lines, types within the brand, brands within the type; main brands shown, the rest under "More brands").
+- **Page**: breadcrumb, same H1 and intro texts as before, full-width filter bar of menus only (Brand, Line on brand pages, Type, Find a shoe in this list — Ruggero: no chips), count line, list, 300 px+ right column from 1,140 px (Raptive sticky sidebar, on since 19 Nov ~18:00 UTC: 2 slots, `Sidebar_9` + `Sidebar_10`, checked live), "Browse reviews" link block under the list (the old left column's links: lines, types within the brand, brands within the type; main brands shown, the rest under "More brands").
 - Raptive hooks kept: cards = `.col-lg-9 > .panel`; sidebar = exact class `col-lg-3 d-none d-lg-block`.
 
 ## Checks (19 Nov)
