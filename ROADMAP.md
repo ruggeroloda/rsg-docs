@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-19 10:20 UTC (byline date on refreshed comparisons: Google shows the 2020 published date)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-19 11:50 UTC (byline date on refreshed comparisons: placement of the "What changed" note agreed)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -16,7 +16,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 | ~2 Dec | Lists/guides new shoe box (live 18 Nov 17:31 UTC, all 5 lists): watch | theme | Search Console position + clicks of the 5 lists vs the 2 weeks before; "Read the full review" clicks from lists (`theme/LISTS-TOP-2026-11-18.md`) |
 | ~22 Nov | **Old-article prune (D5)** | content | `content/ARTICLES-PRUNE-PLAN-2026-11-15.md`; needs a fresh Search Console export. Decide whether it waits until after Black Friday |
 | ~24 Nov | Homepage re-check (a week to breathe) | theme | Shorter desktop hero kept in reserve (`theme/HOMEPAGE-BUILD-2026-11-17.md`) |
-| ~26 Nov | **Byline date on refreshed pages**: Google (AI Mode card, 19 Nov) shows Winflo vs Pegasus as "4 Apr 2020" although the page has updated 18 Nov 2026 in byline, schema `dateModified` and `article:modified_time` (URL submitted in Search Console 18 Nov) | theme | Check the 5 refreshed comparisons in Google. If still 2020: byline leads with "Updated 18 Nov 2026", then "Originally published Apr 2020" (site date format, not xx/xx/xxxx), plus a one-line "What changed" note from a new field, shown only when filled. Staging first, mobile + desktop; extractcheck. No separate changelog page |
+| ~26 Nov | **Byline date on refreshed pages**: Google (AI Mode card, 19 Nov) shows Winflo vs Pegasus as "4 Apr 2020" although the page has updated 18 Nov 2026 in byline, schema `dateModified` and `article:modified_time` (URL submitted in Search Console 18 Nov) | theme | Check the 5 refreshed comparisons in Google. If still 2020: top byline (same height) = "Updated 18 Nov 2026 · Originally published Apr 2020" (site date format, not xx/xx/xxxx), the updated date links to the bottom author note; that note gets a one-line "What changed: …" from a new field, shown only when filled (Ruggero 19 Nov: no extra space at the top). Staging first, mobile + desktop; extractcheck. No changelog page |
 | 25 Nov | Rocket.net charges $1,000 (Business annual) | hosting | Check the invoice and the credit for the unused Expert time (`hosting/RUNBOOK.md` Open 1) |
 | 26 Nov | Delete the site-pass backups on Rocket.net (`~/rsg_deploy_backups/site-cleanup-*-20261112-*`, ~500 MB) | hosting | — |
 | 27–30 Nov | **Black Friday → Cyber Monday** | all | Freeze rule to decide (what may still go live that week) |
