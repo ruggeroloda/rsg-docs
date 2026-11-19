@@ -1,11 +1,12 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-19 19:30 UTC (Raptive: listings sticky sidebar on and checked; old-review selectors updated, 1 sidebar ad there)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-19 19:35 UTC (Hoka US kids offers fixed live; outdated US list prices + list-price design added; 19:30: Raptive: listings sticky sidebar on and checked; old-review selectors updated, 1 sidebar ad there)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
 |---|---|---|---|
 | now | **Phase F: retire the old DFS** (planned from ~17 Nov) | dfs / hosting | `dfs/PLAN-STEP7.md`: no callers 7 days, `/go/` stub, strip `[ds]` from 76 old posts, deactivate `dstudio` (+ its 2 cron hooks), power off 1 week, cancel ($29/mo); Linode Managed monitor + `dfs-mon` off; `uploads/dfs-images-cache` (498 MB) after |
+| now | **Outdated US list prices hide full-price offers** (found 19 Nov: shops raised prices, `rrp_us` not; filter drops > 1 % above list, e.g. Vomero 18 $155 vs Nike $165, Bondi 9 at RW/Zappos hidden) | dfs | Ruggero OKs the 10 raises in `dfs/LIST-PRICES-2026-11-19.md` → write `rrp_us` (staging + live); then the nightly raise-proposal check (USD) on the test bench. Other currencies after 30 Nov |
 | now | **PHP warnings cleanup**: fatals solved 18 Nov (0 real since 15 Nov); 394 distinct warnings left in ~25 theme files | theme | Fix the ~100 'read on null/false' first, then the rest, one template per batch on staging with byte-identical HTML; timing vs Black Friday to decide (Ruggero) |
 | now | **DFS fresh price check** (Ruggero 18 Nov: last check 10–11 Nov) | dfs | Old vs new on ~30 shoes, links land, per-country offers; merchant moves are in the DFS chat |
 | now | **Australia: running/sport retailers** (Ruggero 18 Nov) | dfs | List AU running retailers, then their affiliate programs (Nike AU, Sportitude, The Iconic are dead ends) |
@@ -59,7 +60,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 - "Check price" wording in the other price spots (phone block `mob`, sidebar card `rail`, drawer) vs "No local price" / "Search Amazon" in the phone bar: Ruggero to decide whether to align (`theme/PHONE-BAR-G-2026-11-18.md`).
 - **Non-US clicks, low priority** (17 Nov, humans): US 84 shop clicks / 792 visits; GB 2 / 244, AU 2 / 175, CA 8 / 143. Ruggero 18 Nov: UK visitors always bought mostly at Amazon ("no Amazon, no sales") and the money comes from the US, so GB is not a gap and this is no longer a pre-Black Friday item. AU/CA only if a cheap cause shows up.
 - Bots left after rules v3: CN/SG/HK visits with normal screens and > 0 s (~165/day, 0 clicks); a country rule is the next step if they matter (`analytics/README.md`).
-- Theme backlog: verdict/"Buy if" box on the ~130 comparisons outside the 39 refreshes (decision 18 Nov), quiz results page + the price-drop-alert copy (build or cut), SEO backlog, local list prices (`theme/MSRP-LOCAL-PRICING-BRIEF.md`), orange-button contrast, shoe spec typos case by case.
+- Theme backlog: verdict/"Buy if" box on the ~130 comparisons outside the 39 refreshes (decision 18 Nov), quiz results page + the price-drop-alert copy (build or cut), SEO backlog, local list prices outside the US (`dfs/LIST-PRICES-2026-11-19.md`, after 30 Nov), orange-button contrast, shoe spec typos case by case.
 - Make: merge the 3 insert scenarios (write via `acf`), port accounting, then cancel Make.
 - Delete rollback copies on rsgmedia (~20 Nov); SiteGround DNS leftovers; old Drive folders `Backups/servers` + `Backups/sites` (after 11 Dec, keep `Backups/nas`).
 - Close the remove.bg account (its API ends 1 Dec 2026).

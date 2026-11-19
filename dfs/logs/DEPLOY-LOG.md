@@ -2,6 +2,13 @@
 
 One entry per change to rsg-dfs, the test bench or the DFS parts of WordPress: date/time UTC, what, why (who asked), commit, checks, rollback. Earlier: `DEPLOY-LOG-STEP6.md`, `DEPLOY-LOG-STEP7.md` (incl. 11 Nov shoe-list sync).
 
+## Hoka US kids shoes out — 19 Nov 2026 19:17–19:24 UTC (Ruggero: "the most important thing is to fix the import and showing of hoka kids shoes", "deploy live")
+- Found in the list-price test run: Hoka US kids rows were kept as adult offers on **Clifton 10** (Hoka "from $88", link to `hoka.com/en/us/kids-shoes/…`), **Mach 6** ($77) and **Rincon 4** ($64–90). Their names have no kids word ("HOKA Clifton 10 Shoes in White/White, Size 3.5Y"; the size is cut with the name); only the category column 29 says "Kids > Footwear > Shoes". Every shop's kept offers checked for kids sizes/links/youth words: only these 3 pages.
+- Code `5053985`: hoka_us `options.kids = {column 29, kids_values ["Kids > Footwear > Shoes"]}` in SEED and via `_migrate_hoka_kids` (sets it only if the feed has no kids option). Settings only, no matcher change.
+- Test bench (rsgmedia, today's Hoka file copied from production): 640 kids rows dropped, kept 3,167 → 2,527, only these 3 shoes change; pushed the 3 to staging, staging pages have 0 kids links.
+- Production: no job running, `git pull` + `up -d --build`, `python -m dfs.match 2026-11-19 hoka_us` (same numbers), `prices build`, `wp_push push --only 48843,45754,47259` (3 changed, purge done). Live check: 0 kids links on the 3 pages (edge and fresh); US offers now: Clifton 10 Hoka $124 (adult); Mach 6 and Rincon 4 no Hoka offer (Hoka's feed has only kids sizes for them).
+- Rollback: `git revert 5053985` + `UPDATE feeds SET options=json_remove(options,'$.kids') WHERE feed='hoka_us'` + re-match + build + push.
+
 ## Step 8c: Impact US + Running Room CA LIVE — 18 Nov 2026 08:30–08:45 UTC (Ruggero: "set it all up, deploy to live")
 - Code `872c70c` + `f42b89b` on top of the Impact commit `6417778` (all in `main`): **rr_ca** (AvantLink feed 301697, legacy 56, env `AVANTLINK_RR_CA_URL`, CAD, import 07:46 UTC; width rule: only men's/unisex "D Width" and women's "B Width" kept), variants `leather`, `spike`, `hiker` (Ghost Max Leather, Speedgoat 5 Spike GTX, Timp 5 Hiker GTX), csv field limit raised (the feed's "Variants XML" field > 128 KB refused the first production download).
 - Test bench first (08:30): Running Room 2,192 rows → 153 kept, 90 shoes; 0 non-standard widths kept. Regression check on production data: the new variant words only drop rows that were wrong (Amazon "Timp 5 Hiker GTX", Zappos "Ghost Max Leather"); "Cherry Leather" colour names stay (rule = word right after the name).
