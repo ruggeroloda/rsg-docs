@@ -35,6 +35,8 @@ Source: Raptive dashboard exports (Ruggero, 13 Nov). Use as the "before" for eve
 - **11 Nov (Ruggero, dashboard):** interstitials off (desktop + mobile), mobile large format ads off. Other settings at that point: desktop sticky footer close button removed, mobile one kept; sticky outstream on both; mobile sticky video bottom right; Reduce CLS from ads on.
 - **11 Nov (Ruggero, Raptive request #495303):** remove Below Post on all devices; mobile viewport limit (no two content ads on screen at once); asked why actual density is below target.
 - **13 Nov ~16:00 UTC (Raptive, Keaton):** Below Post removed, mobile one-content-ad-per-viewport override on. Ruggero replied: keep the guide cap and the viewport limit as they are for now.
+- **18 Nov (Raptive, Brianna):** review + comparison placements use our markers (other page types: body classes only, old injection selectors); review sidebar ad limited to square sizes (300×250, 250×250, 300×300; Ruggero's ask 16 Nov). The gap between sidebar price card and ad is **our** `spacer-xxl` (64 px) at the end of the sticky wrapper in the 4 review templates, not Raptive's. Asked us: an rsg-page-review-old example, and whether we run another privacy banner (no: only Raptive's, checked 19 Nov).
+- **19 Nov (draft in Gmail, not sent yet):** sticky sidebar on `/reviews/` listings (`rsg-page-listing`, column `col-lg-3 d-none d-lg-block`), example old review `/review/hoka-speedgoat-5-review/`, no other privacy banner, spacer is ours and goes. Homepage sticky deliberately not mentioned (after the homepage watch, ~24–25 Nov).
 - Measure the 11 + 13 Nov changes from ~25–27 Nov against this baseline.
 
 ## Raptive's answers (#495303, 13 Nov — Keaton 15:58 UTC, Brianna 21:55 UTC)
