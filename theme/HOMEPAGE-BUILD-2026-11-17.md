@@ -27,8 +27,8 @@
 - 0 price clicks from the picks; 0 plans sign-ups. Hero search = top action (~15 % of visits): see `SITE-SEARCH-IDEAS-2026-11-17.md` (finding #5).
 - **Decision (Ruggero, 17 Nov 22:31): give the homepage a week; re-check ~24 Nov** (note the hero rotation from 17 Nov 21:23 and the article pruning ~22 Nov fall inside the week).
 
-## In the tank (not on staging)
-- **Shorter desktop hero:** desktop-only CSS (≥ 992 px): hero height by content (~450 px instead of 720), smaller H1, lead on one line, chips + browse links on one line; nothing removed; phone unchanged. Preview with live-page screenshots at 4 desktop sizes + phone, and the CSS: https://claude.ai/artifact/HStvL3AMcHBsAGkEPxVXRF. Use if desktop in the markets is still clearly worse after the week.
+## In the tank
+- **Shorter desktop hero — ON STAGING 19 Nov 2026 17:47 UTC (`548ff26`, behind the switch `rsg_home_hero_short`; Ruggero: "put the shorter hero on stage", not to ride along with another live deploy). Live = set the option on live after his "deploy to live" (`RUNBOOK.md` "Homepage 2026"). Why now: 17–18 Nov desktop home landings in the markets left without a 2nd page 58 % / 56 % vs 43 % on the old homepage (phone 38–42 %); desktop click-or-search 18–27 % vs phone 40–50 %.** Original note: desktop-only CSS (≥ 992 px): hero height by content (~450 px instead of 720), smaller H1, lead on one line, chips + browse links on one line; nothing removed; phone unchanged. Preview with live-page screenshots at 4 desktop sizes + phone, and the CSS: https://claude.ai/artifact/HStvL3AMcHBsAGkEPxVXRF. Use if desktop in the markets is still clearly worse after the week.
 
 ## Open
 - Ruggero: Search Console → URL Inspection → Request indexing for the homepage; fix /top/best-running-shoes-right-now/ title ("(April 2025)").

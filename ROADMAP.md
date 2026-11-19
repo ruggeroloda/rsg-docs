@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-19 17:40 UTC (ads: listings sticky sidebar asked of Raptive, review sidebar gap removed, homepage sticky ~24–25 Nov)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-19 18:10 UTC (shorter desktop homepage hero on staging behind a switch)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -17,7 +17,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 | ~26 Nov | **Site search: 7-day watch** (live 19 Nov 15:25 UTC) | theme | Umami `search_result` outcomes (none/nothing share; was 51 % zero results), searches per visit, review opens after a search; top `not_tested` lines = review backlog (Novablast 6, Endorphin Azura, Cloudmonster 3, Hyperboost, 1080 v15, Superblast 3, Triumph 24, Kayano 33). Then decide typo tolerance (`theme/SITE-SEARCH-ROUTING-2026-11-19.md`) |
 | ~3 Dec | **Listings reskin: watch** (live 19 Nov) | theme | Same table as the baseline (review opens 17 %, another listing 41 %, leave 36 %, shop click 1.1 %) + Raptive listing RPM after 2 weeks; if RPM drops without more review opens: ask Raptive for closer in-list ads (`theme/LISTINGS-RESKIN-2026-11-19.md`) |
 | ~22 Nov | **Old-article prune (D5)** | content | `content/ARTICLES-PRUNE-PLAN-2026-11-15.md`; needs a fresh Search Console export. Decide whether it waits until after Black Friday |
-| ~24 Nov | Homepage re-check (a week to breathe) | theme | Shorter desktop hero kept in reserve (`theme/HOMEPAGE-BUILD-2026-11-17.md`) |
+| ~24 Nov | Homepage re-check (a week to breathe) | theme | Desktop landings in the markets leave without a 2nd page 56–58 % vs 43 % old (17–18 Nov). **Shorter desktop hero on staging (19 Nov, switch `rsg_home_hero_short`)**: Ruggero decides; live = option on live after "deploy to live", never with another deploy (`theme/RUNBOOK.md` "Homepage 2026") |
 | ~24–25 Nov | **Homepage sticky ad: ask Raptive** (after the homepage re-check, in time for Black Friday prices) | ads | Ruggero's call; not mentioned to Raptive yet (`ads/BASELINE-2026-11.md` Open 2) |
 | ~21 Nov | **Raptive: listings sticky sidebar** (asked 19 Nov, #495303) | ads | Check their answer; then count sidebar ads on a listing (Playwright, `theme/LISTINGS-RESKIN-2026-11-19.md` "How to re-run") |
 | ~26 Nov | **Byline date on refreshed pages**: Google (AI Mode card, 19 Nov) shows Winflo vs Pegasus as "4 Apr 2020" although the page has updated 18 Nov 2026 in byline, schema `dateModified` and `article:modified_time` (URL submitted in Search Console 18 Nov) | theme | Check the 5 refreshed comparisons in Google. If still 2020: top byline (same height) = "Updated 18 Nov 2026 · Originally published Apr 2020" (site date format, not xx/xx/xxxx), the updated date links to the bottom author note; that note gets a one-line "What changed: …" from a new field, shown only when filled (Ruggero 19 Nov: no extra space at the top). Staging first, mobile + desktop; extractcheck. No changelog page |
