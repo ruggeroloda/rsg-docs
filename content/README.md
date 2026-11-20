@@ -2,7 +2,7 @@
 
 _Last updated 2026-11-20. Status: idea stage._
 
-**20 Nov 2026: content review with Fable done; the work list to continue is `CONTENT-REVIEW-2026-11-20.md`.**
+**20 Nov 2026: content review with Fable done; the work list to continue is `CONTENT-REVIEW-2026-11-20.md`.** Prune: independent analysis `PRUNE-ANALYSIS-2026-11-20.md` (20 Nov), waiting for Ruggero's decision on date and scope.
 
 ## Direction so far (Ruggero, Nov 2026)
 - "Nimble" restart: budget **one shoe per month** (~$100 with the Running Warehouse discount).

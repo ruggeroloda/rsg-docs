@@ -1,5 +1,7 @@
 # Brief: should RSG prune, what, and how far? (independent analysis)
 
+**DONE — analysis delivered 20 Nov 2026: `PRUNE-ANALYSIS-2026-11-20.md` (nothing changed on the site).**
+
 _Written 20 Nov 2026 by Claude Fable for a separate Fable chat. This file gives the question, the material and the risks. It holds numbers, not a recommendation: reach your own._
 
 ## The question (Ruggero, 20 Nov)
