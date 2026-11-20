@@ -49,7 +49,7 @@ Not backed up: the DFS test bench volume `dfs_data` (production has its own back
 - DFS production never runs here (9 Nov); the test bench is planned to become a stopped copy refreshed from production (ROADMAP "DFS simplification").
 
 ## Open
-1. Rollback copies of the 6 Nov hardening deleted 20 Nov. Still to delete (Ruggero OK needed): `stargrid-api.bak-20261106`, `stargrid-api/.env.bak-20261106` (old token), `src/routes/admin.js.bak-*`; the 16 Nov Umami `.bak-20261116-*` files later. 18 apt updates pending (incl. Docker 29.10), not applied.
+1. Rollback copies of the 6 Nov hardening and the `stargrid-api` copies deleted 20 Nov; the 16 Nov Umami `.bak-20261116-*` files (compose ×2, sshd) are kept for now. Packages current since 20 Nov (Docker 29.10), no reboot pending. `stargrid-api` git has an uncommitted `src/routes/stats.js` change to check.
 2. DNS leftovers `portainer|adminer|npm.rsgmedia.info` at SiteGround.
 3. Stargrid image URLs need an HTTPS route through NPM before posting is reactivated (not a reopened 3001).
 4. n8n: internal runner mode deprecated (revisit at the next upgrade).
