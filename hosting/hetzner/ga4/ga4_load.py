@@ -1,8 +1,9 @@
-"""Load GA4 history into Postgres (schema rsg, database umami) — 20 Nov 2026. One-off pull, re-runnable for a range.
+"""Load GA4 history into Postgres (schema rsg, database umami) — 20 Nov 2026. Weekly reload of the last 2 months; any range by hand.
 
 Per month (one API call per table and month, paged at 250k rows): rsg.ga4_page_day, rsg.ga4_landing_day,
 rsg.ga4_site_day, rsg.ga4_event_day (see schema.sql). Each month is replaced whole in one transaction.
-Usage:  ga4_load.py 2023-02 2026-11      -> months from .. to (inclusive); the current month loads up to yesterday
+Usage:  ga4_load.py                      -> last month + this month (weekly cron, Mondays 06:50 UTC)
+        ga4_load.py 2023-02 2026-11      -> months from .. to (inclusive); the current month loads up to yesterday
 Env: GA4_PROPERTY (250633127), GA4_KEY_FILE (service account JSON, same as Search Console), DATABASE_URL.
 """
 import datetime as dt, os, sys, time
@@ -83,8 +84,12 @@ def load(conn, m0):
     print(m0.strftime("%Y-%m"), b, n, "other:", other, flush=True)
 
 def main():
-    m = dt.date.fromisoformat(sys.argv[1] + "-01")
-    last = dt.date.fromisoformat(sys.argv[2] + "-01")
+    if len(sys.argv) == 3:
+        m = dt.date.fromisoformat(sys.argv[1] + "-01")
+        last = dt.date.fromisoformat(sys.argv[2] + "-01")
+    else:  # weekly job: last month + this month (GA4 settles within ~3 days, so the whole previous month is reloaded once more)
+        last = dt.date.today().replace(day=1)
+        m = (last - dt.timedelta(days=1)).replace(day=1)
     with psycopg.connect(DB) as conn:
         while m <= last:
             load(conn, m)
