@@ -1,19 +1,19 @@
 # RSG — project primer
 
-_Last updated 2026-11-19._ **Start every RSG session here** (after `git pull`), then read `ROADMAP.md` and the `RUNBOOK.md` of the workstream you work on. That's all you need for the current state.
+_Last updated 2026-11-20._ **Start every RSG session here** (after `git pull`), then read `ROADMAP.md` and the `RUNBOOK.md` of the workstream you work on. That's all you need for the current state.
 
 **What this is:** the relaunch of RunningShoesGuru.com: cut running costs, modernise the stack, restart content on a small budget. Traffic is ~10 % of what it was (GA4 ~160k page views / 30 days, Nov 2026); revenue = Raptive ads + affiliate (mostly Amazon) + deals emails.
 
 ## Workstreams
-| Workstream | Runbook (current state) | Status 19 Nov |
+| Workstream | Runbook (current state) | Status 20 Nov |
 |---|---|---|
 | Price engine (DFS) | `dfs/RUNBOOK.md` | Live since 10 Nov on rsg-dfs; 25 feeds, countries US, CA, GB, DE, FR, IT, ES, IE, GR, SE, AU (18 Nov: Impact US brand shops + Running Room CA); Hoka US kids offers removed 19 Nov; outdated US list prices hide some full-price offers (ROADMAP); old Linode retires in Phase F (due now) |
-| WordPress site + theme | `theme/RUNBOOK.md` | Reskin live 15 Nov; homepage, `/top/`, guides, `/reviews/` hub, list images live 17 Nov; one-width price copies + lists picks table + deploy guard + phone price bar G + lists/guides shoe box + review top on phones live 18 Nov; site search routing + `/reviews/` listings reskin + 41 reviews tagged into families live 19 Nov; review sidebar spacer removed + listings browse block beside the ad column live 19 Nov 17:29 UTC; live = `2fe3018`; staging = GitHub `main` = `56c9424` (same content as live: the shorter desktop hero was tried and reverted 19 Nov) |
+| WordPress site + theme | `theme/RUNBOOK.md` | Reskin live 15 Nov; homepage, `/top/`, guides, `/reviews/` hub, list images live 17 Nov; one-width price copies + lists picks table + deploy guard + phone price bar G + lists/guides shoe box + review top on phones live 18 Nov; site search routing + `/reviews/` listings reskin + 41 reviews tagged into families live 19 Nov; review sidebar spacer removed + listings browse block beside the ad column live 19 Nov 17:29 UTC; comparison "Shoe type" fix live 20 Nov; live = staging = GitHub `main` = `3944e4b` |
 | Hosting, backups, DNS | `hosting/RUNBOOK.md` | Rocket.net Business annual since 12 Nov ($1,000 on 25 Nov); bot challenge on 2 networks since 16 Nov; server stall 19 Nov reported, waiting for their answer |
 | rsgmedia server (n8n, Stargrid) | `hosting/hetzner/RUNBOOK.md` | Hardened, backed up |
 | Automations (n8n, Make) | `automations/RUNBOOK.md` | Bank import still on paid n8n Cloud |
 | Email | `email/RUNBOOK.md` | List cleanup, then platform decision |
-| Content | `content/README.md` | Idea stage; old-article prune ~22 Nov; SEO checklist with Ruggero: comparison refresh 5 of 39 live 18 Nov |
+| Content | `content/README.md` | Idea stage; old-article prune ~22 Nov; SEO checklist with Ruggero: comparison refresh 10 of 39 live (20 Nov) |
 | Costs | `costs/COSTS.md` | Register |
 | Analytics + analyst | `analytics/README.md` | Umami live 16 Nov; analyst metrics + notebook on rsgmedia; Ruggero asks for the analysis in the project (not scheduled) |
 
