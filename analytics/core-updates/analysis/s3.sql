@@ -1,0 +1,1 @@
+select date_trunc('week',day)::date wk, rsg.guess_page_type(page) t, sum(sessions) s, sum(engaged_sessions) e, sum(key_events) k from rsg.ga4_landing_day where channel='Organic Search' group by 1,2 order by 1,2;

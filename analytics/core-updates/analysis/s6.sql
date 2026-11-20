@@ -1,0 +1,2 @@
+select day, sum(sessions) s, sum(engaged_sessions) e from rsg.ga4_landing_day where channel='Organic Search' and page like '/reviews/road/saucony-endorphin-speed-4-review%' and day between '2024-01-10' and '2024-02-25' group by 1 order by 1;
+select day, sum(sessions) s, sum(engaged_sessions) e from rsg.ga4_landing_day where channel='Organic Search' and page like '/reviews/road/nike-infinity-rn4-review%' and day between '2023-07-15' and '2023-09-20' group by 1 order by 1;
