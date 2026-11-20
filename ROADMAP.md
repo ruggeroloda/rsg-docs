@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-20 12:05 UTC (content review with Fable → work list `content/CONTENT-REVIEW-2026-11-20.md`; best-of lists consolidated in /top/ + one-date line on comparisons and lists live)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-20 18:15 UTC (cut-out check + fix and price card photo fallback on staging, `theme/CUTOUTS-2026-11-20.md`)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -52,7 +52,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 - **Alt-text test** (live 11 Nov): read Search Console for the 10 test vs 10 control reviews ~9 Dec (4 weeks) and ~23 Dec (6 weeks): `theme/ALT-TEXT-TEST-2026-11.md`. The result decides "AI alt text at upload".
 - Network sub-ID checks (AWIN Click References, CJ/Rakuten, Impact `subId1`, AvantLink `ctc`) at the first commissions.
 - Brooks US thumbnails: brooksrunning.com refuses server image requests (403), so Brooks offers show "no image" (live 18 Nov). Options if it matters: another image source per shoe, or ask Brooks/Impact.
-- Review cut-out photos uploaded before 5 Nov were not cropped by Pixian (remove.bg era): list the uneven ones and re-crop (18 Nov: Adrenaline GTS 25 cropped by hand; Nimbus 28 has uneven margins).
+- **Cut-outs + price card photo fallback on staging (20 Nov)**: Ruggero reviews, then live after "deploy to live": theme `a97a34d` + the 45 fixed photos (steps in `theme/CUTOUTS-2026-11-20.md`). Adrenaline GTS 25 (hand crop 18 Nov) is on white, not transparent: fine in the card, redo through Pixian if wanted.
 - Vomero 18 review: list price field $155 vs its text $150 (Ruggero to confirm). Cumulus 28 review: heel 42 mm in the specs vs 38.5 mm in the text (left). Triumph 23 review: sub-scores 10/10 for comfort, transition and toe-off vs a text that says not soft enough, no energy return (tester's ratings, left; Ruggero to decide).
 - List picks: "Compare N shops" drawer per pick (proposal on the design canvas, `theme/LISTS-TOP-2026-11-18.md`): waiting for Ruggero. NL/BE have no DFS shops (all Amazon "Check price"): Running Warehouse EU to NL/BE is a DFS item.
 - List data (`theme/LISTS-TOP-2026-11-18.md` "Open"): Evo SL plate field, "Hoka One One" name, Metaspeed same link men/women, long list intros (Puma, heavy runners).
