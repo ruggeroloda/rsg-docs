@@ -112,6 +112,13 @@ Plan corrections (`ARTICLES-PRUNE-PLAN-2026-11-15.md`):
 
 **Stop rule:** the last two rows are the only place a benefit could appear, and new reviews, the trust details and the next core update move the same numbers. If they are flat after step 2 and the next core update (2026's came in March, May and November), pruning is done and no further groups are added. If they rise, the prune cannot be credited alone.
 
+## Reading before the first batch (Ruggero 20 Nov: "we'll have to do reading too")
+The numbers say which pages nobody visits; they do not say which pages are unhelpful. Three reads, none done yet:
+1. **Tier 3 list (~480 articles), all of it, by Ruggero**, bucket by bucket (D, C, B, A, E) from titles + first lines (`excerpts-live.jsonl`): the automatic first pass has wrong targets and may hide a page worth keeping.
+2. **~20 old reviews**, spread over 2012–2022 and over high and low clicks: would a reader today call them honest first-hand reviews (outdated is fine) or thin? This tests the "keep all old reviews" call.
+3. **~20 of the 106 "KEEP?" advice articles** (training, health): the group most likely to be judged unhelpful. Outcome per article: keep, improve, or move into batch 2.
+Reads 2 and 3 can be done by Claude with a short verdict per page for Ruggero to check; read 1 needs his OK per bucket.
+
 ## Limits
 - Search Console links are a 1,000-row sample from 15 Nov; a page outside it has few linking sites, not provably none.
 - Ad income per group is page views × the site's page RPM, not Raptive's per-page figure; affiliate clicks are GA4 key events and end on 11 Nov.

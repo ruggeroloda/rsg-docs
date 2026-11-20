@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-20 20:10 UTC (independent prune analysis done; D5 date and scope with Ruggero)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-20 20:50 UTC (prune moved to the week of 7 Dec, reading first; independent prune analysis done)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -17,7 +17,6 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 | ~2 Dec | Lists/guides new shoe box (live 18 Nov 17:31 UTC, all 5 lists): watch | theme | Search Console position + clicks of the 5 lists vs the 2 weeks before (Beginners + Heavy Runners moved to /top/ on 20 Nov: add up old + new URL); "Read the full review" clicks from lists (`theme/LISTS-TOP-2026-11-18.md`) |
 | ~26 Nov | **Site search: 7-day watch** (live 19 Nov 15:25 UTC) | theme | Umami `search_result` outcomes (none/nothing share; was 51 % zero results), searches per visit, review opens after a search; top `not_tested` lines = review backlog (Novablast 6, Endorphin Azura, Cloudmonster 3, Hyperboost, 1080 v15, Superblast 3, Triumph 24, Kayano 33). Then decide typo tolerance (`theme/SITE-SEARCH-ROUTING-2026-11-19.md`) |
 | ~3 Dec | **Listings reskin: watch** (live 19 Nov; Raptive sticky sidebar on from 19 Nov ~18:00 UTC) | theme | Same table as the baseline (review opens 17 %, another listing 41 %, leave 36 %, shop click 1.1 %) + Raptive listing RPM after 2 weeks; if RPM drops without more review opens: ask Raptive for closer in-list ads (`theme/LISTINGS-RESKIN-2026-11-19.md`) |
-| ~22 Nov | **Old-article prune (D5): date to decide (Ruggero)** | content | Independent analysis done 20 Nov: `content/PRUNE-ANALYSIS-2026-11-20.md` (no traffic lift to expect; cleanup of ~480 dead articles as housekeeping; old reviews stay; proposes the first batch in the week of 7 Dec, after the core update and Black Friday, and one change to the redirect rule). Ruggero to read and decide date + scope; then fresh Search Console exports and `content/ARTICLES-PRUNE-PLAN-2026-11-15.md` |
 | ~24 Nov | Homepage re-check (a week to breathe) | theme | Desktop landings in the markets leave without a 2nd page 56–58 % vs 43 % old (17–18 Nov). Shorter desktop hero tried on staging 19 Nov and rejected (Ruggero). Look at the desktop journey instead: old hero = two big buttons (all reviews / Shoe Finder), now small text links; Ruggero: phone visitors scroll more (`theme/HOMEPAGE-BUILD-2026-11-17.md` "Ruggero's notes"). Nothing changes before |
 | ~24–25 Nov | **Old reviews: only 1 sidebar ad** (Speedgoat 5: 14,662 px sidebar column, 1 `Sidebar_9` slot after Raptive's 19 Nov selector update; listings get 2 in ~4,400 px) | ads | Ruggero's call whether to ask Raptive for Enhanced Sticky Sidebar on `rsg-page-review-old`; can go in the same mail as the homepage ask (`ads/BASELINE-2026-11.md` 19 Nov 17:57 entry) |
 | ~24–25 Nov | **Homepage sticky ad: ask Raptive** (after the homepage re-check, in time for Black Friday prices) | ads | Ruggero's call; not mentioned to Raptive yet (`ads/BASELINE-2026-11.md` Open 2) |
@@ -28,6 +27,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 | 27–30 Nov | **Black Friday → Cyber Monday** | all | Freeze rule to decide (what may still go live that week) |
 | ~30 Nov | Old click/view logs vs Umami: 2-week parallel run ends | analytics | Compare, then switch the old logs off or sample them |
 | after 30 Nov | Geo / edge-share measurement (geo rule off since 11 Nov; moved by Ruggero 18 Nov: deploy week isn't normal traffic) | hosting / dfs | Rocket.net edge share vs baseline 68.6 % (`dfs/GO-LIVE-2026-11-10.md`); then page-view log sampled + retention |
+| week of 7 Dec | **Old-article prune (D5): start** (Ruggero 20 Nov; moved from ~22 Nov; reminder set for Mon 7 Dec 09:00) | content | `content/PRUNE-ANALYSIS-2026-11-20.md` section 4 + "Reading before the first batch". Before anything is applied: fresh Search Console exports (performance + links) and re-run of the joins; **reading**: Ruggero reads the tier 3 list (~480 dead articles) bucket by bucket (D, C, B, A, E), and ~20 old reviews + ~20 of the 106 "KEEP?" advice articles are read to judge whether they are unhelpful; check the core update is complete and the reskin watches are read. Then tier 3 on staging → "deploy to live". Apply checklist: `content/ARTICLES-PRUNE-PLAN-2026-11-15.md` |
 
 ## Now / next (not dated)
 | # | Item | Area | Next step |

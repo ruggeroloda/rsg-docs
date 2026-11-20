@@ -1,4 +1,6 @@
-# Old articles prune (D5) — plan, on hold until ~22 Nov 2026
+# Old articles prune (D5) — plan, on hold until the week of 7 Dec 2026
+
+**20 Nov 2026: moved from ~22 Nov to the week of 7 Dec (Ruggero), after the core update and Black Friday. Read `PRUNE-ANALYSIS-2026-11-20.md` first: it changes the redirect rule (301 only to a same-shoe or same-topic page) and stages the work in two batches.**
 
 _Status 15 Nov 2026: data joined and first-pass proposal made; **nothing changed on live or staging**. Ruggero (15 Nov):
 the reskin goes live first (target: end of day 15 Nov); the prune is applied **about a week later (~22 Nov)** so any
