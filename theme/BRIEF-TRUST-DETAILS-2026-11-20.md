@@ -1,5 +1,7 @@
 # Brief: trust details on the About page, reviewer bio and small facts
 
+**DONE — live 20 Nov 2026 19:52 UTC (`0d110b4`, tag `live-20261120-195225`; database part applied 19:52; change log rows 118 + 119), except item 2 (reviewer bio: Ruggero left it for now) and the Italian-site line (undecided, link kept). Live backups: `~/rsg_deploy_backups/trust-details-20261120/live-*`.**
+
 _Written 20 Nov 2026 by Claude Fable from the crawler-eye check in `analytics/core-updates/REPORT-2026-11-20.md` ("Follow-up 2"). For its own chat. Staging first; live only on Ruggero's "deploy to live"._
 
 ## STATUS 20 Nov 2026 19:50 UTC: on staging, waiting for Ruggero ("deploy to live" not given)

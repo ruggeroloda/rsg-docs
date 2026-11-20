@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-20 19:55 UTC (trust details on staging; `/top/` hub on staging, waits for Ruggero; prune moved to the week of 7 Dec, reading first; independent prune analysis done)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-20 20:00 UTC (trust details live 19:52 UTC; `/top/` hub on staging, waits for Ruggero; prune moved to the week of 7 Dec, reading first; independent prune analysis done)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -11,7 +11,6 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 | now | **DFS fresh price check** (Ruggero 18 Nov: last check 10–11 Nov) | dfs | Old vs new on ~30 shoes, links land, per-country offers; merchant moves are in the DFS chat |
 | now | **Australia: running/sport retailers** (Ruggero 18 Nov) | dfs | List AU running retailers, then their affiliate programs (Nike AU, Sportitude, The Iconic are dead ends) |
 | ~18 Nov | Amazon slot review | dfs | "real N" per slot → drop the weakest slot or keep 4 (dropping 08:00 delays the morning feed changes to ~14:15) |
-| now | **Trust details on staging** (About page at `/about/`, numbers, schema, one review count, typos): waiting for Ruggero | theme | Ruggero checks staging `/about/` → "deploy to live"; steps in `theme/BRIEF-TRUST-DETAILS-2026-11-20.md` STATUS. Open with him: reviewer bio wording (left for now), the Italian site line |
 | ~22 Nov | Reskin 7-day watch ends | theme | Search Console, clicks per 1,000 views, Raptive RPM (`theme/AFTER-GO-LIVE-2026-11-15.md`) |
 | ~25 Nov | Phone price bar G + review top on phones: 7-day watch (bar from 18 Nov 10:16 UTC, review top from 18:03 UTC: read together) | theme | `stick` clicks per view and drawer opens (Umami `shop_click`, `drawer_open`) vs the week before; Raptive RPM on reviews; `gallery_swipe` per phone review view (`theme/PHONE-BAR-G-2026-11-18.md`, `theme/REVIEW-TOP-PHONE-2026-11-18.md`). If numbers drop: revert the review top first |
 | ~25 Nov | Lists/guides picks table: 7-day watch | theme | Raptive RPM and ads per view on the 5 lists (2 top ad candidates fewer), `header_card` clicks per view vs before (`theme/LISTS-TOP-2026-11-18.md`) |
@@ -52,6 +51,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 | 15 | Analytics next steps | analytics | Umami 1-day flags from ~22 Nov, 7-day from ~7 Dec; outside data (networks, Amazon, Raptive) later; unattended analyst only when Ruggero asks (`analytics/README.md`) |
 
 ## Small / waiting
+- **Reviewer bio (Brandon)**: still reads as RSG's current tester on his author page and in the "Reviewed by Brandon" box (131 reviews, 161 comparisons, 17 reviews of New Balance shoes); Ruggero left it for now (20 Nov). Wording options in `theme/BRIEF-TRUST-DETAILS-2026-11-20.md`. Same brief: the About page's Italian-site line (runningshoesguru.it, newest review 2021): keep, remove or restart the site; "reviewed every year" lines in "Some Numbers" while publishing is paused.
 - **Alt-text test** (live 11 Nov): read Search Console for the 10 test vs 10 control reviews ~9 Dec (4 weeks) and ~23 Dec (6 weeks): `theme/ALT-TEXT-TEST-2026-11.md`. The result decides "AI alt text at upload".
 - Network sub-ID checks (AWIN Click References, CJ/Rakuten, Impact `subId1`, AvantLink `ctc`) at the first commissions.
 - Brooks US thumbnails: brooksrunning.com refuses server image requests (403), so Brooks offers show "no image" (live 18 Nov). Options if it matters: another image source per shoe, or ask Brooks/Impact.
