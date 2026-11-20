@@ -26,7 +26,7 @@ _Current state only. Checked 11 Nov 2026 ~15:40 UTC; re-checked 12 Nov ~08:40 UT
 ## Automatic jobs
 | When (UTC) | What |
 |---|---|
-| 03:30 daily | `/usr/local/bin/rsg-backup.sh` (`/etc/cron.d/rsg-backup`): all Postgres DBs, Docker volumes (incl. the n8n encryption key), `/home/ruggero`, system config → one age-encrypted archive (~108 MB) → `/var/backups/rsgmedia` (7) + Google Drive `Server-Backups/servers/rsgmedia/` (30 days). Log `/var/log/rsg-backup.log`. Restore tested 5 Nov |
+| 03:30 daily | `/usr/local/bin/rsg-backup.sh` (`/etc/cron.d/rsg-backup`): all Postgres DBs, Docker volumes (incl. the n8n encryption key), `/home/ruggero`, system config → one age-encrypted archive (~108 MB) → `/var/backups/rsgmedia` (7) + Google Drive `Server-Backups/servers/rsgmedia/` (30 days). Log `/var/log/rsg-backup.log`. Restore tested 5 Nov. 20 Nov: the home tar accepts "file changed as we read it" (exit 1, live NPM logs) after one failed night |
 | every 5 min | site check |
 | daily | unattended **security** updates. **No automatic reboot**: reboot by hand when `/var/run/reboot-required` exists (none on 11 Nov) |
 | hourly / daily | Stargrid jobs (table above) |
@@ -34,7 +34,7 @@ _Current state only. Checked 11 Nov 2026 ~15:40 UTC; re-checked 12 Nov ~08:40 UT
 Not backed up: the DFS test bench volume `dfs_data` (production has its own backups).
 
 ## How to change things
-- **n8n upgrade:** backup first (`sudo /usr/local/bin/rsg-backup.sh`), change the pinned tag in compose, `docker compose up -d n8n`, check workflows. Rollback image `n8nio/n8n:2.15.0-rollback` + DB dump in `/var/backups/pre-upgrade/` (old).
+- **n8n upgrade:** backup first (`sudo /usr/local/bin/rsg-backup.sh`), change the pinned tag in compose, `docker compose up -d n8n`, check workflows. The 2.15.0 rollback image and dump were deleted 20 Nov: for a rollback restore from the nightly backup.
 - **Secrets:** only in `.env` files (600), never inline in compose. After editing an `.env`: `docker compose up -d --force-recreate <service>` (a restart doesn't reload it).
 - **Reboot:** Postgres binds to the Tailscale IP → needs `net.ipv4.ip_nonlocal_bind=1` (`/etc/sysctl.d/60-docker-tailscale-bind.conf`) and docker after tailscaled (both in place; reboot tested 6 Nov).
 - **NPM:** disabling a proxy host in the DB doesn't remove its conf file: check `proxy_host/*.conf`.
@@ -49,7 +49,7 @@ Not backed up: the DFS test bench volume `dfs_data` (production has its own back
 - DFS production never runs here (9 Nov); the test bench is planned to become a stopped copy refreshed from production (ROADMAP "DFS simplification").
 
 ## Open
-1. Delete the rollback copies (compose `*.bak-2026110*`, `stargrid-api/.env.bak-20261106`, NPM `database.sqlite.bak-20261106`) after ~2 weeks without problems (~20 Nov).
+1. Rollback copies of the 6 Nov hardening deleted 20 Nov. Still to delete (Ruggero OK needed): `stargrid-api.bak-20261106`, `stargrid-api/.env.bak-20261106` (old token), `src/routes/admin.js.bak-*`; the 16 Nov Umami `.bak-20261116-*` files later. 18 apt updates pending (incl. Docker 29.10), not applied.
 2. DNS leftovers `portainer|adminer|npm.rsgmedia.info` at SiteGround.
 3. Stargrid image URLs need an HTTPS route through NPM before posting is reactivated (not a reopened 3001).
 4. n8n: internal runner mode deprecated (revisit at the next upgrade).

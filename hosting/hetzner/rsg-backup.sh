@@ -26,10 +26,11 @@ for v in n8n_data portainer_data compose_imggen_images; do
 done
 
 # 3. Home: code, compose files, NPM data + certs, scripts (exclude rebuildable stuff)
+# tar exits 1 ("file changed as we read it", e.g. live NPM access logs): archive is still complete, accept it; exit 2+ = real failure
 tar -C /home -cf "$WORK/home_ruggero.tar" \
   --exclude='ruggero/.nvm' --exclude='ruggero/.cache' --exclude='ruggero/.npm' \
   --exclude='*/node_modules' --exclude='ruggero/backups' --exclude='*.mp4' --exclude='*.mov' \
-  --exclude='*/venv' --exclude='*/.venv' --exclude='*/__pycache__' ruggero
+  --exclude='*/venv' --exclude='*/.venv' --exclude='*/__pycache__' ruggero || { rc=$?; [ "$rc" -eq 1 ] || exit "$rc"; echo "WARN home tar: files changed while reading (exit 1), continuing"; }
 
 # 4. System config
 crontab -u ruggero -l > "$WORK/crontab_ruggero.txt" 2>/dev/null || true

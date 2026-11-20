@@ -62,7 +62,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 - Bots left after rules v3: CN/SG/HK visits with normal screens and > 0 s (~165/day, 0 clicks); a country rule is the next step if they matter (`analytics/README.md`).
 - Theme backlog: verdict/"Buy if" box on the ~130 comparisons outside the 39 refreshes (decision 18 Nov), quiz results page + the price-drop-alert copy (build or cut), SEO backlog, local list prices outside the US (`dfs/LIST-PRICES-2026-11-19.md`, after 30 Nov), orange-button contrast, shoe spec typos case by case.
 - Make: merge the 3 insert scenarios (write via `acf`), port accounting, then cancel Make.
-- Delete rollback copies on rsgmedia (~20 Nov); SiteGround DNS leftovers; old Drive folders `Backups/servers` + `Backups/sites` (after 11 Dec, keep `Backups/nas`).
+- rsgmedia: 6 Nov rollback copies deleted 20 Nov; still ask Ruggero about `stargrid-api.bak-20261106` + `.env.bak-20261106` and the 16 Nov Umami `.bak` files; 18 apt updates pending; SiteGround DNS leftovers; old Drive folders `Backups/servers` + `Backups/sites` (after 11 Dec, keep `Backups/nas`).
 - Close the remove.bg account (its API ends 1 Dec 2026).
 - Umami admin password and the `rsg_analyst` password into 1Password, then delete `_private/umami-admin.txt` (`analytics/README.md` Open 5).
 - Resubmit the sitemap in Search Console (Ruggero).
