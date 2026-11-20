@@ -1,5 +1,7 @@
 # Brief: the `/top/` lists hub
 
+**Worked 20 Nov 2026: hub built on staging (theme `283b1a7`, branch `top-hub`), lists checked, Puma flagged, baseline taken → `TOP-HUB-2026-11-20.md`. Not live: waits for Ruggero's "deploy to live".**
+
 _Written 20 Nov 2026 by Claude Fable from the crawler-eye check in `analytics/core-updates/REPORT-2026-11-20.md` ("Follow-up 2"). For its own chat. Staging first; live only on Ruggero's "deploy to live"._
 
 ## What is there now (fetched 20 Nov with the Googlebot phone user agent)
