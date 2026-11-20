@@ -29,10 +29,12 @@ _Started 20 Nov 2026 with Ruggero. **Next chat: continue at "Work list" below.**
 - Details: `theme/RUNBOOK.md`, `DECISIONS.md` 20 Nov.
 
 ## Work list (continue here, in this order)
-1. **Next-step block** for reviews and comparisons (wireframe shown in chat 20 Nov, Ruggero: "fundamental also for reviews"; not yet approved):
-   - Review: short "Compare it" strip after pros/cons (vs previous version, a sibling, a rival); end-of-article block: Compare it chips · "Better for you if…" (up to 3 tester alternatives, one line each: needs a new review field) · price alert / "email me deals on this shoe" (MailerLite group tagged with the shoe).
-   - Comparison end: the two full reviews · "Also compared" (other comparisons with these shoes, automatic) · Shoe Finder.
-   - Build after 30 Nov (Black Friday), staging first, phone + desktop; measure 2+ pages per visit (review 20.5 %, comparison 14.1 % baseline) and shop clicks.
+1. **Next-step block: PARKED 20 Nov (Ruggero: "not ready, decide another time").** Not built; nothing changed on the site.
+   - First idea (wireframe + render on the live Pegasus 42 review): "Compare it" chip strip after pros/cons + end block (chips · "Better for you if…" · price alert). Ruggero: not convinced by looks or position.
+   - Research (live pages, 20 Nov): RTINGS ends the review with ~12 "popular comparisons", each one line of reason + side-by-side link + review link, no images/prices. RunRepeat puts a comparison block (image, score, price, short role) right after verdict/pros/cons and drops alternatives inside the test sections and "Who should NOT buy". Running Warehouse: "is for you if…", 2 vs-sections, spec table. None uses a separate related-content widget, chips or a price alert.
+   - Second idea (renders `content-review-2026-11-20/next-step-v3-who.png`, `next-step-v3-list.png`): reuse what exists. (a) "Who should not buy": one line under each sentence, "Try instead: <shoe> · score · price" (tester's pick, needs a review field); (b) "How does it compare?" table → list of rows (photo, score, role tag, one-line reason, comparison + review links, price), 6 + "Show more", specs table behind a link. Ruggero: v2 too big, breaks the page balance; v3 compact still not ready.
+   - Gaps found: no Pegasus 42 vs 41 comparison; no Pegasus vs Evo SL. Open questions when it comes back: who writes the reason lines (tester vs generated), phone length of the list.
+   - Baseline to measure against: 2+ pages per visit (review 20.5 %, comparison 14.1 %) and shop clicks.
 2. **Shoe list for the next 6 months**, chosen by site-search demand + how many comparisons each shoe spawns. Site search "not tested" (19 Nov): Novablast 6, Superblast 3, Kayano 33, Endorphin Azura, Cloudmonster 3, Hyperboost, 1080 v15, Triumph 24. Each new shoe → 2–3 comparisons (always vs its predecessor).
 3. **Strategic call (Ruggero):** more coverage (samples; would mean rewording "No free samples" on every review), a non-search channel (email/YouTube), or revenue per visit.
 4. **Track every sign-up form** in Umami (only Shoe Finder today); prerequisite for the price alert and any email decision.
