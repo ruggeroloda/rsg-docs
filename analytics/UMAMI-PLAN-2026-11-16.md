@@ -75,6 +75,19 @@ Every new spot gets a component name and a plain name here before it ships.
 | errors | `data-errors`, `data-release` = theme commit | automatic |
 Network sub-IDs and Amazon tracking IDs are **built from these values** (one string only where a network needs one).
 
+### Reading depth and ways onward (21 Nov 2026; on staging, live after "deploy to live")
+On current reviews (road/trail/training), comparisons and list posts (`top_list`, `guide`). Not on old-template reviews, GPS reviews or the homepage (which has its own `home_*` events). Code: `rsg-core/assets/rsg-track.js` `reading()`; sections are found by the templates' own classes and ids (no markup added), so a renamed class or id must be changed there and here. Why and how to read it: `content/ENGAGEMENT-READ-2026-11-21.md`.
+
+| Event | Sent when | Properties |
+|---|---|---|
+| `section_seen` | any part of a section in the upper 85 % of the screen for 1 s; once per section per page view | `section`, `pos` (place on the page, 1 = first), `t` (seconds the page has been visible) |
+| `next_click` | click / middle-click on a link to another page of the site (not offers, `/go/`, images) | `block` (where the link sits), `section`, `to` (page type it opens: review, comparison, review_list, top_list, top_hub, comparison_list, gps_review, guide, author, home, other), `to_path` |
+| `jump_click` | click on a link to another spot of the same page | `block`, `section`, `to` (the target's id) |
+
+`section` names. Review: `top`, `verdict`, `pros_cons`, `ratings`, `facts`, `tester_take`, then the text sections by their field name (`who_should_buy_it`, `who_should_not_buy_it`, `introduction`, `first_impressions`, `upper`, `sole_unit`, `conclusions`; trail: `protection`, `durability_section`, `responsiveness_speed`, `comfort_and_fit`; extra sections by their title), `compare_table`, `price_list`, `reviewer`, `comments`, `similar`. Comparison: `top`, `intro`, `jump_line`, `table`, `scores`, `sole_unit`, `upper`, `which_to_buy`, `price_boxes`, `writer`, `latest`. List post: `top`, `picks_table`, `pick_1` … `pick_N` (the category sections in page order), `faq`.
+
+`block` names: `breadcrumb`, `jump_line`, `picks_table`, `shoe_box`, `compare_table`, `similar`, `latest`, `reviewer`, `byline`, `facts`, `verdict`, `top`, `comments`, `text`, `footer`, `menu`, `other_content`, `other`.
+
 ## C. Site integration rules
 - **Load:** one `<script defer>` from the subdomain (keeps tracker and server versions in step; no copy in the theme that could go stale). `data-website-id` per environment (staging and live are separate websites in Umami) + `data-domains` exact host (`www.runningshoesguru.com`; staging host on staging).
 - **Our own code sends events with `umami.track()`** from one delegated listener in `js/rsg-dfs.js`/footer script — **not** `data-umami-event` attributes: with that method other listeners on the element don't fire, which would break our click log and the drawer opener.
