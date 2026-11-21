@@ -1,6 +1,6 @@
 # RSG — project primer
 
-_Last updated 2026-11-20._ **Start every RSG session here** (after `git pull`), then read `ROADMAP.md` and the `RUNBOOK.md` of the workstream you work on. That's all you need for the current state.
+_Last updated 2026-11-21._ **Start every RSG session here** (after `git pull`), then read `ROADMAP.md` and the `RUNBOOK.md` of the workstream you work on. That's all you need for the current state.
 
 **What this is:** the relaunch of RunningShoesGuru.com: cut running costs, modernise the stack, restart content on a small budget. Traffic is ~10 % of what it was (GA4 ~160k page views / 30 days, Nov 2026); revenue = Raptive ads + affiliate (mostly Amazon) + deals emails.
 
@@ -15,7 +15,7 @@ _Last updated 2026-11-20._ **Start every RSG session here** (after `git pull`), 
 | Email | `email/RUNBOOK.md` | List cleanup, then platform decision |
 | Content | `content/README.md` | Content review with Fable 20 Nov: **work list `content/CONTENT-REVIEW-2026-11-20.md`** (continue there); old-article prune: independent analysis `content/PRUNE-ANALYSIS-2026-11-20.md` (20 Nov), starts the week of 7 Dec with reading first (Ruggero 20 Nov); SEO checklist with Ruggero: comparison refresh 10 of 39 live (20 Nov) |
 | Costs | `costs/COSTS.md` | Register |
-| Analytics + analyst | `analytics/README.md` | Umami live 16 Nov; GA4 history from Feb 2023 in the database, reloaded weekly; traffic-history findings `analytics/TRAFFIC-HISTORY-2026-11-20.md`; core-update research: brief + data and Fable's first full pass `analytics/core-updates/REPORT-2026-11-20.md` (20 Nov); analyst metrics + notebook on rsgmedia; Ruggero asks for the analysis in the project (not scheduled) |
+| Analytics + analyst | `analytics/README.md` | Umami live 16 Nov; Bing Webmaster connected 21 Nov (API key on rsgmedia, no loader yet); GA4 history from Feb 2023 in the database, reloaded weekly; traffic-history findings `analytics/TRAFFIC-HISTORY-2026-11-20.md`; core-update research: brief + data and Fable's first full pass `analytics/core-updates/REPORT-2026-11-20.md` (20 Nov); analyst metrics + notebook on rsgmedia; Ruggero asks for the analysis in the project (not scheduled) |
 
 ## Servers
 | Server | Runs | Access |

@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-20 20:00 UTC (trust details live 19:52 UTC; `/top/` hub on staging, waits for Ruggero; prune moved to the week of 7 Dec, reading first; independent prune analysis done)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-21 06:00 UTC (Bing Webmaster connected; trust details live 20 Nov 19:52 UTC; `/top/` hub on staging, waits for Ruggero; prune in the week of 7 Dec)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -51,6 +51,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 | 15 | Analytics next steps | analytics | Umami 1-day flags from ~22 Nov, 7-day from ~7 Dec; outside data (networks, Amazon, Raptive) later; unattended analyst only when Ruggero asks (`analytics/README.md`) |
 
 ## Small / waiting
+- **Bing Webmaster** (connected 21 Nov): Ruggero adds the API key to 1Password (optionally regenerates it, Claude swaps it on rsgmedia); then decide a daily loader into `rsg` (traffic per day, pages/queries per week, crawl) and check whether the API exposes AI Performance (Copilot citations) (`analytics/README.md` "Bing Webmaster Tools").
 - **Reviewer bio (Brandon)**: still reads as RSG's current tester on his author page and in the "Reviewed by Brandon" box (131 reviews, 161 comparisons, 17 reviews of New Balance shoes); Ruggero left it for now (20 Nov). Wording options in `theme/BRIEF-TRUST-DETAILS-2026-11-20.md`. Same brief: the About page's Italian-site line (runningshoesguru.it, newest review 2021): keep, remove or restart the site; "reviewed every year" lines in "Some Numbers" while publishing is paused.
 - **Alt-text test** (live 11 Nov): read Search Console for the 10 test vs 10 control reviews ~9 Dec (4 weeks) and ~23 Dec (6 weeks): `theme/ALT-TEXT-TEST-2026-11.md`. The result decides "AI alt text at upload".
 - Network sub-ID checks (AWIN Click References, CJ/Rakuten, Impact `subId1`, AvantLink `ctc`) at the first commissions.
