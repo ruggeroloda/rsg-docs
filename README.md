@@ -13,7 +13,7 @@ _Last updated 2026-11-21._ **Start every RSG session here** (after `git pull`), 
 | rsgmedia server (n8n, Stargrid) | `hosting/hetzner/RUNBOOK.md` | Hardened, backed up |
 | Automations (n8n, Make) | `automations/RUNBOOK.md` | Bank import still on paid n8n Cloud |
 | Email | `email/RUNBOOK.md` | List cleanup, then platform decision |
-| Content | `content/README.md` | Content review with Fable 20 Nov: **work list `content/CONTENT-REVIEW-2026-11-20.md`** (continue there); old-article prune: independent analysis `content/PRUNE-ANALYSIS-2026-11-20.md` (20 Nov), starts the week of 7 Dec with reading first (Ruggero 20 Nov); SEO checklist with Ruggero: comparison refresh 10 of 39 live (20 Nov) |
+| Content | `content/README.md` | Content review with Fable 20 Nov: **work list `content/CONTENT-REVIEW-2026-11-20.md`** (continue there); old-article prune: independent analysis `content/PRUNE-ANALYSIS-2026-11-20.md` (20 Nov; Bing links added 21 Nov: 39 tier 3 pages have links, proposed out of batch 1), starts the week of 7 Dec with reading first (Ruggero 20 Nov); SEO checklist with Ruggero: comparison refresh 10 of 39 live (20 Nov) |
 | Costs | `costs/COSTS.md` | Register |
 | Analytics + analyst | `analytics/README.md` | Umami live 16 Nov; Bing Webmaster connected 21 Nov (API key on rsgmedia, no loader yet); GA4 history from Feb 2023 in the database, reloaded weekly; traffic-history findings `analytics/TRAFFIC-HISTORY-2026-11-20.md`; core-update research: brief + data and Fable's first full pass `analytics/core-updates/REPORT-2026-11-20.md` (20 Nov); analyst metrics + notebook on rsgmedia; Ruggero asks for the analysis in the project (not scheduled) |
 

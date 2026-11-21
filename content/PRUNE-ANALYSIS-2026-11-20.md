@@ -1,6 +1,6 @@
 # Prune analysis: should RSG prune, what, and how far?
 
-_Claude Fable, 20 Nov 2026, from `BRIEF-PRUNE-ANALYSIS-2026-11-20.md`. An analysis and a staged plan; **nothing changed on live or staging**. Working files (Mac only, not in git): `_work/prune-analysis-20261120/` (`build.py` → `pages.csv`, one row per published indexable page; `tab.py`; `unknown-urls-oct.csv`). "Clicks" = Search Console web search; "12 months" = Nov 2025 – Oct 2026; "views" = GA4 page views, all sources._
+_Claude Fable, 20 Nov 2026, from `BRIEF-PRUNE-ANALYSIS-2026-11-20.md`. **Updated 21 Nov with Bing Webmaster link data (section 6): tier 3 is not link-free; the conclusions stand, proposed: the batch-1 list shrinks by 39 pages.** An analysis and a staged plan; **nothing changed on live or staging**. Working files (Mac only, not in git): `_work/prune-analysis-20261120/` (`build.py` → `pages.csv`, one row per published indexable page; `tab.py`; `unknown-urls-oct.csv`). "Clicks" = Search Console web search; "12 months" = Nov 2025 – Oct 2026; "views" = GA4 page views, all sources._
 
 ## Answer in six lines
 1. **A prune will not bring traffic back, and should not be sold as that.** RSG's own data, Google's statements and the outside cases all point the same way (section 3).
@@ -51,7 +51,7 @@ Nothing here changes the picture.
 ## 2. Options per group
 | Group | Call | Why |
 |---|---|---|
-| Articles with no value (plan's tier 3: 480 URLs, under 10 clicks in 16 months and at most 1 linking site) | **Remove** (draft = 404). 301 only the 76 with a same-shoe or same-topic target | 508 clicks and 7.7k views in 12 months, about $50 a year in ads, no page with 2+ linking sites. Giveaways from 2013, launch news of retired shoes, "Around the Web": nothing a reader in 2026 wants |
+| Articles with no value (plan's tier 3: 480 URLs, under 10 clicks in 16 months and at most 1 linking site) | **Remove** (draft = 404). 301 only the 76 with a same-shoe or same-topic target. **21 Nov, proposed: the 39 with 2+ linking sites in Bing move to the hand list (section 6)** | 508 clicks and 7.7k views in 12 months, about $50 a year in ads, no page with 2+ linking sites in the Search Console sample (Bing: 39 have). Giveaways from 2013, launch news of retired shoes, "Around the Web": nothing a reader in 2026 wants |
 | Articles with some value that the plan retires (tier 2: 85 × 301, 22 × remove) | **By hand, second batch** | 2,993 clicks in 12 months and 18 pages with links. Each needs a real target or stays |
 | Articles marked "KEEP?" (106, mostly training/health advice) | **Keep for now** | 2,277 clicks a year, 24 pages with links. Deciding them needs reading them, not a threshold. This is the one group a quality rater might call unhelpful (generic health and training advice, not shoe testing), so it is the right place for a later "improve or remove" read |
 | Articles that earn (85) | Keep | 35.8k clicks |
@@ -91,8 +91,8 @@ Plan corrections (`ARTICLES-PRUNE-PLAN-2026-11-15.md`):
 - **Order**
   | Step | When | What |
   |---|---|---|
-  | 0 | now – 6 Dec | Nothing on the site. Fresh Search Console exports (performance + links), re-run the joins, Ruggero reads the tier 3 list bucket by bucket (D, C, B, A, E), baseline numbers below noted |
-  | 1 | week of 7 Dec | Tier 3 (≈480 articles) on staging, then live on "deploy to live", with the plan's apply checklist. One change-log row |
+  | 0 | now – 6 Dec | Nothing on the site. Fresh Search Console exports (performance + links) and a fresh Bing links pull (`_work/prune-analysis-20261120/bing_join.py`), re-run the joins, Ruggero reads the tier 3 list bucket by bucket (D, C, B, A, E), baseline numbers below noted |
+  | 1 | week of 7 Dec | Tier 3 without the pages with 2+ linking sites (≈441 articles) on staging, then live on "deploy to live", with the plan's apply checklist. One change-log row |
   | read | ~11 Jan (5 weeks) | Numbers in section 5 |
   | 2 | mid Jan | Tier 2 by hand (≈107), junk pages (22), thin archives (noindex). Only if step 1 was clean |
   | read | 5 weeks later, and after the next core update | Stop rule |
@@ -120,8 +120,28 @@ The numbers say which pages nobody visits; they do not say which pages are unhel
 Reads 2 and 3 can be done by Claude with a short verdict per page for Ruggero to check; read 1 needs his OK per bucket.
 
 ## Limits
-- Search Console links are a 1,000-row sample from 15 Nov; a page outside it has few linking sites, not provably none.
+- Search Console links are a 1,000-row sample from 15 Nov; a page outside it has few linking sites, not provably none. Bing's list (section 6) fills this in for dated URLs but is a different crawler's view, and it shows almost nothing for `/reviews/` and `/comparison/` URLs (links to their old addresses are counted on the old URL).
 - Ad income per group is page views × the site's page RPM, not Raptive's per-page figure; affiliate clicks are GA4 key events and end on 11 Nov.
 - GA4 non-Google views include bots, mostly on old pages.
 - I did not read the old reviews or the advice articles. Whether they would be judged unhelpful is a reading job (20 sampled per group would do), not a data one.
 - Tiers come from the plan's automatic first pass (16-month clicks to 13 Nov); I checked the totals against 12-month data, not each URL.
+
+## 6. Update 21 Nov: Bing Webmaster links
+_Bing Webmaster API (`GetLinkCounts` + `GetUrlLinks`, pulled 21 Nov): 1,044 RSG URLs with outside links, every linking URL listed, joined to `pages.csv` → `_work/prune-analysis-20261120/bing/pages-bing.csv` (script `bing_join.py`, raw `bing/links-20261121.json`; copy on rsgmedia `~/bing/`). "Sites" = distinct linking domains; "in-text" = a site with at most 3 links to the page (more = a blog list, sidebar or footer)._
+
+| Group | Pages | 2+ linking sites: Search Console sample | Bing | Either |
+|---|---|---|---|---|
+| Old reviews, dated URLs | 936 | 461 | 491 | **659** |
+| Old reviews, `/review/` | 62 | 19 | 22 | 32 |
+| Articles, dated URLs | 587 | 49 | 87 | 106 |
+| Articles, `/content/` | 191 | 26 | 16 | 36 |
+| **Tier 3 (plan: remove)** | 480 | **0** | **39** (34 in-text) | 39 |
+| Tier 2 (by hand) | 213 | 42 | 43 | 62 |
+| of which "KEEP?" advice articles | 106 | 24 | 21 | 32 |
+| The 87 dead old reviews | 87 | 14 | 25 | 33 |
+
+What changes:
+- **Tier 3 is not link-free.** 39 of the 480 have 2+ linking sites (30 set to 404, 9 to 301). Most are small running blogs, Reddit threads and coupon sites; the big counts are blog-list widgets (one blog, `chrisultra.blogspot.com`, gives 229–384 links to each June 2020 "new shoe releases" post). Weak links, but the plan's rule ("at most 1 linking site") does not hold for them. **Proposed (Ruggero to OK): these 39 leave batch 1 and join the tier 2 hand list** (301 to a same-topic page where one exists, else keep). Batch 1 becomes ≈441 pages with no known links: cleaner, and nothing is lost by the delay.
+- **Old reviews hold even more links than the sample showed:** 659 of 936 dated reviews have 2+ linking sites in one source or the other (461 in the sample). This strengthens "keep all old reviews", and the 87 dead ones too (33 have links, not 14).
+- **The other conclusions stand:** no traffic effect expected, wait until the week of 7 Dec, no holdout, the stop rule. Links of this kind (blog lists, forums, small blogs) do not change the size of what is at stake; they change which pages should be redirected rather than removed.
+- List of the 39: run `bing_join.py` (prints them with action, bucket and top linking sites), or filter `pages-bing.csv` on `tier = 3` and `bing_sites >= 2`.
