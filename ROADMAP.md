@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-21 08:30 UTC (Bing Webmaster connected; prune analysis + shoe list updated with Bing data; trust details live 20 Nov 19:52 UTC; `/top/` hub on staging, waits for Ruggero; prune in the week of 7 Dec)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-21 15:00 UTC (21 Nov server stall, Rocket.net ticket reopened; docs repo git key used in place; Bing Webmaster connected; prune analysis + shoe list updated with Bing data; trust details live 20 Nov 19:52 UTC; `/top/` hub on staging, waits for Ruggero; prune in the week of 7 Dec)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -21,7 +21,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 | ~24–25 Nov | **Old reviews: only 1 sidebar ad** (Speedgoat 5: 14,662 px sidebar column, 1 `Sidebar_9` slot after Raptive's 19 Nov selector update; listings get 2 in ~4,400 px) | ads | Ruggero's call whether to ask Raptive for Enhanced Sticky Sidebar on `rsg-page-review-old`; can go in the same mail as the homepage ask (`ads/BASELINE-2026-11.md` 19 Nov 17:57 entry) |
 | ~24–25 Nov | **Homepage sticky ad: ask Raptive** (after the homepage re-check, in time for Black Friday prices) | ads | Ruggero's call; not mentioned to Raptive yet (`ads/BASELINE-2026-11.md` Open 2) |
 | ~27 Nov | **Do refreshed comparisons show 2026 in Google?** One date ("Updated 18 Nov 2026") live on comparisons and lists since 20 Nov 11:47 UTC; Google (19 Nov) showed Winflo vs Pegasus as "4 Apr 2020" | theme / seo | Check the 10 refreshed comparisons in Google (#1–#5 18 Nov, #6–#10 20 Nov). If still 2020: request indexing again, then look at what else carries 2020 (bottom author note, `article:published_time`) |
-| ~21 Nov | **Rocket.net answer on the 19 Nov server stall** (10:40–10:44 UTC, emailed 19 Nov) | hosting | Read the answer (`hosting/RUNBOOK.md` Open 7); if stalls repeat, send them the new times |
+| ~24 Nov | **Rocket.net answer on the 21 Nov server stall** (13:29:30–13:32 UTC, same pattern as 19 Nov, which they put down to maintenance; ticket 123597 reopened 21 Nov) | hosting | Read the answer (`hosting/RUNBOOK.md` Open 7); if stalls repeat, send them the new times |
 | 25 Nov | Rocket.net charges $1,000 (Business annual) | hosting | Check the invoice and the credit for the unused Expert time (`hosting/RUNBOOK.md` Open 1) |
 | 26 Nov | Delete the site-pass backups on Rocket.net (`~/rsg_deploy_backups/site-cleanup-*-20261112-*`, ~500 MB) | hosting | — |
 | 27–30 Nov | **Black Friday → Cyber Monday** | all | Freeze rule to decide (what may still go live that week) |
