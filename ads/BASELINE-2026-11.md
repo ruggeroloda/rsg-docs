@@ -2,7 +2,7 @@
 
 **Status 13 Nov: paused (Ruggero). Ad placement continues as an important part of the redesign** — see "Open for the redesign" at the bottom and `../theme/THEME-REBUILD-NEXT-STAGE.md` ("Ads in the reskin").
 
-Source: Raptive dashboard exports (Ruggero, 13 Nov). Use as the "before" for every ad change. Compare 2 weeks after each change, same metrics.
+Source: Raptive dashboard exports (Ruggero, 13 Nov). Use as the "before" for every ad change. Compare 2 weeks after each change, same metrics. Twelve months of history and the seasonal path to read the watches against: `RAPTIVE-HISTORY-2025-11_2026-11.md` (21 Nov).
 
 ## Totals (30 days)
 - Ad earnings **$1,109** (~$37/day), 163.7k page views, 130.6k sessions, page RPM 6.8, session RPM 8.5.
