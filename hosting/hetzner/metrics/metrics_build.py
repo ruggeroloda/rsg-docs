@@ -131,13 +131,16 @@ FROM p GROUP BY event_name, GROUPING SETS ((), (lay), (comp), (comp, lay), (pt, 
 
   "vitals": BASE + f""",
 x AS (
-  SELECT coalesce(m.page_type, 'unknown') pt, ev.layout, k.name, k.val
+  SELECT coalesce(m.page_type, 'unknown') pt, ev.layout, k.name, k.val,
+         -- 22 Nov 2026 (Ruggero): speed split markets vs rest; faraway visitors (SA, KE, QA, MA, AE, IN...) made the
+         -- whole-site p75s look slow while the markets were fast. Markets = the visits' country groups.
+         CASE WHEN ev.country IN ('US','GB','AU','CA','DE','IE','NZ') THEN 'in' ELSE 'out' END mkt
   FROM ev LEFT JOIN rsg.page_type_map m ON m.url_path = ev.url_path
   CROSS JOIN LATERAL (VALUES ('lcp', ev.lcp), ('inp', ev.inp), ('cls', ev.cls), ('ttfb', nullif(ev.ttfb, 0))) k(name, val)
   WHERE ev.event_type = 5 AND k.val IS NOT NULL)
-SELECT name || '_p75', concat_ws(';', {D('pt','page_type')}, {D('layout','layout')}),
+SELECT name || '_p75', concat_ws(';', {D('pt','page_type')}, {D('mkt','market')}, {D('layout','layout')}),
        percentile_cont(0.75) WITHIN GROUP (ORDER BY val), count(*)::int
-FROM x GROUP BY name, GROUPING SETS ((layout), (pt, layout))""",
+FROM x GROUP BY name, GROUPING SETS ((layout), (pt, layout), (mkt, layout), (pt, mkt, layout))""",
 }
 
 OTHER_UMAMI = """
@@ -145,12 +148,19 @@ SELECT 'sessions', 'quality=' || q.quality, count(*), NULL::int
 FROM session s JOIN rsg.session_quality q USING (session_id)
 WHERE s.website_id = %(w)s AND s.created_at >= %(d)s::date AND s.created_at < %(d)s::date + 1 GROUP BY q.quality
 UNION ALL
+-- JS errors per visitor (22 Nov 2026, Ruggero): a count of error events let one browser stand for thousands
+-- (19-20 Nov: 2 visitors, ~5,000 'ResizeObserver loop' warnings). Human visitors only; the harmless ResizeObserver
+-- warning is left out. js_errors = errors from our own .js files (stack names one); js_errors_other = the rest
+-- (stack points only at the page itself: browser add-ons and in-app browsers, e.g. Safari's '@context' reader,
+-- iOS 'window.ethereum', plus any error in our inline scripts). js_error_issues = distinct issues behind js_errors.
 SELECT v.m, '', v.c, NULL::int FROM (
-  SELECT count(*) c, count(DISTINCT e.issue_id) i FROM error_event e
-  LEFT JOIN rsg.session_quality q ON q.session_id = e.session_id
-  WHERE e.website_id = %(w)s AND e.created_at >= %(d)s::date AND e.created_at < %(d)s::date + 1
-    AND coalesce(q.quality, 'human') <> 'bot') t
-CROSS JOIN LATERAL (VALUES ('js_errors', t.c), ('js_error_issues', t.i)) v(m, c)
+  SELECT count(DISTINCT e.session_id) FILTER (WHERE e.own) c, count(DISTINCT e.issue_id) FILTER (WHERE e.own) i,
+         count(DISTINCT e.session_id) FILTER (WHERE NOT e.own) o
+  FROM (SELECT e.session_id, e.issue_id, e.stack ~ 'runningshoesguru[.]com/[^[:space:]:?]*[.]js' own
+        FROM error_event e JOIN rsg.session_quality q ON q.session_id = e.session_id AND q.quality = 'human'
+        WHERE e.website_id = %(w)s AND e.created_at >= %(d)s::date AND e.created_at < %(d)s::date + 1
+          AND e.message NOT LIKE 'ResizeObserver loop%%') e) t
+CROSS JOIN LATERAL (VALUES ('js_errors', t.c), ('js_error_issues', t.i), ('js_errors_other', t.o)) v(m, c)
 """
 
 def umami_day(cur, day):
@@ -194,9 +204,10 @@ WHERE val IS NOT NULL
 """
 
 # ---------------------------------------------------------------- 5. flags
-LOWER_IS_BETTER = {"lcp_p75", "inp_p75", "cls_p75", "ttfb_p75", "js_errors", "js_error_issues", "position", "bot_share"}
+LOWER_IS_BETTER = {"lcp_p75", "inp_p75", "cls_p75", "ttfb_p75", "js_errors", "js_error_issues", "js_errors_other", "position", "bot_share"}
 RATES = {"ctr", "bot_share"}
 LEVELS = {"lcp_p75", "inp_p75", "cls_p75", "ttfb_p75", "position"}
+VITALS = {"lcp_p75", "inp_p75", "cls_p75", "ttfb_p75"}
 CWV_LIMITS = {"lcp_p75": (2500, 4000), "inp_p75": (200, 500), "cls_p75": (0.1, 0.25)}
 
 def judge(metric, win, x, refs, nx, nrefs):
@@ -253,6 +264,9 @@ def flags_for(cur, source, as_of, valid_days):
         series[(m, d)][day] = (float(v), n)
     out = []
     for (m, d), pts in series.items():
+        # speed: flag only the markets (22 Nov 2026, Ruggero); whole-site and out-of-market p75s stay in metric_day
+        if m in VITALS and "market=in" not in d:
+            continue
         def val(day):
             if day in pts:
                 v, n = pts[day]
