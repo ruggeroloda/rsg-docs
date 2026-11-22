@@ -34,3 +34,8 @@ body.rsgx-notes .rsgx-n{display:block}
 .rsgx-bar{position:fixed;left:0;right:0;bottom:0;z-index:2147483000;background:#1b1b1b;color:#fff;font:500 12px/1.3 system-ui,sans-serif;padding:8px 12px;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap}
 .rsgx-bar button,.rsgx-bar a{font:600 12px system-ui,sans-serif;background:#fff4c2;color:#1b1b1b!important;border:0;border-radius:4px;padding:5px 10px;cursor:pointer;text-decoration:none}
 body{padding-bottom:48px}
+
+/* variant B */
+@media(max-width:767px){.rsgx-cw2 .rsg-cw-list li:nth-child(n+3){display:none}}
+.rsgx-yn{font-weight:700;margin:14px 0 6px}.rsgx-one h2{margin-bottom:4px}.rsgx-one .rsgx-ul{margin-bottom:0}
+.rsgx-gl2{margin:10px 0 16px;font-size:15px}

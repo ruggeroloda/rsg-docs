@@ -1,4 +1,5 @@
 ()=>{
+const V=window.__V||'a';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const el=(html)=>{const t=document.createElement('template'); t.innerHTML=html.trim(); return t.content.firstElementChild;};
 const rep=[]; const need=(n,x)=>{ if(!x) rep.push('MISSING '+n); return x; };
@@ -39,15 +40,21 @@ const glance=el(`<section class="rsgx-glance">${note('New, two lines. Best for, 
 // ---------- 2 verdict: why line, drop the sentence that repeats the summary
 const vp=$('.rsg-verdict p.big'); const sum=($('.rsg-summary')||{}).textContent||'';
 if(sum && vp.textContent.trim().startsWith(sum.trim())) vp.textContent=vp.textContent.trim().slice(sum.trim().length).trim();
+if(V==='b'){const t=vp.textContent.trim(); const k=t.indexOf('. '); if(k>0) vp.textContent=t.slice(0,k+1);}
 vp.before(el('<p class="rsgx-why"><b>Why 7/10?</b>The best Pegasus upper to date, on a ride that feels flat and firm. The ride decides it.</p>'));
 $('.rsg-verdict').prepend(el(note('“Why 7/10?” replaces the first sentence, which repeated the summary above. The box is shorter than today.')));
 
 // ---------- 3 is it for you
+if(V==='b'){
+ const go2=(t,h)=>` <a class="rsgx-go" href="${h}">${t} <span aria-hidden="true">›</span></a>`;
+ who.innerHTML=`<div class="review-section rsgx-one"><h2>Who should buy the Nike Pegasus 42, and who should not</h2><p class="rsgx-yn">Buy it if</p><ul class="rsgx-ul"><li>You buy the Pegasus every year: the 42 is a slight upgrade with a smoother ride.</li><li>You want a really durable, well built daily trainer with an outsole that will last a long time.</li></ul><p class="rsgx-yn">Skip it if</p><ul class="rsgx-ul"><li>You want a fun daily trainer with good energy return and bounce: the Pegasus 42 will feel too dull.${go2('Best daily trainers right now',L.best)}</li><li>You want a versatile daily trainer for all paces and distances: it won’t feel fast enough or cushioned enough.${go2('Pegasus vs Vomero 18',L.vom)}</li></ul></div>`;
+} else {
 const [buy,skip]=$$('.review-section',who);
 const lis=(arr)=>'<ul class="rsgx-ul">'+arr.map(a=>`<li>${a[0]}${a[1]?` <a class="rsgx-go" href="${a[2]}">${a[1]} <span aria-hidden="true">›</span></a>`:''}</li>`).join('')+'</ul>';
 $('p',buy).outerHTML=lis([['If you buy the Pegasus every year, the Pegasus 42 is a slight upgrade with a smoother ride.'],['If you want a really durable, well built daily trainer with an outsole that will last a long time, you should get the Pegasus 42.']]);
 $('p',skip).outerHTML=lis([['If you want a fun daily trainer with good energy return and bounce, the Pegasus 42 will feel too dull.','See the best daily trainers right now',L.best],['If you want a versatile daily trainer for all paces and distances, the Pegasus 42 won’t feel fast enough or cushioned enough.','Compare it with the Nike Vomero 18',L.vom]]);
 who.classList.add('rsgx-who');
+}
 const forYou=el(`<section class="rsgx-blk">${note('Moved up from screen 6.7 (41 % of phone readers) to where 73 % still are. Each “should not buy” line now leads to another RSG page: today 75 % of phone review views end here.')}</section>`); forYou.append(who);
 
 // ---------- 4 rating breakdown: four parts
@@ -55,6 +62,7 @@ const parts=[['ride','Ride','6.0',6,'Dense, flat and familiar. Fine for easy run
 const rating=el(`<section class="rsgx-blk"><h3 class="rsg-sub-h">Rating breakdown</h3>${note('Four rows instead of ten bars (the four ride scores were one score). Each row jumps to its section: readers tap what they are looking at; the separate jump line on comparisons got 0 taps.')}<div class="rsgx-parts">`+parts.map(p=>`<a class="rsgx-part" href="#${p[0]}"><dl class="rsg-kv rsg-scores"><div class="rsg-rate" style="--v:${p[3]}"><dt>${p[1]}</dt><dd class="rsg-rate-val">${p[2]}</dd></div></dl><p class="rsgx-find">${p[4]} <span class="rsgx-more">Read why ↓</span></p></a>`).join('')+`</div></section>`);
 
 // ---------- 5 head to head
+if(V==='b') cw.classList.add('rsgx-cw2');
 cw.removeAttribute('hidden'); cw.setAttribute('data-cw','on'); cw.classList.add('rsgx-blk');
 $('h3',cw).after(el(note('The “head to head” block of the live test, placed where readers decide to stay or leave: the next two sections lose 41 % → 28 % today.')));
 
@@ -62,6 +70,38 @@ $('h3',cw).after(el(note('The “head to head” block of the live test, placed 
 const cap=(id,c)=>{const f=figs[id]; if(!f) return ''; f.querySelectorAll('.wp-caption-text').forEach(x=>x.remove()); f.removeAttribute('style'); return f.outerHTML+(c?`<p class="rsgx-cap">${c}</p>`:'');};
 const head=(id,t,sc,lead,n)=>`<div class="rsgx-h" id="${id}"><h2>${t}</h2>${sc?`<span class="rsg-rate-val">${sc}</span>`:''}</div>${n?note(n):''}${lead?`<p class="rsgx-lead">${lead}</p>`:''}`;
 const go=(t,h)=>`<p class="rsgx-next"><a class="rsgx-go" href="${h}">${t} <span aria-hidden="true">›</span></a></p>`;
+if(V==='b'){
+text.innerHTML=`
+<div class="review-section">${head('tested','How I tested it','','','Short, first person, no box: the four numbers are one line of text.')}
+<dl class="rsgx-gl rsgx-gl2"><div><dt>Runs</dt><dd>7</dd></div><div><dt>Distance</dt><dd>81.6 km</dd></div><div><dt>Longest</dt><dd>23 km</dd></div><div><dt>Paces</dt><dd>6:22–7:13 /km</dd></div></dl>
+<p>I’ve owned 10 different versions of the Pegasus over the years. My favourite was version 32 and my least favourite was version 36. I bought this pair at Running Warehouse, a half size bigger than usual: in the store the toe-box felt too tight for me.</p>
+<p>All seven runs were easy or recovery runs, plus one 23 km long run. My first run was a 6 kilometre recovery run. <b>The ride felt very similar to the previous version.</b></p></div>
+
+<div class="review-section">${head('ride','Ride','6.0','Dense, flat and familiar. Fine for easy runs; 23 km was the limit.','No boxes inside the text: one photo, short paragraphs, one bold sentence each (example: the tester marks them). The sliders went back to the facts.')}
+${cap('50282')}
+<p>The ride of the Pegasus 42 feels familiar rather than exciting and if you’ve run in previous versions of the Pegasus, you’ll be able to run in v42 blindfolded and be able to identify it. <b>It has that distinct dense, rubbery, Pegasus midsole feel.</b></p>
+<p><b>I only use the Pegasus for easy/recovery runs because it doesn’t enjoy picking up the pace.</b> I don’t feel a lot of responsiveness from the ReactX and the Zoom Air unit also doesn’t provide much bounce.</p>
+<p><b>The longest run I did in the Pegasus 42 was 23 kilometres and I wouldn’t do anything longer in it.</b> It has decent stack height but it doesn’t feel like a very cushioned trainer.</p>
+<p>There is no forefoot rocker (even though Nike advertises a higher toe spring). This contributes to flat feeling, slow transitions. With a 10 mm drop, <b>the rearfoot feels much more cushioned than the forefoot</b>, which alienates runners who are forefoot strikers.</p>
+<p><b>Against the Pegasus 41:</b> transitions feel smoother thanks to the full-length Zoom Air unit. The previous version had separate air units and the forefoot air unit felt lumpy. The ReactX in the midsole is the same and it doesn’t feel very lively. <a class="rsgx-go" href="${L.vom}">Softer, with a rocker: Pegasus vs Vomero 18 <span aria-hidden="true">›</span></a></p></div>
+
+<div class="review-section">${head('fit','Fit & comfort','8.5','The best Pegasus upper to date. Very narrow toe box: go half a size up.')}
+${cap('50273','The toe box is very narrow.')}
+<p>The Pegasus 42’s upper is far better than its midsole and it’s the best Pegasus upper to date. <b>It’s padded in all the right places and foot lockdown is superb.</b></p>
+<p><b>It’s a very narrow toe box so you need to go up a half size (or get the wide version)</b> if you prefer a more spacious interior for your feet to swell. If you’re only using it for casual wear, going true to size is fine.</p>
+<p>The tongue is semi-gusseted and it doesn’t slide around. The upper is on the warm side because of the padding but breathability is decent- there are plenty of ventilation holes on the toe box and side panels. <a class="rsgx-go" href="#full-price-comparison">See today’s prices <span aria-hidden="true">↓</span></a></p></div>
+
+<div class="review-section">${head('build','Build & durability','8.5','Well built, with a hard outsole that lasts.')}
+${cap('50288','Hard rubber on the high wear areas.')}
+<p><b>The durable outsole is a strength of the Pegasus 42.</b> It’s not called Waffle traction anymore but there are still protruding rectangles on the forefoot to bite into the ground. The hard rubber on the high wear areas is supremely abrasion resistant and lasts long.</p>
+<p>The thing that I respect the most about all the Pegasus versions over the years is how durable and how well-built they feel. There are also big reflector strips on the heel for safety.</p></div>
+
+<div class="review-section">${head('value','Value, and what else to look at','6.0','Heavier than the Ride 19, Cumulus 28, Clifton 10 and Ghost 17, and no more cushioned.','Rivals as three short paragraphs with a bold lead-in, no sub-headings, no photo.')}
+<p>The Pegasus 42 is not the upgrade I was hoping for. <b>It’s still one of the heaviest daily trainers on the market and its midsole doesn’t feel more cushioned.</b> It doesn’t feel as engaging or as versatile as other daily trainers in its price range.</p>
+<p><b>Or the Pegasus 41?</b> The Pegasus 42 is slightly better because the ride is smoother. Overall, the rides are very similar though and if you just bought the 41, you don’t need to buy the 42. <a class="rsgx-go" href="${L.p41}">Pegasus 41 review <span aria-hidden="true">›</span></a></p>
+<p><b>Or the Nike Vomero 18?</b> The softer Nike Vomero and Vomero Plus have forefoot rockers and are much better long run trainers. <a class="rsgx-go" href="${L.vom}">Pegasus vs Vomero, side by side <span aria-hidden="true">›</span></a></p>
+<p><b>Or the ASICS Cumulus 28?</b> The closest midsole foam to ReactX is FF Blast Max that’s in the ASICS Cumulus 28. Both these midsoles feel like they are from 5 years ago. The Cumulus 28 is lighter. <a class="rsgx-go" href="${L.cum}">Cumulus 28 review <span aria-hidden="true">›</span></a></p></div>`;
+} else {
 text.innerHTML=`
 <div class="review-section">${head('tested','How I tested it','','','New, short, first person. The run log was at the end of the introduction (38 % reach, and that section loses a quarter of its readers). The Pegasus history is cut.')}
 <dl class="rsg-kv rsg-facts rsgx-g4"><div><dt>Runs</dt><dd>7</dd></div><div><dt>Distance</dt><dd>81.6 km</dd></div><div><dt>Longest run</dt><dd>23 km</dd></div><div><dt>Paces</dt><dd>6:22–7:13 /km</dd></div></dl>
@@ -110,9 +150,10 @@ const card=(box,title)=>{const s=take.cloneNode(false); s.classList.add('rsgx-ta
 $('[data-slot="ride"]',text).replaceWith(card(rideBox,'How it rides'));
 $('[data-slot="fit"]',text).replaceWith(card(fitBox,'How it fits'));
 const tn=el(note('The cushioning sliders and the fit drawing come from “Our tester’s take”. The data zone (ratings, facts, tester’s take) is where a third of readers leave today (73 % → 41 %); each piece now sits next to the text that explains it.')); $('#ride').after(tn);
+}
 
 // ---------- 7 facts, compare, others, prices, trust, reviewer, comments
-const facts=el('<section class="rsgx-blk"></section>'); facts.append(factsSec); $('h3',factsSec).after(el(note('The full facts, for those who look for them. The four most asked ones are at the top of the page.')));
+const facts=el('<section class="rsgx-blk"></section>'); if(V==='b'){ facts.append(assess); } else facts.append(factsSec); $('h3',factsSec).after(el(note('The full facts, for those who look for them. The four most asked ones are at the top of the page.')));
 const cmp=el('<section class="rsgx-blk"></section>'); if(cmpH){cmpH.className='rsgx-h2'; cmp.append(cmpH);} cmp.append(cmpTable);
 const others=el(`<section class="rsg-cw rsgx-blk" data-cw="on"><h3 class="rsg-sub-h">Other shoes to look at</h3>${note('“Similar shoes” sat after the comments, seen on 1–2 % of views. Same three shoes, as a small list in the head-to-head style.')}<ul class="rsg-cw-list n2">`+sims.map(s=>`<li><a href="${s.href}"><img src="${s.img}" alt="" width="64" height="36"><span class="rsg-cw-t"><span class="rsg-cw-n">${s.name}</span></span><span class="rsg-cw-a">Review <span aria-hidden="true">›</span></span></a></li>`).join('')+`<li><a href="${L.best}"><span class="rsg-cw-t"><span class="rsg-cw-n">Best daily trainers right now</span></span><span class="rsg-cw-a">List <span aria-hidden="true">›</span></span></a></li></ul></section>`);
 priceList.classList.add('rsgx-blk'); trust.classList.add('rsgx-blk'); reviewer.classList.add('rsgx-blk');
