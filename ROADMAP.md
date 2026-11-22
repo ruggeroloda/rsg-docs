@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-22 09:30 UTC ("head to head" test live 09:19 UTC on the 10 most viewed reviews, read 8 Dec; next: refresh its comparisons; `page_left` live 08:27 UTC)_left` live 08:27 UTC; "Compare it with" test proposed (page proposal 3); `/top/` hub + section tracking live 07:13 UTC; measurement fixes done)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-22 09:30 UTC ("head to head" test live 09:19 UTC on the 10 most viewed reviews, read 8 Dec; next: refresh its comparisons; `page_left` live 08:27 UTC; `/top/` hub + section tracking live 07:13 UTC; measurement fixes done)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
