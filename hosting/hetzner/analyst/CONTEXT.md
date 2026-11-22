@@ -54,6 +54,9 @@ and say so in the report._
 ## Review page events (from 18 Nov 2026 18:03 UTC)
 - `gallery_swipe` (photos = number of photos in the review): the visitor swiped the phone photo strip at the top of a review (road, trail, training, GPS), once per page view; phones < 768 px only. Use it per phone review view. The strip nudges itself once per browser session (no event for that).
 
+## Reading depth events (reviews, comparisons, /top/ lists; from 22 Nov 2026 07:13 UTC)
+- `section_seen` (section, pos, t), `next_click` (block, section, to, to_path), `jump_click` (block, section, to): current reviews, comparisons and list posts; not old-template reviews, GPS reviews or the homepage. Dictionary and section names: `analytics/UMAMI-PLAN-2026-11-16.md` "Reading depth and ways onward"; why: `content/ENGAGEMENT-READ-2026-11-21.md`. Clean baseline 1–7 Dec (27–30 Nov left out); no layout change on these pages before 8 Dec. Not in `rsg.metric_day` yet: query `website_event` + `event_data` (humans only).
+
 ## Current situation (Nov 2026) — read with `rsg.change_log`
 - A relaunch is under way: new price engine (10 Nov), SEO batch (11 Nov), old content erased (12 Nov), guides redirected
   (15 Nov), **reskin live 15 Nov 14:30 UTC**, Umami tracking from 16 Nov 09:25 UTC. Planned: old-article pruning (~22 Nov),

@@ -75,7 +75,7 @@ Every new spot gets a component name and a plain name here before it ships.
 | errors | `data-errors`, `data-release` = theme commit | automatic |
 Network sub-IDs and Amazon tracking IDs are **built from these values** (one string only where a network needs one).
 
-### Reading depth and ways onward (21 Nov 2026; on staging, live after "deploy to live")
+### Reading depth and ways onward (21 Nov 2026; LIVE since 22 Nov 2026 07:13 UTC, `live-20261122-071334`)
 On current reviews (road/trail/training), comparisons and list posts (`top_list`, `guide`). Not on old-template reviews, GPS reviews or the homepage (which has its own `home_*` events). Code: `rsg-core/assets/rsg-track.js` `reading()`; sections are found by the templates' own classes and ids (no markup added), so a renamed class or id must be changed there and here. Why and how to read it: `content/ENGAGEMENT-READ-2026-11-21.md`.
 
 | Event | Sent when | Properties |
