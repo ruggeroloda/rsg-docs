@@ -7,7 +7,7 @@ _The 10 reviews that carry the "head to head" block (test live 22 Nov 2026 09:19
 | Nike Pegasus 42 | vs Nike Vomero 18 | /comparison/nike-pegasus-vs-nike-vomero/ | refreshed 18 Nov |
 | | vs Nike Pegasus Premium | /comparison/nike-pegasus-premium-vs-nike-pegasus/ | to check |
 | | vs Nike Winflo 11 | /comparison/nike-winflo-vs-nike-pegasus/ | refreshed 18 Nov |
-| | vs Nike Structure 25 | /comparison/nike-pegasus-vs-nike-structure/ | to check (Structure 25 is not the newest model) |
+| | vs Nike Structure 25 | /comparison/nike-pegasus-vs-nike-structure/ | **on staging 22 Nov, Ruggero to read** (Structure 25 → 26 swapped, text rewritten from the Pegasus 42 + Structure 26 reviews; meta description rewritten: it called the Structure neutral) |
 | Nike Vomero Plus | vs Nike Vomero Premium | /comparison/nike-vomero-premium-vs-nike-vomero-plus/ | to check |
 | | vs Nike Pegasus Plus | /comparison/nike-vomero-plus-vs-nike-pegasus-plus/ | to check |
 | ASICS Gel-Nimbus 28 | vs Hoka Bondi 9 | /comparison/asics-nimbus-28-vs-hoka-bondi-9/ | **refreshed 22 Nov** (live ~11:05 UTC, change log 131; review specs fixed live, change log 132: Bondi 9 weight 9.3 → 10.5 oz, Nimbus 28 toe box normal → tight; backups Rocket `~/rsg_deploy_backups/comparisons-2026-11-22/`). Was: "Which one to buy" contradicted the table and review |
@@ -15,7 +15,7 @@ _The 10 reviews that carry the "head to head" block (test live 22 Nov 2026 09:19
 | | vs ASICS Gel-Cumulus 28 | /comparison/asics-nimbus-vs-asics-cumulus/ | refreshed 18 Nov |
 | | vs Brooks Glycerin 23 | /comparison/brooks-glycerin-23-vs-asics-nimbus-28/ | to check |
 | adidas adizero Evo SL | vs adidas Adios Pro Evo 1 | /comparison/adidas-evo-sl-vs-adidas-adios-pro-evo-1/ | to check |
-| ASICS Novablast 5 | vs ASICS Superblast 2 | /comparison/asics-superblast-vs-asics-novablast-3/ | **on staging 22 Nov, Ruggero to read** (already Superblast 2 vs Novablast 5; text was wrong on stability and the Novablast; URL kept: slug change = redirect + tile change during the test; specs fixed on staging: Superblast 2 weight 9.0 → 8.8 oz + toe box normal → tight, Novablast 5 weight 8.7 → 8.8 oz + toe box normal → wide/normal, as in their texts) |
+| ASICS Novablast 5 | vs ASICS Superblast 2 | /comparison/asics-superblast-vs-asics-novablast-3/ | **refreshed 22 Nov** (live, change log 133; review specs change log 134) (already Superblast 2 vs Novablast 5; text was wrong on stability and the Novablast; URL kept: slug change = redirect + tile change during the test; specs fixed on staging: Superblast 2 weight 9.0 → 8.8 oz + toe box normal → tight, Novablast 5 weight 8.7 → 8.8 oz + toe box normal → wide/normal, as in their texts) |
 | | vs ASICS Gel-Nimbus 28 | /comparison/asics-nimbus-vs-asics-novablast/ | to check |
 | | vs ASICS Megablast | /comparison/asics-megablast-vs-asics-novablast/ | to check |
 | | vs ASICS Gel-Cumulus 28 | /comparison/asics-cumulus-vs-asics-novablast/ | refreshed 20 Nov |
@@ -34,3 +34,5 @@ _The 10 reviews that carry the "head to head" block (test live 22 Nov 2026 09:19
 | | vs ASICS Gel-Cumulus 26 | /comparison/asics-cumulus-vs-saucony-ride/ | to check (Cumulus 26, not 28) |
 
 28 tiles, 26 different comparisons (Nimbus vs Cumulus and Cumulus vs Novablast are on two reviews each); 7 refreshed, 19 to check. Tile names on the site come from the review's brand + model fields (e.g. "Asics Gel Nimbus 27", "Hoka One One Bondi 9").
+
+**Wrong shoe in the comparison (checked 22 Nov, `first_shoe`/`second_shoe` vs newer reviews; Ruggero: fix these first):** Pegasus vs Structure (Structure 25 → 26), Pegasus vs Zoom Fly (Pegasus 41 → 42), Ride vs Kinvara (Kinvara 14 → 16), Cumulus vs Ride (Cumulus 26 → 28). Zoom Fly vs Tempo Next%: no newer Tempo review (old model, tile choice for Ruggero). Version pairs (Nimbus 28 vs 27, Rebel v5 vs v4, Zoom Fly 6 vs 5, Ride 19 vs 18) are meant that way; Zoom Fly vs Vaporfly already uses the Vaporfly 4 (only the address says Next%).
