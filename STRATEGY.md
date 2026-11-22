@@ -39,3 +39,4 @@ Not goals: scroll depth, time on page, page length.
 | Date | Change | Goal | Expected | Result (read on) | Keep / revert |
 |---|---|---|---|---|---|
 | 22 Nov 2026 | Section tracking live (`section_seen`, `next_click`, `jump_click`) | measures 1–3 | baseline 1–7 Dec | 8 Dec | — |
+| 22 Nov 2026 | `page_left` live (where readers are when they leave; their last action) | measures 1–3 | read with the 1–7 Dec baseline | 8 Dec | — |
