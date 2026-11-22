@@ -2,6 +2,8 @@
 
 _Last updated 2026-11-22. Status: idea stage._
 
+**22 Nov 2026 (evening): what should a review be? Ruggero's idea (the review organised around what is rated) and the scoring questions, briefed for an independent Fable chat: `BRIEF-REVIEW-FORMAT-2026-11-22.md`, data `review-format-2026-11-22/reviews-2026-11-22.csv` (367 scored reviews). Nothing decided.**
+
 **22 Nov 2026: the three goals every content or page change is judged against are in `../STRATEGY.md`.** Proposal mock-ups and Ruggero's answers: `ENGAGEMENT-READ-2026-11-21.md` (bottom), `proposals-2026-11-21/`.
 
 **20 Nov 2026: content review with Fable done; the work list to continue is `CONTENT-REVIEW-2026-11-20.md`.** Prune: independent analysis `PRUNE-ANALYSIS-2026-11-20.md` (20 Nov), starts the week of 7 Dec (Ruggero 20 Nov), reading first (analysis, "Reading before the first batch").
