@@ -2,6 +2,8 @@
 
 _Last updated 2026-11-22. Status: idea stage._
 
+**22 Nov 2026 (late): Fable's independent answer on the review format: `REVIEW-FORMAT-2026-11-22.md` (five text sections around four scored parts; old reviews shown in the same four; no "vs average"). Ruggero decides (six decisions at its bottom); nothing decided, nothing built.**
+
 **22 Nov 2026 (evening): what should a review be? Ruggero's idea (the review organised around what is rated) and the scoring questions, briefed for an independent Fable chat: `BRIEF-REVIEW-FORMAT-2026-11-22.md`, data `review-format-2026-11-22/reviews-2026-11-22.csv` (367 scored reviews). Nothing decided.**
 
 **22 Nov 2026: the three goals every content or page change is judged against are in `../STRATEGY.md`.** Proposal mock-ups and Ruggero's answers: `ENGAGEMENT-READ-2026-11-21.md` (bottom), `proposals-2026-11-21/`.

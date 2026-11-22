@@ -1,3 +1,5 @@
+**DONE — answered 22 Nov 2026: `REVIEW-FORMAT-2026-11-22.md` (Ruggero's decisions still open).**
+
 # Brief for Fable: what should an RSG review be? (22 Nov 2026)
 
 _Written 22 Nov 2026 by a Claude chat that talked this through with Ruggero. That chat's own opinions are **deliberately left out**: Ruggero wants an independent view, not a reaction to one. Everything below is either Ruggero's words or a fact measured on the live site on 22 Nov._
