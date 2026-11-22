@@ -7,7 +7,7 @@ _The 10 reviews that carry the "head to head" block (test live 22 Nov 2026 09:19
 | Nike Pegasus 42 | vs Nike Vomero 18 | /comparison/nike-pegasus-vs-nike-vomero/ | refreshed 18 Nov |
 | | vs Nike Pegasus Premium | /comparison/nike-pegasus-premium-vs-nike-pegasus/ | to check |
 | | vs Nike Winflo 11 | /comparison/nike-winflo-vs-nike-pegasus/ | refreshed 18 Nov |
-| | vs Nike Structure 25 | /comparison/nike-pegasus-vs-nike-structure/ | **on staging 22 Nov, Ruggero to read** (Structure 25 → 26 swapped, text rewritten from the Pegasus 42 + Structure 26 reviews; meta description rewritten: it called the Structure neutral) |
+| | vs Nike Structure 25 | /comparison/nike-pegasus-vs-nike-structure/ | **refreshed 22 Nov** (live, change log 135; Structure 25 → 26 swapped, text rewritten from the Pegasus 42 + Structure 26 reviews; meta description rewritten: it called the Structure neutral) |
 | Nike Vomero Plus | vs Nike Vomero Premium | /comparison/nike-vomero-premium-vs-nike-vomero-plus/ | to check |
 | | vs Nike Pegasus Plus | /comparison/nike-vomero-plus-vs-nike-pegasus-plus/ | to check |
 | ASICS Gel-Nimbus 28 | vs Hoka Bondi 9 | /comparison/asics-nimbus-28-vs-hoka-bondi-9/ | **refreshed 22 Nov** (live ~11:05 UTC, change log 131; review specs fixed live, change log 132: Bondi 9 weight 9.3 → 10.5 oz, Nimbus 28 toe box normal → tight; backups Rocket `~/rsg_deploy_backups/comparisons-2026-11-22/`). Was: "Which one to buy" contradicted the table and review |
@@ -22,7 +22,7 @@ _The 10 reviews that carry the "head to head" block (test live 22 Nov 2026 09:19
 | New Balance FuelCell Rebel v5 | vs Rebel v4 | /comparison/new-balance-rebel-v5-vs-new-balance-rebel-v4/ | to check |
 | Nike Zoom Fly 6 | vs Nike ZoomX Vaporfly 4 | /comparison/nike-zoom-fly-vs-nike-vaporfly-next/ | to check (URL says Vaporfly Next%) |
 | | vs Nike Zoom Fly 5 | /comparison/nike-zoom-fly-6-vs-nike-zoom-fly-5/ | to check |
-| | vs Nike Pegasus 41 | /comparison/nike-pegasus-vs-nike-zoom-fly/ | to check (Pegasus 41, not 42) |
+| | vs Nike Pegasus 41 | /comparison/nike-pegasus-vs-nike-zoom-fly/ | **on staging 22 Nov** (Pegasus 41 → 42 swapped, text + meta description rewritten from the Pegasus 42 + Zoom Fly 6 reviews; spec fix on staging: Zoom Fly 6 toe box normal → tight, as in its text) |
 | | vs Nike Air Zoom Tempo Next% | /comparison/nike-zoom-fly-vs-nike-tempo-next/ | to check (old model) |
 | Brooks Adrenaline GTS 25 | vs Brooks Ghost 17 | /comparison/brooks-ghost-vs-brooks-adrenaline/ | refreshed 18 Nov |
 | ASICS Gel-Cumulus 28 | vs ASICS Gel-Nimbus 28 | /comparison/asics-nimbus-vs-asics-cumulus/ | refreshed 18 Nov |
@@ -30,8 +30,8 @@ _The 10 reviews that carry the "head to head" block (test live 22 Nov 2026 09:19
 | | vs ASICS Gel-Kayano 32 | /comparison/asics-cumulus-vs-asics-kayano/ | refreshed 20 Nov |
 | Saucony Ride 19 | vs Saucony Ride 18 | /comparison/saucony-ride-19-vs-saucony-ride-18/ | to check |
 | | vs Saucony Triumph 23 | /comparison/saucony-ride-vs-saucony-triumph/ | refreshed 20 Nov |
-| | vs Saucony Kinvara 14 | /comparison/saucony-ride-vs-saucony-kinvara/ | to check |
-| | vs ASICS Gel-Cumulus 26 | /comparison/asics-cumulus-vs-saucony-ride/ | to check (Cumulus 26, not 28) |
+| | vs Saucony Kinvara 14 | /comparison/saucony-ride-vs-saucony-kinvara/ | **refreshed 22 Nov** (live, change log 137; Kinvara 14 → 16 swapped, text + meta description rewritten) |
+| | vs ASICS Gel-Cumulus 26 | /comparison/asics-cumulus-vs-saucony-ride/ | **refreshed 22 Nov** (live, change log 136; Cumulus 26 → 28 swapped, text + meta description rewritten; Ride 19 weight 9.0 → 9.2 oz as in its text, change log 138) |
 
 28 tiles, 26 different comparisons (Nimbus vs Cumulus and Cumulus vs Novablast are on two reviews each); 7 refreshed, 19 to check. Tile names on the site come from the review's brand + model fields (e.g. "Asics Gel Nimbus 27", "Hoka One One Bondi 9").
 
