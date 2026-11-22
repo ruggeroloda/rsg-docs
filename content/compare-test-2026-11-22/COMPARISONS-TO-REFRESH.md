@@ -10,12 +10,12 @@ _The 10 reviews that carry the "head to head" block (test live 22 Nov 2026 09:19
 | | vs Nike Structure 25 | /comparison/nike-pegasus-vs-nike-structure/ | to check (Structure 25 is not the newest model) |
 | Nike Vomero Plus | vs Nike Vomero Premium | /comparison/nike-vomero-premium-vs-nike-vomero-plus/ | to check |
 | | vs Nike Pegasus Plus | /comparison/nike-vomero-plus-vs-nike-pegasus-plus/ | to check |
-| ASICS Gel-Nimbus 28 | vs Hoka Bondi 9 | /comparison/asics-nimbus-28-vs-hoka-bondi-9/ | **on staging 22 Nov, Ruggero to read** (rewritten from both reviews; review specs fixed on staging: Bondi 9 weight 9.3 → 10.5 oz as in its text, Nimbus 28 toe box normal → tight as in its text; backups Rocket `~/rsg_deploy_backups/comparisons-2026-11-22/`). Was: "Which one to buy" contradicted the table and review (`content/ENGAGEMENT-READ-2026-11-21.md`) |
+| ASICS Gel-Nimbus 28 | vs Hoka Bondi 9 | /comparison/asics-nimbus-28-vs-hoka-bondi-9/ | **refreshed 22 Nov** (live ~11:05 UTC, change log 131; review specs fixed live, change log 132: Bondi 9 weight 9.3 → 10.5 oz, Nimbus 28 toe box normal → tight; backups Rocket `~/rsg_deploy_backups/comparisons-2026-11-22/`). Was: "Which one to buy" contradicted the table and review |
 | | vs ASICS Gel-Nimbus 27 | /comparison/asics-nimbus-28-vs-asics-nimbus-27/ | to check |
 | | vs ASICS Gel-Cumulus 28 | /comparison/asics-nimbus-vs-asics-cumulus/ | refreshed 18 Nov |
 | | vs Brooks Glycerin 23 | /comparison/brooks-glycerin-23-vs-asics-nimbus-28/ | to check |
 | adidas adizero Evo SL | vs adidas Adios Pro Evo 1 | /comparison/adidas-evo-sl-vs-adidas-adios-pro-evo-1/ | to check |
-| ASICS Novablast 5 | vs ASICS Superblast 2 | /comparison/asics-superblast-vs-asics-novablast-3/ | to check (URL and probably the text are about the Novablast 3) |
+| ASICS Novablast 5 | vs ASICS Superblast 2 | /comparison/asics-superblast-vs-asics-novablast-3/ | **on staging 22 Nov, Ruggero to read** (already Superblast 2 vs Novablast 5; text was wrong on stability and the Novablast; URL kept: slug change = redirect + tile change during the test; specs fixed on staging: Superblast 2 weight 9.0 → 8.8 oz + toe box normal → tight, Novablast 5 weight 8.7 → 8.8 oz + toe box normal → wide/normal, as in their texts) |
 | | vs ASICS Gel-Nimbus 28 | /comparison/asics-nimbus-vs-asics-novablast/ | to check |
 | | vs ASICS Megablast | /comparison/asics-megablast-vs-asics-novablast/ | to check |
 | | vs ASICS Gel-Cumulus 28 | /comparison/asics-cumulus-vs-asics-novablast/ | refreshed 20 Nov |
