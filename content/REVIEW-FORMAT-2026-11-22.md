@@ -114,13 +114,20 @@ No text is rewritten. If option 2 is chosen, the template shows their ten scores
 - Doctors of Running (bot check). WordPress, for the stability term. Whether any search feature uses the sub-scores in the schema (the Rich Results test is already on the roadmap).
 - The reach numbers are the 21 Nov sample (5 days, during a core update); the 1–7 Dec baseline replaces them.
 
+## The template as a picture (added 22 Nov, late)
+Ruggero asked for the ideal review as a template, Pegasus 42 as the example, in the reskin's style. Made the usual way: the live page changed in a headless browser (live site only read), phone 390 px next to desktop 1366 px, ads not shown. **Every text in it is Brandon's own sentence from the live review, rearranged; the "Why 7/10?" line and the four finding lines are examples written from his text.** Nothing built.
+- `review-format-2026-11-22/template-pegasus42-1-top.png`: top of the page to the facts. `template-pegasus42-2-text.png`: the text. Full pages: `template-pegasus42-phone-full.jpg`, `template-pegasus42-desktop-full.jpg`. Script: `mock-template.py`.
+- **What changed against the live page:** "Why 7/10?" line at the top of the verdict box; rating breakdown = four rows (score, bar, one finding, "Read why" jump) instead of ten bars; "Who should / should not buy" directly under it, above the facts and the tester's take; text = How I tested it (four numbers + two paragraphs), Ride, Fit & comfort, Build & durability, Value and what else to look at, each heading with its score and finding. Phone price block, sidebar price card, facts, tester's take, compare table and price list untouched.
+- **Measured on the mock-up (phone, no ads):** "Who should buy" starts 905 px higher (2,948 vs 3,853); the ride text starts 3,218 px earlier (5,562 vs 8,780 for "Sole unit"); the page is 770 px shorter (17,107 vs 17,877).
+- **What the example shows honestly:** the Build & durability section is thin (two paragraphs): the review has little on it, so a tester must be asked for it (wear photo, km). "How I tested it" has no runner details (weight, foot strike) because the live review has none. The introduction's Pegasus history (about 330 words) is gone; whether to keep some of it is Ruggero's call.
+
 ## Decisions for Ruggero
 1. Text for new reviews: the five sections above (How I tested it, Ride, Fit & comfort, Build & durability, Value and what else to look at): yes / change / no.
 2. Scoring: option 1, **2**, 3 or 4.
 3. "Why 7?" line instead of "the parts say X, we say Y": yes / no.
 4. No "versus category average"; rivals and the previous version in words: yes / no.
 5. Categories: park until after the tester: yes / no.
-6. Want a picture of the top block (phone next to desktop) before deciding 2–3?
+6. The template picture (section above): yes / change what / no.
 
 ## Method
 CSV read with pandas on 22 Nov (scripts throwaway, not kept). Four parts = plain averages of the sub-scores listed. "Explain the expert score" = share of variation in a straight-line fit (R² 0.71 for ten sub-scores, 0.71 for the four parts). Predecessor match: "Previous model" name against review titles, 126 of the 207 linked ones matched by name. Live pages: RSG Pegasus 42 and Cascadia 19; RunRepeat, RTINGS, Believe in the Run and Running Warehouse on the Pegasus 42; Road Trail Run on the Pegasus Plus 2; Solereview on the Pegasus 41.
