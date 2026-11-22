@@ -84,6 +84,10 @@ On current reviews (road/trail/training), comparisons and list posts (`top_list`
 | `next_click` | click / middle-click on a link to another page of the site (not offers, `/go/`, images) | `block` (where the link sits), `section`, `to` (page type it opens: review, comparison, review_list, top_list, top_hub, comparison_list, gps_review, guide, author, home, other), `to_path` |
 | `jump_click` | click on a link to another spot of the same page | `block`, `section`, `to` (the target's id) |
 | `page_left` | the page is hidden or left, once per page view (since 22 Nov 2026 08:27 UTC) | `at`, `deepest`, `pos`, `t`, `after` |
+| `cw_view` | a review in the "head to head" test opened (10 reviews, 22 Nov – 7 Dec 2026; both groups) | `cw` (on = block shown, off = not, x = no storage), `n` (tiles) |
+| `cw_seen` | the "head to head" block ≥ 50 % on screen for 1 s, once per page view | `n` |
+
+`next_click` from the block has `block` = `compare_with`. Group per browser in `localStorage.rsgCw`; split visits by the `cw` of their `cw_view`.
 
 `page_left` (22 Nov 2026 08:27 UTC): once per page view, the first time the page is hidden or left (closed tab, back button, another app, a link in this or a new tab; browsers don't say which): `at` = the section in the middle of the screen at that moment (`between` = between sections, e.g. an ad), `deepest` + `pos` = the furthest section seen, `t` = visible seconds, `after` = the reader's last action on the page view (`shop_click`, `next_click`, `jump_click`, `drawer_open`, `price_switch`, `search_submit`, `none`). Sent as a beacon (Umami's own JSON fetch needs a CORS pre-check that a closing page never runs). A reader who switches tab and comes back is counted at the first hide.
 

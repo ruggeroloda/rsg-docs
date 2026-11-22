@@ -44,3 +44,4 @@ Why this order: ads are about $1,100 a month (163.7k views × page RPM 6.8, `ads
 |---|---|---|---|---|---|
 | 22 Nov 2026 | Section tracking live (`section_seen`, `next_click`, `jump_click`) | measures 1–3 | baseline 1–7 Dec | 8 Dec | — |
 | 22 Nov 2026 | `page_left` live (where readers are when they leave; their last action) | measures 1–3 | read with the 1–7 Dec baseline | 8 Dec | — |
+| 22 Nov 2026 | "Head to head" block on the 10 most viewed reviews, 50/50 test | 2 + 3 | more reviews → comparison, more 2-page visits, shop clicks not lower | 8 Dec | — |
