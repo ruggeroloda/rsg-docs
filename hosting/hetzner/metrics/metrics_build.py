@@ -16,7 +16,7 @@ import psycopg
 DB = os.environ["DATABASE_URL"]
 SITE = os.environ.get("UMAMI_WEBSITE_ID", "31037802-afa8-48d7-9ff0-badf153a16d8")
 UMAMI_FIRST_FULL_DAY = dt.date(2026, 11, 17)   # live since 16 Nov 09:25 UTC: 16 Nov is partial, never a baseline
-RULES_V = 3   # v2 16 Nov 2026 (Ruggero): + direct_offmarket_fhd; v3 18 Nov 2026 (Ruggero): + offmarket_screen, linux_1536, direct_offmarket_0s
+RULES_V = 4   # v2 16 Nov 2026 (Ruggero): + direct_offmarket_fhd; v3 18 Nov 2026 (Ruggero): + offmarket_screen, linux_1536, direct_offmarket_0s; v4 22 Nov 2026 (Ruggero): + offmarket_square_screen
 # Search Console: the loader takes only Google's "final" data, from today-3 (06:40 UTC) and reloads each day until today-7.
 # Flags wait one more reload: a GSC day is used for flags only once it is >= 4 days old (Ruggero 16 Nov: the latest days are iffy).
 GSC_SETTLE_DAYS = 4
@@ -56,7 +56,14 @@ r AS (
     CASE WHEN s.screen = '1536x960' AND s.os = 'Linux' THEN 'linux_1536:2' END,
     -- direct-only, everything within 0 s, outside RSG's markets (mostly SG/CN/HK; 0 clicks)
     CASE WHEN a.direct_only AND a.dur = 0
-              AND coalesce(s.country, '') NOT IN ('US','GB','DE','AT','CH','CA','AU','NZ','IE','NL','IN') THEN 'direct_offmarket_0s:2' END], NULL) reasons
+              AND coalesce(s.country, '') NOT IN ('US','GB','DE','AT','CH','CA','AU','NZ','IE','NL','IN') THEN 'direct_offmarket_0s:2' END,
+    -- v4 (22 Nov 2026, Ruggero): direct-only desktop (width >= 992) from outside the markets with a near-square screen
+    -- (width < 1.2 x height; real monitors are wider). 17-21 Nov: 496 "human" sessions, CN 292 / SG 81 / MX 56 / HK 52,
+    -- a different screen size per session (faked), 0 shop clicks, median 0 s. Same screens in the markets kept (42, 3 clicks).
+    CASE WHEN a.direct_only AND s.screen ~ '^[0-9]+x[0-9]+$'
+              AND split_part(s.screen, 'x', 1)::int >= 992
+              AND split_part(s.screen, 'x', 1)::numeric < 1.2 * nullif(split_part(s.screen, 'x', 2)::numeric, 0)
+              AND coalesce(s.country, '') NOT IN ('US','GB','DE','AT','CH','CA','AU','NZ','IE','NL','IN') THEN 'offmarket_square_screen:3' END], NULL) reasons
   FROM session s JOIN act a USING (session_id))
 INSERT INTO rsg.session_quality (session_id, website_id, score, quality, reasons, rules_v, built_at)
 SELECT session_id, website_id, sc,

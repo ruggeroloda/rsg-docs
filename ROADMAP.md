@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-22 07:30 UTC (`/top/` hub + 6 why texts + section tracking live 22 Nov 07:13 UTC, `live-20261122-071334`; site-experience check 22 Nov: three measurement fixes proposed, Small / waiting)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-22 07:45 UTC (`/top/` hub + 6 why texts + section tracking live 22 Nov 07:13 UTC, `live-20261122-071334`; measurement fixes done: JS errors per visitor, speed by market, bot rules v4)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -66,7 +66,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 - "Check price" wording in the other price spots (phone block `mob`, sidebar card `rail`, drawer) vs "No local price" / "Search Amazon" in the phone bar: Ruggero to decide whether to align (`theme/PHONE-BAR-G-2026-11-18.md`).
 - **Non-US clicks, low priority** (17 Nov, humans): US 84 shop clicks / 792 visits; GB 2 / 244, AU 2 / 175, CA 8 / 143. Ruggero 18 Nov: UK visitors always bought mostly at Amazon ("no Amazon, no sales") and the money comes from the US, so GB is not a gap and this is no longer a pre-Black Friday item. AU/CA only if a cheap cause shows up.
 - Bots left after rules v3: CN/SG/HK visits with normal screens and > 0 s (~165/day, 0 clicks); a country rule is the next step if they matter (`analytics/README.md`).
-- **Measurement fixes from the 22 Nov site-experience check** (proposed, wait for Ruggero, analytics server only): (1) JS errors counted per visitor, without the harmless `ResizeObserver loop` warning and browser-injected script errors (19–20 Nov "tripling" = 2 visitors, ~5,000 warnings); (2) Web Vitals split markets vs rest (slow p75s come from SA/KE/QA/MA/AE/IN and similar; in the markets desktop LCP 1.0–1.3 s, TTFB 0.4–0.7 s); (3) bot rules v4 for ~650 desktop direct listing landings that leave in 0 s (17–20 Nov, mostly CN, odd screens). Also: planned change-log row "Old-article pruning" still dated 22 Nov (moved to week of 7 Dec).
+- Change log: the planned row "Old-article pruning" is still dated 22 Nov 09:00 UTC (moved to the week of 7 Dec): re-date it when the batch is planned.
 - Theme backlog: verdict/"Buy if" box on the ~130 comparisons outside the 39 refreshes (decision 18 Nov), quiz results page + the price-drop-alert copy (build or cut), SEO backlog, local list prices outside the US (`dfs/LIST-PRICES-2026-11-19.md`, after 30 Nov), orange-button contrast, shoe spec typos case by case.
 - Make: merge the 3 insert scenarios (write via `acf`), port accounting, then cancel Make.
 - rsgmedia: rollback copies + `stargrid-api` copies deleted, packages updated and rebooted 20 Nov; delete the 16 Nov Umami `.bak-20261116-*` files when sure; check the uncommitted `stargrid-api/src/routes/stats.js`; SiteGround DNS leftovers; old Drive folders `Backups/servers` + `Backups/sites` (after 11 Dec, keep `Backups/nas`).
