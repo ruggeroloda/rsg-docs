@@ -1,0 +1,36 @@
+/* mock-up additions: everything else is the live theme's CSS */
+.rsgx-blk{margin-top:32px!important}
+.rsgx-glance{margin:0 0 20px}
+.rsgx-gl{display:flex;flex-wrap:wrap;gap:6px 20px;margin:0;font-size:14px;line-height:1.4}.rsgx-gl div{display:flex;gap:6px;white-space:nowrap}.rsgx-gl dt{color:#5b6b82;font-weight:400}.rsgx-gl dd{margin:0;font-weight:700}
+article.rsg-content>.rsgx-glance+.rsgx-blk{margin-top:0!important}
+.rsg-content>.row.rsgx-blk+.row.rsgx-blk,.rsg-content>.row.rsgx-blk+section.rsg-dfs-mob{margin-top:24px!important}
+article.rsg-content>.rsgx-blk:first-child{margin-top:0!important}
+.rsgx-g4{margin:0}
+@media(min-width:768px){.rsgx-g4{display:grid!important;grid-template-columns:repeat(4,1fr)!important}}
+.rsgx-why{margin:0 0 14px;padding:0 0 14px;border-bottom:1px solid #dfe5ee;font-size:1.05em;line-height:1.5}
+.rsgx-why b{display:block;font-size:.72em;letter-spacing:.08em;text-transform:uppercase;color:#5b6b82;font-weight:600;margin-bottom:4px}
+.rsgx-who .review-section h2{margin-bottom:12px}
+.rsgx-ul{margin:0;padding-left:1.1em}.rsgx-ul li{margin:0 0 10px;line-height:1.5}
+@media(min-width:768px){.rsgx-who{display:grid;grid-template-columns:1fr 1fr;gap:16px}.rsgx-who .review-section{margin:0!important;height:100%}}
+.rsgx-go{font-weight:600;white-space:normal}
+.rsgx-next{margin-top:18px;padding-top:14px;border-top:1px solid #dfe5ee}
+.rsgx-parts{margin:14px 0 0}
+.rsgx-part{display:block;padding:14px 0;border-top:1px solid #dfe5ee;color:inherit!important;text-decoration:none!important}
+.rsgx-part:first-child{border-top:0;padding-top:0}
+.rsgx-part dl{margin:0}.rsgx-part .rsg-rate{margin:0}.rsgx-part .rsg-rate dt{font-weight:600;font-size:1.05em}
+.rsgx-find{margin:8px 0 0;line-height:1.45}.rsgx-more{color:#0b62c4;font-weight:600;white-space:nowrap}
+@media(min-width:768px){.rsgx-parts{display:grid;grid-template-columns:1fr 1fr;column-gap:40px}.rsgx-part:nth-child(2){border-top:0;padding-top:0}}
+.rsgx-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-top:3px solid #0f2340;padding-top:14px;margin-top:36px}
+.review-section:first-child .rsgx-h{margin-top:0}
+.rsgx-h h2{margin:0}.rsgx-h2{margin:0 0 18px}
+.rsgx-lead{font-weight:600;font-size:1.15em;line-height:1.4;margin:6px 0 18px}
+.rsg-text h3.rsgx-vs,.rsgx-vs{font-family:inherit!important;font-weight:700!important;font-size:1.05em!important;line-height:1.4!important;margin:24px 0 6px!important;text-transform:none!important;letter-spacing:0!important}
+.rsgx-cap{font-size:.85em;color:#5b6b82;margin:-8px 0 18px}
+.rsgx-take{margin:8px 0 22px}.rsgx-take .rsg-ride,.rsgx-take .rsg-fit{margin:0}
+.rsgx-log{margin:6px 0 0}.rsgx-log summary{cursor:pointer;font-weight:600;color:#0b62c4}.rsgx-log ul{margin:10px 0 0;padding-left:1.1em}
+#tested .rsg-rate-val{display:none}
+.rsgx-n{display:none;background:#fff4c2;color:#3b2f00;border-left:3px solid #e0a800;font:500 13px/1.45 system-ui,sans-serif;padding:8px 10px;margin:8px 0 12px;text-transform:none;letter-spacing:0}
+body.rsgx-notes .rsgx-n{display:block}
+.rsgx-bar{position:fixed;left:0;right:0;bottom:0;z-index:2147483000;background:#1b1b1b;color:#fff;font:500 12px/1.3 system-ui,sans-serif;padding:8px 12px;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap}
+.rsgx-bar button,.rsgx-bar a{font:600 12px system-ui,sans-serif;background:#fff4c2;color:#1b1b1b!important;border:0;border-radius:4px;padding:5px 10px;cursor:pointer;text-decoration:none}
+body{padding-bottom:48px}
