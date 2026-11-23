@@ -40,13 +40,21 @@ def main(argv):
     out, n = ['BEGIN;'], 0
     for s, e in windows(a, b):
         rows = fetch(s, e); n += len(rows)
-        out.append(f"DELETE FROM rsg.rakuten_order WHERE transaction_at >= '{s}' AND transaction_at < '{e + dt.timedelta(days=1)}';")
+        w = f"transaction_at >= '{s}' AND transaction_at < '{e + dt.timedelta(days=1)}'"
+        out.append('CREATE TEMP TABLE IF NOT EXISTS rk_new (LIKE rsg.rakuten_order INCLUDING DEFAULTS); TRUNCATE rk_new;')
         for r in rows:
             vals = [r['MID'], r['Advertiser Name'], r['Order ID'], f"{r['Transaction Date']} {r['Transaction Time']}+00",
                     r['SKU'], r['Sales'], r['# of Items'], r['Total Commission'], f"{r['Process Date']} {r['Process Time']}+00",
                     r['Member ID (U1)']]
-            out.append('INSERT INTO rsg.rakuten_order (mid,advertiser,order_id,transaction_at,sku,sales_usd,items,commission_usd,process_at,u1) VALUES ('
+            out.append('INSERT INTO rk_new (mid,advertiser,order_id,transaction_at,sku,sales_usd,items,commission_usd,process_at,u1) VALUES ('
                        + ','.join(q(v) for v in vals) + ');')
+        # Guard: never replace a window with a download that has less than half the rows already stored
+        # (an empty or cut-off report would otherwise wipe good data). The exception rolls back the whole run.
+        out.append(f"""DO $$ DECLARE o int; n int; BEGIN
+  SELECT count(*) INTO o FROM rsg.rakuten_order WHERE {w}; SELECT count(*) INTO n FROM rk_new;
+  IF o >= 5 AND n < o / 2 THEN RAISE EXCEPTION 'Rakuten {s}..{e}: % rows downloaded vs % stored, nothing replaced', n, o; END IF; END $$;
+DELETE FROM rsg.rakuten_order WHERE {w};
+INSERT INTO rsg.rakuten_order SELECT * FROM rk_new;""")
         print(f'{s}..{e} {len(rows)}', file=sys.stderr)
     out.append("""DELETE FROM rsg.revenue_period WHERE source='rakuten';
 INSERT INTO rsg.revenue_period (source,account,grain,period_start,period_end,date_basis,tag,page,
