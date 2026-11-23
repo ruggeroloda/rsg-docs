@@ -8,6 +8,8 @@ _Live since 16 Nov 2026 09:25 UTC (theme/rsg-core `fa0d473`, tag `live-20261116-
 - **On the site:** tracker on every page except for editors/previews/feeds; page views tagged with the page type; Web Vitals; JS errors; events `spot_seen`, `shop_click`, `drawer_open`, `price_switch` (dictionary v1), `search_submit` (q, form) + `search_result` (outcome, n, q) since 19 Nov (`theme/SITE-SEARCH-ROUTING-2026-11-19.md`); recorder (heatmaps + replays) for 10 % of browser sessions (option `rsg_umami_rec_rate`), never EU/EEA/UK/CH.
 - **Amazon US tracking IDs per spot group** (Associates reports per ID; read after ~4 weeks): `rsg-comp-20` comparisons, `rsg-reviewlist-20` review lists, `rsg-wizard-20` shoe finder, `rsg-bestof-20` top lists/guides/home/related/article boxes/text links, reviews: `rsg-revside-20` sidebar card, `rsg-revmob-20` phone block, `rsg-revbar-20` sticky bar, `rsg-revdrw-20` drawer, `rsg-revlow-20` lower spots; everything else `rsg-single-20`. Option `rsg_amazon_us_tags` overrides.
 
+- **Amazon reports** (no API): Ruggero downloads Tracking-Id weekly (Wednesday, previous Mon–Sun) and Tracking-Id + Category monthly (~5th) into the Mac's `data-drops/amazon/` (not in git); naming and pairing: `REVENUE-DATA-2026-11-23.md`. Per-page-type tags replacing the per-spot ones: `amazon-tags-2026-11-23/PLAN.md` (to build 23–25 Nov).
+
 ## Switches
 - `?rsg-notrack=1` on any page: this browser is never tracked (`=0` undoes). Ruggero + reviewers: once per browser/device.
 - `?rsg-rec=1`: record this session (heatmaps + replay) anywhere — for tests.

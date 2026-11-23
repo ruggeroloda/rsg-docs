@@ -1,6 +1,6 @@
 # RSG — project primer
 
-_Last updated 2026-11-22._ **Start every RSG session here** (after `git pull`), then read `ROADMAP.md` and the `RUNBOOK.md` of the workstream you work on. That's all you need for the current state.
+_Last updated 2026-11-23._ **Start every RSG session here** (after `git pull`), then read `ROADMAP.md` and the `RUNBOOK.md` of the workstream you work on. That's all you need for the current state.
 
 **Strategy (22 Nov 2026, `STRATEGY.md`):** (1) the reader gets the answer and doesn't return to Google; (2) revenue per 1,000 views (shop clicks plus Raptive) goes up, scroll depth is not a goal; (3) the undecided reader opens a second page, ideally a comparison. Every change says which goal it serves; scoreboard and change log are in `STRATEGY.md`.
 
@@ -17,7 +17,7 @@ _Last updated 2026-11-22._ **Start every RSG session here** (after `git pull`), 
 | Email | `email/RUNBOOK.md` | List cleanup, then platform decision |
 | Content | `content/README.md` | **22 Nov late: review format: Fable's independent view written, Ruggero decides: `content/REVIEW-FORMAT-2026-11-22.md`** (brief: `content/BRIEF-REVIEW-FORMAT-2026-11-22.md`); **22 Nov: comparisons linked from the "head to head" test: 12 of 26 refreshed, wrong-shoe ones fixed (`content/compare-test-2026-11-22/COMPARISONS-TO-REFRESH.md`)**; **22 Nov: three goals agreed (`STRATEGY.md`); page proposals 1–2 shown as mock-ups (`content/proposals-2026-11-21/`), nothing to build yet, 3–5 not shown: `content/ENGAGEMENT-READ-2026-11-21.md` "Ruggero's answers"**; Content review with Fable 20 Nov: **work list `content/CONTENT-REVIEW-2026-11-20.md`** (continue there); old-article prune: independent analysis `content/PRUNE-ANALYSIS-2026-11-20.md` (20 Nov; Bing links added 21 Nov: 39 tier 3 pages have links, proposed out of batch 1), starts the week of 7 Dec with reading first (Ruggero 20 Nov); SEO checklist with Ruggero: comparison refresh 10 of 39 live (20 Nov) |
 | Costs | `costs/COSTS.md` | Register |
-| Analytics + analyst | `analytics/README.md` | Umami live 16 Nov; Bing Webmaster connected 21 Nov (API key on rsgmedia, no loader yet); GA4 history from Feb 2023 in the database, reloaded weekly; traffic-history findings `analytics/TRAFFIC-HISTORY-2026-11-20.md`; core-update research: brief + data and Fable's first full pass `analytics/core-updates/REPORT-2026-11-20.md` (20 Nov); analyst metrics + notebook on rsgmedia (22 Nov: JS errors per visitor, speed by market, bot rules v4); Ruggero asks for the analysis in the project (not scheduled) |
+| Analytics + analyst | `analytics/README.md` | **23 Nov: revenue data plan (`analytics/REVENUE-DATA-2026-11-23.md`) + Amazon tags per page type to build now (`analytics/amazon-tags-2026-11-23/PLAN.md`)**; Umami live 16 Nov; Bing Webmaster connected 21 Nov (API key on rsgmedia, no loader yet); GA4 history from Feb 2023 in the database, reloaded weekly; traffic-history findings `analytics/TRAFFIC-HISTORY-2026-11-20.md`; core-update research: brief + data and Fable's first full pass `analytics/core-updates/REPORT-2026-11-20.md` (20 Nov); analyst metrics + notebook on rsgmedia (22 Nov: JS errors per visitor, speed by market, bot rules v4); Ruggero asks for the analysis in the project (not scheduled) |
 
 ## Servers
 | Server | Runs | Access |

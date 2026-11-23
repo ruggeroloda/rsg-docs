@@ -24,3 +24,5 @@ dfs/legacy-snapshot/
 **/.DS_Store
 # Saved page captures (contain old third-party keys, e.g. ip-api)
 theme/schema-pass/rich-results-test/*-full.html
+# Raw revenue exports (Amazon, Raptive): kept on the Mac only, loaded into the rsg database
+data-drops/

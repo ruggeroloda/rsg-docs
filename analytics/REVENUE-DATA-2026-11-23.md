@@ -1,0 +1,41 @@
+# Revenue data: collect, normalise, read (plan, 23 Nov 2026)
+
+Goal (Ruggero 23 Nov): all revenue sources in the `rsg` database, comparable, at a grain fine enough to see the effect of changes made during a month. Feeds strategy step 2 (revenue per 1,000 views by page type).
+
+## Design
+- Collect **per day** where the source allows; cut any window afterwards (week, month, before/after a `rsg.change_log` date).
+- One table, grain: day × source × account × tag/sub-ID × page (where known). Metrics: clicks, orders, items, sales, commission split pending / confirmed / reversed. Amounts to € at the ECB rate of the day, original currency kept. Two dates: order/click date (steering) and booking date (cash). Each load re-pulls the last 90 days and overwrites (returns and reversals land weeks later).
+- Mapping table: tag / sub-ID → page type (→ spot where a network passes it).
+- Loaders: plain Python on rsgmedia, daily timer; files for Amazon from a drop folder.
+
+## Sources (researched 23 Nov; not yet tested with our accounts)
+| Source | Route | Grain | Page / spot | Needs |
+|---|---|---|---|---|
+| Amazon US | **no reporting API**; Ruggero downloads | one summary per chosen date range (no per-day rows) | tracking ID | see routine below |
+| Raptive | Creator API (beta), `publisher-api.raptive.com/creator-api/v1` | daily traffic confirmed; per-page earnings by day not stated | per page **title** (not URL) | beta access by ticket (drafted 23 Nov; Ruggero sends), token in Account Settings, expires after 365 days |
+| CJ | Commission Detail API (GraphQL) | per sale | SID | personal access token |
+| Awin | publisher API (transactions) | per sale | clickref | API token (20 calls/min) |
+| Rakuten | reporting API (events / advanced reports) | per sale | u1 | security token |
+| AvantLink | `AffiliateReport` API module | any range | ctc | affiliate id + auth key |
+| Impact | Actions API | per sale | subId1 | read-only API token |
+Network reporting tokens are new keys (not the DFS feed logins): Ruggero → 1Password, Claude → rsgmedia.
+
+## Amazon routine (Ruggero 23 Nov)
+- **Weekly, Wednesday:** Tracking-Id report for the previous Mon–Sun. Use: clicks per tag + total orders/earnings per week. Earnings per tag are mostly hidden in a week (threshold ~4 items).
+- **Monthly, ~5th:** Tracking-Id + Category for the previous month (Category's Date column = the month end; the Tracking-Id file of the same month has the same totals: that pairs them). Linked Product / Top Sellers optional: product sales are mostly hidden.
+- Files on the Mac in `data-drops/amazon/{weekly,monthly}/`, named `amazon_<report>_<start>_<end>.xlsx` (**not in git**, `.gitignore`). The files carry no date range inside (Tracking-Id) → name them when they arrive; weekly files were checked against the monthly totals (Oct: 4,563 vs 4,566 clicks).
+- In hand 23 Nov: 12 weeks 31 Aug–22 Nov; months Jan–Dec 2025 + Oct 2026. Ruggero downloads Jan–Sep + Nov 2026 next.
+
+## First reads (23 Nov)
+- 2025: $15,010 from 93.3k clicks ($0.16/click); earnings halved Jan → Dec but $/click stayed $0.12–0.20 (decline = traffic). Oct 2026: $327 at $0.07/click → the value drop happened in 2026 (2026 files will show when).
+- Comparisons: $0.21–0.39/click all 2025, 54 % of 2025 Amazon earnings; reviews $0.07–0.16 (2025) → $0.03–0.04 (Oct–Nov 2026).
+- `pimeagi-20` (main account tag = untagged links) 13 % of 2025 clicks at $0.06. Mar 2025 (14.1k clicks, half the usual $/click) and Nov 2025 untagged spike look like junk traffic.
+- Week of 16 Nov 2026: best $/click of the 12 weeks ($0.13), same week as per-spot tags, bot challenge and pre-Black-Friday: not attributable yet.
+- Raptive AI "revenue opportunities" (22 Oct–20 Nov): homepage 23,132 views at $0.45 RPM / 0.49 impressions per view; 2012-URL reviews ~0.35 impressions per view; flat-feet article 12 % viewability. Kept for the Raptive mail (strategy step 3); individual pages not worth acting on.
+
+## Steps
+1. ~~Research sources~~ (done 23 Nov).
+2. Ruggero: Raptive beta ticket, network tokens, Amazon 2026 monthly files.
+3. Claude: table design + tag/sub-ID mapping (`amazon-tags-2026-11-23/PLAN.md` for Amazon).
+4. Loaders: API networks (backfill ≥ 1 Sep), Amazon files, Raptive.
+5. Weekly view: revenue per 1,000 views by page type, change dates marked; our click log vs Amazon clicks per week as a bot check.
