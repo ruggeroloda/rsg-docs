@@ -1,5 +1,34 @@
 # Brief: revenue data chat (from 23 Nov 2026)
 
+## START HERE: state at end of chat 1 (23 Nov 2026, 19:30 UTC)
+Read `analytics/README.md` "Revenue data" first: it is the current state (tables, loaders, limits). Server side: `hosting/hetzner/RUNBOOK.md` "Revenue loader". Code: `hosting/hetzner/revenue/`.
+- **In the database** (`rsg` schema, money in US dollars): Amazon US monthly Jan 2025 – Oct 2026 + 12 weeks (files, `analytics/amazon-reader/load_amazon.py`); CJ from 2009 ($182k); Awin account 131905 from 2011 ($83k, ECB rate of the order day); Rakuten from 24 Nov 2022 ($24.6k; older not reachable); ECB rates since 1999; **offers** (`rsg.offer`) from Awin, Rakuten, CJ. View `rsg.revenue_by_page_type`.
+- **Daily 06:55 UTC** (`/etc/cron.d/rsg-revenue` → `~/revenue/run_daily.sh`): fx, CJ, Rakuten, Awin, offers. Nothing is written unless every download succeeded; CJ/Awin upsert by id; Rakuten refuses a window with < half the stored rows.
+- **Findings:** the Amazon $/click drop started **June 2026** on review links (Jun–Jul click flood: 6.1k and 14.5k review clicks with fewer orders; Aug–Oct orders per click 2–5 % vs 6–9 % in 2025); comparisons held $0.22–0.32/click. October 2026 per 1,000 GA4 visits (129,296): ads (Raptive) $8.80, affiliate $3.37 (Amazon 2.53, Rakuten 0.45, CJ 0.27, Awin 0.11), total $12.16.
+- **Offers read (23 Nov):** ~20 of 57 useful (Black Friday codes: Under Armour BLACKFRIDAY/EXTRA10, PUMA CHEER, ASICS CYBER, Finish Line FNL10/15; Zappos shoe deals); Rakuten ASICS lists 21 stale "evergreen" offers (2022–23 models) → filter needed; links can carry our email tag (Rakuten `u1`, CJ `sid`, Awin `clickref`).
+
+## Next, in order (ask Ruggero which first)
+1. **Deals-email view + first Black Friday draft** from `rsg.offer`: keep offers started in the last 60 days or with a code ending within 30 days, drop end dates > 1 year ahead, US/all regions, merge identical titles; pair with shoe-level deals from the DFS price data; tag links per email.
+2. **Sub-ID → page type**: the new `<post id>-<spot>-<country>` sub-IDs (all networks since 10 Nov) map via the post's type (not built; view group `unmapped`).
+3. **Junk-click check**: Jun–Jul 2026 Amazon review clicks vs our own click log.
+4. **More networks** (Ruggero prepares, plain text files in `_private/`, also 1Password): **Impact** (Account SID + auth token; Brooks, Mizuno, adidas, New Balance US: actions + deals/promo codes API), **AvantLink** (affiliate ID, API key, website ID; AffiliateReport + AffiliateMerchantDiscounts), **Partnerize** (only if programmes are active; application + user key), **Webgains** (Ruggero 23 Nov: old Runners Need UK partnership, program 5503, looks suspended; API not checked yet).
+5. **Raptive** per page (Creator API beta ticket), then the weekly revenue per 1,000 views by page type (strategy step 2).
+
+## Waiting on Ruggero
+- **Rotate the CJ token and the Rakuten report link** (both shown in chat 23 Nov), then Claude swaps them in `~/revenue/.env`.
+- Name 6 closed Awin programmes (ids 1074, 1857, 16330, 16331, 3506, 3356; show as `awin <id>`).
+- OK to add "revenue loaded in the last 30 h" to the `rsg-umami` health check (failures are silent today).
+- Credential files: save as **plain text** (TextEdit Format → Make Plain Text); twice saved as RTF on 23 Nov.
+
+## Session notes (23 Nov)
+- GitHub from the Mac's device shell failed (no key access); a cloud clone with the repo attached works: commit on the Mac, `git format-patch`, stage, `git am` in the clone, push. The Mac's local `main` is behind/diverged in hashes (same content): `git pull` there merges cleanly.
+- rsgmedia SSH from the device shell works (`_private/claude-hetzner-key`, port 2222). Never end an ssh command with `< /dev/null` when piping data into it; `pkill -f` must not match the ssh command line itself.
+- `~/revenue/backfill-cj.sql` and `backfill-awin.sql` (one-off SQL, ~30 MB each) can be deleted.
+
+---
+
+## Earlier state (morning of 23 Nov, kept for history)
+
 For a new chat in the RSG project. Start as usual (`git pull`, `README.md`, `ROADMAP.md`), then read `analytics/REVENUE-DATA-2026-11-23.md` (the plan), `analytics/amazon-tags-2026-11-23/PLAN.md` (Amazon tag history + the new map) and `analytics/README.md`.
 
 ## Where things stand (23 Nov, 13:20 UTC)
