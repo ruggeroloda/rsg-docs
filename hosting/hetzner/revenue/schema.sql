@@ -48,6 +48,31 @@ CREATE TABLE IF NOT EXISTS rsg.rakuten_order (
   loaded_at timestamptz NOT NULL DEFAULT now());
 CREATE INDEX IF NOT EXISTS rakuten_order_tx ON rsg.rakuten_order (transaction_at);
 
+-- ECB euro reference rates (units of currency per 1 EUR), daily since 1999; EUR = 1.
+CREATE TABLE IF NOT EXISTS rsg.fx_ecb_day (day date NOT NULL, currency text NOT NULL, per_eur numeric(14,6) NOT NULL,
+  PRIMARY KEY (day, currency));
+-- US dollars per 1 unit of currency on a day (latest ECB rate on or before it; weekends/holidays take Friday's).
+CREATE OR REPLACE FUNCTION rsg.usd_rate(cur text, d date) RETURNS numeric LANGUAGE sql STABLE AS $$
+  SELECT CASE WHEN cur = 'USD' THEN 1 ELSE
+    (SELECT u.per_eur / c.per_eur FROM rsg.fx_ecb_day u JOIN rsg.fx_ecb_day c ON c.day = u.day AND c.currency = cur
+      WHERE u.currency = 'USD' AND u.day <= d ORDER BY u.day DESC LIMIT 1) END $$;
+
+-- Awin: one row per transaction (status changes overwrite; nothing is deleted).
+CREATE TABLE IF NOT EXISTS rsg.awin_transaction (
+  id bigint PRIMARY KEY, advertiser_id int, advertiser text, status text,  -- pending / approved / declined / deleted
+  sale_amount numeric(12,2), sale_currency text, commission_amount numeric(12,2), currency text,
+  transaction_at timestamptz, validation_at timestamptz, click_at timestamptz, click_ref text,
+  customer_country text, type text, decline_reason text, paid boolean, loaded_at timestamptz NOT NULL DEFAULT now());
+CREATE INDEX IF NOT EXISTS awin_transaction_tx ON rsg.awin_transaction (transaction_at);
+
+-- Active offers (promotions, coupons) from joined advertisers; daily upsert, nothing deleted.
+CREATE TABLE IF NOT EXISTS rsg.offer (
+  source text NOT NULL, offer_id text NOT NULL,   -- Awin promotionId, CJ link-id, Rakuten: md5 of advertiser|text|code|start
+  advertiser text, title text, description text, code text, type text,
+  start_at timestamptz, end_at timestamptz, regions text, url text,   -- url = tracking link that credits our account
+  terms text, first_seen timestamptz NOT NULL DEFAULT now(), last_seen timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (source, offer_id));
+
 -- One row per loader run (API sources).
 CREATE TABLE IF NOT EXISTS rsg.revenue_load_log (source text NOT NULL, loaded_at timestamptz NOT NULL DEFAULT now(),
   window_from timestamptz, window_to timestamptz, records int, PRIMARY KEY (source, loaded_at));
@@ -64,7 +89,7 @@ CREATE TABLE IF NOT EXISTS rsg.revenue_tag_map (
   PRIMARY KEY (source, tag, valid_from)
 );
 
-DELETE FROM rsg.revenue_tag_map WHERE source IN ('amazon_us','cj','rakuten');
+DELETE FROM rsg.revenue_tag_map WHERE source IN ('amazon_us','cj','rakuten','awin');
 INSERT INTO rsg.revenue_tag_map (source, tag, valid_from, valid_to, page_type, note) VALUES
 -- always
  ('amazon_us','Other',            '2000-01-01', NULL,        'hidden',     'Amazon row for tags under ~4 items in the period'),
@@ -112,7 +137,8 @@ INSERT INTO rsg.revenue_tag_map (source, tag, valid_from, valid_to, page_type, n
  ('amazon_us','rsg-other-20',     '2026-11-23', NULL,        'other',      'search, archives, 404, pages'),
 -- CJ: no sub-ID = untagged; sub-IDs since 10 Nov 2026 are <post id>-<spot>-<country> (page type via the post: to build)
  ('cj',       '',                 '2000-01-01', NULL,        'untagged',   'no sub-ID (all sales before 10 Nov 2026)'),
- ('rakuten',  '',                 '2000-01-01', NULL,        'untagged',   'no U1 (almost all sales before 10 Nov 2026)');
+ ('rakuten',  '',                 '2000-01-01', NULL,        'untagged',   'no U1 (almost all sales before 10 Nov 2026)'),
+ ('awin',     '',                 '2000-01-01', NULL,        'untagged',   'no clickRef');
 
 -- Report view: page type x period. Pick ONE grain when reading (weeks and months overlap).
 CREATE OR REPLACE VIEW rsg.revenue_by_page_type AS
@@ -133,4 +159,4 @@ LEFT JOIN rsg.revenue_tag_map m
  AND r.period_start >= m.valid_from AND (m.valid_to IS NULL OR r.period_start < m.valid_to)
 GROUP BY 1,2,3,4,5,6;
 
-GRANT SELECT ON rsg.revenue_period, rsg.revenue_tag_map, rsg.revenue_by_page_type, rsg.cj_commission, rsg.rakuten_order, rsg.revenue_load_log TO rsg_analyst;
+GRANT SELECT ON rsg.revenue_period, rsg.revenue_tag_map, rsg.revenue_by_page_type, rsg.cj_commission, rsg.rakuten_order, rsg.awin_transaction, rsg.fx_ecb_day, rsg.offer, rsg.revenue_load_log TO rsg_analyst;
