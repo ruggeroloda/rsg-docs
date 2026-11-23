@@ -1,6 +1,11 @@
 # Brief: revenue data chat (from 23 Nov 2026)
 
-## START HERE: state at end of chat 1 (23 Nov 2026, 19:30 UTC)
+## START HERE: state at end of chat 2 (23 Nov 2026, 22:35 UTC)
+- Done in chat 2: **Impact** connected (scoped token, `impact_load.py`, sales from 25 Nov 2023, deals into `rsg.offer`, nightly); **view `rsg.deals_email_offer`**; Black Friday links built with sub-IDs `email-20261126-NN` (Mac `_work/deals-email/links.md`); **Running Warehouse US** Data Studio report read in the built-in browser (`analytics/README.md`); networks summary: CJ, Rakuten, Awin, Impact nightly; AvantLink CA / Partnerize / Webgains not connected.
+- **Next:** (1) Black Friday email copy once Ruggero picks the send date + link target (shop vs review); (2) sub-ID → page type; (3) junk-click check; (4) AvantLink CA API; (5) Raptive.
+- Ruggero: no Chrome for Claude (built-in browser instead). RunRepeat US shops we lack: KICKS CREW, Shoebacca, Commonwealth Running, eBay, Dick's, Run United (AvantLink US), REI, Macy's, Nordstrom; GB/AU/CA not visible from here (RunRepeat serves US shops to US IPs).
+
+## State at end of chat 1 (23 Nov 2026, 19:30 UTC)
 Read `analytics/README.md` "Revenue data" first: it is the current state (tables, loaders, limits). Server side: `hosting/hetzner/RUNBOOK.md` "Revenue loader". Code: `hosting/hetzner/revenue/`.
 - **In the database** (`rsg` schema, money in US dollars): Amazon US monthly Jan 2025 – Oct 2026 + 12 weeks (files, `analytics/amazon-reader/load_amazon.py`); CJ from 2009 ($182k); Awin account 131905 from 2011 ($83k, ECB rate of the order day); Rakuten from 24 Nov 2022 ($24.6k; older not reachable); ECB rates since 1999; **offers** (`rsg.offer`) from Awin, Rakuten, CJ. View `rsg.revenue_by_page_type`.
 - **Daily 06:55 UTC** (`/etc/cron.d/rsg-revenue` → `~/revenue/run_daily.sh`): fx, CJ, Rakuten, Awin, offers. Nothing is written unless every download succeeded; CJ/Awin upsert by id; Rakuten refuses a window with < half the stored rows.

@@ -21,6 +21,10 @@ DNS (Route 53): SPF `include:_spf.mailersend.net a mx include:_spf.mlsend.com ~a
 - DOI only where required (EU/EEA/CH); single opt-in elsewhere, with the newsletter stated at the point of sign-up (26 Jul).
 - Clean the list before choosing a platform; wanted: smart list management and create/send through an API (9 Nov).
 
+## Deals emails: data (23 Nov 2026)
+- Offers: view `rsg.deals_email_offer` in the `umami` database on rsgmedia (Awin, Rakuten, CJ, Impact; filter rules in `../analytics/README.md` "Offers"). Shoe deals: DFS `price_history` on rsg-dfs (US, non-Amazon, ≥ 25 % below list). Never Amazon prices in email.
+- Link sub-ID per email: `email-<send date>-<nn>` (Rakuten `u1` before `murl`, CJ `sid`, Awin `clickref`, Impact `subId1`; Running Warehouse can't carry one). First draft's links: Mac `_work/deals-email/links.md` (not in git).
+
 ## Open
 1. List cleanup: active = opened or clicked in 12 months → one re-engagement email → remove non-responders (ROADMAP "Email list cleanup").
 2. Platform decision after the cleanup: MailerLite vs EmailOctopus vs Listmonk + SES; confirm MailerLite's real plan/price first (ROADMAP "Email list cleanup, then platform decision").
