@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-23 13:45 UTC (Amazon tags per page type agreed, to build now: `analytics/amazon-tags-2026-11-23/PLAN.md`; revenue data plan: `analytics/REVENUE-DATA-2026-11-23.md`; review format: Fable's independent view written, Ruggero decides: `content/REVIEW-FORMAT-2026-11-22.md`; head-to-head comparisons: 12 of 26 refreshed, wrong-shoe ones fixed, Pegasus vs Zoom Fly on staging; "head to head" test live 09:19 UTC, read 8 Dec; `page_left` live 08:27 UTC; `/top/` hub + section tracking live 07:13 UTC; measurement fixes done)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-23 13:20 UTC (Amazon tags per page type on staging `0ace71d`, waits for "deploy to live"; Amazon tags per page type agreed, to build now: `analytics/amazon-tags-2026-11-23/PLAN.md`; revenue data plan: `analytics/REVENUE-DATA-2026-11-23.md`; review format: Fable's independent view written, Ruggero decides: `content/REVIEW-FORMAT-2026-11-22.md`; head-to-head comparisons: 12 of 26 refreshed, wrong-shoe ones fixed, Pegasus vs Zoom Fly on staging; "head to head" test live 09:19 UTC, read 8 Dec; `page_left` live 08:27 UTC; `/top/` hub + section tracking live 07:13 UTC; measurement fixes done)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -24,7 +24,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 | ~24 Nov | **Rocket.net answer on the 21 Nov server stall** (13:29:30–13:32 UTC, same pattern as 19 Nov, which they put down to maintenance; ticket 123597 reopened 21 Nov) | hosting | Read the answer (`hosting/RUNBOOK.md` Open 7); if stalls repeat, send them the new times |
 | 25 Nov | Rocket.net charges $1,000 (Business annual) | hosting | Check the invoice and the credit for the unused Expert time (`hosting/RUNBOOK.md` Open 1) |
 | 26 Nov | Delete the site-pass backups on Rocket.net (`~/rsg_deploy_backups/site-cleanup-*-20261112-*`, ~500 MB) | hosting | — |
-| 23–25 Nov | **Amazon US tags per page type** (Ruggero 23 Nov: now, not 1 Dec) | theme / analytics | `analytics/amazon-tags-2026-11-23/PLAN.md` steps 1–5: staging, Ruggero checks, "deploy to live" by Wed 25 Nov |
+| 23–25 Nov | **Amazon US tags per page type** (Ruggero 23 Nov: now, not 1 Dec) | theme / analytics | **On staging since 23 Nov 12:51 UTC (`0ace71d`, checked)**: Ruggero's "deploy to live" by Wed 25 Nov, then plan step 5 (live spot check, change log, docs) and step 6 (new IDs in Amazon's report next day): `analytics/amazon-tags-2026-11-23/PLAN.md` |
 | 27–30 Nov | **Black Friday → Cyber Monday** | all | Freeze rule to decide (what may still go live that week) |
 | ~30 Nov | Old click/view logs vs Umami: 2-week parallel run ends | analytics | Compare, then switch the old logs off or sample them |
 | after 30 Nov | **Old Amazon short links in 65 posts + 5 review fields → direct links with the page's tag** (scan 23 Nov) | content | `analytics/amazon-tags-2026-11-23/PLAN.md` part C; Ruggero: all 65 or only those not on the prune list? |
