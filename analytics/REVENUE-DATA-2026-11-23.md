@@ -31,6 +31,7 @@ Network reporting tokens are new keys (not the DFS feed logins): Ruggero → 1Pa
 - Comparisons: $0.21–0.39/click all 2025, 54 % of 2025 Amazon earnings; reviews $0.07–0.16 (2025) → $0.03–0.04 (Oct–Nov 2026).
 - `pimeagi-20` (main account tag = untagged links) 13 % of 2025 clicks at $0.06. Mar 2025 (14.1k clicks, half the usual $/click) and Nov 2025 untagged spike look like junk traffic.
 - Week of 16 Nov 2026: best $/click of the 12 weeks ($0.13), same week as per-spot tags, bot challenge and pre-Black-Friday: not attributable yet.
+- **Page-type read (23 Nov, 14:30 CET; `analytics/amazon-reader/read_amazon.py`, all 13 monthly files name-checked OK):** Oct 2026 vs 2025 — reviews $0.03/click (2025 $0.07–0.16; orders per click 1.8 % vs 6–9 %), comparisons $0.26 (2025 $0.21–0.39), untagged $0.08 (2025 $0.02–0.11). Mix also shifted: reviews 75 % of clicks (2025 ~50 %), comparisons 12 % (2025 ~30 %). At 2025 per-type rates Oct 2026 would be ~$0.14/click: the drop is reviews converting worse plus fewer comparison clicks, not untagged links or everything. Weekly totals 31 Aug–15 Nov already $0.05–0.09/click → the drop happened between Jan and Aug 2026; the Jan–Sep 2026 monthly files (not in the folder yet) will date it.
 - Raptive AI "revenue opportunities" (22 Oct–20 Nov): homepage 23,132 views at $0.45 RPM / 0.49 impressions per view; 2012-URL reviews ~0.35 impressions per view; flat-feet article 12 % viewability. Kept for the Raptive mail (strategy step 3); individual pages not worth acting on.
 
 ## Steps
