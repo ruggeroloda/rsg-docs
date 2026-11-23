@@ -16,7 +16,7 @@ Read `analytics/README.md` "Revenue data" first: it is the current state (tables
 
 ## Waiting on Ruggero
 - **Rotate the CJ token and the Rakuten report link** (both shown in chat 23 Nov), then Claude swaps them in `~/revenue/.env`.
-- Name 6 closed Awin programmes (ids 1074, 1857, 16330, 16331, 3506, 3356; show as `awin <id>`).
+- ~~Name 6 closed Awin programmes~~ dropped 23 Nov (Ruggero: not found in Awin, no business with them for years; they stay `awin <id>`).
 - OK to add "revenue loaded in the last 30 h" to the `rsg-umami` health check (failures are silent today).
 - Credential files: save as **plain text** (TextEdit Format → Make Plain Text); twice saved as RTF on 23 Nov.
 
