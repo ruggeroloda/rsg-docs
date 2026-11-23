@@ -169,13 +169,20 @@ Ruggero asked for SoundGuys read properly ("rendered and all") and for ideas fro
 6. Best / this shoe / average / worst bars only for measured facts RSG has on 367 shoes (weight, drop, stack, price), not for opinion scores (OutdoorGearLab; the tester-bias finding above still rules out opinion averages).
 7. Later, needs readers: a one-tap "Would you buy it?" poll and an owners' "after 300 km: better / as expected / worse" block, which would cover the durability a tester cannot (SoundGuys).
 
+## Version C: the full Pegasus 42 page with the ideas from other sites (23 Nov 2026)
+Ruggero: "make a (full) pegasus 42 test with your own recommendations in mind." `template/c.html`; `template/index.html` now shows A, B and C as three phones. Built offline from the saved page. Nothing built on the site.
+- **C = B's top, plus:** "What's new against the Pegasus 41" (four bullets) before the text; an "About this test" box with the run log as a closed row; headings as the reader's questions; every section as one-sentence answer → "Brandon's notes" → the numbers (stack drawing and cushioning sliders in Ride, fit drawing in Fit); one pull-quote per section instead of bold sentences; "What should you get instead?" with a price link and an RSG link per alternative; four "short answers" and "All the facts" as closed rows; a "Would you buy it?" poll (example, not working).
+- **Phone, no ads, px from the top (live / B / C):** phone price block 1,800 / 1,845 / 1,845; first text section 4,507 / 3,526 / 3,526; ride text 8,780 / 3,986 / 4,173; compare table 12,560 / 9,442 / 10,140; whole page 17,877 / 13,757 / 14,279.
+- **Not in C:** best / this shoe / average / worst bars for weight, drop and price (the files here hold no weights or prices for the 367 reviews: needs a pull from WordPress); the owners' "after 300 km" block (no data).
+- **Examples, not Brandon's words:** "Why 7/10?", the four finding lines, the "what's new" bullets (written from his text), the "About this test" wording, the link labels. Paragraphs, pull-quotes and short answers are his sentences.
+
 ## Decisions for Ruggero
 1. Text for new reviews: the five sections above (How I tested it, Ride, Fit & comfort, Build & durability, Value and what else to look at): yes / change / no.
 2. Scoring: option 1, **2**, 3 or 4.
 3. "Why 7?" line instead of "the parts say X, we say Y": yes / no.
 4. No "versus category average"; rivals and the previous version in words: yes / no.
 5. Categories: park until after the tester: yes / no.
-6. The template: version A or B (`review-format-2026-11-22/template/index.html`), and what to change.
+6. The template: version A, B or C (`review-format-2026-11-22/template/index.html`), and what to change.
 
 ## Method
 CSV read with pandas on 22 Nov (scripts throwaway, not kept). Four parts = plain averages of the sub-scores listed. "Explain the expert score" = share of variation in a straight-line fit (R² 0.71 for ten sub-scores, 0.71 for the four parts). Predecessor match: "Previous model" name against review titles, 126 of the 207 linked ones matched by name. Live pages: RSG Pegasus 42 and Cascadia 19; RunRepeat, RTINGS, Believe in the Run and Running Warehouse on the Pegasus 42; Road Trail Run on the Pegasus Plus 2; Solereview on the Pegasus 41.

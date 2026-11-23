@@ -1,7 +1,7 @@
 import asyncio, sys, json
 from playwright.async_api import async_playwright
 OUT=sys.argv[1]; VAR=sys.argv[2]
-SEL=['.rsgx-glance','.rsg-verdict','section.rsg-dfs-mob','.rsgx-who','.rsgx-parts','#rsg-cw','#tested','#ride','#fit','#build','#value','section.rsg-facts-sec','.rsg-cmp-scroll','#full-price-comparison','.rsg-reviewer','#comments-row']
+SEL=['#whatsnew','#instead','#faq','.rsgx-glance','.rsg-verdict','section.rsg-dfs-mob','.rsgx-who','.rsgx-parts','#rsg-cw','#tested','#ride','#fit','#build','#value','section.rsg-facts-sec','.rsg-cmp-scroll','#full-price-comparison','.rsg-reviewer','#comments-row']
 async def main():
     async with async_playwright() as p:
         b=await p.chromium.launch()
