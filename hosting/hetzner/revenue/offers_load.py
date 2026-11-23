@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Active offers (promotions, coupons) from joined advertisers on Awin, Rakuten and CJ -> SQL on stdout
+"""Active offers (promotions, coupons) from joined advertisers on Awin, Rakuten, CJ and Impact -> SQL on stdout
 (pipe into psql as umami). Stdlib only. Upsert into rsg.offer by (source, offer_id): first_seen stays,
 last_seen = this run; nothing is deleted (an offer missing from today's pull keeps its old last_seen).
 A network that fails is skipped (its offers keep their old last_seen); the others still load.
 
-env: AWIN_PUBLISHER_ID, AWIN_TOKEN, RAKUTEN_SID, RAKUTEN_CLIENT_ID, RAKUTEN_SECRET, CJ_TOKEN, CJ_WEBSITE_ID
+env: AWIN_PUBLISHER_ID, AWIN_TOKEN, IMPACT_ACCOUNT_SID, IMPACT_AUTH_TOKEN, RAKUTEN_SID, RAKUTEN_CLIENT_ID, RAKUTEN_SECRET, CJ_TOKEN, CJ_WEBSITE_ID
 """
 import os, sys, json, time, base64, hashlib, urllib.request, urllib.parse, xml.etree.ElementTree as ET
 
@@ -68,12 +68,27 @@ def cj():
             page += 1
     return out
 
+def impact():
+    sid, tok = os.environ['IMPACT_ACCOUNT_SID'], os.environ['IMPACT_AUTH_TOKEN']
+    hdr = {'Accept': 'application/json', 'Authorization': 'Basic ' + base64.b64encode(f'{sid}:{tok}'.encode()).decode()}
+    api = f'https://api.impact.com/Mediapartners/{sid}/'
+    out = []
+    for c in json.loads(http(api + 'Campaigns?PageSize=200', hdr))['Campaigns']:
+        if c.get('ContractStatus') != 'Active': continue
+        for d in json.loads(http(api + f"Campaigns/{c['CampaignId']}/Deals?PageSize=500", hdr)).get('Deals', []):
+            if d.get('State') != 'ACTIVE': continue
+            # Impact deals often have no start date: use the creation date, so old "evergreen" deals age out of the deals view
+            out.append(dict(offer_id=str(d['Id']), advertiser=c['CampaignName'], title=d.get('Name'), description=d.get('Description'),
+                code=d.get('DefaultPromoCode'), type=d.get('Type'), start_at=d.get('StartDate') or d.get('DateCreated'),
+                end_at=d.get('EndDate'), regions=None, url=c.get('TrackingLink'), terms=None))
+    return out
+
 def q(v):
     return 'NULL' if v in (None, '') else "'" + str(v).replace("'", "''") + "'"
 
 def main():
     sql = ['BEGIN;']
-    for name, fn in (('awin', awin), ('rakuten', rakuten), ('cj', cj)):
+    for name, fn in (('awin', awin), ('rakuten', rakuten), ('cj', cj), ('impact', impact)):
         try:
             offers = fn()
         except Exception as ex:

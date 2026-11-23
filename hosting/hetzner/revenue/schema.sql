@@ -65,6 +65,13 @@ CREATE TABLE IF NOT EXISTS rsg.awin_transaction (
   customer_country text, type text, decline_reason text, paid boolean, loaded_at timestamptz NOT NULL DEFAULT now());
 CREATE INDEX IF NOT EXISTS awin_transaction_tx ON rsg.awin_transaction (transaction_at);
 
+-- Impact: one row per action (state changes overwrite; nothing is deleted). Amounts in the account currency (EUR).
+CREATE TABLE IF NOT EXISTS rsg.impact_action (
+  id text PRIMARY KEY, campaign_id int, campaign text, state text,  -- PENDING / APPROVED / REVERSED
+  amount numeric(12,2), payout numeric(12,2), currency text, event_at timestamptz, locking_at timestamptz, cleared_at timestamptz,
+  sub_id1 text, sub_id2 text, customer_country text, promo_code text, referring_domain text, loaded_at timestamptz NOT NULL DEFAULT now());
+CREATE INDEX IF NOT EXISTS impact_action_event ON rsg.impact_action (event_at);
+
 -- Active offers (promotions, coupons) from joined advertisers; daily upsert, nothing deleted.
 CREATE TABLE IF NOT EXISTS rsg.offer (
   source text NOT NULL, offer_id text NOT NULL,   -- Awin promotionId, CJ link-id, Rakuten: md5 of advertiser|text|code|start
@@ -89,7 +96,7 @@ CREATE TABLE IF NOT EXISTS rsg.revenue_tag_map (
   PRIMARY KEY (source, tag, valid_from)
 );
 
-DELETE FROM rsg.revenue_tag_map WHERE source IN ('amazon_us','cj','rakuten','awin');
+DELETE FROM rsg.revenue_tag_map WHERE source IN ('amazon_us','cj','rakuten','awin','impact');
 INSERT INTO rsg.revenue_tag_map (source, tag, valid_from, valid_to, page_type, note) VALUES
 -- always
  ('amazon_us','Other',            '2000-01-01', NULL,        'hidden',     'Amazon row for tags under ~4 items in the period'),
@@ -138,7 +145,8 @@ INSERT INTO rsg.revenue_tag_map (source, tag, valid_from, valid_to, page_type, n
 -- CJ: no sub-ID = untagged; sub-IDs since 10 Nov 2026 are <post id>-<spot>-<country> (page type via the post: to build)
  ('cj',       '',                 '2000-01-01', NULL,        'untagged',   'no sub-ID (all sales before 10 Nov 2026)'),
  ('rakuten',  '',                 '2000-01-01', NULL,        'untagged',   'no U1 (almost all sales before 10 Nov 2026)'),
- ('awin',     '',                 '2000-01-01', NULL,        'untagged',   'no clickRef');
+ ('awin',     '',                 '2000-01-01', NULL,        'untagged',   'no clickRef'),
+ ('impact',   '',                 '2000-01-01', NULL,        'untagged',   'no SubId1');
 
 -- Report view: page type x period. Pick ONE grain when reading (weeks and months overlap).
 CREATE OR REPLACE VIEW rsg.revenue_by_page_type AS
@@ -159,4 +167,30 @@ LEFT JOIN rsg.revenue_tag_map m
  AND r.period_start >= m.valid_from AND (m.valid_to IS NULL OR r.period_start < m.valid_to)
 GROUP BY 1,2,3,4,5,6;
 
-GRANT SELECT ON rsg.revenue_period, rsg.revenue_tag_map, rsg.revenue_by_page_type, rsg.cj_commission, rsg.rakuten_order, rsg.awin_transaction, rsg.fx_ecb_day, rsg.offer, rsg.revenue_load_log TO rsg_analyst;
+-- Deals-email view (24 Nov 2026): offers worth putting in a deals email, one row per distinct offer.
+-- Keep: still in the network's latest pull, not ended, end date <= 1 year ahead (drops "evergreen" fillers),
+-- and (started in the last 60 days, or has a code ending within 30 days). Upcoming offers (start in the future) are kept, status 'upcoming'.
+-- market = Awin's region list when it names countries, else the store country in the advertiser name (Nike UK -> GB), else US.
+CREATE OR REPLACE VIEW rsg.deals_email_offer AS
+WITH latest AS (SELECT source, max(last_seen) AS ls FROM rsg.offer GROUP BY 1),
+o AS (
+  SELECT f.*,
+         CASE WHEN f.regions IS NOT NULL AND f.regions NOT IN ('', 'all') THEN f.regions
+              WHEN f.advertiser ~ ' UK$' THEN 'GB'
+              WHEN f.advertiser ~ ' (DE|IT|FR|ES|IE|AU|CA|NL)$' THEN substring(f.advertiser FROM ' ([A-Z]{2})$')
+              ELSE 'US' END AS market
+  FROM rsg.offer f JOIN latest l ON l.source = f.source AND f.last_seen >= l.ls - interval '1 hour')
+SELECT DISTINCT ON (advertiser, title, coalesce(code, ''))
+       market, source, advertiser, title, nullif(code, '') AS code, type, start_at, end_at,
+       CASE WHEN start_at > now() THEN 'upcoming'
+            WHEN end_at < now() + interval '3 days' THEN 'ending'
+            WHEN start_at > now() - interval '7 days' THEN 'new'
+            ELSE 'running' END AS status,
+       url, terms, description, first_seen, offer_id
+FROM o
+WHERE (end_at IS NULL OR (end_at >= now() AND end_at <= now() + interval '1 year'))
+  AND (start_at >= now() - interval '60 days'
+       OR (coalesce(code, '') <> '' AND end_at <= now() + interval '30 days'))
+ORDER BY advertiser, title, coalesce(code, ''), source, offer_id;
+
+GRANT SELECT ON rsg.revenue_period, rsg.revenue_tag_map, rsg.revenue_by_page_type, rsg.cj_commission, rsg.rakuten_order, rsg.awin_transaction, rsg.impact_action, rsg.fx_ecb_day, rsg.offer, rsg.deals_email_offer, rsg.revenue_load_log TO rsg_analyst;
