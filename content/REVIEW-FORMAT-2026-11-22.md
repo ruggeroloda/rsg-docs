@@ -136,6 +136,39 @@ Ruggero on version A: on a phone "it's a very long way down scrolling before you
 - **Phone, 390 px, no ads (px from the top), live / A / B:** phone price block 1,800 / 1,957 / 1,845; who should buy 3,853 / 2,309 / 2,198; first text section 4,507 / 3,883 / 3,526; ride text 8,780 / 4,465 / 3,986; compare table 12,560 / 11,282 / 9,442; whole page 17,877 / 15,597 / 13,757. The text starts 357 px earlier than in A, less than the 700–800 px guessed before building.
 - **Builds are now offline:** `template/_build/build.py OUT a|b` works from `snapshot-live-page-2026-11-22.html` and the saved assets; the live site is not requested. Reason: after the repeated page loads of this session Cloudflare answered this Mac's connection with a challenge (403, `cf-mitigated: challenge`, 22:09 CET). No bypass was tried.
 
+## Reviews read rendered, on a phone: SoundGuys and other industries (23 Nov 2026)
+Ruggero asked for SoundGuys read properly ("rendered and all") and for ideas from other industries, not RTINGS or RunRepeat. Each page was rendered at 390 px in a plain headless browser and read screen by screen from the full-page picture. Not seen: ads (no consent given, none loaded), SoundGuys' interactive charts (blank in the render). KBB refused the browser (403), The Drive rendered only partly: neither is used below.
+
+**SoundGuys** (Sony WF-1000XM6: 29,857 px; Sony WH-1000XM6: 31,902 px; Sony WH-CH530, a $70 product: 15,553 px)
+- Top card: score, "What stands out" = four lines, each a number with context ("Noise cancelling 8.8/10, beats 98 % of wireless earbuds we've measured"), tagged Lab / Specs / Editor, bad ones in red; one price button with "Price last checked 46m ago"; "The bottom line, from Adam Birney, who tested it"; what we like / don't like. The full score list is behind a link.
+- **Secondary questions are closed accordions** ("Who are they for?", "Is it waterproof?", "How do you pair…", "How has this article been updated?"). The headings exist for search; the page does not get longer. (Correction to what was said from the text extraction on 23 Nov: these are not filler that lengthens the page, and "who is it for" is one of the closed ones.)
+- **Each main section: the answer in one sentence, then "Reviewer's notes" (first person, named songs), then "Objective measurements" under its own sub-heading.** Impressions and stats are separated inside every section.
+- One centred pull-quote per section ("These are some of Sony's chunkiest earbuds yet.") as the scanning hook; photo captions state a finding.
+- "About this review" box: tested for N days, firmware, who provided the unit.
+- Readers' polls inside the text ("Would you buy…?" 1,360 votes; microphone rating 4,046 votes).
+- "What owners say": would buy again, one quote, and **"Against what owners expected"** per aspect (comfort over long sessions, battery in real life, fit and build after months: better / as expected / worse).
+- End: "Should you buy?" with a product card and price button; **"What should you get instead?" where every alternative carries its own price link**; on the flagship three "X vs Y" sections; FAQ accordions; comments closed behind "Open conversation".
+
+**OutdoorGearLab** (Altra Lone Peak Hiker 3, hiking boot: 13,094 px, the shortest page read)
+- Top: one-sentence finding under the title, weighted score table (comfort 30 %, support 25 %, traction 20 %, water resistance 10 %, durability 10 %, weight 5 %), "ranked #15 of 20", sizing sliders for length and width, reasons to buy / avoid, then a compare table with price links.
+- **Text sections are the scored metrics, in the same order, and each has a four-bar chart: best / this boot / average / worst of the boots tested.** This is "versus the average" in a form that reads in a second. It works because one team tests the 20 boots side by side.
+- Short clips of the test itself (6–17 s; the boot in a tub of water). "We buy all the products we test, no freebies" is the first line of the page.
+
+**NapLab** (mattress: 43,678 px)
+- Coloured score chips per test at the top, "Best for" / "Considerations" / "Our verdict", "Best for: all sleeping positions, all body weights". A table of this mattress against the average of all tested; each test section starts with its score chip and shows its key numbers large. Far too long to copy; the "best for which body" line and score-chip-on-the-heading are the useful parts.
+
+**DC Rainmaker** (sports watch: 49,331 px, about 7,200 words, 131 photos)
+- No score, no summary card, no boxes: one first-person account. Starts with **"What's new" as a bullet list against last year's model**, then the basics, sports use, accuracy, wrap-up. A photo for nearly every paragraph, showing the thing described. Trust through exhaustive first-hand detail; built for a loyal audience, not for scanners.
+
+**What this adds to the template (candidates, nothing decided):**
+1. Section pattern: one-sentence answer → tester's notes → "the numbers" under its own sub-heading (SoundGuys).
+2. Closed accordions for the secondary material: run log, full facts, short questions (SoundGuys).
+3. "What's new against the Pegasus 41" as a short bullet list near the top (DC Rainmaker).
+4. Alternatives that each carry a price link (SoundGuys).
+5. One pull-quote per section instead of bold sentences (SoundGuys).
+6. Best / this shoe / average / worst bars only for measured facts RSG has on 367 shoes (weight, drop, stack, price), not for opinion scores (OutdoorGearLab; the tester-bias finding above still rules out opinion averages).
+7. Later, needs readers: a one-tap "Would you buy it?" poll and an owners' "after 300 km: better / as expected / worse" block, which would cover the durability a tester cannot (SoundGuys).
+
 ## Decisions for Ruggero
 1. Text for new reviews: the five sections above (How I tested it, Ride, Fit & comfort, Build & durability, Value and what else to look at): yes / change / no.
 2. Scoring: option 1, **2**, 3 or 4.
