@@ -21,13 +21,13 @@ def rows(path):
     return [dict(zip(head, r)) for r in rs[1:]]
 
 # Old scheme (until 10 Nov 2026). "hidden" = Amazon's "Other" row: tags with < ~4 items in the period.
-def page_type(tag):
+def page_type(tag, start='2026-11-16'):
     if tag == 'Other': return 'hidden'
     if tag == 'pimeagi-20': return 'untagged'
     if tag == 'rsg-comp-20': return 'comparisons'
     if tag in ('rsg-single-20', 'rsg-single-trail-20'): return 'reviews'
     if tag.startswith('rsg-rev') and tag != 'rsg-reviewlist-20': return 'reviews'  # 16-23 Nov 2026 per-spot review tags
-    if tag == 'rsg-bestof-20': return 'lists'  # 16-23 Nov 2026: lists/guides/home/related/text links
+    if tag == 'rsg-bestof-20': return 'lists' if start >= '2026-11-16' else 'rest'  # from 16 Nov 2026: lists/guides/home/related/text links; before: article shortcodes
     if tag.startswith('rsg-best') and tag not in ('rsg-bestof-20', 'rsg-bestold-20'): return 'lists'
     return 'rest'   # wizard, gps, tube, reviewlist, bestof, overview, unknown
 
@@ -70,7 +70,7 @@ def main(base, kind):
         if (s, e) in bad: continue
         agg = defaultdict(lambda: [0, 0, 0])
         for r in rs:
-            a = agg[page_type(r['Tracking Id'])]
+            a = agg[page_type(r['Tracking Id'], s)]
             a[0] += num(r['Clicks']); a[1] += num(r['Items Ordered']); a[2] += num(r['Total Earnings'])
         T = [sum(agg[t][i] for t in types) for i in range(3)]
         cells = [f"{t} {agg[t][0]:.0f}/{agg[t][1]:.0f}/{agg[t][2]:.0f}/{(agg[t][2]/agg[t][0] if agg[t][0] else 0):.2f}" for t in types if agg[t][0] or agg[t][2]]
