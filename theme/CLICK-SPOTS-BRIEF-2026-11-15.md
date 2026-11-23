@@ -52,6 +52,8 @@ Every new spot added later gets its own code **and a plain name** (rule; goes in
 - **Query (after go-live):** views, seen + clicks per template-spot and device for a date range, in the theme RUNBOOK next to the click queries.
 
 ## Amazon US tracking IDs (final, Ruggero 15 Nov)
+
+**→ Superseded 23 Nov 2026**: one tag per page type, live 23 Nov 13:11 UTC (`../analytics/amazon-tags-2026-11-23/PLAN.md`). The per-spot IDs below are retired.
 Before 10 Nov the old price system already used one ID per location (`rsg-comp-20`, `rsg-reviewlist-20`, `rsg-wizard-20`, `rsg-bestof-20`, `rsg-road-*`, `rsg-overview-20`); the new DFS boxes put everything on `rsg-single-20`. Where the meaning is the same we **reuse the old ID** (its Amazon history continues across the switch); review spots get **new IDs** (the old `rsg-road-*` were tied to the old layout). Checked 15 Nov: none of the reused IDs is in the database; in the theme they sit only in the old non-DFS code paths (removed with the reskin). Everything not listed keeps `rsg-single-20`. No mobile/desktop split (device is in our click log only).
 
 | Tracking ID | Spots | |
