@@ -4,7 +4,7 @@ Goal (Ruggero 23 Nov): all revenue sources in the `rsg` database, comparable, at
 
 ## Design
 - Collect **per day** where the source allows; cut any window afterwards (week, month, before/after a `rsg.change_log` date).
-- One table, grain: day × source × account × tag/sub-ID × page (where known). Metrics: clicks, orders, items, sales, commission split pending / confirmed / reversed. Amounts to € at the ECB rate of the day, original currency kept. Two dates: order/click date (steering) and booking date (cash). Each load re-pulls the last 90 days and overwrites (returns and reversals land weeks later).
+- One table, grain: day × source × account × tag/sub-ID × page (where known). Metrics: clicks, orders, items, sales, commission split pending / confirmed / reversed. Amounts in **US dollars** (Ruggero 23 Nov; ECB rate of the day for other currencies), original currency kept. Two dates: order/click date (steering) and booking date (cash). Each load re-pulls the last 90 days and overwrites (returns and reversals land weeks later).
 - Mapping table: tag / sub-ID → page type (→ spot where a network passes it).
 - Loaders: plain Python on rsgmedia, daily timer; files for Amazon from a drop folder.
 
@@ -38,6 +38,6 @@ Network reporting tokens are new keys (not the DFS feed logins): Ruggero → 1Pa
 ## Steps
 1. ~~Research sources~~ (done 23 Nov).
 2. Ruggero: Raptive beta ticket, network tokens, Amazon 2026 monthly files.
-3. Claude: table design + tag/sub-ID mapping (`amazon-tags-2026-11-23/PLAN.md` for Amazon).
-4. Loaders: API networks (backfill ≥ 1 Sep), Amazon files, Raptive.
+3. ~~Claude: table design + tag/sub-ID mapping~~ (done 23 Nov: `analytics/README.md` "Revenue data"; $ everywhere, untagged separate).
+4. Loaders: Amazon files done 23 Nov (`analytics/amazon-reader/load_amazon.py`); API networks (backfill ≥ 1 Sep), Raptive.
 5. Weekly view: revenue per 1,000 views by page type, change dates marked; our click log vs Amazon clicks per week as a bot check.

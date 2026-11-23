@@ -11,8 +11,8 @@ For a new chat in the RSG project. Start as usual (`git pull`, `README.md`, `ROA
 
 ## Work list, in order (plan "Steps" 3–5)
 1. **Read the 2026 months as they arrive** (23 Nov: reader `analytics/amazon-reader/read_amazon.py` built and run on 2025 + Oct 2026 + weeklies, result in the plan's "First reads"; Jan–Sep + Nov 2026 files not in the folder yet: rerun when they land): month by month clicks, orders, earnings, $/click, by tag mapped to page type; find **when in 2026** the value per click dropped and whether it is one page type, untagged (`pimeagi-20`) or everything. Show Ruggero a short table first (his style: summary, then step by step).
-2. **Table design** for all sources (grain day × source × account × tag/sub-ID × page; € at the ECB rate of the day, original currency kept; two dates; 90-day re-pull) + the tag/sub-ID → page type mapping table with validity dates (the three Amazon schemes above). Propose before building.
-3. **Amazon loader** from the drop folder (files are monthly/weekly summaries, not daily), then the API networks once tokens exist (backfill ≥ 1 Sep), Raptive once beta access exists.
+2. **Done 23 Nov** (`analytics/README.md` "Revenue data"). **Table design** for all sources (grain day × source × account × tag/sub-ID × page; € at the ECB rate of the day, original currency kept; two dates; 90-day re-pull) + the tag/sub-ID → page type mapping table with validity dates (the three Amazon schemes above). Propose before building.
+3. **Amazon loader** (done 23 Nov, `analytics/amazon-reader/load_amazon.py`) from the drop folder (files are monthly/weekly summaries, not daily), then the API networks once tokens exist (backfill ≥ 1 Sep), Raptive once beta access exists.
 4. **Weekly view:** revenue per 1,000 views by page type (strategy step 2), change dates marked; our click log vs Amazon clicks per week as a bot check.
 
 ## Rules for this chat
