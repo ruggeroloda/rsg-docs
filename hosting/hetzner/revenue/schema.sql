@@ -31,6 +31,19 @@ CREATE TABLE IF NOT EXISTS rsg.revenue_period (
 );
 CREATE INDEX IF NOT EXISTS revenue_period_start ON rsg.revenue_period (period_start);
 
+-- CJ: one row per commission (corrections/returns are their own rows, original=false, negative amounts).
+CREATE TABLE IF NOT EXISTS rsg.cj_commission (
+  commission_id text PRIMARY KEY, action_tracker text, action_type text, action_status text,  -- new / extended = pending; locked / closed = confirmed
+  advertiser_id text, advertiser text, event_at timestamptz, posting_at timestamptz, locking_at timestamptz,
+  original boolean, original_action_id text, order_id text, correction_reason text,
+  sale_usd numeric(12,2), commission_usd numeric(12,3), sub_id text, website_id text, website text,
+  click_at timestamptz, country text, loaded_at timestamptz NOT NULL DEFAULT now());
+CREATE INDEX IF NOT EXISTS cj_commission_event ON rsg.cj_commission (event_at);
+
+-- One row per loader run (API sources).
+CREATE TABLE IF NOT EXISTS rsg.revenue_load_log (source text NOT NULL, loaded_at timestamptz NOT NULL DEFAULT now(),
+  window_from timestamptz, window_to timestamptz, records int, PRIMARY KEY (source, loaded_at));
+
 -- Which page type a tag / sub-ID stood for, and when. valid_to is exclusive; NULL = still valid.
 -- Changes happen during a day: a period is mapped by its start date (Amazon: compare per tag only from 24 Nov 2026).
 CREATE TABLE IF NOT EXISTS rsg.revenue_tag_map (
@@ -43,7 +56,7 @@ CREATE TABLE IF NOT EXISTS rsg.revenue_tag_map (
   PRIMARY KEY (source, tag, valid_from)
 );
 
-DELETE FROM rsg.revenue_tag_map WHERE source = 'amazon_us';
+DELETE FROM rsg.revenue_tag_map WHERE source IN ('amazon_us','cj');
 INSERT INTO rsg.revenue_tag_map (source, tag, valid_from, valid_to, page_type, note) VALUES
 -- always
  ('amazon_us','Other',            '2000-01-01', NULL,        'hidden',     'Amazon row for tags under ~4 items in the period'),
@@ -88,7 +101,9 @@ INSERT INTO rsg.revenue_tag_map (source, tag, valid_from, valid_to, page_type, n
  ('amazon_us','rsg-guide-20',     '2026-11-23', NULL,        'guide',      NULL),
  ('amazon_us','rsg-home-20',      '2026-11-23', NULL,        'home',       NULL),
  ('amazon_us','rsg-article-20',   '2026-11-23', NULL,        'article',    NULL),
- ('amazon_us','rsg-other-20',     '2026-11-23', NULL,        'other',      'search, archives, 404, pages');
+ ('amazon_us','rsg-other-20',     '2026-11-23', NULL,        'other',      'search, archives, 404, pages'),
+-- CJ: no sub-ID = untagged; sub-IDs since 10 Nov 2026 are <post id>-<spot>-<country> (page type via the post: to build)
+ ('cj',       '',                 '2000-01-01', NULL,        'untagged',   'no sub-ID (all sales before 10 Nov 2026)');
 
 -- Report view: page type x period. Pick ONE grain when reading (weeks and months overlap).
 CREATE OR REPLACE VIEW rsg.revenue_by_page_type AS
@@ -109,4 +124,4 @@ LEFT JOIN rsg.revenue_tag_map m
  AND r.period_start >= m.valid_from AND (m.valid_to IS NULL OR r.period_start < m.valid_to)
 GROUP BY 1,2,3,4,5,6;
 
-GRANT SELECT ON rsg.revenue_period, rsg.revenue_tag_map, rsg.revenue_by_page_type TO rsg_analyst;
+GRANT SELECT ON rsg.revenue_period, rsg.revenue_tag_map, rsg.revenue_by_page_type, rsg.cj_commission, rsg.revenue_load_log TO rsg_analyst;
