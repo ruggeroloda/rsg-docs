@@ -8,7 +8,7 @@
 # Rocket.net's own daily backups (30 kept) stay the first restore option; this is the copy outside Rocket.net.
 # Restore: see hosting/RUNBOOK.md. Freshness is checked by the rsgmedia site check (healthchecks.io "rsg-site").
 set -euo pipefail
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:$PATH"   # cron has only /usr/bin:/bin; wp is in /usr/local/bin (weekly failed 15 + 22 Nov)
 # rclone uses its shared public Google client, which hits "rateLimitExceeded" now and then: retry chunks more often.
 export RCLONE_LOW_LEVEL_RETRIES=20 RCLONE_DRIVE_CHUNK_SIZE=64M
 MODE="${1:-weekly}"
