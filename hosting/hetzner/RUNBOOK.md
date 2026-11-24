@@ -41,7 +41,7 @@ Not backed up: the DFS test bench volume `dfs_data` (production has its own back
 - **Secrets:** only in `.env` files (600), never inline in compose. After editing an `.env`: `docker compose up -d --force-recreate <service>` (a restart doesn't reload it).
 - **Reboot:** Postgres binds to the Tailscale IP → needs `net.ipv4.ip_nonlocal_bind=1` (`/etc/sysctl.d/60-docker-tailscale-bind.conf`) and docker after tailscaled (both in place; reboot tested 6 Nov).
 - **NPM:** disabling a proxy host in the DB doesn't remove its conf file: check `proxy_host/*.conf`.
-- Site check URLs: `/etc/rsg-site-check.url` + `/etc/rsg-php-check.url` (root, 600; previous script `/usr/local/bin/rsg-site-check.sh.bak-20261114`); PHP-error endpoint token `/etc/rsg-site-check.token` (root, 600, since 12 Nov; previous script `/usr/local/bin/rsg-site-check.sh.bak-20261112`). Test `sudo DRYRUN=1 /usr/local/bin/rsg-site-check.sh`.
+- Site check URLs: `/etc/rsg-site-check.url` + `/etc/rsg-php-check.url` (root, 600; previous script `/usr/local/bin/rsg-site-check.sh.bak-20261114`; 24 Nov: WordPress db backup size check added, previous `.bak-20261124`; server = repo, md5 `573bcfde…`); PHP-error endpoint token `/etc/rsg-site-check.token` (root, 600, since 12 Nov; previous script `/usr/local/bin/rsg-site-check.sh.bak-20261112`). Test `sudo DRYRUN=1 /usr/local/bin/rsg-site-check.sh`.
 
 ## Rules in force (date = line in `../../DECISIONS.md`)
 - SSH key only on 2222, no Tailscale dependency; one standing Claude key (6 Nov).
