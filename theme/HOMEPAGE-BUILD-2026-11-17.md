@@ -42,3 +42,5 @@
 - Brand names as stored ("Asics", "Hoka One One", "Adidas").
 - Watch per the SEO review (generic homepage queries, 14-day rule).
 - First-day stats (17 Nov, same hours vs old homepage on 16 Nov, humans): desktop pages per home-landing visit 2.7 → 3.9, median time 10 → 31 s; only ~40 % of desktop viewers scroll past the hero; hero search = most-used element; "How we test" and the plans form seen by < 10 %.
+
+- **7-day read 24 Nov 2026:** `../analytics/STATS-READ-2026-11-24.md` ("Watches").

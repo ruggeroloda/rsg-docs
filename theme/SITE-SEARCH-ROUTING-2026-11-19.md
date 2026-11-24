@@ -31,3 +31,5 @@ Index = one row per published shoe review (GPS excluded) from the titles: brand 
 - Results page as shoe cards (step 4): dropped — only ~3 % of searches still reach the old list.
 - Edge cache on search pages: kept at 30 days.
 - No new families: the 27 families stay; 41 untagged reviews of those families were tagged (live 19 Nov).
+
+- **7-day read 24 Nov 2026:** `../analytics/STATS-READ-2026-11-24.md` ("Watches").

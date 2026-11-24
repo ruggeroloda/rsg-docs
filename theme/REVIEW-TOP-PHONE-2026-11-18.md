@@ -34,3 +34,5 @@ Read together with phone price bar G (~25 Nov): `stick` clicks per view, drawer 
 
 ## Ideas (not built)
 - Show the phone price bar later in the scroll, with a small animation (Ruggero, roadmap "Small / waiting").
+
+- **7-day read 24 Nov 2026:** `../analytics/STATS-READ-2026-11-24.md` ("Watches").

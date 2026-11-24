@@ -19,3 +19,5 @@ US men/women, GB, NL, CA, AU, DE; Pegasus 42, NB Fresh Foam X More v6 (long name
 ## Open
 - The other price spots still say "Check price … See deal" for the same fallback: align with the bar or not (Ruggero).
 - 7-day watch from ~25 Nov: `stick` clicks per view, drawer opens, Raptive RPM on reviews.
+
+- **7-day read 24 Nov 2026:** `../analytics/STATS-READ-2026-11-24.md` ("Watches").

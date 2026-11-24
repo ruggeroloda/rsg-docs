@@ -83,7 +83,7 @@ On current reviews (road/trail/training), comparisons and list posts (`top_list`
 | `section_seen` | any part of a section in the upper 85 % of the screen for 1 s; once per section per page view | `section`, `pos` (place on the page, 1 = first), `t` (seconds the page has been visible) |
 | `next_click` | click / middle-click on a link to another page of the site (not offers, `/go/`, images) | `block` (where the link sits), `section`, `to` (page type it opens: review, comparison, review_list, top_list, top_hub, comparison_list, gps_review, guide, author, home, other), `to_path` |
 | `jump_click` | click on a link to another spot of the same page | `block`, `section`, `to` (the target's id) |
-| `page_left` | the page is hidden or left, once per page view (since 22 Nov 2026 08:27 UTC) | `at`, `deepest`, `pos`, `t`, `after` |
+| `page_left` | the page is hidden or left, once per page view (reviews, comparisons, `/top/` lists, guides since 22 Nov 2026 08:27 UTC; homepage since 24 Nov 11:08 UTC: `at`/`deepest` = its `data-hm-sec` sections, `after` also `home_click` / `home_search`) | `at`, `deepest`, `pos`, `t`, `after` |
 | `cw_view` | a review in the "head to head" test opened (10 reviews, 22 Nov – 7 Dec 2026; both groups) | `cw` (on = block shown, off = not, x = no storage), `n` (tiles) |
 | `cw_seen` | the "head to head" block ≥ 50 % on screen for 1 s, once per page view | `n` |
 

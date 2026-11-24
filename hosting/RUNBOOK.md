@@ -5,7 +5,7 @@ _Current state only. Checked 11 Nov 2026 ~15:40 UTC. Update in the same session 
 ## Servers at a glance
 | Server | What | Runbook |
 |---|---|---|
-| Rocket.net `194.39.148.145` (`dal11.onrocket.com`, since 24 Nov) | WordPress live + staging | `../theme/RUNBOOK.md` |
+| Rocket.net `194.39.148.145` (`dal11.onrocket.com`, since 24 Nov) | WordPress live + staging; PHP `short_open_tag` **Off** here (web + CLI; `php_flag` in `.htaccess` is ignored, tested 24 Nov): theme code uses `<?php` only (old `<?` tags broke old reviews + articles 07:22–11:08 UTC 24 Nov) | `../theme/RUNBOOK.md` |
 | Hetzner **rsg-dfs** `135.181.110.157` (CAX11, Helsinki) | DFS production only | `../dfs/RUNBOOK.md`, `../dfs/PRODUCTION-SERVER.md` |
 | Hetzner **rsgmedia** `116.203.146.177` (CPX32, Nuremberg) | n8n, Stargrid, DFS test bench, site check | `hetzner/RUNBOOK.md` |
 | Linode `45.33.39.133` | Old DFS (rollback) until Phase F | below |
