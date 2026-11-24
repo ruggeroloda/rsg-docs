@@ -149,22 +149,30 @@ INSERT INTO rsg.revenue_tag_map (source, tag, valid_from, valid_to, page_type, n
  ('impact',   '',                 '2000-01-01', NULL,        'untagged',   'no SubId1');
 
 -- Report view: page type x period. Pick ONE grain when reading (weeks and months overlap).
+-- Page type: from the tag (Amazon / networks); for rows that carry a page path (Raptive) from rsg.page_type_map
+-- (latest Umami tag per path, paths end in '/'), else rsg.guess_page_type(path).
 CREATE OR REPLACE VIEW rsg.revenue_by_page_type AS
-SELECT r.source, r.grain, r.period_start, r.period_end,
-       coalesce(m.page_type, 'unmapped') AS page_type,
-       CASE WHEN m.page_type IN ('review','old_review','gps_review') THEN 'reviews'
-            WHEN m.page_type = 'comparison' THEN 'comparisons'
-            WHEN m.page_type IN ('top_list','guide','review_list') THEN 'lists'
-            WHEN m.page_type IN ('untagged','hidden') THEN m.page_type
-            WHEN m.page_type IS NULL THEN 'unmapped'
+WITH t AS (
+  SELECT r.*, coalesce(m.page_type, pm.page_type,
+                       CASE WHEN r.page <> '' THEN rsg.guess_page_type(pm_path) END) AS pt
+  FROM (SELECT *, CASE WHEN page = '' OR right(page, 1) = '/' THEN page ELSE page || '/' END AS pm_path
+        FROM rsg.revenue_period) r
+  LEFT JOIN rsg.revenue_tag_map m
+    ON m.source = r.source AND m.tag = r.tag
+   AND r.period_start >= m.valid_from AND (m.valid_to IS NULL OR r.period_start < m.valid_to)
+  LEFT JOIN rsg.page_type_map pm ON r.page <> '' AND pm.url_path = r.pm_path)
+SELECT source, grain, period_start, period_end,
+       coalesce(pt, 'unmapped') AS page_type,
+       CASE WHEN pt IN ('review','old_review','gps_review') THEN 'reviews'
+            WHEN pt = 'comparison' THEN 'comparisons'
+            WHEN pt IN ('top_list','guide','review_list') THEN 'lists'
+            WHEN pt IN ('untagged','hidden') THEN pt
+            WHEN pt IS NULL THEN 'unmapped'
             ELSE 'rest' END AS page_group,
-       sum(r.clicks) AS clicks, sum(r.items_ordered) AS items_ordered,
-       sum(r.earnings_usd) AS earnings_usd,
-       round(sum(r.earnings_usd) / nullif(sum(r.clicks), 0), 3) AS usd_per_click
-FROM rsg.revenue_period r
-LEFT JOIN rsg.revenue_tag_map m
-  ON m.source = r.source AND m.tag = r.tag
- AND r.period_start >= m.valid_from AND (m.valid_to IS NULL OR r.period_start < m.valid_to)
+       sum(clicks) AS clicks, sum(items_ordered) AS items_ordered,
+       sum(earnings_usd) AS earnings_usd,
+       round(sum(earnings_usd) / nullif(sum(clicks), 0), 3) AS usd_per_click
+FROM t
 GROUP BY 1,2,3,4,5,6;
 
 -- Deals-email view (24 Nov 2026): offers worth putting in a deals email, one row per distinct offer.
