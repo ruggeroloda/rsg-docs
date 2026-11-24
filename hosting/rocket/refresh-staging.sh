@@ -1,6 +1,6 @@
 #!/bin/bash
 # Refresh Rocket.net STAGING from LIVE (11 Nov 2026), instead of Rocket.net's "re-sync" (which copies all 25 GB of uploads).
-# Run from the Mac:  ssh -i ~/.rsgkey jfx9wij@65.181.124.237 'bash -s' < hosting/rocket/refresh-staging.sh
+# Run from the Mac:  ssh -i ~/.rsgkey jfx9wij@194.39.148.145 'bash -s' < hosting/rocket/refresh-staging.sh
 # What it does (staging only; live is only read):
 #   1. backs up staging's database, plugins folder and .htaccess to ~/rsg_deploy_backups/staging-refresh-<stamp>/
 #   2. copies live's plugins folder over staging's (code; drop-ins and wp-rocket-config stay staging's own)

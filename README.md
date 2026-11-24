@@ -22,7 +22,7 @@ _Last updated 2026-11-23 (late)._ **Start every RSG session here** (after `git p
 ## Servers
 | Server | Runs | Access |
 |---|---|---|
-| Rocket.net `65.181.124.237` | WordPress live + staging | SSH from the Mac only (`theme/.ssh-rocket-key`) |
+| Rocket.net `194.39.148.145` | WordPress live + staging | SSH from the Mac only (`theme/.ssh-rocket-key`) |
 | Hetzner **rsg-dfs** `135.181.110.157` | DFS production only | SSH 2222, key only |
 | Hetzner **rsgmedia** `116.203.146.177` | n8n, Stargrid, DFS test bench, site check | SSH 2222, key only |
 | Linode `45.33.39.133` | Old DFS (rollback until Phase F) | read-only unless agreed |

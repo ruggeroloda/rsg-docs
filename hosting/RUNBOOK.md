@@ -5,7 +5,7 @@ _Current state only. Checked 11 Nov 2026 ~15:40 UTC. Update in the same session 
 ## Servers at a glance
 | Server | What | Runbook |
 |---|---|---|
-| Rocket.net `65.181.124.237` (`dal20.onrocket.com`) | WordPress live + staging | `../theme/RUNBOOK.md` |
+| Rocket.net `194.39.148.145` (`dal11.onrocket.com`, since 24 Nov) | WordPress live + staging | `../theme/RUNBOOK.md` |
 | Hetzner **rsg-dfs** `135.181.110.157` (CAX11, Helsinki) | DFS production only | `../dfs/RUNBOOK.md`, `../dfs/PRODUCTION-SERVER.md` |
 | Hetzner **rsgmedia** `116.203.146.177` (CPX32, Nuremberg) | n8n, Stargrid, DFS test bench, site check | `hetzner/RUNBOOK.md` |
 | Linode `45.33.39.133` | Old DFS (rollback) until Phase F | below |
@@ -63,4 +63,4 @@ Two healthchecks.io checks (Ruggero's account, same as the DFS heartbeat; alerts
 5. After 11 Dec 2026: delete `Backups/servers/` and `Backups/sites/` in Drive by hand (old-login copies; the new login can't see or prune them). Keep `Backups/nas/`. Arq's Mac backups on the same Drive are untouched by all of this.
 6. Parked: hotlink protection, top lists by bytes, ASN challenge (bandwidth overage is cheap).
 7. **Server stalls on Rocket.net** (ticket 123597). **19 Nov 10:40–10:44 UTC**: almost no requests completed (9–15/min vs ~70), static files stalled too; Redis socket read errors 10:42:59 + 10:44:23; 49 HTTP 500 on recovery; shorter slowdown 13:19–13:22. Rocket.net (Raouf Saada, 20 Nov): their infrastructure maintenance + security patches, nothing to change on our side; ticket closed 20 Nov. **21 Nov 13:29:30–13:32:00 UTC (Saturday)**: same pattern (1–6 requests per 10 s vs 15–30, static files too, 13:30 site check got no answer); no 500s, no PHP or Redis errors, no job of ours, normal traffic before; no other stall minutes 08–22 UTC since 19 Nov. Ruggero reopened the ticket 21 Nov ~14:50 UTC (same cause as 19 Nov? anything on our side?). Next: read their answer; if stalls keep repeating, send them the new times.
-8. **Server transfer 24 Nov 07:00 UTC** (Rocket.net, Maria Y., 23 Nov): new server IP to follow when done; the scheduled job (WordPress backup) moves unchanged; they email at start and end. `www` is a CNAME to `jfx92wmcr3.onrocket.site` and the apex resolves to Cloudflare (checked 23 Nov), so no Route 53 change expected. After: replace `65.181.124.237` everywhere (ROADMAP 24 Nov row).
+8. ~~Server transfer~~ done 24 Nov 07:24 UTC (Rocket.net, ticket 123597; zero downtime): new server `dal11.onrocket.com`, IP `194.39.148.145` (inbound SSH and outbound); old `65.181.124.237` / `dal20` gone. Checked 07:33 UTC: live + staging 200, SSH key works, crontab (backups Sun 04:10/04:40, wp-cron) and Redis socket unchanged, 32 cores. Old DFS (Linode) allowlist doesn't know the new IP: harmless, Phase F.

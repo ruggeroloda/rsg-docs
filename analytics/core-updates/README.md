@@ -57,7 +57,7 @@ Source of truth: tables in the analytics database on rsgmedia (see "Access"); th
 
 ## Access (from a session linked to Ruggero's Mac; the cloud shell reaches none of these)
 - **Analytics database** (read-only): `ssh -i <rsg>/_private/claude-hetzner-key -p 2222 ruggero@116.203.146.177`, then `echo "select …" | rsg-sql` (add `--csv` for CSV). Tables `rsg.ga4_page_day`, `rsg.ga4_landing_day`, `rsg.ga4_site_day`, `rsg.ga4_event_day`, `rsg.gsc_page_day`, `rsg.gsc_query_day`, `rsg.gsc_country_day`, Umami (from 16 Nov 2026) per `../README.md`. 120 s statement limit.
-- **WordPress** (read-only use only; never change the live site): `cp <rsg>/theme/.ssh-rocket-key ~/.rsgkey && chmod 600 ~/.rsgkey`, `ssh -i ~/.rsgkey jfx9wij@65.181.124.237`, `cd ~/public_html && wp …`. Exporter used for `wp_pages`: `wp_pages.php` here.
+- **WordPress** (read-only use only; never change the live site): `cp <rsg>/theme/.ssh-rocket-key ~/.rsgkey && chmod 600 ~/.rsgkey`, `ssh -i ~/.rsgkey jfx9wij@194.39.148.145`, `cd ~/public_html && wp …`. Exporter used for `wp_pages`: `wp_pages.php` here.
 - **Wayback Machine**: works from the Mac shell and from rsgmedia (`curl`/Python), not from the cloud shell or WebFetch. CDX API: `https://web.archive.org/cdx/search/cdx?url=<url>&output=json&from=2023&to=2026&filter=statuscode:200&collapse=timestamp:6`.
 - **Sources**: `SOURCES.md` (links only, no summaries).
 - The live site: https://www.runningshoesguru.com
