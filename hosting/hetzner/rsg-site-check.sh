@@ -31,11 +31,14 @@ site_check() {
   local newest age state=/var/lib/rsg-site-check/newest-backup
   mkdir -p "${state%/*}"
   if [ -z "$(find "$state" -mmin -360 2>/dev/null)" ]; then     # Drive listing takes ~50 s: refresh at most every 6 h
-    newest=$(rclone --config /root/.config/rclone/rclone.conf lsf --files-only --format t gdrive:Server-Backups/sites/rsg/db 2>/dev/null | sort | tail -1)
+    newest=$(rclone --config /root/.config/rclone/rclone.conf lsf --files-only --format ts --separator ';' gdrive:Server-Backups/sites/rsg/db 2>/dev/null | sort | tail -1)
     [ -n "$newest" ] && echo "$newest" > "$state"
   fi
   newest=$(cat "$state" 2>/dev/null)
   [ -n "$newest" ] || { echo "backup: none found on Drive"; return 1; }
+  # Size too, not only the date: a failed export still uploads a ~220-byte empty file (15 + 22 Nov 2026).
+  [ "${newest#*;}" -ge 1000000 ] 2>/dev/null || { echo "backup: newest WordPress db backup is only ${newest#*;} bytes"; return 1; }
+  newest=${newest%%;*}
   age=$(( ( $(date +%s) - $(date -d "$newest" +%s) ) / 86400 ))
   [ "$age" -lt 8 ] || { echo "backup: newest WordPress backup is $age days old"; return 1; }
   local own; own=$(find /var/backups/rsgmedia -name '*.age' -mmin -2160 2>/dev/null | head -1)
