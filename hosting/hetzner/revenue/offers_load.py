@@ -6,7 +6,7 @@ A network that fails is skipped (its offers keep their old last_seen); the other
 
 env: AWIN_PUBLISHER_ID, AWIN_TOKEN, IMPACT_ACCOUNT_SID, IMPACT_AUTH_TOKEN, RAKUTEN_SID, RAKUTEN_CLIENT_ID, RAKUTEN_SECRET, CJ_TOKEN, CJ_WEBSITE_ID
 """
-import os, sys, json, time, base64, hashlib, urllib.request, urllib.parse, xml.etree.ElementTree as ET
+import os, re, sys, json, time, base64, hashlib, urllib.request, urllib.parse, xml.etree.ElementTree as ET
 
 def http(url, headers, data=None, method=None):
     req = urllib.request.Request(url, data=data, headers=headers, method=method)
@@ -66,6 +66,25 @@ def cj():
                     regions=None, url=f('clickUrl'), terms=None))
             if page * 100 >= int(ls.get('total-matched') or 0): break
             page += 1
+    # 24 Nov 2026: some advertisers (Nike US) publish offers as plain text links: no promotion type, no start date,
+    # code only in the title. Keep untyped links that have an end date or a "code XXX" in the title; code read from the title.
+    seen, page = {o['offer_id'] for o in out}, 1
+    while True:
+        qs = urllib.parse.urlencode({'website-id': os.environ['CJ_WEBSITE_ID'], 'advertiser-ids': 'joined',
+                                     'records-per-page': 100, 'page-number': page})
+        r = ET.fromstring(http('https://link-search.api.cj.com/v2/link-search?' + qs, {'Authorization': 'Bearer ' + os.environ['CJ_TOKEN']}))
+        ls = r.find('links')
+        for l in ls.findall('link'):
+            f = lambda k: (l.findtext(k) or '').strip() or None
+            if f('link-id') in seen: continue
+            m = re.search(r'\bcode[:\s]+([A-Z0-9]{3,20})\b', f('link-name') or '', re.I)
+            if not f('promotion-end-date') and not m: continue   # evergreen links, not offers
+            seen.add(f('link-id'))
+            out.append(dict(offer_id=f('link-id'), advertiser=f('advertiser-name'), title=f('link-name'), description=f('description'),
+                code=f('coupon-code') or (m.group(1).upper() if m else None), type=f('promotion-type') or 'text link',
+                start_at=f('promotion-start-date'), end_at=f('promotion-end-date'), regions=None, url=f('clickUrl'), terms=None))
+        if page * 100 >= int(ls.get('total-matched') or 0): break
+        page += 1
     return out
 
 def impact():
