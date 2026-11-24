@@ -1,6 +1,6 @@
 # Email — runbook (MailerLite, MailerSend, sign-up forms)
 
-_Current state only. Checked 11 Nov 2026 (site code + DNS; no MailerLite access from here). Update in the same session as any change. Strategy and platform options: `README.md`._
+_Current state only. Deals emails updated 24 Nov 2026; rest checked 11 Nov 2026 (site code + DNS; no MailerLite access from here). Update in the same session as any change. Strategy and platform options: `README.md`._
 
 ## Services
 | Service | Used for | Facts |
@@ -23,7 +23,11 @@ DNS (Route 53): SPF `include:_spf.mailersend.net a mx include:_spf.mlsend.com ~a
 
 ## Deals emails: data (23 Nov 2026)
 - Offers: view `rsg.deals_email_offer` in the `umami` database on rsgmedia (Awin, Rakuten, CJ, Impact; filter rules in `../analytics/README.md` "Offers"). Shoe deals: DFS `price_history` on rsg-dfs (US, non-Amazon, ≥ 25 % below list). Never Amazon prices in email.
-- Link sub-ID per email: `email-<send date>-<nn>` (Rakuten `u1` before `murl`, CJ `sid`, Awin `clickref`, Impact `subId1`; Running Warehouse can't carry one). First draft's links: Mac `_work/deals-email/links.md` (not in git).
+- Link sub-ID per email: `email-<send date>-<nn>` (Rakuten `u1` before `murl`, CJ `sid`, Awin `clickref`, Impact `subId1`; Running Warehouse can't carry one).
+- Shoe prices on the send day: DFS production view `offers` (`/data/dfs.sqlite` in container `dfs` on rsg-dfs, read-only), latest `day`, country US, non-Amazon, cheapest per shoe + gender. `price_history` lags a day.
+- Shoe photos: the review's `…white-background-300x225` cut-out from the site's uploads (each shoe's review page). Before picking a shoe, read the review's verdict: no shoe our review is negative about.
+- Build (Mac, `_work/deals-email/`, not in git): `build_20261124.py` (data + sub-IDs → json), `render_20261124_v3.py <logo URL> <out.html>` (branded HTML: navy logo bar, blue hero, yellow buttons `#FFC83D`, photo above text, codes, footer with affiliate note). Logo: `assets/rsg-logo-white-550.png`, uploaded to MailerLite's file manager (the site's logo is SVG, which email apps don't show).
+- Sent: **24 Nov 2026 ~13:55 UTC, email 1, US segment** (subject "Black Friday came early: Pegasus 42 from $78, Evo SL $93"; change log row 146). Next: Fri 27 Nov (PUMA CHEER), Cyber Monday 30 Nov.
 
 ## Open
 1. List cleanup: active = opened or clicked in 12 months → one re-engagement email → remove non-responders (ROADMAP "Email list cleanup").

@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-24 13:00 UTC (stats read after the server move: watches done, comparisons drop, head-to-head day 2, Raptive by page type; old reviews + articles 500 after the move, fixed live 11:08 UTC; Raptive mail sent; site check covers old reviews + articles, after-server-change checklist)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-24 14:00 UTC (Black Friday deals email 1 sent, US only; email 2 on Fri 27 Nov)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -23,7 +23,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 | 25 Nov | **Amazon US tags per page type: first day in Amazon's report** (live 23 Nov 13:11 UTC, `0ace71d`) | analytics | Tracking-Id report for 24 Nov (available 25 Nov): the new IDs appear (`rsg-single-old-20`, `rsg-home-20`, `rsg-article-20`, `rsg-other-20` …), the retired rev* / bestof IDs stop; `pimeagi-20` falls only after part C (plan step 6) |
 | 25 Nov | Rocket.net charges $1,000 (Business annual) | hosting | Check the invoice and the credit for the unused Expert time (`hosting/RUNBOOK.md` Open 1) |
 | 26 Nov | Delete the site-pass backups on Rocket.net (`~/rsg_deploy_backups/site-cleanup-*-20261112-*`, ~500 MB) | hosting | — |
-| ~25 Nov | **Black Friday deals email** (links built 23 Nov from `rsg.deals_email_offer` + DFS shoe deals, `_work/deals-email/links.md` on the Mac) | email | Ruggero: send date (proposed Thu 26 Nov) and shoe links to the shop or to our review; then the copy, prices refreshed on the send day, Ruggero sends from MailerLite |
+| Fri 27 Nov | **Black Friday deals email 2** (email 1 sent 24 Nov, US only: `email/RUNBOOK.md` "Deals emails") | email | Same process on the send day: offers from `rsg.deals_email_offer` (PUMA code CHEER starts 26 Nov), prices from the DFS build of that day, sub-IDs `email-<date>-nn`, render with `_work/deals-email/render_20261124_v3.py` (Mac). Then Cyber Monday (30 Nov). Read email 1 clicks/sales per sub-ID ~1 Dec |
 | 1st of each month | **Running Warehouse report read** (US, EU, AU; Data Studio, built-in browser, account ruggeroloda@gmail.com) | analytics | Buyers per month, items by brand, visits; numbers into `analytics/README.md` "Running Warehouse"; EU + AU not read yet |
 | 27–30 Nov | **Black Friday → Cyber Monday** | all | Freeze rule to decide (what may still go live that week) |
 | ~30 Nov | Old click/view logs vs Umami: 2-week parallel run ends | analytics | Compare (take the old log's US bot surplus out; it faded 23–24 Nov, see `analytics/STATS-READ-2026-11-24.md`), then switch the old logs off or sample them |
