@@ -35,3 +35,4 @@ DNS (Route 53): SPF `include:_spf.mailersend.net a mx include:_spf.mlsend.com ~a
 3. Decide whether the site gets a footer/sidebar sign-up (new work).
 4. Quiz copy promises price-drop alerts that don't exist (build or cut).
 5. Separate MailerSend tokens per system (ROADMAP "Rotate exposed keys").
+6. Subscriber country for everyone, not only quiz sign-ups: idea written down, not started (`SUBSCRIBER-COUNTRY-2026-11-24.md`).
