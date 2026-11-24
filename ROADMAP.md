@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-24 14:00 UTC (Black Friday deals email 1 sent, US only; email 2 on Fri 27 Nov)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-24 15:30 UTC (old reviews: newer-version card by name + https image fixes live 15:20 UTC; Black Friday deals email 1 sent 14:00 UTC, US only; email 2 on Fri 27 Nov)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -84,5 +84,4 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 - Resubmit the sitemap in Search Console (Ruggero).
 - Listings cleanup (Ruggero to OK): unused `print_review_block_2020()` + `.rsg-rc` CSS, template leftovers, keyboard-safe filter menus (`theme/LISTINGS-RESKIN-2026-11-19.md` Open).
 - Comment notifications: reader reply emails only if comments matter after the content restart.
-
 - Mixed-content leftovers in content (24 Nov scan): 26 posts from 2009–2012 with Flash YouTube embeds (dead since 2020; convert or leave for the prune), 1 dead Rakuten pixel (post 11350), 1 `http://tinyimg.io` image on `/content/rsg-survey-results/` (works over https: one text edit, offered).
