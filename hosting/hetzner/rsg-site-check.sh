@@ -13,7 +13,7 @@
 #   rsg-php-errors.php, token in /etc/rsg-site-check.token = WP option rsg_php_errors_token).
 #  rsg-umami (URL in /etc/rsg-umami-check.url; 16 Nov 2026; skipped while the file is missing) = Umami analytics:
 #   app answers its heartbeat (127.0.0.1:3010), the public tracker script answers through Nginx Proxy Manager, and the
-#   dashboard is NOT reachable from outside (/login must be 404), Search Console data loaded within 6 days (rsg-gsc cron), analyst metrics built within 30 h (rsg-metrics cron). A failure here is an analytics gap, never a site problem.
+#   dashboard is NOT reachable from outside (/login must be 404), Search Console data loaded within 6 days (rsg-gsc cron), analyst metrics built within 30 h (rsg-metrics cron), every revenue source (rsg.revenue_load_log, active in the last 14 days) loaded within 26 h (rsg-revenue cron). A failure here is an analytics gap, never a site problem.
 # Each check gets one retry after 30 s before reporting a failure. DRYRUN=1 prints instead of pinging.
 set -uo pipefail
 SITE="https://www.runningshoesguru.com"; REVIEW="/reviews/road/nike-vomero-18-review/"
@@ -74,7 +74,11 @@ umami_check() {
   [ -n "$g" ] && [ "$g" -le 6 ] || { echo "Search Console data stale: newest day ${g:-?} days old (cron /etc/cron.d/rsg-gsc)"; return 1; }
   local h; h=$(docker exec postgres psql -U umami -d umami -tAc "select floor(extract(epoch from now() - max(run_at)) / 3600) from rsg.metric_run" 2>/dev/null | tr -d ' ')
   [ -n "$h" ] && [ "$h" -le 30 ] || { echo "analyst metrics stale: last build ${h:-?} h ago (cron /etc/cron.d/rsg-metrics)"; return 1; }
-  echo "ok: app up, tracker public, dashboard private, Search Console data ${g} days old, metrics built ${h} h ago"
+  # Revenue loads (cron /etc/cron.d/rsg-revenue, daily 06:55 UTC): every source that loaded in the last 14 days must have loaded
+  # within 26 h (one missed daily run alerts the next morning; a source retired for 14 days drops out on its own).
+  local r; r=$(docker exec postgres psql -U umami -d umami -tAc "select coalesce(string_agg(source || ' ' || h || ' h', ', ' order by source), '') from (select source, floor(extract(epoch from now() - max(loaded_at)) / 3600)::int h from rsg.revenue_load_log where loaded_at > now() - interval '14 days' group by 1) s where h > 26" 2>/dev/null) || r="query failed"
+  [ -z "$r" ] || { echo "revenue loads stale: $r (cron /etc/cron.d/rsg-revenue, log ~/revenue/daily.log)"; return 1; }
+  echo "ok: app up, tracker public, dashboard private, Search Console data ${g} days old, metrics built ${h} h ago, revenue loads within 26 h"
 }
 run() {  # run check $1 (one retry after 30 s), ping URL $2
   local msg
