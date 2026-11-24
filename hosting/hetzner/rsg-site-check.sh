@@ -5,7 +5,8 @@
 #  rsg-site (URL in /etc/rsg-site-check.url) = is the site up:
 #   (1) the page visitors get through the edge cache; (2) a fresh render at the origin (a query string the edge has
 #   never cached; the edge keeps HTML 30 days, so it can hide an origin outage); (3) a review page renders its price
-#   box; (4) the newest off-site WordPress backup on Google Drive is < 8 days old (weekly job on Rocket.net);
+#   box; (3b) an old review and an article render at the origin (HTTP 200 + full page; added 24 Nov 2026: after the server
+#   move only those templates broke, the homepage and new reviews stayed fine); (4) the newest off-site WordPress backup on Google Drive is < 8 days old (weekly job on Rocket.net);
 #   (5) this server's own nightly backup (rsgmedia) is < 36 h old.
 #  rsg-php (URL in /etc/rsg-php-check.url; split off 14 Nov 2026 so one PHP fatal no longer reads as "site down") =
 #   PHP logging is on and there was no PHP fatal error on the site in the last 60 min (endpoint from the mu-plugin
@@ -16,6 +17,8 @@
 # Each check gets one retry after 30 s before reporting a failure. DRYRUN=1 prints instead of pinging.
 set -uo pipefail
 SITE="https://www.runningshoesguru.com"; REVIEW="/reviews/road/nike-vomero-18-review/"
+# One page per old template (24 Nov 2026). If one of these pages is ever removed or redirected, pick another of the same template.
+OLD_PAGES="/review/salomon-speedcross-5-review/ /content/alternatives-to-the-asics-nimbus-26/"
 SITE_URL=$(cat /etc/rsg-site-check.url 2>/dev/null || true)
 PHP_URL=$(cat /etc/rsg-php-check.url 2>/dev/null || true)
 UMAMI_URL=$(cat /etc/rsg-umami-check.url 2>/dev/null || true)
@@ -28,6 +31,11 @@ site_check() {
   code=${body##*$'\n'}; [ "${code%% *}" = 200 ] && grep -q '</html>' <<<"$body" || { echo "origin: HTTP ${code%% *}"; return 1; }
   body=$(curl -s -m 30 -A "rsg-site-check" "$SITE$REVIEW?rsgcheck=$t") || { echo "review: no answer"; return 1; }
   grep -q 'class="rsg-dfs' <<<"$body" || { echo "review: no price box on $REVIEW"; return 1; }
+  local p
+  for p in $OLD_PAGES; do
+    body=$(curl -s -m 30 -A "rsg-site-check" -w '\n%{http_code}' "$SITE$p?rsgcheck=$t") || { echo "old page: no answer on $p"; return 1; }
+    [ "${body##*$'\n'}" = 200 ] && grep -q '</html>' <<<"$body" || { echo "old page: HTTP ${body##*$'\n'} on $p"; return 1; }
+  done
   local newest age state=/var/lib/rsg-site-check/newest-backup
   mkdir -p "${state%/*}"
   if [ -z "$(find "$state" -mmin -360 2>/dev/null)" ]; then     # Drive listing takes ~50 s: refresh at most every 6 h
@@ -43,7 +51,7 @@ site_check() {
   [ "$age" -lt 8 ] || { echo "backup: newest WordPress backup is $age days old"; return 1; }
   local own; own=$(find /var/backups/rsgmedia -name '*.age' -mmin -2160 2>/dev/null | head -1)
   [ -n "$own" ] || { echo "rsgmedia backup: none in the last 36 h"; return 1; }
-  echo "ok: edge + origin (${code#* }s) + price box + WP backup ${age} d + rsgmedia backup"
+  echo "ok: edge + origin (${code#* }s) + price box + old review + article + WP backup ${age} d + rsgmedia backup"
 }
 php_check() {
   local tok pe; tok=$(cat /etc/rsg-site-check.token 2>/dev/null)

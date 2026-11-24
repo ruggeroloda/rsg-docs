@@ -36,9 +36,18 @@ _Current state only. Checked 11 Nov 2026 ~15:40 UTC. Update in the same session 
 
 ## Site check
 Two healthchecks.io checks (Ruggero's account, same as the DFS heartbeat; alerts go to that account's notification channels, email by default — not checked from here), both pinged every 5 min by `/usr/local/bin/rsg-site-check.sh` on rsgmedia (`/etc/cron.d/rsg-site-check`, source `hetzner/rsg-site-check.sh`); each check runs in parallel with one retry after 30 s:
-- **`rsg-site`** = is the site up (ping URL `/etc/rsg-site-check.url`): edge page, fresh origin render, price box on a review, off-site WordPress backup age (< 8 days) and size (newest db file ≥ 1 MB, since 24 Nov), rsgmedia's own nightly backup (< 36 h).
+- **`rsg-site`** = is the site up (ping URL `/etc/rsg-site-check.url`): edge page, fresh origin render, price box on a review, an old review + an article at the origin (HTTP 200, since 24 Nov: `/review/salomon-speedcross-5-review/`, `/content/alternatives-to-the-asics-nimbus-26/`; previous script `.bak-20261124b`), off-site WordPress backup age (< 8 days) and size (newest db file ≥ 1 MB, since 24 Nov), rsgmedia's own nightly backup (< 36 h).
 - **`rsg-php`** = PHP health (since 14 Nov; ping URL `/etc/rsg-php-check.url`): **no fatal error in the last 60 min and logging on** (endpoint `/wp-json/rsg/v1/php-errors`, token `/etc/rsg-site-check.token` = WP option `rsg_php_errors_token`; details theme `RUNBOOK.md` "PHP error log"). A single fatal keeps it DOWN for up to 60 min. Split off from `rsg-site` 14 Nov because one scanner request to `/wp-admin/setup-config.php` (13 Nov 22:10 UTC) made `rsg-site` read "down" for 55 min while the site was fine.
 - Test: `sudo DRYRUN=1 /usr/local/bin/rsg-site-check.sh`.
+- **An alert during or after maintenance is checked, never assumed to be the maintenance** (24 Nov: the `rsg-php` alert at 08:25 local was a real outage, read as the server move).
+
+## After any server change (move, PHP version, PHP settings, plan change)
+Run all of it right after Rocket.net (or we) change the server, and again ~1 h later:
+1. **One page per template, bypassing the cache** (`?cb=<random>`, expect 200 and no raw `<?` in the HTML): homepage, new review (`/reviews/road/…`), trail review, GPS review (`/reviews/gps/garmin-forerunner-265/`), old review (`/review/…`), dated post (`/2012/10/…`), article (`/content/…`), comparison, `/top/` list, `/reviews/` listing, search results (`/?s=pegasus`), Shoe Finder; the same on staging.
+2. **PHP error log** (`~/rsg-logs/php-errors-live.log` + `-staging.log`): no new Parse/Fatal lines since the change.
+3. **PHP settings vs the old server**: `ea-php83 -i | grep -E "short_open_tag|memory_limit|max_execution_time|upload_max_filesize|post_max_size"`; code check of the whole theme with the server's real settings (`ea-php83 -l`, as `deploy.sh` does: a lint failure on files you didn't touch = the server changed).
+4. **Site check by hand**: `sudo DRYRUN=1 /usr/local/bin/rsg-site-check.sh` on rsgmedia (all three ok).
+5. Cron, backups, SSH key, outbound IP (allow-lists: rsgmedia `IGNORE_IP`, DFS push), WP-CLI, `deploy.sh` host — as in the 24 Nov move checks (Open 8).
 - `.htaccess` (live, top, block `rsg-block-installer`, 14 Nov): `wp-admin/setup-config.php` and `wp-admin/install.php` are refused (answer 404 via WordPress); backup `~/rsg_deploy_backups/htaccess-before-installer-block-20261114-044425`.
 
 ## DNS and domains
