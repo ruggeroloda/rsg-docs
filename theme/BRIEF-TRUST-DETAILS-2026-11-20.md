@@ -1,3 +1,5 @@
+**Brandon's bio: left as it is, permanently (Ruggero, 24 Nov 2026).** Other open items here: see `../ROADMAP.md` "About page leftovers".
+
 # Brief: trust details on the About page, reviewer bio and small facts
 
 **DONE — live 20 Nov 2026 19:52 UTC (`0d110b4`, tag `live-20261120-195225`; database part applied 19:52; change log rows 118 + 119), except item 2 (reviewer bio: Ruggero left it for now) and the Italian-site line (undecided, link kept). Live backups: `~/rsg_deploy_backups/trust-details-20261120/live-*`.**

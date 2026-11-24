@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-24 21:00 UTC (Raptive Creator API loaded daily on rsgmedia, data from 1 Sep 2026; Mac git access fixed)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-24 21:10 UTC (trust card v6 live 20:50 UTC; Raptive Creator API loaded daily on rsgmedia, data from 1 Sep 2026; Mac git access fixed)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -62,7 +62,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 
 ## Small / waiting
 - **Bing Webmaster** (connected 21 Nov): Ruggero adds the API key to 1Password (optionally regenerates it, Claude swaps it on rsgmedia); then decide a daily loader into `rsg` (traffic per day, pages/queries per week, crawl). AI Performance (Copilot citations) is not in the API (checked 21 Nov): web interface only (`analytics/README.md` "Bing Webmaster Tools").
-- **Reviewer bio (Brandon)**: still reads as RSG's current tester on his author page and in the "Reviewed by Brandon" box (131 reviews, 161 comparisons, 17 reviews of New Balance shoes); Ruggero left it for now (20 Nov). Wording options in `theme/BRIEF-TRUST-DETAILS-2026-11-20.md`. Same brief: the About page's Italian-site line (runningshoesguru.it, newest review 2021): keep, remove or restart the site; "reviewed every year" lines in "Some Numbers" while publishing is paused.
+- **About page leftovers** (`theme/BRIEF-TRUST-DETAILS-2026-11-20.md`): the Italian-site line (runningshoesguru.it, newest review 2021): keep, remove or restart the site; "reviewed every year" lines in "Some Numbers" while publishing is paused.
 - **Alt-text test** (live 11 Nov): read Search Console for the 10 test vs 10 control reviews ~9 Dec (4 weeks) and ~23 Dec (6 weeks): `theme/ALT-TEXT-TEST-2026-11.md`. The result decides "AI alt text at upload".
 - **Subscriber country** (Ruggero 24 Nov: note only, not now; after 30 Nov at the earliest): email domain, locate on click, ask (`email/SUBSCRIBER-COUNTRY-2026-11-24.md`).
 - Network sub-ID checks (AWIN Click References, CJ/Rakuten, Impact `subId1`, AvantLink `ctc`) at the first commissions.
