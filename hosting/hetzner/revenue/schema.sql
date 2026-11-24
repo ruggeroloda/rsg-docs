@@ -194,3 +194,25 @@ WHERE (end_at IS NULL OR (end_at >= now() AND end_at <= now() + interval '1 year
 ORDER BY advertiser, title, coalesce(code, ''), source, offer_id;
 
 GRANT SELECT ON rsg.revenue_period, rsg.revenue_tag_map, rsg.revenue_by_page_type, rsg.cj_commission, rsg.rakuten_order, rsg.awin_transaction, rsg.impact_action, rsg.fx_ecb_day, rsg.offer, rsg.deals_email_offer, rsg.revenue_load_log TO rsg_analyst;
+
+-- Raptive Creator API (24 Nov 2026): raptive_load.py, one API call per report per day. Days as Raptive reports them.
+CREATE TABLE IF NOT EXISTS rsg.raptive_site_day (
+  day date PRIMARY KEY, earnings numeric(12,2), pageviews int, sessions int,
+  rpm numeric(10,2), rps numeric(10,2),                     -- rpm = dashboard "Page RPM" (per 1,000 views), rps = "RPM" (per 1,000 sessions)
+  video_earnings numeric(12,2), video_impressions_per_pageview numeric(10,2),
+  loaded_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS rsg.raptive_page_day (
+  day date NOT NULL, page text NOT NULL,                    -- page = URL path as Raptive reports it
+  earnings numeric(12,4), pageviews int, impressions int, rpm numeric(10,2), cpm numeric(10,2),
+  viewability numeric(6,3), impressions_per_pageview numeric(10,2), author text,
+  loaded_at timestamptz NOT NULL DEFAULT now(), PRIMARY KEY (day, page));
+CREATE TABLE IF NOT EXISTS rsg.raptive_breakdown_day (
+  day date NOT NULL, kind text NOT NULL CHECK (kind IN ('device','ad_unit','video_player','country','traffic_source','category')),
+  key text NOT NULL, sub text NOT NULL DEFAULT '',          -- ad_unit: sub = mobile/tablet/desktop/all; video_player: sub = player category
+  earnings numeric(14,6), pageviews int, sessions int, impressions int, viewable_impressions int,
+  rpm numeric(10,2), rps numeric(10,2), cpm numeric(10,2), viewability numeric(6,3), impressions_per_pageview numeric(10,2),
+  loaded_at timestamptz NOT NULL DEFAULT now(), PRIMARY KEY (day, kind, key, sub));
+CREATE TABLE IF NOT EXISTS rsg.raptive_day_revision (     -- site totals of every load: does Raptive still change "final" days?
+  day date NOT NULL, loaded_at timestamptz NOT NULL DEFAULT now(), earnings numeric(12,2), pageviews int, sessions int,
+  PRIMARY KEY (day, loaded_at));
+GRANT SELECT ON rsg.raptive_site_day, rsg.raptive_page_day, rsg.raptive_breakdown_day, rsg.raptive_day_revision TO rsg_analyst;
