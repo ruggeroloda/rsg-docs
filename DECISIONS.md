@@ -355,3 +355,4 @@ Dated, one line each, in date order (newest at the bottom). A line that was late
 - 2026-11-24 — **Comparisons Google drop (−28 %): no rollback, Metaspeed Sky vs Edge stays as it is** (Ruggero); re-check ~27 Nov. `analytics/STATS-READ-2026-11-24.md`.
 - 2026-11-24 — **Raptive mail sent** (Ruggero, #495303): check GPS reviews, articles, `/top/` lists; Enhanced Sticky Sidebar on old reviews; earnings by page type. Homepage sticky ad not asked (~$15–25/month). `ads/BASELINE-2026-11.md`.
 - 2026-11-24 — **Site check also renders an old review + an article; "after any server change" checklist** (Ruggero OK); site search typo tolerance: not yet (Ruggero). `hosting/RUNBOOK.md` "Site check".
+- 2026-11-24 — **Old reviews: "newer version" card also finds the newest review by name; photos and other guid images over https, live** (Ruggero "deploy to live", `live-20261124-152009`). Flash-era YouTube embeds in 26 old posts left as they are (content work). `theme/RUNBOOK.md`.
