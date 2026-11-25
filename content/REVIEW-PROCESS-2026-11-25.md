@@ -24,7 +24,10 @@ _Read from the real systems on 25 Nov 2026: Airtable base "RSG Product Testing" 
 5. Specs have one home; no placeholder values reach a draft.
 6. Photo editing stays manual. Improve only the plumbing (one folder in, one step back) and give testers a one-page photo guide with the new tester's brief.
 
-Considered and dropped: testers writing straight into WordPress drafts (one definition per field, but no staging step for the photos).
+Considered and dropped: testers writing straight into WordPress drafts (one definition per field, but no staging step for the photos); one shared shoe record in WordPress (its payoff was pages for unreviewed shoes, which were the thin `/overview/` pages).
+
+## Shoe facts: where they live
+Airtable owns a shoe's facts until the review is published (scraper, Ruggero's corrections, one flow sends shoe + review to WordPress). After publishing, WordPress owns the published copy (the price engine reads list prices there). Airtable is not updated afterwards. To make it hold: add previous model, family, release date and the list prices per currency to "Running Shoes"; fix shoe facts in Airtable before the insert, never in the draft.
 
 ## Depends on
 The review format decisions (`REVIEW-FORMAT-2026-11-22.md`, six decisions) define the new fields; the form and the flow are built after them.
