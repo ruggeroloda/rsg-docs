@@ -2,6 +2,16 @@
 
 One entry per change to rsg-dfs, the test bench or the DFS parts of WordPress: date/time UTC, what, why (who asked), commit, checks, rollback. Earlier: `DEPLOY-LOG-STEP6.md`, `DEPLOY-LOG-STEP7.md` (incl. 11 Nov shoe-list sync).
 
+## MEC CA LIVE — 25 Nov 2026 21:42–21:46 UTC (Ruggero: "deploy to live")
+- Before: production idle (last job Amazon re-price 20:22 UTC, next 22:00 history). Logo `mec.png` live with theme `38dde6a` (21:39 UTC).
+- Production: `.env.bak-20261125-mec`, DB `/data/dfs.sqlite.bak-20261125-mec` (sqlite backup API); `AVANTLINK_MEC_CA_URL` in `.env`; `up -d --force-recreate` (no code change, `1cf691a`); feed row `mec_ca` (AvantLink, MEC, CA, CAD, zip CSV, column map as Running Room, shoe test `Category` contains "shoes", adults, in stock, sub-ID `ctc={page}-{box}-{country}`, import 07:48 UTC, guard 70 %); `merchant_logos` MEC → live URL `?v=20261125`; import mec_ca 10,771 rows → 15 kept, 10 shoes (9 also at Running Room; CA 90 → 91); build + push: 10 of 10 pushed, 15 thumbnails, purge done (price_runs 551). Change log 154.
+- Live check (headless, ads/analytics blocked, desktop + phone, country CA): Guide 18 women "from C$93.44, C$179.95, 48 % off at MEC" vs Running Room C$100.00; Challenger 8 MEC C$143.96 (−20 %) vs Running Room C$179.99; logo shows; links `classic.avantlink.ca/click.php?p=369093…&ctc=<post>-drw-CA`; US box unchanged (Pegasus 42).
+- Rollback: `UPDATE feeds SET enabled=0 WHERE feed='mec_ca'` + build + push; `.env.bak-20261125-mec`; DB backup above.
+
+## MEC CA on the test bench + staging — 25 Nov 2026 20:45–21:00 UTC
+- Approved on AvantLink CA 25 Nov (API `AssociationFeed`: active, 6 %). Test bench: `.env.bak-20261125-mec`, `AVANTLINK_MEC_CA_URL`, recreate; feed `mec_ca` added (first shoe test on `SubCategory` missed Hoka rows with an empty sub-category → `Category`, as Running Room); Running Room CA re-imported (data was from 18 Nov); `merchant_logos` MEC + Running Room (was missing there) with staging URLs; push to staging. Logo made with `dfs/logos/optical/optical.py` (source `mec.png` = AvantLink logo, white recoloured MEC green), copied to staging by hand.
+- Staging check found 4 reviews cut after the byline (Bondi 9, Cloudsurfer Max, Glycerin 23, Cascadia 19): PHP 8 fatal from empty cached comment ratings, not MEC (`../../theme/RUNBOOK.md`, `../../hosting/RUNBOOK.md` Open 10).
+
 ## Pace Athletic AU LIVE — 25 Nov 2026 15:59–16:05 UTC (Ruggero: "deploy to live")
 - Before: production idle, next job 20:00 UTC. Logo `pace-athletic.png` to live `images/merchants/` (scp + chmod 644; md5 = theme `744da10`, now on GitHub `main`).
 - Production: `.env.bak-20261125-pace`, DB `/data/dfs.sqlite.bak-20261125-pace`; `CF_PACE_AU_URL` in `.env`; `git pull` (`1cf691a`) + `up -d --build --force-recreate`; `merchant_logos` Pace Athletic → live URL `?v=20261125`; import pace_au 6,014 rows → 1,352 kept, 58 shoes; `build prices` + push: 58 of 58 pushed, 92 thumbnails, purge 16:03 UTC (log `~/push-20261125-pace.log`).
