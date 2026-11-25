@@ -33,4 +33,4 @@ Edit here, commit, then copy the three `.py` files to `~/code/RW-info/` (scp) an
 1. `HC_URL` is empty until Ruggero creates the healthchecks.io check `rsg-scraper` (period 1 day, grace 12 h).
 2. Rows from 2023–2025 still carrying 999 (250, of which 82 published) are not backfilled; many pages are gone.
 3. EUR / AUD launch prices: Running Warehouse Europe and Australia use other page addresses than the US site (US link answers 404 there). Proposed source: the RW EU / RW AU feeds the price engine downloads nightly, retried until the model appears. Not built.
-4. Only the men's arrivals page is read.
+4. Only the men's arrivals page is read, and Running Warehouse pre-orders don't appear on it (found 25 Nov: Gel Nimbus 29 + Gel Cumulus 29 were on pre-order and missing). Those two were added by hand and filled with a one-off copy of the new-row logic (`/tmp/rsgfill/fill.py` on the OptiPlex; log `logs/ids-20261125-evening.log`). Wave Rider 30's link pointed at a gone unisex page: now `descpage-MIZWR00.html`.
