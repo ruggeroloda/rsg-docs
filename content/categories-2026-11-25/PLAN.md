@@ -88,7 +88,6 @@ The 8 Dec section baseline covers reviews, comparisons and lists, not listings; 
 Baseline before go-live: listing views and listing → review clicks (Umami), menu clicks, Search Console clicks/impressions of the retired type URLs vs the new ones (old total 2,970 clicks / 90 days), "similar shoes" clicks on reviews. Read 4 weeks after go-live, keeping the December update in mind.
 
 ## Open
-- Nimbus: ASICS's own positioning not checked (stays Daily trainer).
+- Nimbus: Daily trainer (Ruggero 25 Nov, decided; ASICS's own positioning not checked).
 - The draft name lists (max cushion, trail max cushion, trail race, performance by name) are judgment, confirmed line by line by Ruggero; the review should test them.
-- The Sheet artifact "RSG shoe categories: old reviews mapping" (claude.ai) is out of date (made before the decisions); delete it if not needed.
 - Short-form listing URLs canonical to `/reviews/` (existing flaw, separate).
