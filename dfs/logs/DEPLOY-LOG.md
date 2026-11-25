@@ -2,6 +2,13 @@
 
 One entry per change to rsg-dfs, the test bench or the DFS parts of WordPress: date/time UTC, what, why (who asked), commit, checks, rollback. Earlier: `DEPLOY-LOG-STEP6.md`, `DEPLOY-LOG-STEP7.md` (incl. 11 Nov shoe-list sync).
 
+## Pace Athletic AU (Commission Factory) — test bench + staging, 25 Nov 2026 14:25–15:55 UTC (Ruggero: "shall we add it to Australia", "can we add it to the DFS?", "go step 2", staging "yes!")
+- Code `4563683` (reader: JSON feeds via `format.json_items`; feeds screen shows "JSON"; edit screen keeps the setting; SEED feed `pace_au`, added by `_migrate_7`) + `1cf691a` (logo tool name). Feed: API data feed 11571, `Price` = list (`PriceRrp`), `PriceSale` = selling price, name cut at " / ", shoes by `Category` (trainers/shoes/track & field), gender from `Gender`, sub-ID `UniqueId`, import 12:40 UTC (feed refreshed ~11:40 UTC).
+- Test bench: backups `.env.bak-20261125-pace`, `dfs.sqlite.bak-20261125-pace`; `CF_PACE_AU_URL` in `.env`; rsync + `up -d --build --force-recreate`. First import 6,014 rows → 1,352 kept, 58 shoes; RW AU + adidas AU re-imported (test bench data was from 15 Nov); `build prices` pushed all 429 to staging (test bench push is on; 111 thumbnails; purge done).
+- Logo: `dfs/logos/optical/pace-athletic.png` (site's white "inverted" logo, white recoloured dark, cyan bar kept) → optical tool → theme commit `744da10` (not pushed) → staging `images/merchants/` (chmod 644 needed). Note: the existing theme logos no longer match a fresh tool run pixel for pixel (pre-existing; only the new file was added).
+- Checks: names of every kept and dropped row read; staging desktop + phone screenshots (Pegasus 42, Boston 13) with country AU; links carry `UniqueId=<page>-<box>-AU` and land on the size's page.
+- Production: unchanged. Rollback (test bench): `.env.bak-20261125-pace`, `dfs.sqlite.bak-20261125-pace`, rsync `5053985`.
+
 ## Hoka US kids shoes out — 19 Nov 2026 19:17–19:24 UTC (Ruggero: "the most important thing is to fix the import and showing of hoka kids shoes", "deploy live")
 - Found in the list-price test run: Hoka US kids rows were kept as adult offers on **Clifton 10** (Hoka "from $88", link to `hoka.com/en/us/kids-shoes/…`), **Mach 6** ($77) and **Rincon 4** ($64–90). Their names have no kids word ("HOKA Clifton 10 Shoes in White/White, Size 3.5Y"; the size is cut with the name); only the category column 29 says "Kids > Footwear > Shoes". Every shop's kept offers checked for kids sizes/links/youth words: only these 3 pages.
 - Code `5053985`: hoka_us `options.kids = {column 29, kids_values ["Kids > Footwear > Shoes"]}` in SEED and via `_migrate_hoka_kids` (sets it only if the feed has no kids option). Settings only, no matcher change.

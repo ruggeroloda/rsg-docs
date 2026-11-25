@@ -1,6 +1,6 @@
 from PIL import Image, ImageDraw
 import numpy as np
-NAMES=['nike','zappos','amazon','running-warehouse','hoka','puma','running-warehouse-us','running-warehouse-au','adidas','brooks','mizuno','new-balance','running-room']
+NAMES=['nike','zappos','amazon','running-warehouse','hoka','puma','running-warehouse-us','running-warehouse-au','adidas','brooks','mizuno','new-balance','running-room','pace-athletic']
 REF=['nike','zappos','amazon','running-warehouse']   # ink reference = the first set (8 Nov), so adding logos never changes the existing ones
 CW, CH = 240, 72          # identical canvas for every logo
 AREA = 0.40 * CW * CH     # target bounding-box area (fraction of the canvas)
