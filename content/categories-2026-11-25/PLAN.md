@@ -99,4 +99,7 @@ Review and reasons: `REVIEW-FABLE.md`. Where this section and the text above dif
 - **Go-live Tue 8 – Thu 10 Dec**, after the 8 Dec baseline read, not 2–3 Dec. Still only on "deploy to live".
 - **Before the script on live:** a copy of `wp_terms`, `wp_term_taxonomy`, `wp_term_relationships` with the restore command written down.
 - **To build as well:** one list in the theme that says what each type slug is (surface, category, stability, old tag) with its label, order and page title; every template that today takes a review's first type reads from it.
-- **Open with Ruggero:** the Max cushion sentence for the listing; the non-review posts that carry a type tag; the judgment lines listed in `REVIEW-FABLE.md` "Follow-up".
+- **Max cushion listing text** (Ruggero's words): "Shoes with thick, soft soles that are meant to maximise comfort while staying overall lightweight". The name list in decision 4 still decides which lines are in.
+- **Non-review posts lose their type tag** (Ruggero).
+- **Build:** `BRIEF-BUILD.md` in this folder, for a new chat.
+- **Open with Ruggero:** the judgment lines listed in `REVIEW-FABLE.md` "Follow-up" (he may overrule any).
