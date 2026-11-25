@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-25 16:00 UTC (Pace Athletic AU on test bench + staging, live pending; earlier: review inserts n8n flow tested on staging, switch 1 Dec; Running Shoes cleaned up to 6 shoes; reviewer reminders off; scraper skips IGNORE)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-25 16:05 UTC (earnings dashboard template; Amazon week 16–22 Nov reloaded; earlier: Pace Athletic AU on test bench + staging, live pending; earlier: review inserts n8n flow tested on staging, switch 1 Dec; Running Shoes cleaned up to 6 shoes; reviewer reminders off; scraper skips IGNORE)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
@@ -28,6 +28,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 | 25 Nov | Rocket.net charges $1,000 (Business annual) | hosting | Check the invoice and the credit for the unused Expert time (`hosting/RUNBOOK.md` Open 1) |
 | 26 Nov | Delete the site-pass backups on Rocket.net (`~/rsg_deploy_backups/site-cleanup-*-20261112-*`, ~500 MB) | hosting | — |
 | Fri 27 Nov | **Black Friday deals email 2** (email 1 sent 24 Nov, US only: `email/RUNBOOK.md` "Deals emails") | email | Same process on the send day: offers from `rsg.deals_email_offer` (PUMA code CHEER starts 26 Nov), prices from the DFS build of that day, sub-IDs `email-<date>-nn`, render with `_work/deals-email/render_20261124_v3.py` (Mac); add Nike US (code BFRIDAY, extra 25 % off select styles, ends Sat 29 Nov 05:00 UTC; CJ allows email: Ruggero) and a campaign tag on "Read our review" links. Then Cyber Monday (30 Nov). Read email 1 clicks/sales per sub-ID ~1 Dec |
+| next | **Earnings dashboard: populate + serve** (template with sample data 25 Nov, Ruggero: template first) | analytics | `analytics/earnings-dashboard/README.md` "Next": build script from `rsg.revenue_period` → page on rsgmedia behind a login, nightly after the 06:55 UTC job; Ruggero says when |
 | 1st of each month | **Running Warehouse report read** (US, EU, AU; Data Studio, built-in browser, account ruggeroloda@gmail.com) | analytics | Buyers per month, items by brand, visits; numbers into `analytics/README.md` "Running Warehouse"; EU + AU not read yet |
 | 27–30 Nov | **Black Friday → Cyber Monday** | all | Freeze rule to decide (what may still go live that week) |
 | ~30 Nov | Old click/view logs vs Umami: 2-week parallel run ends | analytics | Compare (take the old log's US bot surplus out; it faded 23–24 Nov, see `analytics/STATS-READ-2026-11-24.md`), then switch the old logs off or sample them |
