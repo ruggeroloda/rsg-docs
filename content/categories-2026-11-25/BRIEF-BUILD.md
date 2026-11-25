@@ -1,5 +1,7 @@
 # Brief: build the shoe categories on staging (new chat)
 
+**Status 26 Nov 00:25: steps 1–6 done on staging (theme branch `categories` `2a15a83`); next step 7 after the 1 Dec n8n switch, step 8 before go-live, step 9 8–10 Dec. Details: `ROADMAP.md`, `theme/RUNBOOK.md`.**
+
 _Written 25 Nov 2026, 23:15, after the Fable review and Ruggero's answers. **Live date: Tue 8 – Thu 10 Dec, only on Ruggero's "deploy to live".** Until then everything is staging._
 
 ## Read first

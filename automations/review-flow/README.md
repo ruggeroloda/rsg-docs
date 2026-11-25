@@ -57,3 +57,10 @@ A new record fires the Airtable automation "When Review received change Status":
 - Trail/road taxonomies Make sent (`usage`, `lugs`, terrain…) are ACF fields: sent as `acf`.
 - Everything else Make sent is still sent (Ruggero 25 Nov: don't drop things yet): `fields.json` → `make_extras`.
 - Trail type: a Category value containing "Trail" (e.g. "Trail; Cushioning") counts as trail; Make's view only matched exact "Trail".
+
+## Shoe categories: new Airtable fields (26 Nov 2026, for the step after the 1 Dec switch)
+Plan: `../../content/categories-2026-11-25/BRIEF-BUILD.md` step 7. Table "Running Shoes" (`tblAJjqqNd4ivOayL`) has three new fields, filled for the 14 shoes to assign:
+- **RSG Surface** `fld2EArTiriMragyU` (single select Road / Trail / Gym) → post type + `road` / `trail` / `training` term. Not the scraper's text field "Surface" (`fldaarCzlddbxC1QV`, Running Warehouse data).
+- **RSG Category** `fldcXzQti8Vio4WGK` (Daily trainer / Max cushion / Performance trainer / Race; Gym empty) → road: `daily-trainer` / `max-cushion` / `performance-trainer` / `racing`; trail: Daily trainer = no extra term, `trail-max-cushion`, `trail-race`. The slug list is the theme's `includes/shoe-types.php`.
+- **RSG Stability** `fldIZCA0anlfpUZ8D` (checkbox) → `stability` term.
+- "Shoe Category" (`fldFtgmgejT5kOu2m`) is hidden in every view, not deleted; the flow above still reads it through "Shoe Reviews" → Category (`fldGXpqPGYhh6VqV4`) until step 7 switches it to the three fields (lookups needed in "Shoe Reviews"). Views "Shoes to Assign" (3) and "Shoes to Buy" are grouped by RSG Surface → RSG Category → RSG Stability instead of Shoe Category (Ruggero 26 Nov: stability shoes in their own group); the Spikes filters still use the old field.
