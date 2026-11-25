@@ -17,3 +17,6 @@ echo "== $(date -u +%FT%TZ) raptive" >> daily.log
 python3 raptive_load.py 2>> daily.log | docker exec -i postgres psql -U umami -d umami -v ON_ERROR_STOP=1 -q >> daily.log 2>&1
 echo "== $(date -u +%FT%TZ) offers" >> daily.log
 python3 offers_load.py 2>> daily.log | docker exec -i postgres psql -U umami -d umami -v ON_ERROR_STOP=1 -q >> daily.log 2>&1
+echo "== $(date -u +%FT%TZ) dashboard" >> daily.log
+# Earnings dashboard (25 Nov 2026): rebuild the page; written next to the served folder, then moved in whole
+python3 dashboard/build_dashboard.py dashboard/template.html /home/ruggero/earnings-dash/index.tmp >> daily.log 2>&1 && mv /home/ruggero/earnings-dash/index.tmp /home/ruggero/earnings-dash/public/index.html

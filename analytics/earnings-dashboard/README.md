@@ -1,6 +1,6 @@
 # Earnings dashboard (template, 25 Nov 2026)
 
-Ruggero 25 Nov: a page to check earnings, including the current month. Chosen: **a static page rebuilt nightly on rsgmedia** after the 06:55 UTC revenue job (no new service; password-protected). Status: **builder runs on rsgmedia with real data (25 Nov); page not served yet, no nightly run yet.**
+Ruggero 25 Nov: a page to check earnings, including the current month. Chosen: **a static page rebuilt nightly on rsgmedia** after the 06:55 UTC revenue job (no new service; password-protected). Status: **built nightly on rsgmedia since 25 Nov (last step of `run_daily.sh`), served by container `rsg-dash` behind a password; public address waits for DNS + Nginx Proxy Manager (`hosting/hetzner/RUNBOOK.md`).**
 
 - `template.html`: the page. One `<script type="application/json" id="rsg-data">__DATA__</script>` block; the nightly job replaces `__DATA__` with JSON of the shape in `sample.json`. Everything else is static.
 - `sample.json`: made-up numbers (`"sample": true` shows a "Sample numbers" banner). `preview-desktop-mobile.png`: desktop + phone render.
@@ -15,3 +15,4 @@ Next (when Ruggero says go): build script reading `rsg.revenue_period` / `revenu
 - Month = month of yesterday (Amsterdam). Networks: orders through yesterday (or the day before their last load). Raptive: through its last loaded day; before its first loaded day = no data (null, never 0). Amazon: weeks fully inside the month vs the same number of weeks starting in the previous month; no last-year weeks (2025 files are monthly).
 - Clicks: Umami `shop_click` merchant → network account via `CLICK_MAP` in the script (from `dfs/RUNBOOK.md` networks; Running Warehouse, Running Room, Pace Athletic have no earnings feed, so not mapped). Merchant clicks exist from 16 Nov 2026 → network EPC uses earnings from the same days. Amazon clicks/EPC from Amazon's report.
 - First real run 25 Nov: Nov 1–24 $1,446 (Raptive $901 to 22 Nov, Amazon $383 = 3 weeks to 22 Nov, CJ $115, Rakuten $40, Awin $8, Impact $0).
+- 25 Nov: Raptive reloaded Nov 2025 – Aug 2026 (Ruggero) so last year and the 13 months include Raptive (`~/revenue/raptive_backfill_2511.sh`, log `~/revenue/raptive-backfill-2511.log`).
