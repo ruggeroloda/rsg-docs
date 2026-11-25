@@ -8,7 +8,7 @@ _Review of `PLAN.md` as asked in `BRIEF-FABLE-REVIEW.md`. Nothing was built or c
 1. **The mapping splits 74 of 420 road lines across categories** (371 reviews): Superblast 1 is Race and Superblast 2 Performance trainer; Clifton 5 is Race, Clifton 7 Performance trainer, the other Cliftons Daily. Cause: the rule order. Fix: decide per line, not per review.
 2. **Retiring Lightweight, Minimalist and Motion control throws away about 810 Google clicks per 90 days** that arrive on searches using exactly those words. Keep those three as hidden old tags instead of redirecting them.
 3. **The rollback is not real** as written (terms deleted, relations replaced, 301s served). It becomes real with a database copy of three tables and no term deletion.
-4. **The timing premise could not be confirmed.** I found no Google preannouncement of a December 2026 core update. What Google's status page shows is a November 2026 core update that began 10 Nov ("up to 2 weeks").
+4. ~~The timing premise could not be confirmed.~~ **Corrected 25 Nov, 23:00: the premise is right, my first search missed it.** Google preannounced the December 2026 core update on 24 Nov, the day the November update finished (see "Follow-up" at the end). The other timing argument (the baseline week) stands.
 
 ## What I checked, and what I could not
 | Checked (25 Nov, evening) | How |
@@ -89,7 +89,7 @@ Answers:
 **For 2–3 Dec:** small for Google (listings only, 1.6 % of clicks); review URLs and dates untouched; a wrong menu costs readers every day it stays.
 
 **Against:**
-- **The premise.** I found no preannounced December 2026 core update. Google's Search Status Dashboard lists the November 2026 core update, started 10 Nov at 10:06 PT, "up to 2 weeks". If that is what was read on 24 Nov, the update is ending, not coming. Google's own advice is to wait a full week after completion before comparing Search Console data. Ruggero: please check the source of the 24 Nov note.
+- ~~The premise.~~ **Corrected:** the preannouncement is real ("Follow-up" at the end). The November update ran 10–24 Nov; the December one has no date.
 - **It lands inside the 1–7 Dec baseline week.** The plan says only the type label changes on review pages. Not so: the mega menu changes on every page, and "similar shoes" on every review changes which shoes it shows. Both move `next_click` and "visits with 2+ pages", the numbers the 8 Dec read is for.
 - **The mapping needs the line pass** (section 3), in Black Friday week, next to the 1 Dec n8n switch.
 
@@ -112,3 +112,17 @@ Answers:
 7. **The non-review posts with a type tag:** drop the tag, or leave them in the listings?
 
 Sources (web, 25 Nov 2026): [Running Warehouse, men's shoe types](https://www.runningwarehouse.com/mens-running-shoe-types.html) · [Running Warehouse, daily trainers](https://www.runningwarehouse.com/catpage-MSHEDM.html) · [Nike, road running lineup](https://about.nike.com/en/newsroom/releases/nike-road-running-footwear-lineup) · [ASICS Gel-Nimbus 28](https://www.asics.com/us/en-us/gel-nimbus-28/p/ANA_1012B899-100.html) · [Brooks Glycerin](https://www.brooksrunning.com/en_us/featured/glycerin/) · [On Cloudmonster](https://www.on.com/en-us/collection/cloudmonster) · [REI, Triumph 23](https://www.rei.com/product/249639) · [Google Search Status Dashboard, ranking](https://status.search.google.com/products/rGHU1u87FJnkP6W2GwMi/history) · [Search Engine Journal, November 2026 core update](https://www.searchenginejournal.com/google-november-2026-core-update/596614)
+
+## Follow-up, 25 Nov 23:00 (Ruggero's answers)
+1. **Old tags: keep.** Lightweight, Minimalist and Motion control stay as hidden old tags with live pages. Only Cushioning redirects.
+2. **Lines: done by Fable** (Ruggero: "only if you can do it"). `map2.py` applies one category per line with named version breaks and writes **`category-mapping-v2.csv`** (the first CSV is unchanged). 133 reviews changed, each marked `CHANGED:` with the reason in the last column; the 6 missing gym reviews are added (1,365 rows). New totals: road Daily trainer 771, Performance trainer 176, Race 135, Max cushion 43; trail 189 / 14 / 16; gym 21; Stability flag 306.
+   - The lines I decided on judgment, for Ruggero to overrule: **Performance trainer:** Kinvara, Rebel, Zante, Cloudflow, Magic Speed, Zoom Fly, Noosa, Mach, Zoom Elite, Razor, Wave Shadow. **Daily trainer:** Rincon, Launch, adidas SL. **Race:** Adios, Hyper Speed. **Trail – Race:** Catamount, Flight Vectiv, Sense 4 Pro (Sense Pro Max → Daily).
+   - Also applied: Hurricane is Max cushion from 24, not 22; Cloudmonster Hyper → Performance trainer; old Minimalist shoes that had landed in Performance trainer → Daily trainer; PureGrit 5 → Trail; Magic Speed 1 loses the Stability flag.
+   - 17 lines still hold two categories on purpose: different models under one name (Deviate Nitro vs Elite, SuperComp Trainer vs Elite, Rebellion Flash vs Pro), named breaks (Vomero 18+, Hurricane 24+, the 2016 Hyperion) and a few 2012–2018 one-offs.
+3. **Go-live 8–10 Dec: agreed**, unless point 4 changed it. It does not.
+4. **Core update: Ruggero's source is right.** Google preannounced the December 2026 core update on its Search Status Dashboard on 24 Nov, about an hour after it marked the November update complete: "This update is scheduled to be released in December 2026", no date. It is the first core update Google has announced in advance. One report says a Google spokesperson called the launch "not imminent" (seen second-hand, not at the source). The Reddit link itself could not be opened from here.
+   **What it means for the date:** with no date, neither 2–3 Dec nor 8–10 Dec is safely "before" the update. The baseline-week argument decides, so 8–10 Dec stays. If the update starts before go-live, my advice is to go anyway: the change touches listings only, and waiting out a rollout pushes it into January.
+
+Still open: the Max cushion wording (question 4) and the non-review posts with a type tag (question 7).
+
+Sources for point 4: [Search Engine Roundtable](https://www.seroundtable.com/google-december-2026-core-update-42615.html) · [Search Engine Land](https://searchengineland.com/google-preannounced-the-december-2026-core-update-but-it-is-not-live-or-active-yet-502947) · [Search Engine Journal](https://www.searchenginejournal.com/google-december-2026-core-update/598760/) · ["not imminent"](https://maccus.fr/en/google-core-update-december-2026/)

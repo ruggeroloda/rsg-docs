@@ -91,3 +91,12 @@ Baseline before go-live: listing views and listing → review clicks (Umami), me
 - Nimbus: Daily trainer (Ruggero 25 Nov, decided; ASICS's own positioning not checked).
 - The draft name lists (max cushion, trail max cushion, trail race, performance by name) are judgment, confirmed line by line by Ruggero; the review should test them.
 - Short-form listing URLs canonical to `/reviews/` (existing flaw, separate).
+
+## Changes after the Fable review (Ruggero, 25 Nov late)
+Review and reasons: `REVIEW-FABLE.md`. Where this section and the text above differ, this section holds.
+- **Old tags stay.** Lightweight, Minimalist and Motion control are not retired: they stay on the reviews that have them, out of the menu, the filter and the card label, with their listing pages and URLs alive (about 810 Google clicks per 90 days arrive on those words). No new review gets them. Only `cushioning` → `daily-trainer` redirects. Old terms are not deleted in the go-live step.
+- **Mapping: `category-mapping-v2.csv`** (made by `map2.py`) replaces `category-mapping.csv` for the build: one category per line with named version breaks, by-name before the old Racing tag, 1,365 rows (the 6 newest gym reviews added). Hurricane is Max cushion from 24, not 22.
+- **Go-live Tue 8 – Thu 10 Dec**, after the 8 Dec baseline read, not 2–3 Dec. Still only on "deploy to live".
+- **Before the script on live:** a copy of `wp_terms`, `wp_term_taxonomy`, `wp_term_relationships` with the restore command written down.
+- **To build as well:** one list in the theme that says what each type slug is (surface, category, stability, old tag) with its label, order and page title; every template that today takes a review's first type reads from it.
+- **Open with Ruggero:** the Max cushion sentence for the listing; the non-review posts that carry a type tag; the judgment lines listed in `REVIEW-FABLE.md` "Follow-up".
