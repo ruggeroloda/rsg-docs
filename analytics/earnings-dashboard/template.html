@@ -27,7 +27,7 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--page);color:var(--ink);
   font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
-main{max-width:1120px;margin:0 auto;padding:24px 20px 48px}
+main{max-width:1200px;margin:0 auto;padding:24px 20px 48px}
 header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 16px;margin-bottom:16px}
 h1{font-size:20px;margin:0;font-weight:600}
 h2{font-size:15px;margin:0 0 2px;font-weight:600}
@@ -61,7 +61,7 @@ h2{font-size:15px;margin:0 0 2px;font-weight:600}
 .foot{color:var(--ink-2);font-size:12px;margin-top:6px}
 .tw{overflow-x:auto;margin:8px -4px 0}
 table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:13px}
-th,td{padding:7px 8px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--grid)}
+th,td{padding:7px 6px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--grid)}
 th{color:var(--ink-2);font-weight:500;font-size:12px}
 th:first-child,td:first-child{text-align:left;position:sticky;left:0;background:var(--surface)}
 tfoot td{font-weight:600;border-bottom:0}
@@ -112,7 +112,7 @@ select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid 
     <h2>By source, this month so far</h2>
     <div class="sub" id="src-sub"></div>
     <div class="tw"><table id="src"></table></div>
-    <div class="foot">EPC = earnings ÷ affiliate clicks. Clicks: our click log for the networks, Amazon's own report for Amazon. Raptive has no clicks (ads).</div>
+    <div class="foot" id="src-foot">EPC = earnings ÷ affiliate clicks. Clicks: our click log for the networks, Amazon's own report for Amazon. Raptive has no clicks (ads).</div>
   </section>
 
   <section class="card" id="merchant-card">
@@ -172,13 +172,15 @@ el('generated').textContent = 'Updated '+new Date(D.generated).toLocaleString('e
 if(D.sample) el('sample-note').hidden=false;
 
 // month to date
-const M=D.month, tot=sum(D.mtd.map(r=>r.this)), lm=sum(D.mtd.map(r=>r.last_month)), ly=sum(D.mtd.map(r=>r.last_year));
+const M=D.month, tot=sum(D.mtd.map(r=>r.this)), lm=sum(D.mtd.map(r=>r.last_month)), lyMiss=(M.last_year_missing||[]), ly=lyMiss.length?null:sum(D.mtd.map(r=>r.last_year));
 el('mtd-title').textContent = M.label+' so far';
 el('mtd-sub').textContent = '1–'+day(M.through)+', all sources, US dollars';
 el('mtd-total').textContent = usd(tot);
 el('mtd-deltas').innerHTML =
   '<span class="delta">'+delta(tot,lm)+' vs '+M.last_month_label+' ('+usd(lm)+')</span>'+
-  '<span class="delta">'+delta(tot,ly)+' vs '+M.last_year_label+' ('+usd(ly)+')</span>';
+  (ly==null ? (()=>{ const av=D.mtd.filter(r=>r.last_year!=null), a=sum(av.map(r=>r.this)), b=sum(av.map(r=>r.last_year));
+      return '<span class="delta">'+(av.length?delta(a,b)+' vs '+M.last_year_label+', '+av.map(r=>r.source).join(' + ')+' only ('+usd(a)+' vs '+usd(b)+')':'vs '+M.last_year_label+': no data')+'; no '+lyMiss.join(' or ')+' data that far back</span>'; })()
+   : '<span class="delta">'+delta(tot,ly)+' vs '+M.last_year_label+' ('+usd(ly)+')</span>');
 
 const pend=sum(D.mtd.map(r=>r.pending)), conf=sum(D.mtd.map(r=>r.confirmed));
 const daysDone=+M.through.slice(8,10), pace=tot/daysDone*M.days_in_month;
@@ -193,6 +195,7 @@ el('tiles').innerHTML = [
 // source table (rows with children open with the arrow)
 el('src-sub').textContent = 'Compared with the same days of last month and last year. Open a source with ▸ for its merchants (Amazon: tracking IDs).';
 const epc=(e,c)=>c?'$'+(e/c).toFixed(2):'—';
+const pc=(p,c)=>p==null&&c==null?'<span class="na">—</span>':usd(p)+' <span class="na">/</span> '+usd(c);
 const num=v=>v==null?'—':Math.round(v).toLocaleString('en-US');
 const mkey=(src,name)=>src+' · '+name;
 function row(r,kid,src,idx){
@@ -201,13 +204,13 @@ function row(r,kid,src,idx){
     ? (D.merchants&&D.merchants[mkey(src,r.name)] ? '<a href="#merchant-card" data-m="'+mkey(src,r.name)+'">'+r.name+'</a>' : r.name)
     : (has?'<button class="tg" aria-expanded="false" aria-label="Show '+r.source+' merchants" data-t="'+idx+'">▸</button>':'<span class="tg-sp"></span>')
       +'<span class="sw" style="background:'+COLOR[r.source]+'"></span>'+r.source+(r.note?'<span class="n">'+r.note+'</span>':'');
-  return '<tr'+(kid?' class="kid" data-p="'+idx+'" hidden':'')+'><td>'+name+'</td><td>'+usd2(r.this)+'</td><td>'+usd(r.last_month)+'</td><td>'+delta(r.this,r.last_month)+'</td><td>'+usd(r.last_year)+'</td><td>'+delta(r.this,r.last_year)+'</td><td>'+num(r.clicks)+'</td><td>'+epc(r.this,r.clicks)+'</td><td>'+epc(r.last_month,r.clicks_last_month)+'</td><td>'+usd(r.pending)+'</td><td>'+usd(r.confirmed)+'</td></tr>';
+  return '<tr'+(kid?' class="kid" data-p="'+idx+'" hidden':'')+'><td>'+name+'</td><td>'+usd2(r.this)+'</td><td>'+usd(r.last_month)+'</td><td>'+delta(r.this,r.last_month)+'</td><td>'+usd(r.last_year)+'</td><td>'+delta(r.this,r.last_year)+'</td><td>'+num(r.clicks)+'</td><td>'+epc(r.epc_earnings!=null?r.epc_earnings:r.this,r.clicks)+'</td><td>'+epc(r.last_month,r.clicks_last_month)+'</td><td>'+pc(r.pending,r.confirmed)+'</td></tr>';
 }
-const tc=sum(D.mtd.map(r=>r.clicks)), tcl=sum(D.mtd.map(r=>r.clicks_last_month)), te=sum(D.mtd.filter(r=>r.clicks).map(r=>r.this)), tel=sum(D.mtd.filter(r=>r.clicks).map(r=>r.last_month));
+const tc=sum(D.mtd.map(r=>r.clicks)), tcl=sum(D.mtd.filter(r=>r.clicks_last_month).map(r=>r.clicks_last_month)), te=sum(D.mtd.filter(r=>r.clicks).map(r=>r.epc_earnings!=null?r.epc_earnings:r.this)), tel=sum(D.mtd.filter(r=>r.clicks_last_month).map(r=>r.last_month));
 el('src').innerHTML =
-  '<thead><tr><th>Source</th><th>So far</th><th>'+M.last_month_label+'</th><th>Change</th><th>'+M.last_year_label+'</th><th>Change</th><th>Clicks</th><th>EPC</th><th>EPC '+M.last_month_label.replace(/ \d{4}$/,'')+'</th><th>Pending</th><th>Confirmed</th></tr></thead><tbody>'+
+  '<thead><tr><th>Source</th><th>So far</th><th>'+M.last_month_label+'</th><th>Change</th><th>'+M.last_year_label+'</th><th>Change</th><th>Clicks</th><th>EPC</th><th>EPC '+M.last_month_label.replace(/ \d{4}$/,'')+'</th><th>Pending / confirmed</th></tr></thead><tbody>'+
   D.mtd.map((r,i)=>row(r,false,r.source,i)+(r.children||[]).map(k=>row(k,true,r.source,i)).join('')).join('')+
-  '</tbody><tfoot><tr><td>Total</td><td>'+usd2(tot)+'</td><td>'+usd(lm)+'</td><td>'+delta(tot,lm)+'</td><td>'+usd(ly)+'</td><td>'+delta(tot,ly)+'</td><td>'+num(tc)+'</td><td>'+epc(te,tc)+'</td><td>'+epc(tel,tcl)+'</td><td>'+usd(pend)+'</td><td>'+usd(conf)+'</td></tr></tfoot>';
+  '</tbody><tfoot><tr><td>Total</td><td>'+usd2(tot)+'</td><td>'+usd(lm)+'</td><td>'+delta(tot,lm)+'</td><td>'+usd(ly)+'</td><td>'+(ly==null?'<span class="na">—</span>':delta(tot,ly))+'</td><td>'+num(tc)+'</td><td>'+epc(te,tc)+'</td><td>'+epc(tel,tcl)+'</td><td>'+pc(pend,conf)+'</td></tr></tfoot>';
 el('src').addEventListener('click',e=>{
   const b=e.target.closest('.tg');
   if(b){ const open=b.getAttribute('aria-expanded')!=='true'; b.setAttribute('aria-expanded',open);
@@ -215,6 +218,7 @@ el('src').addEventListener('click',e=>{
   const a=e.target.closest('a[data-m]'); if(a){ el('msel').value=a.dataset.m; drawMerchant(); }
 });
 
+if(D.clicks_from){ el('src-foot').textContent+=' Our click log has merchants from '+day(D.clicks_from)+', so network EPC uses earnings from '+day(D.epc_from)+' on; last month\'s EPC is only there for Amazon until a month of clicks exists. Network earnings of the last days still grow as orders come in.'; }
 // page type table
 const ptT=sum(D.page_types.map(r=>r.this)), ptL=sum(D.page_types.map(r=>r.last_month));
 el('pt').innerHTML='<thead><tr><th>Page type</th><th>So far</th><th>Share</th><th>'+M.last_month_label+'</th><th>Change</th></tr></thead><tbody>'+
@@ -290,8 +294,8 @@ function drawMerchant(){
   const sl=(i,n,W)=>W>=500?i%2===0:i%4===0;
   stacked('mclicks',wl,wt,[m.name],ck,{h:150,aria:'Affiliate clicks per week, '+m.name,showLabel:sl,plain:true,fmt:v=>v==null?'—':Math.round(v).toLocaleString('en-US')+' clicks'});
   stacked('mearn',wl,wt,[m.name],ek,{h:150,aria:'Earnings per week, '+m.name,showLabel:sl});
-  const c=sum(m.clicks), e=sum(m.earnings);
-  el('mstats').innerHTML='<div>Clicks, 13 weeks<b>'+c.toLocaleString('en-US')+'</b></div><div>Earnings, 13 weeks<b>'+usd(e)+'</b></div><div>EPC<b>'+epc(e,c)+'</b></div>';
+  const c=sum(m.clicks), e=sum(m.earnings), ce=sum(m.earnings.map((v,i)=>m.clicks[i]!=null?v:0)), nw=m.clicks.filter(v=>v!=null).length;
+  el('mstats').innerHTML='<div>Clicks, 13 weeks<b>'+(nw?c.toLocaleString('en-US'):'—')+'</b></div><div>Earnings, 13 weeks<b>'+usd(e)+'</b></div><div>EPC'+(nw&&nw<13?' ('+nw+' wk with clicks)':'')+'<b>'+(nw?epc(ce,c):'—')+'</b></div>';
 }
 el('msel').addEventListener('change',drawMerchant);
 draw(); drawMerchant(); let t; addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(()=>{draw();drawMerchant();},120);});
