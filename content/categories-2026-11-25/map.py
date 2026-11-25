@@ -11,7 +11,7 @@ def has(t,*p):
   return False
 LINE=''
 # draft line lists (Ruggero confirms)
-ROAD_MAX=[r'\bbondi\b',r'\bmore\b(?! trail)',r'skyward',r'ghost max',r'glycerin max',r'gaviota',r'paradigm',r'invincible',r'vomero premium',r'magmax',r'hurricane 2[2-9]',r'gliderid?e max',r'cloudsurfer max',r'cloudeclipse',r'neo zen',r'max ?road',r'balos']
+ROAD_MAX=[r'\bbondi\b',r'\bmore\b(?! trail)',r'skyward',r'ghost max',r'glycerin max',r'gaviota',r'paradigm',r'invincible',r'vomero (1[89]|2[0-9]|plus|premium)',r'magmax',r'hurricane 2[2-9]',r'gliderid?e max',r'cloudsurfer max',r'cloudeclipse',r'neo zen',r'max ?road',r'balos']
 RACE_NAMES=[r'adios pro',r'endorphin pro',r'carbon x']
 PERF=[r'superblast',r'megablast',r'hyperion max',r'hyperion tempo',r'mach x',r'\bmach 4\b',r'boston',r'supercomp trainer',r'deviate nitro',r'tempo next',r'evo sl',r'endorphin trainer',r'neo vista',r'switch fwd',r'sonicblast',r'aero burst',r'fresh foam x tempo']
 ROAD_BORDER=[r'nimbus',r'glycerin',r'triumph',r'1080',r'kayano',r'clifton',r'skyflow',r'adistar',r'cloudmonster',r'wave sky',r'vomero',r'endorphin azura',r'arahi']
