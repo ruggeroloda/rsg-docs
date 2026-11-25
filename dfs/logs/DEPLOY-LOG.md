@@ -2,6 +2,12 @@
 
 One entry per change to rsg-dfs, the test bench or the DFS parts of WordPress: date/time UTC, what, why (who asked), commit, checks, rollback. Earlier: `DEPLOY-LOG-STEP6.md`, `DEPLOY-LOG-STEP7.md` (incl. 11 Nov shoe-list sync).
 
+## Pace Athletic AU LIVE — 25 Nov 2026 15:59–16:05 UTC (Ruggero: "deploy to live")
+- Before: production idle, next job 20:00 UTC. Logo `pace-athletic.png` to live `images/merchants/` (scp + chmod 644; md5 = theme `744da10`, now on GitHub `main`).
+- Production: `.env.bak-20261125-pace`, DB `/data/dfs.sqlite.bak-20261125-pace`; `CF_PACE_AU_URL` in `.env`; `git pull` (`1cf691a`) + `up -d --build --force-recreate`; `merchant_logos` Pace Athletic → live URL `?v=20261125`; import pace_au 6,014 rows → 1,352 kept, 58 shoes; `build prices` + push: 58 of 58 pushed, 92 thumbnails, purge 16:03 UTC (log `~/push-20261125-pace.log`).
+- Live check (headless, desktop + phone): Pegasus 42 with country AU "from A$110, previous price A$220, 50 % off at Pace Athletic", logo, links `t.cfjump.com/85747/p/<id>?UniqueId=50267-vs-AU`; Boston 13 AU men RW AU + adidas AU; US box unchanged (Zappos from $87). Change log row 151.
+- Rollback: `UPDATE feeds SET enabled=0 WHERE feed='pace_au'` + build (pushes); `.env.bak-20261125-pace`; `git checkout 5053985` + compose.
+
 ## Pace Athletic AU (Commission Factory) — test bench + staging, 25 Nov 2026 14:25–15:55 UTC (Ruggero: "shall we add it to Australia", "can we add it to the DFS?", "go step 2", staging "yes!")
 - Code `4563683` (reader: JSON feeds via `format.json_items`; feeds screen shows "JSON"; edit screen keeps the setting; SEED feed `pace_au`, added by `_migrate_7`) + `1cf691a` (logo tool name). Feed: API data feed 11571, `Price` = list (`PriceRrp`), `PriceSale` = selling price, name cut at " / ", shoes by `Category` (trainers/shoes/track & field), gender from `Gender`, sub-ID `UniqueId`, import 12:40 UTC (feed refreshed ~11:40 UTC).
 - Test bench: backups `.env.bak-20261125-pace`, `dfs.sqlite.bak-20261125-pace`; `CF_PACE_AU_URL` in `.env`; rsync + `up -d --build --force-recreate`. First import 6,014 rows → 1,352 kept, 58 shoes; RW AU + adidas AU re-imported (test bench data was from 15 Nov); `build prices` pushed all 429 to staging (test bench push is on; 111 thumbnails; purge done).
