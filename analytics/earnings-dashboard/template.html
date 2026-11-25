@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>RSG earnings</title>
+<style>
+:root{
+  color-scheme:light;
+  --page:#f9f9f9; --surface:#ffffff; --ink:#191919; --ink-2:#666666;
+  --grid:#e7e7e7; --axis:#c2c2c2; --ring:rgba(11,11,11,.10);
+  --up:#006c10; --down:#b3261e;
+  --s1:#257de0; --s2:#f47230; --s3:#00b894; --s4:#f2a600; --s5:#ee7fac; --s6:#008a17;
+  --tip:#191919; --tip-ink:#ffffff;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    color-scheme:dark;
+    --page:#0b0b0b; --surface:#191919; --ink:#efefef; --ink-2:#9c9c9c;
+    --grid:#303030; --axis:#474747; --ring:rgba(255,255,255,.10);
+    --up:#53c556; --down:#f07070;
+    --s1:#338ced; --s2:#e76624; --s3:#00a888; --s4:#d28e05; --s5:#e24d8b; --s6:#0aac23;
+    --tip:#efefef; --tip-ink:#191919;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);
+  font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1120px;margin:0 auto;padding:24px 20px 48px}
+header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 16px;margin-bottom:16px}
+h1{font-size:20px;margin:0;font-weight:600}
+h2{font-size:15px;margin:0 0 2px;font-weight:600}
+.sub{color:var(--ink-2);font-size:13px}
+.sample{background:#fff4d6;color:#5c4300;border-radius:8px;padding:8px 12px;margin-bottom:16px;font-size:13px}
+@media (prefers-color-scheme:dark){.sample{background:#3a2f10;color:#f5dc9a}}
+.card{background:var(--surface);border-radius:12px;box-shadow:0 0 0 1px var(--ring);padding:18px 20px;margin-bottom:16px}
+.grid{display:grid;gap:16px}
+.top{grid-template-columns:1.4fr 1fr}
+@media (max-width:760px){.top{grid-template-columns:1fr} main{padding:16px 12px 40px} .card{padding:16px}}
+.hero{font-size:52px;font-weight:600;line-height:1.05;margin:6px 0 10px;letter-spacing:-.01em}
+.deltas{display:flex;flex-wrap:wrap;gap:6px 20px}
+.delta{font-size:13px;color:var(--ink-2)}
+.delta b{font-weight:600}
+.up{color:var(--up)} .down{color:var(--down)}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile .label{color:var(--ink-2);font-size:13px}
+.tile .value{font-size:22px;font-weight:600}
+.tile .note{color:var(--ink-2);font-size:12px}
+.cov{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--ink-2)}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;margin:10px 0 6px;font-size:12px;color:var(--ink-2)}
+.sw{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.chart{position:relative}
+.chart svg{display:block;width:100%;overflow:visible}
+.chart text{fill:var(--ink-2);font-size:11px;font-variant-numeric:tabular-nums}
+.tip{position:absolute;pointer-events:none;background:var(--tip);color:var(--tip-ink);border-radius:8px;
+  padding:8px 10px;font-size:12px;min-width:150px;opacity:0;transition:opacity .08s;z-index:2}
+.tip .r{display:flex;justify-content:space-between;gap:12px;font-variant-numeric:tabular-nums}
+.tip .t{font-weight:600;margin-bottom:4px}
+.tip .tot{border-top:1px solid rgba(127,127,127,.4);margin-top:4px;padding-top:4px;font-weight:600}
+.foot{color:var(--ink-2);font-size:12px;margin-top:6px}
+.tw{overflow-x:auto;margin:8px -4px 0}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:13px}
+th,td{padding:7px 8px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--grid)}
+th{color:var(--ink-2);font-weight:500;font-size:12px}
+th:first-child,td:first-child{text-align:left;position:sticky;left:0;background:var(--surface)}
+tfoot td{font-weight:600;border-bottom:0}
+td .n{color:var(--ink-2);font-size:11px;display:block}
+.na{color:var(--ink-2)}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>RSG earnings</h1>
+    <span class="sub" id="generated"></span>
+  </header>
+  <div class="sample" id="sample-note" hidden>Sample numbers: layout only, not real earnings.</div>
+
+  <section class="grid top">
+    <div class="card">
+      <h2 id="mtd-title">This month so far</h2>
+      <div class="sub" id="mtd-sub"></div>
+      <div class="hero" id="mtd-total"></div>
+      <div class="deltas" id="mtd-deltas"></div>
+    </div>
+    <div class="card">
+      <div class="tiles" id="tiles"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Day by day this month</h2>
+    <div class="sub">Earnings per day by source, US dollars</div>
+    <div class="legend" id="daily-legend"></div>
+    <div class="chart" id="daily"></div>
+    <div class="foot">Amazon has no daily figures (weekly downloads): it is in the month totals and the table, not here.</div>
+  </section>
+
+  <section class="card">
+    <h2>By source, this month so far</h2>
+    <div class="sub" id="src-sub"></div>
+    <div class="tw"><table id="src"></table></div>
+  </section>
+
+  <section class="card">
+    <h2>Last 13 months</h2>
+    <div class="sub">Earnings per month by source, US dollars; the current month is so far</div>
+    <div class="legend" id="monthly-legend"></div>
+    <div class="chart" id="monthly"></div>
+  </section>
+
+  <section class="card">
+    <h2>By page type, this month so far</h2>
+    <div class="sub">Where the earnings came from on the site</div>
+    <div class="tw"><table id="pt"></table></div>
+  </section>
+
+  <section class="card">
+    <h2>Data through</h2>
+    <ul class="cov" id="cov"></ul>
+  </section>
+</main>
+
+<!-- The nightly job replaces the contents of this block with the real numbers (same shape). -->
+<script type="application/json" id="rsg-data">__DATA__</script>
+
+<script>
+(function(){
+const D = JSON.parse(document.getElementById('rsg-data').textContent);
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const COLOR = {}; D.sources.forEach((s,i)=>COLOR[s]='var(--s'+(i+1)+')');
+const usd = v => v==null ? '—' : '$'+Math.round(v).toLocaleString('en-US');
+const usd2 = v => v==null ? '—' : '$'+v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+const day = s => { const d=new Date(s+'T00:00:00Z'); return d.toLocaleDateString('en-GB',{day:'numeric',month:'short',timeZone:'UTC'}); };
+const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const sum = a => a.reduce((x,y)=>x+(y||0),0);
+function delta(a,b){
+  if(!b) return '<span class="na">—</span>';
+  const p=(a-b)/b*100, up=p>=0;
+  if(Math.abs(p)<0.5) return '<b class="na">0%</b>';
+  return '<b class="'+(up?'up':'down')+'">'+(up?'▲ +':'▼ −')+Math.abs(p).toFixed(0)+'%</b>';
+}
+const el = id => document.getElementById(id);
+
+// header
+el('generated').textContent = 'Updated '+new Date(D.generated).toLocaleString('en-GB',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'Europe/Amsterdam'});
+if(D.sample) el('sample-note').hidden=false;
+
+// month to date
+const M=D.month, tot=sum(D.mtd.map(r=>r.this)), lm=sum(D.mtd.map(r=>r.last_month)), ly=sum(D.mtd.map(r=>r.last_year));
+el('mtd-title').textContent = M.label+' so far';
+el('mtd-sub').textContent = '1–'+day(M.through)+', all sources, US dollars';
+el('mtd-total').textContent = usd(tot);
+el('mtd-deltas').innerHTML =
+  '<span class="delta">'+delta(tot,lm)+' vs '+M.last_month_label+' ('+usd(lm)+')</span>'+
+  '<span class="delta">'+delta(tot,ly)+' vs '+M.last_year_label+' ('+usd(ly)+')</span>';
+
+const pend=sum(D.mtd.map(r=>r.pending)), conf=sum(D.mtd.map(r=>r.confirmed));
+const daysDone=+M.through.slice(8,10), pace=tot/daysDone*M.days_in_month;
+const best=D.mtd.slice().sort((a,b)=>b.this-a.this)[0];
+el('tiles').innerHTML = [
+  ['Per day so far',usd(tot/daysDone),daysDone+' days'],
+  ['Month end at this pace',usd(pace),'straight line, no Black Friday bump'],
+  ['Pending',usd(pend),'networks that report status'],
+  ['Confirmed',usd(conf),'approved / locked'],
+].map(t=>'<div class="tile"><div class="label">'+t[0]+'</div><div class="value">'+t[1]+'</div><div class="note">'+t[2]+'</div></div>').join('');
+
+// source table
+el('src-sub').textContent = 'Compared with the same days of last month and last year';
+el('src').innerHTML =
+  '<thead><tr><th>Source</th><th>So far</th><th>'+M.last_month_label+'</th><th>Change</th><th>'+M.last_year_label+'</th><th>Change</th><th>Pending</th><th>Confirmed</th></tr></thead><tbody>'+
+  D.mtd.map(r=>'<tr><td><span class="sw" style="background:'+COLOR[r.source]+'"></span>'+r.source+(r.note?'<span class="n">'+r.note+'</span>':'')+'</td><td>'+usd2(r.this)+'</td><td>'+usd(r.last_month)+'</td><td>'+delta(r.this,r.last_month)+'</td><td>'+usd(r.last_year)+'</td><td>'+delta(r.this,r.last_year)+'</td><td>'+usd(r.pending)+'</td><td>'+usd(r.confirmed)+'</td></tr>').join('')+
+  '</tbody><tfoot><tr><td>Total</td><td>'+usd2(tot)+'</td><td>'+usd(lm)+'</td><td>'+delta(tot,lm)+'</td><td>'+usd(ly)+'</td><td>'+delta(tot,ly)+'</td><td>'+usd(pend)+'</td><td>'+usd(conf)+'</td></tr></tfoot>';
+
+// page type table
+const ptT=sum(D.page_types.map(r=>r.this)), ptL=sum(D.page_types.map(r=>r.last_month));
+el('pt').innerHTML='<thead><tr><th>Page type</th><th>So far</th><th>Share</th><th>'+M.last_month_label+'</th><th>Change</th></tr></thead><tbody>'+
+  D.page_types.map(r=>'<tr><td>'+r.type+'</td><td>'+usd(r.this)+'</td><td>'+(r.this/ptT*100).toFixed(0)+'%</td><td>'+usd(r.last_month)+'</td><td>'+delta(r.this,r.last_month)+'</td></tr>').join('')+
+  '</tbody><tfoot><tr><td>Total</td><td>'+usd(ptT)+'</td><td>100%</td><td>'+usd(ptL)+'</td><td>'+delta(ptT,ptL)+'</td></tr></tfoot>';
+
+// coverage
+el('cov').innerHTML = D.coverage.map(c=>'<li><span class="sw" style="background:'+COLOR[c.source]+'"></span>'+c.source+': '+day(c.through)+(c.note?' ('+c.note+')':'')+'</li>').join('');
+
+// legends
+const legend=(id,names)=>el(id).innerHTML=names.map(n=>'<span><span class="sw" style="background:'+COLOR[n]+'"></span>'+n+'</span>').join('');
+
+// stacked columns
+function niceMax(v){ if(v<=0) return 10; const p=Math.pow(10,Math.floor(Math.log10(v))), f=v/p; return (f<=1?1:f<=2?2:f<=2.5?2.5:f<=5?5:10)*p; }
+function stacked(id,labels,tipLabels,names,series,opt){
+  const box=el(id); box.innerHTML='';
+  const W=box.clientWidth, H=opt.h||220, L=44, R=6, T=8, B=24;
+  const n=labels.length, band=(W-L-R)/n, bw=Math.min(24,band*0.62);
+  const totals=labels.map((_,i)=>sum(names.map(s=>series[s][i])));
+  const max=niceMax(Math.max(...totals)), y=v=>T+(H-T-B)*(1-v/max);
+  const NS='http://www.w3.org/2000/svg';
+  let s='<svg xmlns="'+NS+'" viewBox="0 0 '+W+' '+H+'" height="'+H+'" role="img" aria-label="'+opt.aria+'">';
+  for(let k=0;k<=4;k++){ const v=max*k/4, yy=y(v);
+    s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+yy+'" y2="'+yy+'" stroke="'+(k?css('--grid'):css('--axis'))+'" stroke-width="1"/>';
+    s+='<text x="'+(L-6)+'" y="'+(yy+4)+'" text-anchor="end">'+(v>=10000?'$'+(v/1000)+'K':'$'+v.toLocaleString('en-US'))+'</text>'; }
+  labels.forEach((lab,i)=>{
+    const cx=L+band*i+band/2, x=cx-bw/2;
+    let base=y(0); const segs=names.map(nm=>[nm,series[nm][i]||0]).filter(a=>a[1]>0);
+    segs.forEach(([nm,v],j)=>{
+      const h=y(0)-y(v), top=base-h, last=j===segs.length-1;
+      const gap=j>0?2:0, hh=Math.max(0,h-gap);
+      if(hh<=0){ base=top; return; }
+      const r=last?Math.min(4,hh,bw/2):0, yt=top, yb=base-gap;
+      s+='<path fill="'+COLOR[nm]+'" d="M'+x+','+yb+'V'+(yt+r)+(r?'Q'+x+','+yt+' '+(x+r)+','+yt+'H'+(x+bw-r)+'Q'+(x+bw)+','+yt+' '+(x+bw)+','+(yt+r):'H'+(x+bw))+'V'+yb+'Z"/>';
+      base=top; });
+    if(opt.showLabel(i,n,W)) s+='<text x="'+cx+'" y="'+(H-6)+'" text-anchor="middle">'+lab+'</text>';
+    s+='<rect data-i="'+i+'" x="'+(L+band*i)+'" y="'+T+'" width="'+band+'" height="'+(H-T-B)+'" fill="transparent" tabindex="0"/>';
+  });
+  s+='</svg><div class="tip"></div>';
+  box.innerHTML=s;
+  const tip=box.querySelector('.tip');
+  function show(e){ const i=+e.target.dataset.i;
+    const rows=names.filter(nm=>series[nm][i]!=null).map(nm=>'<div class="r"><span><span class="sw" style="background:'+COLOR[nm]+'"></span>'+nm+'</span><span>'+usd2(series[nm][i])+'</span></div>').join('');
+    tip.innerHTML='<div class="t">'+tipLabels[i]+'</div>'+(rows||'<div class="r">no data yet</div>')+(rows?'<div class="r tot"><span>Total</span><span>'+usd2(totals[i])+'</span></div>':'');
+    const bx=box.getBoundingClientRect(), r=e.target.getBoundingClientRect();
+    let left=r.left-bx.left+r.width/2+10; if(left+170>bx.width) left=r.left-bx.left+r.width/2-180;
+    tip.style.left=Math.max(0,left)+'px'; tip.style.top='0px'; tip.style.opacity=1; }
+  box.querySelectorAll('rect[data-i]').forEach(r=>{ r.addEventListener('mouseenter',show); r.addEventListener('focus',show); r.addEventListener('click',show); });
+  box.addEventListener('mouseleave',()=>tip.style.opacity=0);
+}
+
+const dailyNames=D.sources.filter(s=>D.daily.series[s]);
+function draw(){
+  const dd=D.daily.dates;
+  stacked('daily', dd.map(d=>String(+d.slice(8))), dd.map(day), dailyNames, D.daily.series,
+    {aria:'Earnings per day this month by source', showLabel:(i,n,W)=>{const d=i+1; return W<500? (d===1||d%7===0) : (d===1||d%5===0);}});
+  const mm=D.monthly.months;
+  stacked('monthly', mm.map(m=>MON[+m.slice(5)-1]+(m.endsWith('-01')?" '"+m.slice(2,4):'')), mm.map((m,i)=>MON[+m.slice(5)-1]+' '+m.slice(0,4)+(i===mm.length-1?' (so far)':'')), D.sources, D.monthly.series,
+    {aria:'Earnings per month by source, last 13 months', showLabel:(i,n,W)=>W>=500||i%2===0||i===n-1});
+}
+legend('daily-legend',dailyNames); legend('monthly-legend',D.sources);
+draw(); let t; addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(draw,120);});
+})();
+</script>
+</body>
+</html>
