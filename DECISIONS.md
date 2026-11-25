@@ -377,3 +377,4 @@ Dated, one line each, in date order (newest at the bottom). A line that was late
 - 2026-11-25 — **Reviewer reminders and the Sunday Weekly Digest off** (Ruggero, in Airtable). `automations/RUNBOOK.md`.
 - 2026-11-25 — **Scraper updater skips IGNORE SHOE rows** (Ruggero) and can check named rows (`--ids`); 2026 backfill down from 220 to 12 rows. `automations/rw-scraper/README.md`.
 - 2026-11-25 — **Pace Athletic (Commission Factory) as the multi-brand AU shop** (Ruggero: "shall we add it to Australia"): Commission Factory feeds are JSON only, so the DFS reader got a generic JSON option instead of shop code; test bench + staging done, live needs "deploy to live". `dfs/RUNBOOK.md` item 7.
+- 2026-11-25 — **Amazon re-download of a period replaces the file; the earlier file moves to `data-drops/amazon/superseded/`** (Claude, weekly routine): week 16–22 Nov reloaded, $126.01 → $170.23. `analytics/REVENUE-DATA-2026-11-23.md`.
