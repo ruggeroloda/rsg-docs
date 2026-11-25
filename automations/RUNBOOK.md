@@ -23,6 +23,9 @@ Active (every 3 h unless noted):
 
 Accounting, inactive, **run by hand for taxes** (keep Make until ported): "RSGMEDIA - Airtable to Outgoing Invoices" (3203531), "CREATE INCOMING FROM AIRTABLE" (3211518), "Create Outgoing Invoices" (2976810); older bank-file scenarios (ABN/ICS/PayPal from Airtable/Dropbox) superseded by n8n. 25 other inactive scenarios (social/Buffer, GPT comments, old WordPress integrations, tests); 9 of them read the removed `custom_fields` REST block (see below).
 
+## Running Warehouse scraper (home server)
+New shoe models, stock photos and specs into Airtable "Running Shoes": two Python scripts on the OptiPlex, code and runbook in `rw-scraper/` (fixed 25 Nov 2026: specs read again, no more 999, token out of the code, alarm ready).
+
 ## WordPress API for automations
 - Every field of every post under `acf` on `/wp-json/wp/v2/<type>/<id>` (reviews road/trail/training/gps, legacy review/gps, comparisons, guides, top lists, posts, pages, users, shoe families). Stored values by default; `?acf_format=standard` for formatted ones; `<name>_source` = label/type/formatted value.
 - Writing: `{"acf": {"vote": 8, "pros": [{"pro_line": "…"}]}}` in a create/update call stores values with their field references (no wp-admin save needed).
