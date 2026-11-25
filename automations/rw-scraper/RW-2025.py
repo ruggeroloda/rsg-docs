@@ -5,10 +5,10 @@ metadata_updater.py fills them later.
 """
 import re
 import sys
+import time
 import traceback
 from collections import defaultdict
 
-import requests
 from bs4 import BeautifulSoup
 from pyairtable import Table
 
@@ -40,11 +40,19 @@ def main():
             model_set.add(name.strip().lower())
     print(f"Found {len(model_set)} existing shoe models in Airtable.")
 
-    res = requests.get(ARRIVALS_URL, timeout=30)
-    soup = BeautifulSoup(res.text, 'html.parser')
+    # The list is read with the browser: plain requests get HTTP 406 (seen 25 Nov 2026).
+    driver = rw.make_driver()
+    try:
+        driver.get(ARRIVALS_URL)
+        time.sleep(5)
+        soup = BeautifulSoup(driver.page_source, 'html.parser')
+    except Exception:
+        driver.quit()
+        raise
     shoe_links = [a['href'] for a in soup.select('div.cattable-wrap-cell-imgwrap a[href]')]
     if not shoe_links:
-        rw.ping(False, f"new arrivals page gave no shoe links (HTTP {res.status_code}): page changed or blocked")
+        driver.quit()
+        rw.ping(False, "new arrivals page gave no shoe links: page changed or blocked")
         return 1
 
     new_models = defaultdict(list)
@@ -57,10 +65,10 @@ def main():
             new_models[model_name].append(link)
     print(f"Found {len(new_models)} new shoe models to scrape.")
     if not new_models:
+        driver.quit()
         return 0
 
     created, failed = 0, []
-    driver = rw.make_driver()
     try:
         for model_name, links in new_models.items():
             print(f"\n--- Scraping new model: {model_name} ---")

@@ -4,7 +4,7 @@ Cron on the OptiPlex, 12:00. Re-visits the Running Warehouse page of every row
 created in the last 8 weeks that lacks a spec, a characteristic or the description.
 
   --since 2026-01-01   look back to a date instead of 8 weeks (one-off backfill)
-  --limit 20           stop after N pages
+  --limit 20           stop after N pages (default 15 per run)
   --dry-run            show what would be written, write nothing
 """
 import argparse
@@ -19,6 +19,7 @@ from pyairtable import Table
 import rw_common as rw
 
 PLACEHOLDER_DESC = "Description not available."
+MAX_PAGES_PER_RUN = 15
 
 
 def missing_fields(fields):
@@ -58,8 +59,9 @@ def main():
             todo.append({'id': record['id'], 'url': fields['Shoe URL'], 'missing': missing,
                          'name': fields.get('Brand + Shoe Name', 'Unknown Shoe')})
     random.shuffle(todo)
-    if args.limit:
-        todo = todo[:args.limit]
+    # Running Warehouse stops answering after ~40 pages in a few minutes (25 Nov 2026): stay well below.
+    limit = args.limit or MAX_PAGES_PER_RUN
+    todo = todo[:limit]
     print(f"{len(todo)} rows since {cutoff.date()} with something missing.")
 
     # Canary: the newest row that has all four specs must still parse, otherwise the page changed.
@@ -80,7 +82,7 @@ def main():
                   f"{'page did not load' if canary_result is None else str(canary_result) + ' of 4 specs read'}")
 
         for row in todo:
-            time.sleep(random.uniform(2, 5))
+            time.sleep(random.uniform(20, 40))
             page = rw.load_product_page(driver, row['url'])
             if page is None:
                 print(f"{row['name']}: page did not load")
