@@ -1,6 +1,6 @@
 # Roadmap
 
-_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-25 16:10 UTC (Amazon 24 Nov tag check; earnings dashboard template; Amazon week 16–22 Nov reloaded; earlier: Pace Athletic AU on test bench + staging, live pending; earlier: review inserts n8n flow tested on staging, switch 1 Dec; Running Shoes cleaned up to 6 shoes; reviewer reminders off; scraper skips IGNORE)._
+_Open work only, in priority order. Done items leave this file (they are in `DECISIONS.md`; older done lists: `_archive/ROADMAP-until-2026-11-11.md`). Last updated 2026-11-25 16:10 UTC (Amazon 24 Nov tag check; earnings dashboard template; Amazon week 16–22 Nov reloaded; Pace Athletic AU live 16:03 UTC; earlier: review inserts n8n flow tested on staging, switch 1 Dec; Running Shoes cleaned up to 6 shoes; reviewer reminders off; scraper skips IGNORE)._
 
 ## Dated, up to Black Friday (Fri 27 Nov; Cyber Monday 30 Nov)
 | When | Item | Area | Next step |
