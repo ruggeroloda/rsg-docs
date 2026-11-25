@@ -28,7 +28,7 @@ Edit here, commit, then copy the three `.py` files to `~/code/RW-info/` (scp) an
 - Spec format on the page since 2025: `<li><strong>Weight:</strong><span> 10.7 oz | 303 g</span></li>` in `#product_sizing` (labels Weight, Heel Stack, Forefoot Stack, Heel-Toe Offset).
 
 ## Open
-0. 25 Nov 09:30: Running Warehouse does not answer the OptiPlex's browser after the fast backfill (30 of 219 rows of 2026 done). Re-test with one page before the next run; then backfill 15 rows a day. Plain requests (no browser) get HTTP 406, so the arrivals list is now read with the browser too; new rows had stopped on 14 Nov.
+0. Backfill of the 2026 rows: Running Warehouse answered again by 12:00 on 25 Nov (noon run at the slow pace: 14 of 15 pages loaded, 10 rows updated). The noon job only looks back 8 weeks, so a **temporary cron line** (15:30 daily, `--since 2026-01-01`, 15 pages, log `logs/backfill.log`) finishes the older rows in about two weeks: remove it when the log says 0 rows. The rewritten new-arrivals script (list read through the browser) has its first run at 18:00 on 25 Nov: check `logs/new-arrivals.log`.
 1. `HC_URL` is empty until Ruggero creates the healthchecks.io check `rsg-scraper` (period 1 day, grace 12 h).
 2. Rows from 2023–2025 still carrying 999 (250, of which 82 published) are not backfilled; many pages are gone.
 3. EUR / AUD launch prices: Running Warehouse Europe and Australia use other page addresses than the US site (US link answers 404 there). Proposed source: the RW EU / RW AU feeds the price engine downloads nightly, retried until the model appears. Not built.
