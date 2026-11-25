@@ -39,6 +39,7 @@ def main():
     parser.add_argument('--since')
     parser.add_argument('--limit', type=int)
     parser.add_argument('--dry-run', action='store_true')
+    parser.add_argument('--ids', help='comma-separated Airtable record IDs: check only these rows, any age')
     args = parser.parse_args()
 
     token = rw.load_env()
@@ -52,7 +53,12 @@ def main():
     todo = []
     for record in all_records:
         fields = record['fields']
-        if created(record) < cutoff or not fields.get('Shoe URL'):
+        if args.ids:
+            if record['id'] not in args.ids.split(','):
+                continue
+        elif created(record) < cutoff or fields.get('Status') == 'IGNORE SHOE':
+            continue  # ignored shoes are never checked (Ruggero 25 Nov 2026); --ids still reaches them
+        if not fields.get('Shoe URL'):
             continue
         missing = missing_fields(fields)
         if missing:
@@ -121,7 +127,7 @@ def main():
     if len(todo) >= 5 and loaded == 0:
         rw.ping(False, "no product page loaded (blocked?). " + message)
         return 1
-    if not args.dry_run and not args.since:
+    if not args.dry_run and not args.since and not args.ids:
         rw.ping(True, message)
     else:
         print(message)

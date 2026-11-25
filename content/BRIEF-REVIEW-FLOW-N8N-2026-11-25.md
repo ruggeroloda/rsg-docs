@@ -1,5 +1,7 @@
 # Brief for a new chat: review inserts from Make to n8n (25 Nov 2026)
 
+**Status 25 Nov 16:00: steps 1–3 done** (flow built, tested on staging for road, trail, training; plus RW-only link tag, no author guess, gallery filled: `../automations/review-flow/README.md`). **Step 4 waits for Ruggero's "deploy to live", planned Tue 1 Dec** (reminder set). Changed from this brief: tests read an existing record and write nothing to Airtable, because a new record in "Shoe Reviews" fires the "When Review received change Status" automation (no "Ready to Publish" copy); nothing Make sent is dropped (Ruggero). Step 5 not started.
+
 **Goal:** one workflow on the self-hosted n8n (rsgmedia) replaces Make's "Insert Road Shoe" (637210), "Insert Trail Shoe" (718279), "Insert Training Shoe" (1664888). Then "New Review → Save Pictures on DropBox" (633722). Ruggero wants this now.
 
 **Read first:** `content/REVIEW-PROCESS-2026-11-25.md` (how it works, direction agreed), `automations/RUNBOOK.md`, `automations/make-migration/README.md` (March analysis: the 11 steps, the three differences, the field names; its Cloudinary image plan and "top-level fields" finding are **outdated**: photos stay manual, and fields are written through the `acf` block since 11 Nov).
