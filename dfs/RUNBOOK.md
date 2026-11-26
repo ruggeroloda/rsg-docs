@@ -81,7 +81,7 @@ A slot runs up to 3 h late (scheduler thread checks every 15 s); a failed run re
 - **Kept for:** raw feed files 3 days; Amazon ASIN without a price drops out after 7 days; price history 730 days (since 7 Nov); WordPress click and view logs (`newguru_wp_rsg_clicks`, `newguru_wp_rsg_views`) **no limit yet** (ROADMAP "DFS simplification").
 - **Server upkeep:** unattended **security** updates only, reboot 04:30 if needed; UFW allows only 2222; fail2ban (sshd); container reaches the internet only (`dfs-firewall.service`). No Hetzner Cloud Firewall.
 
-## Rules in force (date = line in `../DECISIONS.md`)
+## Rules in force (date = line in `../DECISIONS.md`; before 18 Nov: `../_archive/DECISIONS-until-2026-11-17.md`)
 - Countries, merchants and shoes are configuration; scope comes from intent, not past revenue (5–6 Nov). Every published review with a `ds_query` started active; dead ones are switched off by hand ("no offers" flag) (6 Nov).
 - One container: Flask screens + scheduler thread (one job at a time) + SQLite. No n8n inside DFS, no Cloudflare dependency of its own (4, 7 Nov).
 - Prices live in WordPress post meta `_rsg_prices`, written only through the narrow REST route by the low-privilege user, via `update_post_meta` (modified date untouched); 16 KB cap, strict validation (6–7 Nov).

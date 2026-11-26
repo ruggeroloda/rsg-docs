@@ -44,7 +44,7 @@ Not backed up: the DFS test bench volume `dfs_data` (production has its own back
 - **NPM:** disabling a proxy host in the DB doesn't remove its conf file: check `proxy_host/*.conf`.
 - Site check URLs: `/etc/rsg-site-check.url` + `/etc/rsg-php-check.url` (root, 600; previous script `/usr/local/bin/rsg-site-check.sh.bak-20261114`; 24 Nov: WordPress db backup size check added, previous `.bak-20261124`; 24 Nov (2): old review + article check added, previous `.bak-20261124b`; 24 Nov (3): revenue-load staleness in `rsg-umami`, previous `.bak-20261124c`; server = repo, md5 `8b056f3a…`); PHP-error endpoint token `/etc/rsg-site-check.token` (root, 600, since 12 Nov; previous script `/usr/local/bin/rsg-site-check.sh.bak-20261112`). Test `sudo DRYRUN=1 /usr/local/bin/rsg-site-check.sh`.
 
-## Rules in force (date = line in `../../DECISIONS.md`)
+## Rules in force (date = line in `../../DECISIONS.md`; before 18 Nov: `../../_archive/DECISIONS-until-2026-11-17.md`)
 - SSH key only on 2222, no Tailscale dependency; one standing Claude key (6 Nov).
 - Only 80/443/2222 open; admin tools private through the tunnel; n8n public with 2FA (OAuth, webhooks) (6 Nov).
 - Secrets in `.env`, never inline (6 Nov). n8n pinned, upgrades on purpose after a backup (5 Nov).

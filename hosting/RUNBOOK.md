@@ -57,7 +57,7 @@ Run all of it right after Rocket.net (or we) change the server, and again ~1 h l
 ## Old Linode (until DFS Phase F)
 "DFS-PERFORMANCE", Linode 4 GB ($24 + $5 backups), Ubuntu 18.04, `45.33.39.133`, SSH port 2200 (`../dfs/DFS-ACCESS.md`, read-only unless agreed). Feeds nothing since 10 Nov; `dstudio` on live still calls it hourly. Phase F (from ~17 Nov, `../dfs/PLAN-STEP7.md`): confirm no callers 7 days, `/go/` stub, deactivate `dstudio`, power off 1 week, cancel; remove the Linode Managed monitor (~3.4k hits/day on the site) and the `dfs-mon` cron.
 
-## Rules in force (date = line in `../DECISIONS.md`)
+## Rules in force (date = line in `../DECISIONS.md`; before 18 Nov: `../_archive/DECISIONS-until-2026-11-17.md`)
 - Stay on Rocket.net; Business yearly, no storage add-on (agreed 11 Nov, in place 12 Nov); geo rule off (11 Nov).
 - Keep ad-industry and search/AI crawlers; block/challenge only scrapers and low-value bots (5–6 Nov).
 - Off-server backups go to Google Drive `Server-Backups/<type>/<source>/` (until 11 Nov: `Backups/`), age-encrypted (one key pair, private key never on a server); Dropbox/OneDrive not used (5 Nov). WordPress copy outside Rocket.net on Drive (11 Nov).

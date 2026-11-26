@@ -41,7 +41,7 @@ New shoe models, stock photos and specs into Airtable "Running Shoes": two Pytho
 ## Bank import (the reason n8n Cloud still exists)
 Statement files (ABN AMRO, ICS, PayPal) are downloaded by Ruggero, uploaded to the accounting Airtable, and n8n Cloud parses them into Airtable. No bank logins anywhere. The self-hosted copy ("RSG — Full Import", id `Y68pvr7eFguKWXzo`) failed when migrated. Next: export of the working Cloud flow + what failed → diff, fix, run both on the same month, compare rows → cancel n8n Cloud after a month (ROADMAP "Bank import").
 
-## Rules in force (date = line in `../DECISIONS.md`)
+## Rules in force (date = line in `../DECISIONS.md`; before 18 Nov: `../_archive/DECISIONS-until-2026-11-17.md`)
 - One automation platform in the end: self-hosted n8n. Cancel n8n Cloud after the bank import runs on Hetzner; Make stays until accounting + shoe inserts are ported (not urgent) (5 Nov).
 - No bank logins on any server; the bank import stays file-based (11 Nov).
 - Every post field available through the REST API (`acf`) for automations (11 Nov).
