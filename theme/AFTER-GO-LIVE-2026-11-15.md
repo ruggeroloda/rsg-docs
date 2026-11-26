@@ -1,6 +1,6 @@
 # Reskin — after go-live (15 Nov 2026)
 
-_Reskin live since 15 Nov 2026 14:30 UTC (`4ac5ef4`, tag `live-20261115-143049`). Rollback point `live-20261115-103600`: `GO-LIVE-PLAN-2026-11-15.md`. The old-article prune (D5) waits until ~22 Nov so this week's numbers can be read on their own._
+_Reskin live since 15 Nov 2026 14:30 UTC (`4ac5ef4`, tag `live-20261115-143049`). Rollback point `live-20261115-103600`: `archive/GO-LIVE-PLAN-2026-11-15.md`. The old-article prune (D5) waits until ~22 Nov so this week's numbers can be read on their own._
 
 ## Watch over the next 7 days (to ~22 Nov)
 **Search Console**

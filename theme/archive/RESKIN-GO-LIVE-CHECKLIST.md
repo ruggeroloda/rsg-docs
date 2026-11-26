@@ -1,6 +1,6 @@
 # Reskin — pre-go-live checklist (started 15 Nov 2026)
 
-_**Live since 15 Nov 2026 14:30 UTC** (`4ac5ef4`, tag `live-20261115-143049`; Ruggero: "deploy to live"). Plan, results, rollback: `GO-LIVE-PLAN-2026-11-15.md`. [x] done, [~] moved to after go-live (Ruggero's go/no-go, 15 Nov), [ ] still open. Project copy: `theme/RESKIN-GO-LIVE-CHECKLIST.md`._
+_**Live since 15 Nov 2026 14:30 UTC** (`4ac5ef4`, tag `live-20261115-143049`; Ruggero: "deploy to live"). Plan, results, rollback: `GO-LIVE-PLAN-2026-11-15.md`. [x] done, [~] moved to after go-live (Ruggero's go/no-go, 15 Nov), [ ] still open. Project copy: `theme/archive/RESKIN-GO-LIVE-CHECKLIST.md`._
 
 ## Content / SEO
 - [~] **Menu links cleanup** (Ruggero, 15 Nov): since step 2 the mega-menu is printed in every page, so all its links are sitewide links Google now sees (before, panels loaded on hover and Googlebot never saw them). 46 of the 95 targets are new to Google's view of the menu: brand guides, 2018/2019 posts, "2024" guides, old watches (Suunto Ambit 3, Forerunner 645 …). Draft a keep/cut/replace list → Ruggero decides → edit the mega menus (content, not code). — **after go-live** (editorial keep/cut; all 92 header/footer links are 200 + indexable + self-canonical except `/privacy-policy/` noindex on purpose and `/reviews/gps/`, see below)

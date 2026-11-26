@@ -1,10 +1,10 @@
 # Cost register
 
-_Every recurring RSG cost, now vs target. "?" = unknown, fill from the bank transactions in Airtable or the invoice. Last updated 2026-11-17._
+_Every recurring RSG cost, now vs target. "?" = unknown, fill from the bank transactions in Airtable or the invoice. Last updated 2026-11-26._
 
 | Item | Provider | Now /mo | Target /mo | Status |
 |---|---|---|---|---|
-| WordPress hosting (Managed Business, yearly) | Rocket.net | **$83** ($1,000/yr) | $83 | ✅ Moved 12 Nov (ticket 122395): $1,000 charged on 25 Nov 2026; rules unchanged; bandwidth under the plan's 300 GB. Was custom Expert ~$370 |
+| WordPress hosting (Managed Business, yearly) | Rocket.net | **$83** ($1,000/yr) | $83 | ✅ Moved 12 Nov (ticket 122395): $1,000 paid 25 Nov 2026 (invoice 257331, to 24 Nov 2027; no credit for the unused Expert time, let go 26 Nov); rules unchanged; bandwidth under the plan's 300 GB. Was custom Expert ~$370 |
 | Old DFS server (Linode 4 GB) + backups | Akamai/Linode | $29 ($24 + $5) | $0 | New DFS live 10 Nov; cancel in Phase F (from ~17 Nov) |
 | Volume "stagingBackups" | Akamai/Linode | $0 (was $9.60) | $0 | ✅ Deleted 5 Nov |
 | DFS production server rsg-dfs (CAX11 + Hetzner Backups) | Hetzner | ? | same | Running since 9 Nov; amount from the first Hetzner invoice |

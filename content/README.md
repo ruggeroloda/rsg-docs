@@ -1,15 +1,20 @@
 # Content & distribution
 
-_Last updated 2026-11-22. Status: idea stage._
+_Last updated 2026-11-26. Current state; the day-by-day history is in `../DECISIONS.md`._
 
-**22 Nov 2026 (late): Fable's independent answer on the review format: `REVIEW-FORMAT-2026-11-22.md` (five text sections around four scored parts; old reviews shown in the same four; no "vs average"). Ruggero decides (six decisions at its bottom); nothing decided, nothing built.**
-
-**22 Nov 2026 (evening): what should a review be? Ruggero's idea (the review organised around what is rated) and the scoring questions, briefed for an independent Fable chat: `BRIEF-REVIEW-FORMAT-2026-11-22.md`, data `review-format-2026-11-22/reviews-2026-11-22.csv` (367 scored reviews). Nothing decided.**
-
-**22 Nov 2026: the three goals every content or page change is judged against are in `../STRATEGY.md`.** Proposal mock-ups and Ruggero's answers: `ENGAGEMENT-READ-2026-11-21.md` (bottom), `proposals-2026-11-21/`.
-
-**20 Nov 2026: content review with Fable done; the work list to continue is `CONTENT-REVIEW-2026-11-20.md`.** Prune: independent analysis `PRUNE-ANALYSIS-2026-11-20.md` (20 Nov), starts the week of 7 Dec (Ruggero 20 Nov), reading first (analysis, "Reading before the first batch").
-**21 Nov 2026: reading of 12 reviews + 11 comparisons with scroll, seen and tap data (where readers stop, order, jumps): `ENGAGEMENT-READ-2026-11-21.md`; proposals wait for Ruggero.**
+## Where each piece of content work stands
+| Piece | State (26 Nov) | Doc |
+|---|---|---|
+| Shoe categories (new scheme, URLs, 1,359 reviews mapped) | Built on staging; n8n step after 1 Dec; live 8–10 Dec | `categories-2026-11-25/` (`PLAN.md`, `BRIEF-BUILD.md`, `REVIEW-FABLE.md`) |
+| Brand names ASICS + HOKA | Plan agreed; staging after 1 Dec | `brand-names-2026-11-25/PLAN.md` |
+| Review process (intake → publish) | Direction agreed: Airtable stays, one form, one n8n flow; switch from Make Tue 1 Dec | `REVIEW-PROCESS-2026-11-25.md`, `BRIEF-REVIEW-FLOW-N8N-2026-11-25.md`, `../automations/review-flow/README.md` |
+| Review format (what a review is) | Independent view written; **six decisions open (Ruggero)**; nothing live on reviews before the 8 Dec read | `REVIEW-FORMAT-2026-11-22.md` |
+| Shoes to test | 14 to assign to testers; Running Shoes table cleaned | `SHOE-LIST-2026-11-20.md`, `RUNNING-SHOES-CLEANUP-2026-11-25.csv`, `../ROADMAP.md` |
+| Page proposals (engagement) | Proposals 1–2 shown, none decided; judged against `../STRATEGY.md`; "Compare it with" runs as the "head to head" test, read 8 Dec | `ENGAGEMENT-READ-2026-11-21.md`, `proposals-2026-11-21/`, `BRIEF-PROPOSAL-CHAT-2026-11-21.md` |
+| Comparison refreshes | 12 of 26 linked from the test refreshed; 11 of 39 on the SEO list; resume after the freeze (from 1 Dec) | `compare-test-2026-11-22/COMPARISONS-TO-REFRESH.md`, `../theme/SEO-AUDIT-2026-11-17.md` "2.1" |
+| Content review work list (Fable, 20 Nov) | Continue there | `CONTENT-REVIEW-2026-11-20.md` |
+| Old-article prune | Starts the week of 7 Dec, reading first | `PRUNE-ANALYSIS-2026-11-20.md`, apply checklist `ARTICLES-PRUNE-PLAN-2026-11-15.md`, `GUIDES-CLEANUP-2026-11-15.md` |
+| Video and social | Live ideas, not now | `VIDEO-BROLL-SHOT-LIST-2026-11-19.md`, `pegasus-42-social-scripts.md` |
 
 ## Direction so far (Ruggero, Nov 2026)
 - "Nimble" restart: budget **one shoe per month** (~$100 with the Running Warehouse discount).
@@ -26,7 +31,7 @@ _Last updated 2026-11-22. Status: idea stage._
 - Production workflow and tools (remove.bg → Pixian: live 5 Nov, see below).
 - How the shoe list drives DFS scope (which shoes need prices).
 
-## Background removal: replace remove.bg (started 5 Nov 2026)
+## Background removal: replace remove.bg (done 5 Nov 2026: Pixian live; current state in `../theme/RUNBOOK.md` "Background removal")
 - **Checked live 5 Nov** (live = staging): `rsg_2022/includes/remove_bg.php`, loaded from `functions.php:1528`. Only **remove.bg** is active (lines 7–101, `acf/save_post` on `professional_image` / `field_5d9574dae3414`). The ClippingMagic block (105–209) is **commented out**, dead code.
 - Behaviour: runs when a review's professional image changes; **skips if the upload is already a PNG**. Writes the cut-out PNG next to the original and repoints the same attachment to it.
 - Keys: the remove.bg key is a **literal in the theme file** (line 30), not `wp-config.php`; ClippingMagic credentials sit literally in the commented block. Remove both; cancel/rotate.

@@ -1,6 +1,6 @@
 # Reskin go-live plan — 15 Nov 2026
 
-_Written after the final staging checks (15 Nov, 13:20–14:45 UTC). Runs only after Ruggero writes **"deploy to live"**. Rollback tested. Project copy: `theme/GO-LIVE-PLAN-2026-11-15.md`._
+_Written after the final staging checks (15 Nov, 13:20–14:45 UTC). Runs only after Ruggero writes **"deploy to live"**. Rollback tested. Project copy: `theme/archive/GO-LIVE-PLAN-2026-11-15.md`._
 
 ## What goes live
 - **Commit `4ac5ef4`** (= GitHub `main` = staging = last staging tag `staging-20261115-131737`). Live today: `5d3118c` (tag `live-20261115-103600`).
