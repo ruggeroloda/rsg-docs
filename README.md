@@ -1,6 +1,6 @@
 # RSG — project primer
 
-_Last updated 2026-11-26 (workstream table cut to one line each; the history is in `DECISIONS.md`)._ **Start every RSG session here** (after `git pull`), then read `ROADMAP.md` and the `RUNBOOK.md` of the workstream you work on. That's all you need for the current state.
+_Last updated 2026-11-26 (docs cleanup: one line per area here, runbooks = current state, decisions before 18 Nov in `_archive/`)._ **Start every RSG session here** (after `git pull`), then read `ROADMAP.md` and the `RUNBOOK.md` of the workstream you work on. That's all you need for the current state.
 
 **Strategy (22 Nov 2026, `STRATEGY.md`):** (1) the reader gets the answer and doesn't return to Google; (2) revenue per 1,000 views (shop clicks plus Raptive) goes up, scroll depth is not a goal; (3) the undecided reader opens a second page, ideally a comparison. Every change says which goal it serves; scoreboard and change log are in `STRATEGY.md`.
 
