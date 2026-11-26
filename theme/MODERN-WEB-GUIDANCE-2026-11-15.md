@@ -21,7 +21,7 @@ _Google Chrome + Edge + Firefox + MDN released **Modern Web Guidance 1.0** on 10
 1. **Old reviews load ~270 KB of 2018 JavaScript:** `js/review_single.js` (249 KB, jQuery Mobile 2018 bundle) + `js/carousel.js` (18 KB), enqueued in `functions.php` `RSG_ajax_comments_scripts()` for `is_review()` pages that aren't the 4 new review types = the 937 dated reviews (~10 % of views) and legacy GPS. Photo slider → CSS scroll-snap (`carousel`), swipebox lightbox (`css/swipebox.css` on every page) → native `<dialog>` (`dialog`). Check first what else in that bundle the old template uses.
 2. **Hidden text findable:** "Show N more" (article shoes box) and other `hidden` content → `hidden="until-found"` (`search-hidden-content`): Ctrl+F and search engines treat it as page content. Small, SEO-relevant.
 3. **Dead code:** 359 `ga(` calls (Universal Analytics is gone; stub `window.ga` in `header.php`), then the stub. No guide needed.
-4. **Shops drawer** (`rsg_prices_drawer_print()`, `js/rsg-dfs.js`): own focus trap, Escape, scrim and scroll lock → native `<dialog>` + `showModal()` (`dialog`, `prevent-page-scroll-under-modal-dialog`). Keep box code `drw`, the opener tracking and Raptive z-order behaviour. **Only after click spots is live** (`CLICK-SPOTS-BRIEF-2026-11-15.md` changes the same files: `includes/rsg-dfs-prices.php`, `js/rsg-dfs.js`, drawer opener codes); rebuild the drawer on top of that version.
+4. **Shops drawer** (`rsg_prices_drawer_print()`, `js/rsg-dfs.js`): own focus trap, Escape, scrim and scroll lock → native `<dialog>` + `showModal()` (`dialog`, `prevent-page-scroll-under-modal-dialog`). Keep box code `drw`, the opener tracking and Raptive z-order behaviour. **Only after click spots is live** (`archive/CLICK-SPOTS-BRIEF-2026-11-15.md` changes the same files: `includes/rsg-dfs-prices.php`, `js/rsg-dfs.js`, drawer opener codes); rebuild the drawer on top of that version.
 5. **Bootstrap 3-era scripts on every page:** `collapse.js`, `util.js`, `ajax_mega_menu.js` (menu is printed in the page since step 2: likely only hover code left) → `<details>` / popover (`accordion`, `declarative-dialog-popover-control`).
 6. **Comment-form slider** `rangeslider.js` (~18 KB inline in every review) → styled native range (`slider`; audit B3).
 7. **Layout leftovers** (floats, clearfix, aspect hacks) → grid/flex + `aspect-ratio` (`responsive-design`), with the template rebuild.
@@ -54,7 +54,7 @@ in the used CSS. Retrieve the matching guide before writing code and follow it.
 Step 3 — after each approved batch, a short go-live plan; nothing goes live until I write "deploy to live". Rollback = previous
 live tag. Docs: RUNBOOK "What runs where", DECISIONS line, this doc's list ticked.
 
-Order with click spots (fixed): click spots (theme/CLICK-SPOTS-BRIEF-2026-11-15.md) goes first and touches
+Order with click spots (fixed): click spots (theme/archive/CLICK-SPOTS-BRIEF-2026-11-15.md) goes first and touches
 includes/rsg-dfs-prices.php + js/rsg-dfs.js. Until click spots is live, do NOT touch those two files or the drawer (item 4);
 start with items that don't (2, 3, 1, 5, 6, 9). Before touching them, check DECISIONS / the click-spots brief status line says
 "live"; if not, skip to the next item and tell me.

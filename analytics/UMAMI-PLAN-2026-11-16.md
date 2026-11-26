@@ -1,6 +1,6 @@
 # Own analytics with Umami — plan (16 Nov 2026)
 
-_Status: **approved by Ruggero 16 Nov ("change the plan and start"); phase A started 16 Nov.** Each phase still gets Ruggero's OK before the next. Research: `UMAMI-RESEARCH-2026-11-16.md`. Replaces the WordPress "seen log" in `../theme/CLICK-SPOTS-BRIEF-2026-11-15.md` (that brief keeps the page-type marker, spot names and Amazon tracking IDs). Imports (networks, Amazon reports, Raptive, Search Console, WordPress page data) = later (Ruggero 16 Nov: "not that pressing")._
+_Status: **approved by Ruggero 16 Nov ("change the plan and start"); phase A started 16 Nov.** Each phase still gets Ruggero's OK before the next. Research: `UMAMI-RESEARCH-2026-11-16.md`. Replaces the WordPress "seen log" in `../theme/archive/CLICK-SPOTS-BRIEF-2026-11-15.md` (that brief keeps the page-type marker, spot names and Amazon tracking IDs). Imports (networks, Amazon reports, Raptive, Search Console, WordPress page data) = later (Ruggero 16 Nov: "not that pressing")._
 
 ## Goal
 One place for everything that happens in the browser (page views, price spots seen, clicks, drawer, switches, page speed, errors, heatmaps, replays), each event linked to its visit and traffic source, split by layout (phone/desktop), queryable by Claude and the future analyst agents (API, SQL, MCP). **Ruggero never has to open Umami: he asks, Claude answers from the data** (16 Nov). Visitors see no change; Rocket.net cache unchanged.

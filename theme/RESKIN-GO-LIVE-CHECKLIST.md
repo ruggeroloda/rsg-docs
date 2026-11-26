@@ -14,7 +14,7 @@ _**Live since 15 Nov 2026 14:30 UTC** (`4ac5ef4`, tag `live-20261115-143049`; Ru
 - [x] Final ad counts (`checks/adcount.py`) on the sample reviews, comparison, guide, blog post (only at the end, Ruggero 14 Nov). — 15 Nov: staging = live after (Pegasus 42 10/11, Clifton vs Bondi 5/11, Pegasus 39 12/13, Nimbus 26 article 4/5, beginners guide 4/10 phone/desktop); before: 9/9, 7/7, 12/12, 4/5, 4/10
 - [ ] Ruggero: phone price bar on a real phone with ads (nothing from Raptive at the top over the bar). — Ruggero, on live (phone check in `GO-LIVE-PLAN-2026-11-15.md`)
 - [~] Price card 288 px (last pass, item 4 skipped 14 Nov). — **after go-live**
-- [~] **Click spots + Amazon IDs** (`CLICK-SPOTS-BRIEF-2026-11-15.md`): built on staging, one click per spot × device checked in the log; the 5 new Amazon US tracking IDs exist (4 reused); the box table `ALTER` runs on live with the deploy. — **after go-live, own deploy** (Ruggero 15 Nov)
+- [~] **Click spots + Amazon IDs** (`archive/CLICK-SPOTS-BRIEF-2026-11-15.md`): built on staging, one click per spot × device checked in the log; the 5 new Amazon US tracking IDs exist (4 reused); the box table `ALTER` runs on live with the deploy. — **after go-live, own deploy** (Ruggero 15 Nov)
 
 ## Performance / caches
 - [x] CLS + LCP on live after the deploy (`checks/cwv.py`, `checks/shots.py`); compare with the 13 Nov baseline. — 15 Nov 14:50 UTC, 12 pages × 390/1366: CLS 0–0.009 (baseline worst 0.31 Pegasus listing, now 0), lab LCP 0.62–1.29 s (baseline 0.54–1.97 s)
@@ -26,7 +26,7 @@ _**Live since 15 Nov 2026 14:30 UTC** (`4ac5ef4`, tag `live-20261115-143049`; Ru
 - [x] `checks/extractcheck.py` live (after) vs live (before) on Clifton vs Bondi, Ghost vs Adrenaline, Pegasus vs Clifton: no new trafilatura MISSING items (staging 15 Nov: 10/10 items on all three). — 10/10 on all three
 - [~] Raptive markers for comparisons with the ads work: main content `rsg-content` is there; a text marker must not contain "text" or "body" (readability then keeps only the prose, tested 15 Nov). — with the Raptive work, after go-live
 
-## Old reviews + articles (added 15 Nov, `content/POSTS-CONTENT-INVENTORY-2026-11-15.md`)
+## Old reviews + articles (added 15 Nov, `content/archive/POSTS-CONTENT-INVENTORY-2026-11-15.md`)
 - [x] Old-review template (`include-single-review.php`, 937 dated reviews, 10% of views) was not in the sample set: add `/2022/05/nike-air-zoom-pegasus-39-review/` and `/review/salomon-speedcross-5-review/` to the screenshot/CWV/ad-count/extract checks. — in the final checks 15 Nov (Pegasus 39, Speedcross 5)
 - [x] "New version" notice (theme `85ca6d3`, `4fa27fa`, `0afcd73`, staging): after the live deploy, Pegasus 39 → Pegasus 42, Adrenaline 15 → GTS 25, Speedcross 5 → Speedcross 6 on live. — 15 Nov on live: Pegasus 39 → Pegasus 42, Adrenaline GTS 15 → GTS 25, Speedcross 5 → Speedcross 6, each with a price
 - [x] Mac repo: `main` is behind GitHub (`0afcd73`): fast-forward before the next commit/deploy. — 15 Nov: fast-forwarded; Mac = GitHub = `4ac5ef4`

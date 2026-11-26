@@ -1,6 +1,6 @@
 # Homepage — final design (17 Nov 2026)
 
-Source of truth for building the new homepage on staging. Canvas: https://claude.ai/artifact/EdFLv1U8gCUpRsaiJe4tdX → page **"Final design"**: board `Final.dc.html` (desktop 1,440, full page) and `FinalPhone.dc.html` (390). The markup/CSS of those boards is the reference (reskin tokens from `rsg_2022/css/rsg-skin.css`, fonts Big Shoulders Display + Public Sans). Other canvas pages (Homepage, Hero experiments, Poster hero, Dark hero) are history, not spec. Data behind the choices: `HOMEPAGE-DATA-2026-11-16.md`.
+Source of truth for building the new homepage on staging. Canvas: https://claude.ai/artifact/EdFLv1U8gCUpRsaiJe4tdX → page **"Final design"**: board `Final.dc.html` (desktop 1,440, full page) and `FinalPhone.dc.html` (390). The markup/CSS of those boards is the reference (reskin tokens from `rsg_2022/css/rsg-skin.css`, fonts Big Shoulders Display + Public Sans). Other canvas pages (Homepage, Hero experiments, Poster hero, Dark hero) are history, not spec. Data behind the choices: `archive/HOMEPAGE-DATA-2026-11-16.md`.
 
 ## Page order (both layouts)
 1. Header 2. Hero 3. Our picks right now (overlaps the hero) 4. Comparisons 5. Latest reviews 6. Reviews by brand + Reviews by type (with GPS links) 7. How we test 8. Free training plans 9. Footer.

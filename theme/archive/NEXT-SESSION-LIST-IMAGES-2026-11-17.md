@@ -7,7 +7,7 @@ Prompt to paste into a new chat in the RSG project:
 ```
 Task: automatic hero + share images for /top/ and /guide/ pages, in three styles I can choose from per page (RSG theme repo, rsg-core plugin). Staging only; live only after I say "deploy to live".
 
-Read first: theme/RUNBOOK.md (access, deploy.sh, git), theme/COMPARISON-RESKIN-2026-11-15.md (C6 share image), rsg-core/inc/share-image.php (the comparison generator to reuse: fonts, cover crop, hash/rebuild, save_post hook, WP-CLI, restore), theme/SEO-AUDIT-2026-11-17.md. Mockups + reference renderer: theme/_work/list-images-2026-11-17/ (directions-board.jpg, render.py, A-/B-/C-*.jpg). Fonts and colours as share-image.php (Big Shoulders Black, Public Sans Bold; ink #13263B, blue #1570C9, yellow #FFC83D).
+Read first: theme/RUNBOOK.md (access, deploy.sh, git), theme/archive/COMPARISON-RESKIN-2026-11-15.md (C6 share image), rsg-core/inc/share-image.php (the comparison generator to reuse: fonts, cover crop, hash/rebuild, save_post hook, WP-CLI, restore), theme/SEO-AUDIT-2026-11-17.md. Mockups + reference renderer: theme/_work/list-images-2026-11-17/ (directions-board.jpg, render.py, A-/B-/C-*.jpg). Fonts and colours as share-image.php (Big Shoulders Black, Public Sans Bold; ink #13263B, blue #1570C9, yellow #FFC83D).
 
 Decisions already made (Ruggero, 17 Nov):
 - Three styles, all built for every list: A = grid (justified rows, every pick equal), B = angled vertical slices, C = hero pick + rail. Default A.

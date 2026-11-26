@@ -1,6 +1,6 @@
 # Site search routing — 19 Nov 2026
 
-**DONE — live 19 Nov 2026 15:25 UTC** (theme `04479d8`, tag `live-20261119-152531`, with the listings reskin; Ruggero: "deploy to live"). Code: `rsg_2022/includes/rsg-search.php`. Earlier ideas: `SITE-SEARCH-IDEAS-2026-11-17.md`.
+**DONE — live 19 Nov 2026 15:25 UTC** (theme `04479d8`, tag `live-20261119-152531`, with the listings reskin; Ruggero: "deploy to live"). Code: `rsg_2022/includes/rsg-search.php`. Earlier ideas: `archive/SITE-SEARCH-IDEAS-2026-11-17.md`.
 
 ## What the data said (16–19 Nov, humans, Umami page views matched to the search log by timestamp)
 - ~110 search visits/day (~5 % of visits); 723 searches in 343 visits; half of those visits searched more than once. Only 21 % from the homepage hero, the rest from the header.

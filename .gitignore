@@ -26,3 +26,6 @@ dfs/legacy-snapshot/
 theme/schema-pass/rich-results-test/*-full.html
 # Raw revenue exports (Amazon, Raptive): kept on the Mac only, loaded into the rsg database
 data-drops/
+# Python caches
+__pycache__/
+*.pyc

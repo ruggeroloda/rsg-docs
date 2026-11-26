@@ -9,7 +9,7 @@ Ruggero wants the proposals for reviews, comparisons and `/top/` list posts **ex
 1. `README.md`, `ROADMAP.md` (as every session).
 2. `content/ENGAGEMENT-READ-2026-11-21.md`: the findings, the numbers and the 7 proposals. This is the source; don't re-derive it.
 3. `content/CONTENT-REVIEW-2026-11-20.md`, work list item 1 (the parked "next-step block") and the two renders `content/content-review-2026-11-20/next-step-v3-who.png`, `next-step-v3-list.png`: what Ruggero already saw and turned down.
-4. `theme/CLAUDE.md` and `theme/RESKIN-DESIGN-DOC.md` for the look (fonts, colours, components), so mock-ups look like the live site.
+4. `theme/CLAUDE.md` and `theme/archive/RESKIN-DESIGN-DOC.md` for the look (fonts, colours, components), so mock-ups look like the live site.
 
 ## What Ruggero already said (don't repeat these mistakes)
 - Next-step block, first idea (chip strip + end block): "not convinced by looks or position". Second idea, v2: "too big, breaks the page balance"; v3 compact: "still not ready".

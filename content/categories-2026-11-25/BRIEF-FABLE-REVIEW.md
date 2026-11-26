@@ -9,7 +9,7 @@ Review `content/categories-2026-11-25/PLAN.md` critically and independently. You
 1. `README.md`, `ROADMAP.md`, `STRATEGY.md` (the three goals: every change says which goal it serves).
 2. `content/categories-2026-11-25/PLAN.md` (the plan and every decision with its reason).
 3. `content/categories-2026-11-25/category-mapping.csv` (1,359 old reviews: old tags, proposed surface, category, Stability flag, reason) and `map.py` (the rules that made it).
-4. For context only: `content/REVIEW-FORMAT-2026-11-22.md` (categories were parked there), `theme/SEO-SETTINGS-REVIEW-2026-11-11.md`, `theme/REVIEWS-HUB-AUDIT-2026-11-17.md`.
+4. For context only: `content/REVIEW-FORMAT-2026-11-22.md` (categories were parked there), `theme/SEO-SETTINGS-REVIEW-2026-11-11.md`, `theme/archive/REVIEWS-HUB-AUDIT-2026-11-17.md`.
 
 ## Questions to answer
 1. **Scheme:** is "Surface + one category + Stability flag" with road = Daily trainer / Max cushion / Performance trainer / Race and trail = Daily / Trail – Max cushion / Trail – Race the right, future-proof structure? Check it against how brands, shops and review sites group shoes today (look them up live; don't rely on the plan's summary). What would break it in 2–3 years?

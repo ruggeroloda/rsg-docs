@@ -23,7 +23,7 @@ _Reskin live since 15 Nov 2026 14:30 UTC (`4ac5ef4`, tag `live-20261115-143049`)
 - `rsg-php` / `rsg-site` healthchecks; PHP weekly digest (Monday ~05:20 UTC); WP Rocket used-CSS failures (2 of ~500 on 15 Nov, pages then get full CSS).
 
 ## Work after go-live (Ruggero's go/no-go, 15 Nov)
-1. Click spots + Amazon tracking IDs (`CLICK-SPOTS-BRIEF-2026-11-15.md`), own deploy. Goes before the drawer part of the front-end modernization (`MODERN-WEB-GUIDANCE-2026-11-15.md` item 4): same files.
+1. Click spots + Amazon tracking IDs (`archive/CLICK-SPOTS-BRIEF-2026-11-15.md`), own deploy. Goes before the drawer part of the front-end modernization (`MODERN-WEB-GUIDANCE-2026-11-15.md` item 4): same files.
 2. GPS listing at `/reviews/gps/`: today it shows all shoe reviews with canonical `/reviews/`; the header "GPS" link and 7 GPS redirects land there. Also the "All running shoes Reviews" back link on GPS reviews.
 3. Raptive mail + re-map to the new markers; then C1/C2 (`HTML-AUDIT-RESKIN-2026-11-15.md`; C2 brings the comparison subtitle back for text extractors).
 4. Mega-menu editorial keep/cut (46 links newly visible to Google; all are clean 200 pages).
