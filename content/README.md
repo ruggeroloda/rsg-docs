@@ -1,6 +1,6 @@
 # Content & distribution
 
-_Last updated 2026-11-26. Current state; the day-by-day history is in `../DECISIONS.md`._
+_Last updated 2026-11-27. Current state; the day-by-day history is in `../DECISIONS.md`._
 
 ## Where each piece of content work stands
 | Piece | State (26 Nov) | Doc |
@@ -9,6 +9,8 @@ _Last updated 2026-11-26. Current state; the day-by-day history is in `../DECISI
 | Brand names ASICS + HOKA | Plan agreed; staging after 1 Dec | `brand-names-2026-11-25/PLAN.md` |
 | Review process (intake → publish) | Direction agreed: Airtable stays, one form, one n8n flow; switch from Make Tue 1 Dec | `REVIEW-PROCESS-2026-11-25.md`, `BRIEF-REVIEW-FLOW-N8N-2026-11-25.md`, `../automations/review-flow/README.md` |
 | Review format (what a review is) | Independent view written; **six decisions open (Ruggero)**; nothing live on reviews before the 8 Dec read | `REVIEW-FORMAT-2026-11-22.md` |
+| Reviewer photo guide | On staging as an unlisted page (`/ex/photo-shot-list/`); Ruggero re-shoots the Beauty examples; needs "deploy to live" | `reviewer-photo-guide/README.md` |
+| Testers | Kristin Lassen back (27 Nov): shortlist of 6 shoes proposed, she picks one stability + one neutral; brief to her not sent yet | `../ROADMAP.md` |
 | Shoes to test | 14 to assign to testers; Running Shoes table cleaned | `SHOE-LIST-2026-11-20.md`, `RUNNING-SHOES-CLEANUP-2026-11-25.csv`, `../ROADMAP.md` |
 | Page proposals (engagement) | Proposals 1–2 shown, none decided; judged against `../STRATEGY.md`; "Compare it with" runs as the "head to head" test, read 8 Dec | `ENGAGEMENT-READ-2026-11-21.md`, `proposals-2026-11-21/`, `BRIEF-PROPOSAL-CHAT-2026-11-21.md` |
 | Comparison refreshes | 12 of 26 linked from the test refreshed; 11 of 39 on the SEO list; resume after the freeze (from 1 Dec) | `compare-test-2026-11-22/COMPARISONS-TO-REFRESH.md`, `../theme/SEO-AUDIT-2026-11-17.md` "2.1" |

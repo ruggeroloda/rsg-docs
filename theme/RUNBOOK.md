@@ -10,7 +10,7 @@ _Current state only (rewritten 26 Nov 2026; the long version with every go-live,
 | WordPress / PHP | 7.1.4 / 8.3 (`short_open_tag` Off since the 24 Nov server move: write `<?php`, never `<?`; `<?=` is fine); core auto-updates on | same |
 | Theme `rsg_2022` + plugin `rsg-core` | **`0019202`** = tag `live-20261126-110914` = GitHub `main` | **`fbf3277`** = branch `categories` + `php-warnings` merged (tag `staging-20261126-111214`) |
 | Price box | on for all DFS reviews (`rsg_prices_default=1`) | same |
-| Uploads / database | 25 GB / 442 MB | 49 staging-only files; everything else is served from live (302) / live's database of 11 Nov |
+| Uploads / database | 25 GB / 442 MB | 70 staging-only files (21 = the reviewer photo guide, `../content/reviewer-photo-guide/README.md`; staging also has Noindex Page 50922 that live lacks); everything else is served from live (302) / live's database of 11 Nov |
 
 - Rollback points: the previous `live-*` tag (list in `logs/DEPLOYS.md`); reskin go-live `live-20261115-143049` (`4ac5ef4`); before the reskin `live-20261115-103600`. Never `rolled-back-live-20261114-111243`.
 - Host: Rocket.net (server `dal11.onrocket.com`, `194.39.148.145`); edge = Cloudflare Enterprise managed by Rocket.net; DNS = AWS Route 53; site ID `CDN_SITE_ID` 69650 (**shared by live and staging**). Table prefix `newguru_wp_`. The server runs **LiteSpeed** (ignores `.user.ini`).
