@@ -24,7 +24,7 @@ _Current state only. Checked 11 Nov 2026 ~15:40 UTC; re-checked 12 Nov ~08:40 UT
 
 ## Access
 - SSH `ssh -p 2222 ruggero@116.203.146.177`, key only (1Password "Hetzner" + Touch ID; Claude: `_private/claude-hetzner-key` with `-o UserKnownHostsFile=_private/ssh_known_hosts -o StrictHostKeyChecking=yes`, server key ED25519 `SHA256:M4m5U05X2LqDZEjImSK5Q6kHSQ/blZaLr6LvxYyZf1Q`; also `n8n@stargrid`, unused). Root and passwords off, `AllowUsers ruggero`, fail2ban.
-- NPM admin login: user `ruggeroloda@gmail.com` (the only account); password in 1Password. `_private/rsgmedia-npm.txt` (27 Nov) did **not** work by API ("Invalid email or password"), so Claude can't change NPM yet.
+- NPM admin login: user `ruggeroloda@gmail.com` (the only account); password in 1Password and `_private/rsgmedia-npm.txt` (works by API since 27 Nov: through the tunnel to 127.0.0.1:81, `POST /api/tokens`). Every public host has Force SSL on (n8n host 1 since 27 Nov; before that `http://` showed the n8n login unencrypted; no webhook had used plain http since 25 Oct).
 - Private tools: double-click `Open RSG server tools.command` (= `rsg-tools.sh`) → Portainer http://localhost:19000, Adminer :18080, NPM admin :18081, DFS test bench :18090, Umami :18010 (since 16 Nov). sshd `PermitOpen` allows only 127.0.0.1:9000/8080/81/8090/3010; no socket forwarding.
 - Open from outside: **80, 443, 2222** only (UFW; also `deny in on br-dfs`; 5432 only on `tailscale0`, Tailscale logged out). Port 3001 (imggen) on 127.0.0.1; 9876 closed.
 
@@ -58,4 +58,3 @@ Not backed up: the DFS test bench volume `dfs_data` (production has its own back
 2. DNS leftovers `portainer|adminer|npm.rsgmedia.info` at SiteGround.
 3. Stargrid image URLs need an HTTPS route through NPM before posting is reactivated (not a reopened 3001).
 4. n8n: internal runner mode deprecated (revisit at the next upgrade).
-5. **n8n login reachable over plain http** (found 27 Nov): NPM proxy host 1 `n8n.rsgmedia.info` has Force SSL off (`http://` answers 200, no redirect). Fix: host 1 → Edit → SSL → Force SSL on (check webhooks still work: callers use https).
