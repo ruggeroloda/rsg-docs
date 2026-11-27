@@ -15,7 +15,7 @@ A missing spec stays **empty** (until 25 Nov 2026 the scripts wrote 999; `is_mis
 - OptiPlex (home server, `192.168.68.79`, user `ruggero`): `~/code/RW-info/`, virtualenv `venv/`, logs `logs/new-arrivals.log`, `logs/updater.log`.
 - It stays at home (Ruggero 25 Nov): Running Warehouse answers plain server requests with 406; the browser from a home connection passes.
 - Settings: `~/code/RW-info/.env` (mode 600, not in git): `AIRTABLE_PAT`, `HC_URL` (healthchecks.io ping URL; empty = no alarm).
-- Access: the standing Claude key (`_private/claude-hetzner-key`) is in the OptiPlex's `authorized_keys` since 25 Nov; only from a chat linked to the Mac while the Mac is at home. Copy the key to the shell's home with mode 600 first.
+- Access: the standing Claude key (`_private/claude-hetzner-key`) is in the OptiPlex's `authorized_keys` since 25 Nov; from a chat linked to the Mac: at home on `192.168.68.79`, and since 27 Nov also away through Tailscale (`100.112.142.127`, the Mac's Tailscale must be on). Copy the key to the shell's home with mode 600 first. sudo needs Ruggero's password. Access and security of the machine: `../../hosting/optiplex/RUNBOOK.md`.
 
 ## Deploy
 Edit here, commit, then copy the three `.py` files to `~/code/RW-info/` (scp) and run `venv/bin/python metadata_updater.py --dry-run --limit 5`. Backups of the pre-25-Nov scripts: `*.bak-20261125` on the OptiPlex; old crontab `logs/crontab.bak-20261125`.

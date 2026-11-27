@@ -1,6 +1,6 @@
 # RSG — project primer
 
-_Last updated 2026-11-27 (earnings dashboard public + every merchant + CF/AvantLink loads on; server access review findings `hosting/ACCESS-REVIEW-2026-11-27.md`; earlier: Black Friday emails, SportsShoes test bench, CF/AvantLink loaders; earlier: Rocket.net outage 27 Nov; earlier: docs cleanup: one line per area here, runbooks = current state, decisions before 18 Nov in `_archive/`)._ **Start every RSG session here** (after `git pull`), then read `ROADMAP.md` and the `RUNBOOK.md` of the workstream you work on. That's all you need for the current state.
+_Last updated 2026-11-27 (OptiPlex on Tailscale, Sonarr port closed, SSH keys only: `hosting/optiplex/RUNBOOK.md`; earlier: earnings dashboard public + every merchant + CF/AvantLink loads on; server access review findings `hosting/ACCESS-REVIEW-2026-11-27.md`; earlier: Black Friday emails, SportsShoes test bench, CF/AvantLink loaders; earlier: Rocket.net outage 27 Nov; earlier: docs cleanup: one line per area here, runbooks = current state, decisions before 18 Nov in `_archive/`)._ **Start every RSG session here** (after `git pull`), then read `ROADMAP.md` and the `RUNBOOK.md` of the workstream you work on. That's all you need for the current state.
 
 **Strategy (22 Nov 2026, `STRATEGY.md`):** (1) the reader gets the answer and doesn't return to Google; (2) revenue per 1,000 views (shop clicks plus Raptive) goes up, scroll depth is not a goal; (3) the undecided reader opens a second page, ideally a comparison. Every change says which goal it serves; scoreboard and change log are in `STRATEGY.md`.
 
@@ -26,7 +26,7 @@ _Last updated 2026-11-27 (earnings dashboard public + every merchant + CF/AvantL
 | Hetzner **rsg-dfs** `135.181.110.157` | DFS production only | SSH 2222, key only |
 | Hetzner **rsgmedia** `116.203.146.177` | n8n, Stargrid, DFS test bench, site check | SSH 2222, key only |
 | Linode `45.33.39.133` | Old DFS (rollback until Phase F) | read-only unless agreed |
-| OptiPlex (home, `192.168.68.79`) | Running Warehouse scraper → Airtable | standing Claude key, only from a chat linked to the Mac at home (`automations/rw-scraper/README.md`) |
+| OptiPlex (home, `192.168.68.79`, Tailscale `optiplex`) | Running Warehouse scraper → Airtable; media stack | Tailscale from the Mac and phone, SSH keys only; standing Claude key from a chat linked to the Mac (`hosting/optiplex/RUNBOOK.md`, `automations/rw-scraper/README.md`) |
 
 Monitoring: healthchecks.io `rsg-dfs` (price engine) and `rsg-site` (site + backup age) and `rsg-php` (PHP fatal errors). Backups: everything to Google Drive `Server-Backups/` (encrypted; key `_private/backup-age-key.txt` + 1Password) plus Rocket.net's and Hetzner's own.
 

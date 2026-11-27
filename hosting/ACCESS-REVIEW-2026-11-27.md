@@ -2,6 +2,8 @@
 
 Ruggero wants to revisit how he reaches his servers and services. Checked live on 27 Nov 2026 (sshd effective config, UFW, listening ports, authorised keys, and a port test of the home IP from rsgmedia). No access changes were made in this review except Force SSL on the n8n proxy host (below). No secrets here.
 
+**Status 27 Nov 2026, 16:10 (same day, next chat):** OptiPlex part **DONE** — Tailscale on OptiPlex + Mac + phone, Sonarr 8989 and dead 2222 forwards deleted, SSH keys only, sudo password changed; Plex 32400 stays open (family streams). Current state: `optiplex/RUNBOOK.md`. **Paused by Ruggero, still open:** Hetzner leftovers (`n8n@stargrid` key, Postgres-over-Tailscale rule: Postgres is also still published on `100.100.225.92:5432` in compose with a sysctl + Docker start-order tweak, so the full cleanup recreates the Postgres container, after Cyber Monday), Rocket.net panel + WordPress admin 2FA check, playbook passwords into 1Password, SiteGround DNS leftovers. Hetzner stays without Tailscale, also for the phone (decided).
+
 ## Current state
 | Server | How Ruggero gets in | Security as checked |
 |---|---|---|

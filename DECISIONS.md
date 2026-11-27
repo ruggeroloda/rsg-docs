@@ -170,6 +170,9 @@ Dated, one line each, in date order (newest at the bottom). A line that was late
 - 2026-11-27 — **Commission Factory + AvantLink loads switched on now, not 1 Dec** (Ruggero: "do everything", after a Running Room sale was missing from the dashboard): server-side only, no site change during the freeze. `analytics/README.md` "Revenue data".
 - 2026-11-27 — **Dashboard pace per source over its own days + coverage dates in the header + hatched "not in yet" days** (Ruggero: Raptive's 2–3-day lag made pace and the chart misleading). `analytics/earnings-dashboard/README.md`.
 - 2026-11-27 — **Server access review → its own chat** (Ruggero): findings in `hosting/ACCESS-REVIEW-2026-11-27.md`; earnings dashboard public, n8n Force SSL on (this chat).
+- 2026-11-27 — **OptiPlex access = Tailscale** (Ruggero: "optiplex on tailscale = ok"): OptiPlex, Mac and phone on his Tailscale; plain SSH with keys (Tailscale SSH off), SSH passwords off, router forwards 8989 (Sonarr) and 2222 deleted. `hosting/optiplex/RUNBOOK.md`.
+- 2026-11-27 — **Plex 32400 stays open to the internet** (Ruggero: the family streams from any device); no 2FA on the Plex account for now; "Secure connections = Required" parked until Plex serves the full certificate chain. `hosting/optiplex/RUNBOOK.md` Open 1.
+- 2026-11-27 — **Hetzner servers stay off Tailscale, also for the phone** (Ruggero: "hetzner: ok"); the rest of the access review (Hetzner leftovers, Rocket.net 2FA, playbook passwords) is paused. `hosting/ACCESS-REVIEW-2026-11-27.md`.
 
 ## Open questions (decide, then move above)
 - **List prices per currency** (reviewed 19 Nov, not decided): existing WordPress fields, one per currency (EUR = `rrp_de`), DFS lookup by currency; feeds' own list prices propose raises only, approved before writing; no brand-site scrapers. US test run: 10 proposals. `dfs/LIST-PRICES-2026-11-19.md` (replaces the 24 Jun scraper plan if agreed).
