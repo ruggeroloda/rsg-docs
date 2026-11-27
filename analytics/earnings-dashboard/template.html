@@ -11,7 +11,7 @@
   --page:#f9f9f9; --surface:#ffffff; --ink:#191919; --ink-2:#666666;
   --grid:#e7e7e7; --axis:#c2c2c2; --ring:rgba(11,11,11,.10);
   --up:#006c10; --down:#b3261e;
-  --s1:#257de0; --s2:#f47230; --s3:#00b894; --s4:#f2a600; --s5:#ee7fac; --s6:#008a17;
+  --s1:#257de0; --s2:#f47230; --s3:#00b894; --s4:#f2a600; --s5:#ee7fac; --s6:#008a17; --s7:#8a63d2; --s8:#a0722a;
   --tip:#191919; --tip-ink:#ffffff;
 }
 @media (prefers-color-scheme:dark){
@@ -20,7 +20,7 @@
     --page:#0b0b0b; --surface:#191919; --ink:#efefef; --ink-2:#9c9c9c;
     --grid:#303030; --axis:#474747; --ring:rgba(255,255,255,.10);
     --up:#53c556; --down:#f07070;
-    --s1:#338ced; --s2:#e76624; --s3:#00a888; --s4:#d28e05; --s5:#e24d8b; --s6:#0aac23;
+    --s1:#338ced; --s2:#e76624; --s3:#00a888; --s4:#d28e05; --s5:#e24d8b; --s6:#0aac23; --s7:#9d7ce0; --s8:#b8893f;
     --tip:#efefef; --tip-ink:#191919;
   }
 }
@@ -112,7 +112,7 @@ select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid 
     <h2>By source, this month so far</h2>
     <div class="sub" id="src-sub"></div>
     <div class="tw"><table id="src"></table></div>
-    <div class="foot" id="src-foot">EPC = earnings ÷ affiliate clicks. Clicks: our click log for the networks, Amazon's own report for Amazon. Raptive has no clicks (ads).</div>
+    <div class="foot" id="src-foot">EPC = earnings ÷ affiliate clicks. Clicks: our click log for the networks, Amazon's own report for Amazon. Raptive has no clicks (ads). "Not loaded" and "clicks only" rows have clicks but no earnings in our data, so they stay out of the total clicks and EPC.</div>
   </section>
 
   <section class="card" id="merchant-card">
@@ -201,12 +201,13 @@ const mkey=(src,name)=>src+' · '+name;
 function row(r,kid,src,idx){
   const has=!kid&&r.children&&r.children.length;
   const name=kid
-    ? (D.merchants&&D.merchants[mkey(src,r.name)] ? '<a href="#merchant-card" data-m="'+mkey(src,r.name)+'">'+r.name+'</a>' : r.name)
+    ? (D.merchants&&D.merchants[mkey(src,r.name)] ? '<a href="#merchant-card" data-m="'+mkey(src,r.name)+'">'+r.name+'</a>' : r.name)+(r.note?'<span class="n">'+r.note+'</span>':'')
     : (has?'<button class="tg" aria-expanded="false" aria-label="Show '+r.source+' merchants" data-t="'+idx+'">▸</button>':'<span class="tg-sp"></span>')
-      +'<span class="sw" style="background:'+COLOR[r.source]+'"></span>'+r.source+(r.note?'<span class="n">'+r.note+'</span>':'');
-  return '<tr'+(kid?' class="kid" data-p="'+idx+'" hidden':'')+'><td>'+name+'</td><td>'+usd2(r.this)+'</td><td>'+usd(r.last_month)+'</td><td>'+delta(r.this,r.last_month)+'</td><td>'+usd(r.last_year)+'</td><td>'+delta(r.this,r.last_year)+'</td><td>'+num(r.clicks)+'</td><td>'+epc(r.epc_earnings!=null?r.epc_earnings:r.this,r.clicks)+'</td><td>'+epc(r.last_month,r.clicks_last_month)+'</td><td>'+pc(r.pending,r.confirmed)+'</td></tr>';
+      +'<span class="sw" style="background:'+(COLOR[r.source]||'var(--axis)')+'"></span>'+r.source+(r.note?'<span class="n">'+r.note+'</span>':'');
+  return '<tr'+(kid?' class="kid" data-p="'+idx+'" hidden':'')+'><td>'+name+'</td><td>'+usd2(r.this)+'</td><td>'+usd(r.last_month)+'</td><td>'+delta(r.this,r.last_month)+'</td><td>'+usd(r.last_year)+'</td><td>'+delta(r.this,r.last_year)+'</td><td>'+num(r.clicks)+'</td><td>'+(r.no_earnings?'—':epc(r.epc_earnings!=null?r.epc_earnings:r.this,r.clicks))+'</td><td>'+(r.no_earnings?'—':epc(r.last_month,r.clicks_last_month))+'</td><td>'+pc(r.pending,r.confirmed)+'</td></tr>';
 }
-const tc=sum(D.mtd.map(r=>r.clicks)), tcl=sum(D.mtd.filter(r=>r.clicks_last_month).map(r=>r.clicks_last_month)), te=sum(D.mtd.filter(r=>r.clicks).map(r=>r.epc_earnings!=null?r.epc_earnings:r.this)), tel=sum(D.mtd.filter(r=>r.clicks_last_month).map(r=>r.last_month));
+const ER=D.mtd.filter(r=>!r.no_earnings);   // rows with earnings data (clicks-only rows stay out of the totals)
+const tc=sum(ER.map(r=>r.clicks)), tcl=sum(ER.filter(r=>r.clicks_last_month).map(r=>r.clicks_last_month)), te=sum(ER.filter(r=>r.clicks).map(r=>r.epc_earnings!=null?r.epc_earnings:r.this)), tel=sum(ER.filter(r=>r.clicks_last_month).map(r=>r.last_month));
 el('src').innerHTML =
   '<thead><tr><th>Source</th><th>So far</th><th>'+M.last_month_label+'</th><th>Change</th><th>'+M.last_year_label+'</th><th>Change</th><th>Clicks</th><th>EPC</th><th>EPC '+M.last_month_label.replace(/ \d{4}$/,'')+'</th><th>Pending / confirmed</th></tr></thead><tbody>'+
   D.mtd.map((r,i)=>row(r,false,r.source,i)+(r.children||[]).map(k=>row(k,true,r.source,i)).join('')).join('')+
@@ -226,7 +227,7 @@ el('pt').innerHTML='<thead><tr><th>Page type</th><th>So far</th><th>Share</th><t
   '</tbody><tfoot><tr><td>Total</td><td>'+usd(ptT)+'</td><td>100%</td><td>'+usd(ptL)+'</td><td>'+delta(ptT,ptL)+'</td></tr></tfoot>';
 
 // coverage
-el('cov').innerHTML = D.coverage.map(c=>'<li><span class="sw" style="background:'+COLOR[c.source]+'"></span>'+c.source+': '+day(c.through)+(c.note?' ('+c.note+')':'')+'</li>').join('');
+el('cov').innerHTML = D.coverage.map(c=>'<li><span class="sw" style="background:'+(COLOR[c.source]||'var(--axis)')+'"></span>'+c.source+': '+day(c.through)+(c.note?' ('+c.note+')':'')+'</li>').join('');
 
 // legends
 const legend=(id,names)=>el(id).innerHTML=names.map(n=>'<span><span class="sw" style="background:'+COLOR[n]+'"></span>'+n+'</span>').join('');
@@ -290,7 +291,7 @@ function drawMerchant(){
   const m=D.merchants[el('msel').value]; if(!m) return;
   const wl=m.weeks.map(w=>day(w)), wt=m.weeks.map(w=>'Week of '+day(w));
   const ck={}; ck[m.name]=m.clicks; const ek={}; ek[m.name]=m.earnings;
-  COLOR[m.name]=COLOR[m.network];
+  COLOR[m.name]=COLOR[m.network]||'var(--axis)';
   const sl=(i,n,W)=>W>=500?i%2===0:i%4===0;
   stacked('mclicks',wl,wt,[m.name],ck,{h:150,aria:'Affiliate clicks per week, '+m.name,showLabel:sl,plain:true,fmt:v=>v==null?'—':Math.round(v).toLocaleString('en-US')+' clicks'});
   stacked('mearn',wl,wt,[m.name],ek,{h:150,aria:'Earnings per week, '+m.name,showLabel:sl});

@@ -16,3 +16,11 @@ Next (when Ruggero says go): build script reading `rsg.revenue_period` / `revenu
 - Clicks: Umami `shop_click` merchant → network account via `CLICK_MAP` in the script (from `dfs/RUNBOOK.md` networks; Running Warehouse, Running Room, Pace Athletic have no earnings feed, so not mapped). Merchant clicks exist from 16 Nov 2026 → network EPC uses earnings from the same days. Amazon clicks/EPC from Amazon's report.
 - First real run 25 Nov: Nov 1–24 $1,446 (Raptive $901 to 22 Nov, Amazon $383 = 3 weeks to 22 Nov, CJ $115, Rakuten $40, Awin $8, Impact $0).
 - 25 Nov: Raptive reloaded Nov 2025 – Aug 2026 (Ruggero) so last year and the 13 months include Raptive (`~/revenue/raptive_backfill_2511.sh`, log `~/revenue/raptive-backfill-2511.log`).
+
+## Merchant coverage (27 Nov 2026, Ruggero)
+- **Listed merchants:** every account that earned this month so far, in **all** of last month, or in **all** of the same month last year, plus every merchant that got clicks this month. Zero this month but sales before → note under the name ("no sales this month · all of Oct: $X · Nov 2025: $Y").
+- **Click → network mapping:** `CLICK_MAP` + `map_click()` (New Balance: US visitors → Impact `New Balance`, others → `New Balance EMEA`); `resolve()` matches the network's real account name once earnings exist. Added 27 Nov: Road Runner Sports (Impact), adidas AU (Awin), Running Room + MEC (AvantLink), Pace Athletic (Commission Factory).
+- **AvantLink, Commission Factory:** in the builder already; until their loaders run (from Tue 1 Dec) they show clicks only ("earnings not loaded yet"), never $0, and stay out of the charts.
+- **"Not loaded" row:** clicked merchants with no earnings source at all: Running Warehouse (all countries), Amazon UK / DE / CA, raw links (`amzn.to`, network domains). Amazon US clicks come from Amazon's own report, so Umami's Amazon US clicks are left out.
+- Total clicks and EPC leave out rows without earnings data. Clicks count the live site only (staging left out since 27 Nov).
+- Swapped in 27 Nov ~11:07 UTC; previous version on rsgmedia `~/revenue/dashboard/*.bak-20261127`, page `~/earnings-dash/index.html.bak-20261127`.

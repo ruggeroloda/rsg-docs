@@ -10,15 +10,24 @@ Rules (analytics/earnings-dashboard/README.md):
 - Raptive: day rows, through its latest loaded day. Not loaded before RAPTIVE_FROM -> null, never 0.
 - Amazon US: weekly files only. Month so far = weeks fully inside the month; last month = the same
   number of weeks starting in the previous month; last year = none (no 2025 weekly files).
-- Clicks: Umami shop_click (since 16 Nov 2026) mapped to network accounts with CLICK_MAP; Amazon
-  clicks come from Amazon's own report. EPC = earnings / clicks.
+- Clicks: Umami shop_click (since 16 Nov 2026, live site only) mapped to network accounts with
+  map_click(); Amazon US clicks come from Amazon's own report. EPC = earnings / clicks.
+- A merchant is listed when it earned this month so far, in all of last month, or in all of the same
+  month last year, or got clicks this month (27 Nov 2026, Ruggero). Zero this month but sales before
+  -> a note under its name.
+- Networks whose earnings are not loaded yet (no rsg.revenue_load_log row) show clicks only, never $0.
+  Clicked merchants with no earnings source at all (Running Warehouse, Amazon outside the US, raw
+  links) go in a 'Not loaded' row. Rows without earnings data stay out of the total clicks and EPC.
 """
 import sys, json, subprocess, datetime as dt
 from zoneinfo import ZoneInfo
 
-NETS = ['cj', 'awin', 'rakuten', 'impact']
-LABEL = {'raptive': 'Raptive', 'amazon_us': 'Amazon US', 'cj': 'CJ', 'awin': 'Awin', 'rakuten': 'Rakuten', 'impact': 'Impact'}
-ORDER = ['raptive', 'amazon_us', 'cj', 'awin', 'rakuten', 'impact']
+NETS = ['cj', 'awin', 'rakuten', 'impact', 'avantlink', 'commission_factory']
+LABEL = {'raptive': 'Raptive', 'amazon_us': 'Amazon US', 'cj': 'CJ', 'awin': 'Awin', 'rakuten': 'Rakuten', 'impact': 'Impact',
+         'avantlink': 'AvantLink', 'commission_factory': 'Commission Factory'}
+ORDER = ['raptive', 'amazon_us', 'cj', 'awin', 'rakuten', 'impact', 'avantlink', 'commission_factory']
+LIVE_SITE = '31037802-afa8-48d7-9ff0-badf153a16d8'   # Umami website RSG live (staging clicks left out)
+NOT_LOADED = 'Not loaded'
 UMAMI_FROM = dt.date(2026, 11, 16)   # shop_click with merchant exists from 16 Nov 2026 09:18 UTC
 # Umami shop_click merchant -> (source, account in rsg.revenue_period). Networks per dfs/RUNBOOK.md.
 CLICK_MAP = {
@@ -27,7 +36,27 @@ CLICK_MAP = {
     'Nike UK': ('awin', 'Nike UK'), 'Nike DE': ('awin', 'Nike DE'), 'Nike IT': ('awin', 'Nike IT'),
     'Hoka UK': ('awin', 'Hoka UK'),
     'Brooks': ('impact', 'Brooks Running'), 'adidas': ('impact', 'adidas'),
+    # 27 Nov 2026: merchants added to the price engine since 25 Nov (names as the networks report them where known;
+    # resolve() matches the real account name once earnings arrive)
+    'Road Runner Sports': ('impact', 'Road Runner Sports'), 'adidas AU': ('awin', 'adidas AU'),
+    'Running Room': ('avantlink', 'Running Room Canada'), 'MEC': ('avantlink', 'MEC'),
+    'Pace Athletic': ('commission_factory', 'Pace Athletic'),
 }
+AMAZON_US_CLICKS = {'Amazon', 'Amazon search US', 'amazon.com'}   # counted by Amazon's own report instead
+NO_SOURCE = {'Amazon search UK': 'Amazon UK', 'amazon.co.uk': 'Amazon UK', 'Amazon search DE': 'Amazon DE',
+             'Amazon search CA': 'Amazon CA', 'amazon.ca': 'Amazon CA', 'runningwarehouse.com': 'Running Warehouse'}
+
+def map_click(m, country):
+    """Umami merchant (+ visitor country) -> (source, account) with earnings data, or None."""
+    if m == 'New Balance':   # one name on the site; US store on Impact US, the rest on New Balance EMEA
+        return ('impact', 'New Balance') if country == 'US' else ('impact', 'New Balance EMEA')
+    return CLICK_MAP.get(m)
+
+def no_source_name(m):
+    """Display name for a clicked merchant we have no earnings for (None = Amazon US, counted elsewhere)."""
+    if m in AMAZON_US_CLICKS: return None
+    if m.startswith('Running Warehouse'): return 'Running Warehouse'
+    return NO_SOURCE.get(m, 'Other links: ' + m)
 PAGE_GROUP = {'reviews': 'Reviews', 'comparisons': 'Comparisons', 'lists': 'Lists & guides', 'untagged': 'Untagged (Amazon)',
               'hidden': 'Hidden by Amazon', 'rest': 'Other pages', 'unmapped': 'Not mapped yet'}
 
@@ -58,6 +87,13 @@ def main(tpl, out, json_out=None):
       'amazon_week_end', (select max(period_end) from rsg.revenue_period where source='amazon_us' and grain='week'),
       'loads', (select json_object_agg(source, d) from (select source, max(loaded_at)::date d from rsg.revenue_load_log group by 1) x))""")
     loads = cov['loads'] or {}
+    loaded = [s for s in NETS if s in loads]
+    accts_all = q("""select coalesce(json_agg(x),'[]') from (select distinct source, account from rsg.revenue_period) x""")
+    def resolve(s, a):   # mapped name -> the account name the network really uses, if one matches
+        names = [r['account'] for r in accts_all if r['source'] == s]
+        if a in names: return a
+        hit = [n for n in names if n.casefold() == a.casefold()] or [n for n in names if n.casefold().startswith(a.casefold())]
+        return hit[0] if len(hit) == 1 else a
     end = {}
     for s in NETS:   # through yesterday if today's load ran, else the day before the last load
         ld = dt.date.fromisoformat(loads[s]) if s in loads else None
@@ -87,34 +123,60 @@ def main(tpl, out, json_out=None):
                 if k == 'this': a['pending'] = r['p']; a['confirmed'] = r['c']
         rows[s] = (w, acc)
 
-    # Umami clicks per (source, account): this month and per week
-    clicks = q(f"""select coalesce(json_agg(x),'[]') from (select m, (created_at at time zone 'UTC')::date d, count(*) n from (
-        select we.event_id, we.created_at, max(ed.string_value) filter (where ed.data_key='merchant') m
+    # whole previous month and whole same month last year, per account (to list merchants that stopped selling)
+    full = q(f"""select coalesce(json_agg(x),'[]') from (select source, account,
+              sum(earnings_usd) filter (where period_start >= {lit(pm0)} and period_start < {lit(m0)}) lm,
+              sum(earnings_usd) filter (where period_start >= {lit(ly0)} and period_start < {lit(month_add(ly0, 1))}) ly
+              from rsg.revenue_period where grain='day' and source in ({','.join("'%s'" % s for s in NETS)})
+              and period_start >= {lit(ly0)} and period_start < {lit(m0)} group by 1,2) x""")
+    full = {(r['source'], r['account']): r for r in full if (r['lm'] or 0) > 0 or (r['ly'] or 0) > 0}
+
+    # Umami clicks (live site) per merchant, visitor country and day
+    clicks = q(f"""select coalesce(json_agg(x),'[]') from (select m, c, (created_at at time zone 'UTC')::date d, count(*) n from (
+        select we.event_id, we.created_at, max(ed.string_value) filter (where ed.data_key='merchant') m,
+               max(ed.string_value) filter (where ed.data_key='country') c
         from website_event we join event_data ed on ed.website_event_id=we.event_id
-        where we.event_name='shop_click' and we.created_at >= {lit(month_add(m0, -4))}
-        group by 1,2) c group by 1,2) x""")
+        where we.event_name='shop_click' and we.website_id='{LIVE_SITE}' and we.created_at >= {lit(month_add(m0, -4))}
+        group by 1,2) x0 where m is not null group by 1,2,3) x""")
+    for c in clicks:
+        k = map_click(c['m'], c['c'])
+        c['k'] = (k[0], resolve(*k)) if k else None
     def clicks_for(s, a, d1, d2):
         if d2 < UMAMI_FROM: return None
-        n = sum(c['n'] for c in clicks if CLICK_MAP.get(c['m']) == (s, a) and d1 <= dt.date.fromisoformat(c['d']) <= d2)
+        n = sum(c['n'] for c in clicks if c['k'] == (s, a) and d1 <= dt.date.fromisoformat(c['d']) <= d2)
         return n
 
     cw0 = max(m0, UMAMI_FROM)
     ce = q(f"""select coalesce(json_agg(x),'[]') from (select source, account, sum(earnings_usd) e from rsg.revenue_period
-              where grain='day' and source in ('cj','awin','rakuten','impact') and period_start between {lit(cw0)} and {lit(yday)} group by 1,2) x""")
+              where grain='day' and source in ({','.join("'%s'" % s for s in NETS)}) and period_start between {lit(cw0)} and {lit(yday)} group by 1,2) x""")
     ce = {(r['source'], r['account']): r['e'] or 0 for r in ce}
     mtd = []
     for s in ['raptive'] + NETS:
         w, acc = rows[s]
         if not acc and s != 'raptive': pass
         kids = []
-        for a, v in sorted(acc.items(), key=lambda kv: -(kv[1].get('this') or 0)):
-            if not any(v.get(k) for k in ('this', 'last_month', 'last_year')): continue
+        if s != 'raptive':   # merchants that sold in all of last month / last year's month, or got clicks this month
+            for (src, a) in full:
+                if src == s: acc.setdefault(a, {})
+            for c in clicks:
+                if c['k'] and c['k'][0] == s and dt.date.fromisoformat(c['d']) >= m0: acc.setdefault(c['k'][1], {})
+        unloaded = s != 'raptive' and s not in loads
+        for a, v in sorted(acc.items(), key=lambda kv: (-(kv[1].get('this') or 0), -(full.get((s, kv[0]), {}).get('lm') or 0), kv[0])):
+            fl = full.get((s, a), {})
             c_this = clicks_for(s, a, m0, end[s]) if w['this'] else None
+            if not any(v.get(k) for k in ('this', 'last_month', 'last_year')) and not fl and not c_this: continue
+            note = None
+            if not unloaded and not v.get('this') and fl:
+                parts = [f"all of {pm0.strftime('%b')}: {'$%s' % format(round(fl['lm']), ',')}" if (fl.get('lm') or 0) > 0 else None,
+                         f"{ly0.strftime('%b %Y')}: {'$%s' % format(round(fl['ly']), ',')}" if (fl.get('ly') or 0) > 0 else None]
+                note = 'no sales this month · ' + ' · '.join(p for p in parts if p)
             c_lm = clicks_for(s, a, *w['last_month']) if w['last_month'] and w['last_month'][0] >= UMAMI_FROM else None
             kids.append(dict(name=a, this=r2(v.get('this', 0)), last_month=r2(v.get('last_month')) if w['last_month'] else None,
                              last_year=r2(v.get('last_year')) if w['last_year'] and not (s == 'raptive' and w['last_year'][0] < rap_min) else None,
                              pending=r2(v.get('pending')), confirmed=r2(v.get('confirmed')), clicks=c_this, clicks_last_month=c_lm,
-                             epc_earnings=r2(ce.get((s, a), 0)) if c_this is not None else None))
+                             epc_earnings=r2(ce.get((s, a), 0)) if c_this is not None else None, note=note))
+            if unloaded:
+                kids[-1].update(this=None, last_month=None, last_year=None, pending=None, confirmed=None, epc_earnings=None, no_earnings=True)
         def tot(k):
             vals = [x[k] for x in kids if x[k] is not None]
             if k == 'last_year' and (not w['last_year'] or (s == 'raptive' and w['last_year'][0] < rap_min)): return None
@@ -133,7 +195,27 @@ def main(tpl, out, json_out=None):
             row['epc_earnings'] = r2(sum(x['epc_earnings'] or 0 for x in kids if x['clicks'] is not None))
             row['children'] = kids
             row['note'] = f"orders to {end[s].day} {end[s].strftime('%b')}"
+            if unloaded:
+                if not kids: continue
+                row.update(this=None, last_month=None, last_year=None, pending=None, confirmed=None, epc_earnings=None, no_earnings=True,
+                           note='clicks only: earnings not loaded yet')
         mtd.append(row)
+
+    # ---- clicked merchants with no earnings source at all
+    nl = {}
+    for c in clicks:
+        if c['k'] or no_source_name(c['m']) is None: continue
+        d = dt.date.fromisoformat(c['d']); name = no_source_name(c['m'])
+        x = nl.setdefault(name, {'this': 0, 'lm': 0})
+        if m0 <= d <= yday: x['this'] += c['n']
+        if pm0 <= d <= clamp_day(pm0, yday.day): x['lm'] += c['n']
+    nl_kids = [dict(name=n, this=None, last_month=None, last_year=None, pending=None, confirmed=None, clicks=v['this'],
+                    clicks_last_month=v['lm'] if pm0 >= UMAMI_FROM else None, epc_earnings=None, no_earnings=True)
+               for n, v in sorted(nl.items(), key=lambda kv: (kv[0].startswith('Other'), -kv[1]['this'])) if v['this']]
+    if nl_kids:
+        mtd.append(dict(source=NOT_LOADED, this=None, last_month=None, last_year=None, pending=None, confirmed=None,
+                        clicks=sum(k['clicks'] for k in nl_kids), clicks_last_month=None, epc_earnings=None, no_earnings=True,
+                        note='clicks only: no earnings source in our data', children=nl_kids))
 
     # ---- Amazon: weeks inside the month
     wk = q(f"""select coalesce(json_agg(x order by period_start),'[]') from (select period_start, period_end, tag, clicks c, earnings_usd e
@@ -162,9 +244,9 @@ def main(tpl, out, json_out=None):
     # ---- daily chart (day sources)
     days = [m0 + dt.timedelta(days=i) for i in range((month_add(m0, 1) - m0).days)]
     dd = q(f"""select coalesce(json_agg(x),'[]') from (select source, period_start d, sum(earnings_usd) e from rsg.revenue_period
-              where grain='day' and source in ('raptive','cj','awin','rakuten','impact') and period_start >= {lit(m0)} and period_start < {lit(month_add(m0,1))} group by 1,2) x""")
+              where grain='day' and source in ({','.join("'%s'" % s for s in ['raptive'] + loaded)}) and period_start >= {lit(m0)} and period_start < {lit(month_add(m0,1))} group by 1,2) x""")
     daily = {}
-    for s in ['raptive'] + NETS:
+    for s in ['raptive'] + loaded:
         m = {r['d']: r['e'] for r in dd if r['source'] == s}
         daily[LABEL[s]] = [r2(m.get(d.isoformat(), 0)) if d <= end[s] else None for d in days]
 
@@ -173,7 +255,7 @@ def main(tpl, out, json_out=None):
     mm = q(f"""select coalesce(json_agg(x),'[]') from (select source, to_char(period_start,'YYYY-MM') m, sum(earnings_usd) e from rsg.revenue_period
               where ((grain='day' and source <> 'amazon_us') or (grain='month' and source='amazon_us')) and period_start >= {lit(ly0)} group by 1,2) x""")
     monthly = {}
-    for s in ORDER:
+    for s in [s for s in ORDER if s not in NETS or s in loaded]:
         m = {r['m']: r['e'] for r in mm if r['source'] == s}
         vals = []
         for mo in months:
@@ -191,7 +273,7 @@ def main(tpl, out, json_out=None):
                          or (grain='week' and source='amazon_us' and period_start in ({','.join(lit(dt.date.fromisoformat(w)) for w in weeks) or 'NULL'})))
                   group by 1) x""")
         return {r['g']: r['e'] or 0 for r in res}
-    net_end = max(end[s] for s in NETS)
+    net_end = max(end[s] for s in loaded)
     pthis = pt((m0, net_end), this_w); plast = pt((pm0, clamp_day(pm0, net_end.day)), prev_w)
     page_types = [dict(type=PAGE_GROUP.get(g, g), this=r2(pthis.get(g, 0)), last_month=r2(plast.get(g, 0)))
                   for g in sorted(set(pthis) | set(plast), key=lambda g: -(pthis.get(g, 0)))]
@@ -200,14 +282,14 @@ def main(tpl, out, json_out=None):
     w0 = yday - dt.timedelta(days=yday.weekday()) - dt.timedelta(weeks=12)
     weeks = [w0 + dt.timedelta(weeks=i) for i in range(13)]
     we = q(f"""select coalesce(json_agg(x),'[]') from (select source, account, date_trunc('week', period_start)::date w, sum(earnings_usd) e
-              from rsg.revenue_period where grain='day' and source in ('cj','awin','rakuten','impact') and period_start >= {lit(w0)} group by 1,2,3) x""")
+              from rsg.revenue_period where grain='day' and source in ({','.join("'%s'" % s for s in NETS)}) and period_start >= {lit(w0)} group by 1,2,3) x""")
     merchants = {}
     for s in NETS:
-        accts = sorted({r['account'] for r in we if r['source'] == s} | {a for (src, a) in CLICK_MAP.values() if src == s})
+        accts = sorted({r['account'] for r in we if r['source'] == s} | {c['k'][1] for c in clicks if c['k'] and c['k'][0] == s})
         for a in accts:
             e = {r['w']: r['e'] for r in we if r['source'] == s and r['account'] == a}
             cl = [clicks_for(s, a, w, w + dt.timedelta(days=6)) if w + dt.timedelta(days=6) >= UMAMI_FROM else None for w in weeks]
-            ev = [r2(e.get(w.isoformat(), 0)) if w <= end[s] else None for w in weeks]
+            ev = [r2(e.get(w.isoformat(), 0)) if w <= end[s] and s in loads else None for w in weeks]
             if not any(ev) and not any(cl): continue
             merchants[f"{LABEL[s]} · {a}"] = dict(network=LABEL[s], name=a, weeks=[w.isoformat() for w in weeks], clicks=cl, earnings=ev)
     aw = q(f"""select coalesce(json_agg(x),'[]') from (select tag, period_start w, clicks c, earnings_usd e from rsg.revenue_period
@@ -232,8 +314,8 @@ def main(tpl, out, json_out=None):
                   'last_year_missing': [r['source'] for r in mtd if r['last_year'] is None and (r['this'] or 0) > 0]},
         'coverage': [{'source': 'Raptive', 'through': end['raptive'].isoformat(), 'note': f"from {rap_min.strftime('%-d %b %Y')}"},
                      {'source': 'Amazon US', 'through': (a_end or dt.date.fromisoformat(cov['amazon_week_end'])).isoformat(), 'note': 'weekly download'}]
-                    + [{'source': LABEL[s], 'through': end[s].isoformat()} for s in NETS],
-        'sources': [LABEL[s] for s in ORDER],
+                    + [{'source': LABEL[s], 'through': end[s].isoformat()} for s in loaded],
+        'sources': [LABEL[s] for s in ORDER if s not in NETS or s in loaded],
         'mtd': mtd,
         'daily': {'dates': [d.isoformat() for d in days], 'series': daily},
         'monthly': {'months': [m.strftime('%Y-%m') for m in months], 'series': monthly},
