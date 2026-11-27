@@ -65,7 +65,7 @@ _Open work only, in priority order. Done items leave this file (they are in `DEC
 - **Small output bugs left by the warnings cleanup** (26 Nov, Ruggero to decide; `theme/RUNBOOK.md` "PHP warnings"): tools box heading without the review count, empty brand in the road-review product microdata, `[gallery]` without ids shows one empty link, default avatar without alt.
 - **Live PHP log after the 26 Nov deploy**: the weekly digest (Mon 30 Nov ~05:20 UTC) should list only the 5 `dstudio` warnings; anything else is new.
 - **Staging: who wrote empty meta into Redis db 3 on ~24 Nov 11:02 UTC?** (109 `comment_meta` entries; pages now guarded, cache emptied by the 25 Nov restart). Only if it comes back: check db 3 single keys (no bulk scans), `hosting/RUNBOOK.md` Open 10.
-- **Rocket.net outage 27 Nov** (05:31 UTC on, 521 on uncached requests): recovered ~06:40 UTC; ticket 124529 (Ruggero must click Zendesk's email-verification link, 06:12 UTC mail); read the answer, then decide (`hosting/RUNBOOK.md` Open 7).
+- **Rocket.net outage 27 Nov** (05:31 UTC on, 521 on uncached requests): recovered ~06:40 UTC; ticket 124529 answered 08:48 UTC, vague ("elevated resource utilization", stabilised); follow-up for specifics drafted (Ruggero sends), then decide (`hosting/RUNBOOK.md` Open 7).
 - **Redis crash ticket to Rocket.net**: draft in the 25 Nov chat, parked (Ruggero).
 - **HOKA Rincon 5 + Saucony Ride 20: wait** (Ruggero 25 Nov): not in Airtable (Running Warehouse doesn't sell the Rincon 5; Ride 20 not there yet).
 - **Scraper alarm**: Ruggero creates the healthchecks.io check `rsg-scraper` (period 1 day, grace 12 h) and gives the ping address → `HC_URL` in `~/code/RW-info/.env` on the OptiPlex (`automations/rw-scraper/README.md`).
