@@ -1,6 +1,6 @@
 # Earnings dashboard (template, 25 Nov 2026)
 
-Ruggero 25 Nov: a page to check earnings, including the current month. Chosen: **a static page rebuilt nightly on rsgmedia** after the 06:55 UTC revenue job (no new service; password-protected). Status: **built nightly on rsgmedia since 25 Nov (last step of `run_daily.sh`), served by container `rsg-dash` behind a password; public address waits for DNS + Nginx Proxy Manager (`hosting/hetzner/RUNBOOK.md`).**
+Ruggero 25 Nov: a page to check earnings, including the current month. Chosen: **a static page rebuilt nightly on rsgmedia** after the 06:55 UTC revenue job (no new service; password-protected). Status: **built nightly on rsgmedia since 25 Nov (last step of `run_daily.sh`); public since 27 Nov at https://earnings.rsgmedia.info (user `ruggero`, password in 1Password / `_private/earnings-dashboard-login.txt`); setup `hosting/hetzner/RUNBOOK.md`.**
 
 - `template.html`: the page. One `<script type="application/json" id="rsg-data">__DATA__</script>` block; the nightly job replaces `__DATA__` with JSON of the shape in `sample.json`. Everything else is static.
 - `sample.json`: made-up numbers (`"sample": true` shows a "Sample numbers" banner). `preview-desktop-mobile.png`: desktop + phone render.

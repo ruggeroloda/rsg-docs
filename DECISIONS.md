@@ -165,6 +165,7 @@ Dated, one line each, in date order (newest at the bottom). A line that was late
 - 2026-11-27 — **Email links: sub-ID parameter chosen by link domain; unknown domain stops the build** (after the AU email's Commission Factory links went out with `sid=`). `email/RUNBOOK.md` "Rules in force".
 - 2026-11-27 — **SportsShoes UK (Partnerize) into the price engine, live Tue 1 Dec** (Ruggero: not during the freeze; Black Friday vouchers pay 1 %). Branch `sportsshoes-gb`, test bench. `dfs/RUNBOOK.md` "Partnerize".
 - 2026-11-27 — **Commission Factory + AvantLink into the daily revenue (and CF offers) loads, live Tue 1 Dec** (Ruggero: build and test now, switch on after the freeze). `analytics/README.md` "Revenue data".
+- 2026-11-27 — **Earnings dashboard public at https://earnings.rsgmedia.info** (Ruggero): HTTPS + the dashboard's own password, noindex; no Tailscale or tunnel needed, works on the phone. `hosting/hetzner/RUNBOOK.md`.
 
 ## Open questions (decide, then move above)
 - **List prices per currency** (reviewed 19 Nov, not decided): existing WordPress fields, one per currency (EUR = `rrp_de`), DFS lookup by currency; feeds' own list prices propose raises only, approved before writing; no brand-site scrapers. US test run: 10 proposals. `dfs/LIST-PRICES-2026-11-19.md` (replaces the 24 Jun scraper plan if agreed).
