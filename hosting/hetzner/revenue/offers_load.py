@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Active offers (promotions, coupons) from joined advertisers on Awin, Rakuten, CJ and Impact -> SQL on stdout
+"""Active offers (promotions, coupons) from joined advertisers on Awin, Rakuten, CJ, Impact and Commission Factory -> SQL on stdout
 (pipe into psql as umami). Stdlib only. Upsert into rsg.offer by (source, offer_id): first_seen stays,
 last_seen = this run; nothing is deleted (an offer missing from today's pull keeps its old last_seen).
 A network that fails is skipped (its offers keep their old last_seen); the others still load.
 
-env: AWIN_PUBLISHER_ID, AWIN_TOKEN, IMPACT_ACCOUNT_SID, IMPACT_AUTH_TOKEN, RAKUTEN_SID, RAKUTEN_CLIENT_ID, RAKUTEN_SECRET, CJ_TOKEN, CJ_WEBSITE_ID
+env: AWIN_PUBLISHER_ID, AWIN_TOKEN, IMPACT_ACCOUNT_SID, IMPACT_AUTH_TOKEN, RAKUTEN_SID, RAKUTEN_CLIENT_ID, RAKUTEN_SECRET, CJ_TOKEN, CJ_WEBSITE_ID,
+     CF_API_KEY (Commission Factory, 27 Nov 2026; network skipped when the key is not set)
 """
 import os, re, sys, json, time, base64, hashlib, urllib.request, urllib.parse, xml.etree.ElementTree as ET
 
@@ -102,12 +103,26 @@ def impact():
                 end_at=d.get('EndDate'), regions=None, url=c.get('TrackingLink'), terms=None))
     return out
 
+def cf():
+    """Commission Factory (27 Nov 2026): promotions and coupons of joined merchants. Market = AU (the merchant name has no country)."""
+    key = os.environ.get('CF_API_KEY')
+    if not key: raise RuntimeError('CF_API_KEY not set')
+    api = 'https://api.commissionfactory.com/V1/Affiliate/'
+    out = []
+    for kind in ('Promotions', 'Coupons'):
+        for p in json.loads(http(api + kind + '?apiKey=' + urllib.parse.quote(key), {'Accept': 'application/json'})):
+            out.append(dict(offer_id=f"{kind[0].lower()}{p['Id']}", advertiser=(p.get('MerchantName') or '') + ' AU',
+                title=p.get('Description') or p.get('Name'), description=p.get('Description'), code=p.get('Code') or p.get('CouponCode'),
+                type=kind[:-1].lower(), start_at=p.get('StartDate') or p.get('DateCreated'), end_at=p.get('EndDate'), regions='AU',
+                url=p.get('TrackingUrl'), terms=p.get('TermsAndConditions')))
+    return out
+
 def q(v):
     return 'NULL' if v in (None, '') else "'" + str(v).replace("'", "''") + "'"
 
 def main():
     sql = ['BEGIN;']
-    for name, fn in (('awin', awin), ('rakuten', rakuten), ('cj', cj), ('impact', impact)):
+    for name, fn in (('awin', awin), ('rakuten', rakuten), ('cj', cj), ('impact', impact), ('cf', cf)):
         try:
             offers = fn()
         except Exception as ex:

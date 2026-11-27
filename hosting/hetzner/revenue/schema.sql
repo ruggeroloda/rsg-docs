@@ -224,3 +224,21 @@ CREATE TABLE IF NOT EXISTS rsg.raptive_day_revision (     -- site totals of ever
   day date NOT NULL, loaded_at timestamptz NOT NULL DEFAULT now(), earnings numeric(12,2), pageviews int, sessions int,
   PRIMARY KEY (day, loaded_at));
 GRANT SELECT ON rsg.raptive_site_day, rsg.raptive_page_day, rsg.raptive_breakdown_day, rsg.raptive_day_revision TO rsg_analyst;
+
+-- Commission Factory (Australia; 27 Nov 2026, cf_load.py): every transaction, upsert by CF id, raw JSON kept. Amounts in AUD.
+CREATE TABLE IF NOT EXISTS rsg.cf_transaction (
+  id bigint PRIMARY KEY, merchant_id int, merchant text, order_id text,
+  status text, status2 text,                                   -- Pending / Approved / Void; Status2 e.g. Paid
+  sale_value numeric(12,2), commission numeric(12,2), currency text, reported_sale_value numeric(12,2),
+  unique_id text, customer_country text, tracking_method text, created_at timestamp, modified_at timestamp,
+  raw jsonb, loaded_at timestamptz NOT NULL DEFAULT now());
+CREATE INDEX IF NOT EXISTS cf_transaction_created ON rsg.cf_transaction (created_at);
+
+-- AvantLink Canada (27 Nov 2026, avantlink_load.py): report 8 commission detail, upsert by AvantLink transaction id. Amounts in CAD.
+CREATE TABLE IF NOT EXISTS rsg.avantlink_commission (
+  txn_id text PRIMARY KEY, merchant_id int, merchant text, website_id int, order_id text,
+  amount numeric(12,2), base_commission numeric(12,2), incentive_commission numeric(12,2), total_commission numeric(12,2),
+  currency text, status text, txn_type text, txn_at timestamp, last_click_at timestamp,
+  tracking_code text, coupon_code text, item_count int, loaded_at timestamptz NOT NULL DEFAULT now());
+CREATE INDEX IF NOT EXISTS avantlink_commission_txn ON rsg.avantlink_commission (txn_at);
+GRANT SELECT ON rsg.cf_transaction, rsg.avantlink_commission TO rsg_analyst;

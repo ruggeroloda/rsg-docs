@@ -1,6 +1,6 @@
 # RSG — project primer
 
-_Last updated 2026-11-27 (Rocket.net outage 27 Nov; earlier: docs cleanup: one line per area here, runbooks = current state, decisions before 18 Nov in `_archive/`)._ **Start every RSG session here** (after `git pull`), then read `ROADMAP.md` and the `RUNBOOK.md` of the workstream you work on. That's all you need for the current state.
+_Last updated 2026-11-27 (Black Friday emails, SportsShoes test bench, CF/AvantLink loaders; earlier: Rocket.net outage 27 Nov; earlier: docs cleanup: one line per area here, runbooks = current state, decisions before 18 Nov in `_archive/`)._ **Start every RSG session here** (after `git pull`), then read `ROADMAP.md` and the `RUNBOOK.md` of the workstream you work on. That's all you need for the current state.
 
 **Strategy (22 Nov 2026, `STRATEGY.md`):** (1) the reader gets the answer and doesn't return to Google; (2) revenue per 1,000 views (shop clicks plus Raptive) goes up, scroll depth is not a goal; (3) the undecided reader opens a second page, ideally a comparison. Every change says which goal it serves; scoreboard and change log are in `STRATEGY.md`.
 
@@ -9,15 +9,15 @@ _Last updated 2026-11-27 (Rocket.net outage 27 Nov; earlier: docs cleanup: one l
 ## Workstreams
 | Workstream | Runbook (current state) | State (26 Nov) |
 |---|---|---|
-| Price engine (DFS) | `dfs/RUNBOOK.md` | Live on rsg-dfs since 10 Nov: 31 feeds, 11 countries, 329 of 429 reviews with offers. Newest: Road Runner Sports US + New Balance DE/IT/GB (26 Nov). Open: retire the old Linode (Phase F), outdated US list prices |
+| Price engine (DFS) | `dfs/RUNBOOK.md` | Live on rsg-dfs since 10 Nov: 31 feeds, 11 countries, 329 of 429 reviews with offers. Newest: Road Runner Sports US + New Balance DE/IT/GB (26 Nov); SportsShoes UK ready on the test bench (live Tue 1 Dec). Open: retire the old Linode (Phase F), outdated US list prices |
 | WordPress site + theme | `theme/RUNBOOK.md` | Reskin live since 15 Nov; live = theme `0019202` (26 Nov, all PHP warnings fixed). Staging runs branch `categories` (shoe categories, live 8–10 Dec). Freeze Fri 27 – Mon 30 Nov |
 | Hosting, backups, DNS | `hosting/RUNBOOK.md` | Rocket.net Business (paid to 24 Nov 2027), new server since 24 Nov; weekly WordPress backup to Drive fixed 24 Nov; Redis crash 25 Nov (ticket parked); **outage 27 Nov from 05:31 UTC** (521 on uncached requests, stalls back on the new server), ticket sent |
 | rsgmedia server (n8n, Stargrid) | `hosting/hetzner/RUNBOOK.md` | Hardened, backed up; also the DFS test bench and the analyst database |
 | Automations (n8n, Make) | `automations/RUNBOOK.md` | Review inserts move Make → n8n Tue 1 Dec (built, tested on staging); bank import still on paid n8n Cloud; Running Warehouse scraper on the OptiPlex fixed 25 Nov |
-| Email | `email/RUNBOOK.md` | Black Friday email 1 sent 24 Nov (US); email 2 Fri 27 Nov, Cyber Monday 30 Nov; then list cleanup → platform decision |
+| Email | `email/RUNBOOK.md` | MailerLite drafts and groups by API (Claude never sends). Black Friday: email 1 24 Nov (US); 27 Nov AU, GB, US A + B (Sat) to country groups BF2026 – USA/UK/AU; Cyber Monday 30 Nov (US); then list cleanup → platform decision |
 | Content | `content/README.md` | Shoe categories on staging (live 8–10 Dec); review flow agreed (Airtable + one n8n flow); review format waits for Ruggero's six decisions; 14 shoes to assign; prune from the week of 7 Dec |
 | Costs | `costs/COSTS.md` | Register |
-| Analytics + analyst | `analytics/README.md` | Umami since 16 Nov; revenue data in `rsg` (Raptive daily, CJ, Rakuten, Awin, Impact, Amazon); GA4 + Search Console history; baseline + "head to head" test read 8 Dec |
+| Analytics + analyst | `analytics/README.md` | Umami since 16 Nov; revenue data in `rsg` (Raptive daily, CJ, Rakuten, Awin, Impact, Amazon; Commission Factory + AvantLink built, on from 1 Dec); GA4 + Search Console history; baseline + "head to head" test read 8 Dec |
 
 ## Servers
 | Server | Runs | Access |

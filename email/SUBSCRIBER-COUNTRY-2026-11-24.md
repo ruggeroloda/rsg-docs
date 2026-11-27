@@ -1,5 +1,7 @@
 # Subscriber country: note (24 Nov 2026)
 
+**Update 27 Nov:** wrong premise below — MailerLite has a Country field (17k filled) and its own location field (Gleam); see `RUNBOOK.md` "Subscriber country". Options 2–3 remain for the ~10k with neither.
+
 **Status: idea, not started** (Ruggero 24 Nov: write it down, don't do it yet). Earliest after Cyber Monday (freeze week).
 
 ## Problem

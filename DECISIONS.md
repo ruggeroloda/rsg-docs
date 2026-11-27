@@ -157,6 +157,14 @@ Dated, one line each, in date order (newest at the bottom). A line that was late
 - 2026-11-26 — **`rsg-core` cleanup (steps 2–6) after the categories go-live** (~11 Dec; staging is busy until then); only the Pixian cut-out on REST/n8n inserts may come earlier (Claude's advice, Ruggero to schedule).
 - 2026-11-26 — **Shoe categories: Guide 19 = Stability, Pegasus Plus 2 = Performance trainer** (Ruggero; both already so in Airtable). **Go-live stays 8–10 Dec**, not earlier (Ruggero agrees: freeze 27–30 Nov, keeps the 1–7 Dec baseline clean, step 8 baseline first).
 - 2026-11-27 — **Rocket.net stalls reopened** after today's outage on dal11 (from 05:31 UTC, 521 on uncached requests); Ruggero sent the ticket. `hosting/RUNBOOK.md` Open 7.
+- 2026-11-26 — **Deals emails open with a short personal note from Ruggero, no blue hero block** (Ruggero: it read as AI and pushed the offers down). `email/RUNBOOK.md`.
+- 2026-11-26 — **Country audiences = static MailerLite groups BF2026 – USA/UK/AU**: Country field decides, else MailerLite location, both empty = USA ("USA = not explicitly from somewhere else", Ruggero); used for 27–30 Nov. `email/RUNBOOK.md` "Subscriber country".
+- 2026-11-26 — **No Black Friday email for Canada** (Ruggero: only 2 MEC deals, no store offers). `email/RUNBOOK.md`.
+- 2026-11-27 — **Zappos stays in deals emails but never leads** (pays 0 % on items ≥ 30 % off; Ruggero: "middle way", check Zappos clicks/orders before Cyber Monday). `analytics/README.md` "Zappos".
+- 2026-11-27 — **US email B goes to the whole BF2026 – USA group**, not only non-openers (Ruggero). `email/RUNBOOK.md`.
+- 2026-11-27 — **Email links: sub-ID parameter chosen by link domain; unknown domain stops the build** (after the AU email's Commission Factory links went out with `sid=`). `email/RUNBOOK.md` "Rules in force".
+- 2026-11-27 — **SportsShoes UK (Partnerize) into the price engine, live Tue 1 Dec** (Ruggero: not during the freeze; Black Friday vouchers pay 1 %). Branch `sportsshoes-gb`, test bench. `dfs/RUNBOOK.md` "Partnerize".
+- 2026-11-27 — **Commission Factory + AvantLink into the daily revenue (and CF offers) loads, live Tue 1 Dec** (Ruggero: build and test now, switch on after the freeze). `analytics/README.md` "Revenue data".
 
 ## Open questions (decide, then move above)
 - **List prices per currency** (reviewed 19 Nov, not decided): existing WordPress fields, one per currency (EUR = `rrp_de`), DFS lookup by currency; feeds' own list prices propose raises only, approved before writing; no brand-site scrapers. US test run: 10 proposals. `dfs/LIST-PRICES-2026-11-19.md` (replaces the 24 Jun scraper plan if agreed).
