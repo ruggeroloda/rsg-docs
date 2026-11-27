@@ -164,9 +164,10 @@ Dated, one line each, in date order (newest at the bottom). A line that was late
 - 2026-11-27 — **US email B goes to the whole BF2026 – USA group**, not only non-openers (Ruggero). `email/RUNBOOK.md`.
 - 2026-11-27 — **Email links: sub-ID parameter chosen by link domain; unknown domain stops the build** (after the AU email's Commission Factory links went out with `sid=`). `email/RUNBOOK.md` "Rules in force".
 - 2026-11-27 — **SportsShoes UK (Partnerize) into the price engine, live Tue 1 Dec** (Ruggero: not during the freeze; Black Friday vouchers pay 1 %). Branch `sportsshoes-gb`, test bench. `dfs/RUNBOOK.md` "Partnerize".
-- 2026-11-27 — **Commission Factory + AvantLink into the daily revenue (and CF offers) loads, live Tue 1 Dec** (Ruggero: build and test now, switch on after the freeze). `analytics/README.md` "Revenue data".
+- 2026-11-27 — **Commission Factory + AvantLink into the daily revenue (and CF offers) loads, live Tue 1 Dec** (Ruggero: build and test now, switch on after the freeze). `analytics/README.md` "Revenue data". **→ Superseded** 2026-11-27 (switched on the same day, below).
 - 2026-11-27 — **Earnings dashboard public at https://earnings.rsgmedia.info** (Ruggero): HTTPS + the dashboard's own password, noindex; no Tailscale or tunnel needed, works on the phone. `hosting/hetzner/RUNBOOK.md`.
 - 2026-11-27 — **Earnings dashboard lists every merchant** (Ruggero): new merchants under their network, merchants that sold last month or last year but not this month with a note, a "Not loaded" row for clicks without an earnings source (Running Warehouse, Amazon UK/DE/CA). `analytics/earnings-dashboard/README.md` "Merchant coverage".
+- 2026-11-27 — **Commission Factory + AvantLink loads switched on now, not 1 Dec** (Ruggero: "do everything", after a Running Room sale was missing from the dashboard): server-side only, no site change during the freeze. `analytics/README.md` "Revenue data".
 
 ## Open questions (decide, then move above)
 - **List prices per currency** (reviewed 19 Nov, not decided): existing WordPress fields, one per currency (EUR = `rrp_de`), DFS lookup by currency; feeds' own list prices propose raises only, approved before writing; no brand-site scrapers. US test run: 10 proposals. `dfs/LIST-PRICES-2026-11-19.md` (replaces the 24 Jun scraper plan if agreed).

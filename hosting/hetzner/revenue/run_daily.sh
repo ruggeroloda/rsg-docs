@@ -13,6 +13,10 @@ echo "== $(date -u +%FT%TZ) awin" >> daily.log
 python3 awin_load.py 2>> daily.log | docker exec -i postgres psql -U umami -d umami -v ON_ERROR_STOP=1 -q >> daily.log 2>&1
 echo "== $(date -u +%FT%TZ) impact" >> daily.log
 python3 impact_load.py 2>> daily.log | docker exec -i postgres psql -U umami -d umami -v ON_ERROR_STOP=1 -q >> daily.log 2>&1
+echo "== $(date -u +%FT%TZ) avantlink" >> daily.log
+python3 avantlink_load.py 2>> daily.log | docker exec -i postgres psql -U umami -d umami -v ON_ERROR_STOP=1 -q >> daily.log 2>&1
+echo "== $(date -u +%FT%TZ) commission_factory" >> daily.log
+python3 cf_load.py 2>> daily.log | docker exec -i postgres psql -U umami -d umami -v ON_ERROR_STOP=1 -q >> daily.log 2>&1
 echo "== $(date -u +%FT%TZ) raptive" >> daily.log
 python3 raptive_load.py 2>> daily.log | docker exec -i postgres psql -U umami -d umami -v ON_ERROR_STOP=1 -q >> daily.log 2>&1
 echo "== $(date -u +%FT%TZ) offers" >> daily.log

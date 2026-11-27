@@ -17,7 +17,7 @@ _Last updated 2026-11-27 (Black Friday emails, SportsShoes test bench, CF/AvantL
 | Email | `email/RUNBOOK.md` | MailerLite drafts and groups by API (Claude never sends). Black Friday: email 1 24 Nov (US); 27 Nov AU, GB, US A + B (Sat) to country groups BF2026 – USA/UK/AU; Cyber Monday 30 Nov (US); then list cleanup → platform decision |
 | Content | `content/README.md` | Shoe categories on staging (live 8–10 Dec); review flow agreed (Airtable + one n8n flow); review format waits for Ruggero's six decisions; 14 shoes to assign; prune from the week of 7 Dec |
 | Costs | `costs/COSTS.md` | Register |
-| Analytics + analyst | `analytics/README.md` | Umami since 16 Nov; revenue data in `rsg` (Raptive daily, CJ, Rakuten, Awin, Impact, Amazon; Commission Factory + AvantLink built, on from 1 Dec); GA4 + Search Console history; baseline + "head to head" test read 8 Dec |
+| Analytics + analyst | `analytics/README.md` | Umami since 16 Nov; revenue data in `rsg` (Raptive daily, CJ, Rakuten, Awin, Impact, Amazon; Commission Factory + AvantLink since 27 Nov); earnings dashboard https://earnings.rsgmedia.info; GA4 + Search Console history; baseline + "head to head" test read 8 Dec |
 
 ## Servers
 | Server | Runs | Access |
