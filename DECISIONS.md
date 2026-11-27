@@ -156,6 +156,7 @@ Dated, one line each, in date order (newest at the bottom). A line that was late
 - 2026-11-26 — **One logo tool**: `optical.py` and its source images live only in the price-engine repo (`app/tools/logos/`); the docs copy is gone (it had drifted: MEC missing).
 - 2026-11-26 — **`rsg-core` cleanup (steps 2–6) after the categories go-live** (~11 Dec; staging is busy until then); only the Pixian cut-out on REST/n8n inserts may come earlier (Claude's advice, Ruggero to schedule).
 - 2026-11-26 — **Shoe categories: Guide 19 = Stability, Pegasus Plus 2 = Performance trainer** (Ruggero; both already so in Airtable). **Go-live stays 8–10 Dec**, not earlier (Ruggero agrees: freeze 27–30 Nov, keeps the 1–7 Dec baseline clean, step 8 baseline first).
+- 2026-11-27 — **Rocket.net stalls reopened** after today's outage on dal11 (from 05:31 UTC, 521 on uncached requests); Ruggero sent the ticket. `hosting/RUNBOOK.md` Open 7.
 
 ## Open questions (decide, then move above)
 - **List prices per currency** (reviewed 19 Nov, not decided): existing WordPress fields, one per currency (EUR = `rrp_de`), DFS lookup by currency; feeds' own list prices propose raises only, approved before writing; no brand-site scrapers. US test run: 10 proposals. `dfs/LIST-PRICES-2026-11-19.md` (replaces the 24 Jun scraper plan if agreed).
