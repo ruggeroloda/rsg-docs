@@ -24,3 +24,9 @@ Next (when Ruggero says go): build script reading `rsg.revenue_period` / `revenu
 - **"Not loaded" row:** clicked merchants with no earnings source at all: Running Warehouse (all countries), Amazon UK / DE / CA, raw links (`amzn.to`, network domains). Amazon US clicks come from Amazon's own report, so Umami's Amazon US clicks are left out.
 - Total clicks and EPC leave out rows without earnings data. Clicks count the live site only (staging left out since 27 Nov).
 - Swapped in 27 Nov ~11:07 UTC; previous version on rsgmedia `~/revenue/dashboard/*.bak-20261127`, page `~/earnings-dash/index.html.bak-20261127`.
+
+## Coverage dates and pace (27 Nov 2026, Ruggero)
+- Header line = what each kind of source covers: "Networks to <d> · Raptive to <d> · Amazon US to <d>" (`month.through_by`). Raptive's API publishes each day 2–3 days late; Amazon is weekly.
+- "Per day so far" and "Month end at this pace" = per source, this month's earnings ÷ the days that source covers (`days` on each row: day sources = 1st → their last day; Amazon US = 7 × weekly files in the month), summed. Clicks-only rows left out.
+- Daily chart: a day up to yesterday where a source has not reported yet is hatched; its tooltip says "<source>: not in yet".
+- Swapped in 27 Nov ~11:27 UTC; previous version `~/revenue/dashboard/*.bak-20261127b`.

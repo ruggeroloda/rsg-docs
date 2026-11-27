@@ -182,7 +182,8 @@ def main(tpl, out, json_out=None):
             if k == 'last_year' and (not w['last_year'] or (s == 'raptive' and w['last_year'][0] < rap_min)): return None
             if k == 'last_month' and not w['last_month']: return None
             return r2(sum(vals)) if vals else (0 if k in ('this', 'last_month', 'last_year') else None)
-        row = dict(source=LABEL[s], this=tot('this') or 0, last_month=tot('last_month'), last_year=tot('last_year'),
+        row = dict(source=LABEL[s], days=(end[s] - m0).days + 1 if end[s] >= m0 else 0,
+                   this=tot('this') or 0, last_month=tot('last_month'), last_year=tot('last_year'),
                    pending=None if s == 'raptive' else tot('pending'), confirmed=None if s == 'raptive' else tot('confirmed'))
         if s == 'raptive':
             row['note'] = f"estimate until month close · to {end[s].day} {end[s].strftime('%b')}"
@@ -239,6 +240,7 @@ def main(tpl, out, json_out=None):
                    last_year=None, pending=None, confirmed=None, clicks=sum(k['clicks'] for k in kids),
                    clicks_last_month=sum(k['clicks_last_month'] or 0 for k in kids) if prev_w else None, children=kids,
                    note=(f"{len(this_w)} weekly files, {fmt_range(dt.date.fromisoformat(this_w[0]), a_end)}; vs first {len(prev_w)} weeks of {pm0.strftime('%b')}" if this_w else "no weekly file for this month yet"))
+    amz_row['days'] = 7 * len(this_w)   # covered days = the weekly files inside the month
     mtd.insert(1, amz_row)
 
     # ---- daily chart (day sources)
@@ -307,7 +309,11 @@ def main(tpl, out, json_out=None):
         'sample': False,
         'generated': dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
         'currency': 'USD',
-        'month': {'label': m0.strftime('%B %Y'), 'start': m0.isoformat(), 'through': net_end.isoformat(),
+        'month': {'label': m0.strftime('%B %Y'), 'start': m0.isoformat(), 'through': net_end.isoformat(), 'yesterday': yday.isoformat(),
+                  # what each kind of source covers so far (27 Nov 2026: Raptive reports 2-3 days late, Amazon weekly)
+                  'through_by': [{'label': 'Networks', 'through': net_end.isoformat()},
+                                 {'label': 'Raptive', 'through': end['raptive'].isoformat()}]
+                                + ([{'label': 'Amazon US', 'through': a_end.isoformat()}] if a_end else []),
                   'days_in_month': (month_add(m0, 1) - m0).days,
                   'last_month_label': fmt_range(pm0, clamp_day(pm0, net_end.day)),
                   'last_year_label': fmt_range(ly0, clamp_day(ly0, net_end.day)),

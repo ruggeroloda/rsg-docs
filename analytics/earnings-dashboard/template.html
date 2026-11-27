@@ -174,7 +174,7 @@ if(D.sample) el('sample-note').hidden=false;
 // month to date
 const M=D.month, tot=sum(D.mtd.map(r=>r.this)), lm=sum(D.mtd.map(r=>r.last_month)), lyMiss=(M.last_year_missing||[]), ly=lyMiss.length?null:sum(D.mtd.map(r=>r.last_year));
 el('mtd-title').textContent = M.label+' so far';
-el('mtd-sub').textContent = '1–'+day(M.through)+', all sources, US dollars';
+el('mtd-sub').textContent = 'US dollars · '+(M.through_by||[{label:'All sources',through:M.through}]).map(b=>b.label+' to '+day(b.through)).join(' · ');
 el('mtd-total').textContent = usd(tot);
 el('mtd-deltas').innerHTML =
   '<span class="delta">'+delta(tot,lm)+' vs '+M.last_month_label+' ('+usd(lm)+')</span>'+
@@ -183,10 +183,11 @@ el('mtd-deltas').innerHTML =
    : '<span class="delta">'+delta(tot,ly)+' vs '+M.last_year_label+' ('+usd(ly)+')</span>');
 
 const pend=sum(D.mtd.map(r=>r.pending)), conf=sum(D.mtd.map(r=>r.confirmed));
-const daysDone=+M.through.slice(8,10), pace=tot/daysDone*M.days_in_month;
+// pace per source over the days it covers (27 Nov 2026): Raptive lags 2-3 days, Amazon is weekly
+const perDay=sum(D.mtd.filter(r=>!r.no_earnings&&r.days>0).map(r=>(r.this||0)/r.days)), pace=perDay*M.days_in_month;
 const best=D.mtd.slice().sort((a,b)=>b.this-a.this)[0];
 el('tiles').innerHTML = [
-  ['Per day so far',usd(tot/daysDone),daysDone+' days'],
+  ['Per day so far',usd(perDay),'each source over the days it has reported'],
   ['Month end at this pace',usd(pace),'straight line, no Black Friday bump'],
   ['Pending',usd(pend),'networks that report status'],
   ['Confirmed',usd(conf),'approved / locked'],
@@ -241,12 +242,14 @@ function stacked(id,labels,tipLabels,names,series,opt){
   const totals=labels.map((_,i)=>sum(names.map(s=>series[s][i])));
   const max=niceMax(Math.max(...totals)), y=v=>T+(H-T-B)*(1-v/max);
   const NS='http://www.w3.org/2000/svg';
-  let s='<svg xmlns="'+NS+'" viewBox="0 0 '+W+' '+H+'" height="'+H+'" role="img" aria-label="'+opt.aria+'">';
+  let s='<svg xmlns="'+NS+'" viewBox="0 0 '+W+' '+H+'" height="'+H+'" role="img" aria-label="'+opt.aria+'">'
+    +(opt.missing?'<defs><pattern id="notin" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="'+css('--surface')+'"/><line x1="0" y1="0" x2="0" y2="6" stroke="'+css('--grid')+'" stroke-width="3"/></pattern></defs>':'');
   for(let k=0;k<=4;k++){ const v=max*k/4, yy=y(v);
     s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+yy+'" y2="'+yy+'" stroke="'+(k?css('--grid'):css('--axis'))+'" stroke-width="1"/>';
     const pre=opt.plain?'':'$'; s+='<text x="'+(L-6)+'" y="'+(yy+4)+'" text-anchor="end">'+(v>=10000?pre+(v/1000)+'K':pre+v.toLocaleString('en-US'))+'</text>'; }
   labels.forEach((lab,i)=>{
     const cx=L+band*i+band/2, x=cx-bw/2;
+    if(opt.missing&&opt.missing[i].length) s+='<rect x="'+(L+band*i+1)+'" y="'+T+'" width="'+(band-2)+'" height="'+(H-T-B)+'" fill="url(#notin)"/>';
     let base=y(0); const segs=names.map(nm=>[nm,series[nm][i]||0]).filter(a=>a[1]>0);
     segs.forEach(([nm,v],j)=>{
       const h=y(0)-y(v), top=base-h, last=j===segs.length-1;
@@ -262,7 +265,8 @@ function stacked(id,labels,tipLabels,names,series,opt){
   box.innerHTML=s;
   const tip=box.querySelector('.tip');
   function show(e){ const i=+e.target.dataset.i;
-    const rows=names.filter(nm=>series[nm][i]!=null).map(nm=>'<div class="r"><span><span class="sw" style="background:'+COLOR[nm]+'"></span>'+nm+'</span><span>'+(opt.fmt||usd2)(series[nm][i])+'</span></div>').join('');
+    const rows=names.filter(nm=>series[nm][i]!=null).map(nm=>'<div class="r"><span><span class="sw" style="background:'+COLOR[nm]+'"></span>'+nm+'</span><span>'+(opt.fmt||usd2)(series[nm][i])+'</span></div>').join('')
+      +(opt.missing?opt.missing[i].map(nm=>'<div class="r"><span><span class="sw" style="background:'+COLOR[nm]+'"></span>'+nm+'</span><span class="na">not in yet</span></div>').join(''):'');
     tip.innerHTML='<div class="t">'+tipLabels[i]+'</div>'+(rows||'<div class="r">no data yet</div>')+(rows&&names.length>1?'<div class="r tot"><span>Total</span><span>'+usd2(totals[i])+'</span></div>':'');
     const bx=box.getBoundingClientRect(), r=e.target.getBoundingClientRect();
     let left=r.left-bx.left+r.width/2+10; if(left+170>bx.width) left=r.left-bx.left+r.width/2-180;
@@ -275,12 +279,14 @@ const dailyNames=D.sources.filter(s=>D.daily.series[s]);
 function draw(){
   const dd=D.daily.dates;
   stacked('daily', dd.map(d=>String(+d.slice(8))), dd.map(day), dailyNames, D.daily.series,
-    {aria:'Earnings per day this month by source', showLabel:(i,n,W)=>{const d=i+1; return W<500? (d===1||d%7===0) : (d===1||d%5===0);}});
+    {aria:'Earnings per day this month by source', missing:dd.map(d=>d<=M.yesterday?dailyNames.filter(nm=>D.daily.series[nm][dd.indexOf(d)]==null):[]), showLabel:(i,n,W)=>{const d=i+1; return W<500? (d===1||d%7===0) : (d===1||d%5===0);}});
   const mm=D.monthly.months;
   stacked('monthly', mm.map(m=>MON[+m.slice(5)-1]+(m.endsWith('-01')?" '"+m.slice(2,4):'')), mm.map((m,i)=>MON[+m.slice(5)-1]+' '+m.slice(0,4)+(i===mm.length-1?' (so far)':'')), D.sources, D.monthly.series,
     {aria:'Earnings per month by source, last 13 months', showLabel:(i,n,W)=>W>=500||i%2===0||i===n-1});
 }
-legend('daily-legend',dailyNames); legend('monthly-legend',D.sources);
+legend('daily-legend',dailyNames);
+if(dailyNames.some(nm=>D.daily.dates.some((d,i)=>d<=M.yesterday&&D.daily.series[nm][i]==null)))
+  el('daily-legend').insertAdjacentHTML('beforeend','<span><span class="sw" style="background:repeating-linear-gradient(45deg,var(--grid) 0 2px,var(--surface) 2px 4px)"></span>Hatched: a source has not reported that day yet (Raptive comes 2–3 days late)</span>'); legend('monthly-legend',D.sources);
 
 // one merchant over time
 const MK=Object.keys(D.merchants||{});

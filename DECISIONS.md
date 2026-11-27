@@ -168,6 +168,8 @@ Dated, one line each, in date order (newest at the bottom). A line that was late
 - 2026-11-27 — **Earnings dashboard public at https://earnings.rsgmedia.info** (Ruggero): HTTPS + the dashboard's own password, noindex; no Tailscale or tunnel needed, works on the phone. `hosting/hetzner/RUNBOOK.md`.
 - 2026-11-27 — **Earnings dashboard lists every merchant** (Ruggero): new merchants under their network, merchants that sold last month or last year but not this month with a note, a "Not loaded" row for clicks without an earnings source (Running Warehouse, Amazon UK/DE/CA). `analytics/earnings-dashboard/README.md` "Merchant coverage".
 - 2026-11-27 — **Commission Factory + AvantLink loads switched on now, not 1 Dec** (Ruggero: "do everything", after a Running Room sale was missing from the dashboard): server-side only, no site change during the freeze. `analytics/README.md` "Revenue data".
+- 2026-11-27 — **Dashboard pace per source over its own days + coverage dates in the header + hatched "not in yet" days** (Ruggero: Raptive's 2–3-day lag made pace and the chart misleading). `analytics/earnings-dashboard/README.md`.
+- 2026-11-27 — **Server access review → its own chat** (Ruggero): findings in `hosting/ACCESS-REVIEW-2026-11-27.md`; earnings dashboard public, n8n Force SSL on (this chat).
 
 ## Open questions (decide, then move above)
 - **List prices per currency** (reviewed 19 Nov, not decided): existing WordPress fields, one per currency (EUR = `rrp_de`), DFS lookup by currency; feeds' own list prices propose raises only, approved before writing; no brand-site scrapers. US test run: 10 proposals. `dfs/LIST-PRICES-2026-11-19.md` (replaces the 24 Jun scraper plan if agreed).
