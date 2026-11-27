@@ -1,6 +1,6 @@
 # RSG — project primer
 
-_Last updated 2026-11-26 (docs cleanup: one line per area here, runbooks = current state, decisions before 18 Nov in `_archive/`)._ **Start every RSG session here** (after `git pull`), then read `ROADMAP.md` and the `RUNBOOK.md` of the workstream you work on. That's all you need for the current state.
+_Last updated 2026-11-27 (Rocket.net outage 27 Nov; earlier: docs cleanup: one line per area here, runbooks = current state, decisions before 18 Nov in `_archive/`)._ **Start every RSG session here** (after `git pull`), then read `ROADMAP.md` and the `RUNBOOK.md` of the workstream you work on. That's all you need for the current state.
 
 **Strategy (22 Nov 2026, `STRATEGY.md`):** (1) the reader gets the answer and doesn't return to Google; (2) revenue per 1,000 views (shop clicks plus Raptive) goes up, scroll depth is not a goal; (3) the undecided reader opens a second page, ideally a comparison. Every change says which goal it serves; scoreboard and change log are in `STRATEGY.md`.
 
@@ -11,7 +11,7 @@ _Last updated 2026-11-26 (docs cleanup: one line per area here, runbooks = curre
 |---|---|---|
 | Price engine (DFS) | `dfs/RUNBOOK.md` | Live on rsg-dfs since 10 Nov: 31 feeds, 11 countries, 329 of 429 reviews with offers. Newest: Road Runner Sports US + New Balance DE/IT/GB (26 Nov). Open: retire the old Linode (Phase F), outdated US list prices |
 | WordPress site + theme | `theme/RUNBOOK.md` | Reskin live since 15 Nov; live = theme `0019202` (26 Nov, all PHP warnings fixed). Staging runs branch `categories` (shoe categories, live 8–10 Dec). Freeze Fri 27 – Mon 30 Nov |
-| Hosting, backups, DNS | `hosting/RUNBOOK.md` | Rocket.net Business (paid to 24 Nov 2027), new server since 24 Nov; weekly WordPress backup to Drive fixed 24 Nov; Redis crash 25 Nov (ticket parked) |
+| Hosting, backups, DNS | `hosting/RUNBOOK.md` | Rocket.net Business (paid to 24 Nov 2027), new server since 24 Nov; weekly WordPress backup to Drive fixed 24 Nov; Redis crash 25 Nov (ticket parked); **outage 27 Nov from 05:31 UTC** (521 on uncached requests, stalls back on the new server), ticket sent |
 | rsgmedia server (n8n, Stargrid) | `hosting/hetzner/RUNBOOK.md` | Hardened, backed up; also the DFS test bench and the analyst database |
 | Automations (n8n, Make) | `automations/RUNBOOK.md` | Review inserts move Make → n8n Tue 1 Dec (built, tested on staging); bank import still on paid n8n Cloud; Running Warehouse scraper on the OptiPlex fixed 25 Nov |
 | Email | `email/RUNBOOK.md` | Black Friday email 1 sent 24 Nov (US); email 2 Fri 27 Nov, Cyber Monday 30 Nov; then list cleanup → platform decision |
