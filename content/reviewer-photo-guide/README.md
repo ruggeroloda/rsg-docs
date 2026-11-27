@@ -25,7 +25,7 @@ Ruggero's calls (27 Nov): no scale shot; backgrounds welcome, outdoors preferred
 - After creation the page in WordPress is the source: Ruggero can edit it in wp-admin (Noindex Pages).
 
 ## Open
-1. Ruggero re-shoots the Beauty examples himself (said 28 Nov): replace the five sketches.
+1. Ruggero re-shoots the Beauty examples himself (planned for 28 Nov): replace the five sketches.
 2. In use and After testing have no real examples yet: first new review supplies them.
 3. Shot 9 (outsole grip, close) uses the "outsole from side" photo: not a real close-up.
 4. The 30-second handling video from the old Google Doc is not in the page (video shot list is separate: `../VIDEO-BROLL-SHOT-LIST-2026-11-19.md`; pilot subset of 11 clips proposed 27 Nov in chat, not saved).
