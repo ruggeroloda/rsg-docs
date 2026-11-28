@@ -1,6 +1,7 @@
 # Decisions log
 
 **The history of decisions: read it to know *why* something is the way it is, not at the start of a session.** The rules in force are in each workstream's `RUNBOOK.md`; pending work is in `ROADMAP.md`.
+- 2026-11-28 — **Photo guide after Ruggero's test shoot**: on-foot, lacing and mid-stride photos leave the photo list (stills come from the video clips); Details examples = his ACG Pegasus Trail photos; Beauty needs its own outing in good light. Reviewer files arrive by one Dropbox file request per shoe, not Airtable. `content/reviewer-photo-guide/README.md`.
 
 Dated, one line each, in date order (newest at the bottom). A line that was later changed keeps its text and gets a **→ Superseded / Amended / Done** note, so the history stays readable. Open questions are at the end. Every new decision: one line here **and** an update of the runbook it affects. **From 18 Nov 2026: one short line per decision (about 300 characters at most); details belong in the runbook or a linked doc.** Older entries are kept as written.
 
