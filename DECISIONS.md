@@ -1,7 +1,6 @@
 # Decisions log
 
 **The history of decisions: read it to know *why* something is the way it is, not at the start of a session.** The rules in force are in each workstream's `RUNBOOK.md`; pending work is in `ROADMAP.md`.
-- 2026-11-28 — **Photo guide after Ruggero's test shoot**: on-foot, lacing and mid-stride photos leave the photo list (stills come from the video clips); Details examples = his ACG Pegasus Trail photos; Beauty needs its own outing in good light. Reviewer files arrive by one Dropbox file request per shoe, not Airtable. `content/reviewer-photo-guide/README.md`.
 
 Dated, one line each, in date order (newest at the bottom). A line that was later changed keeps its text and gets a **→ Superseded / Amended / Done** note, so the history stays readable. Open questions are at the end. Every new decision: one line here **and** an update of the runbook it affects. **From 18 Nov 2026: one short line per decision (about 300 characters at most); details belong in the runbook or a linked doc.** Older entries are kept as written.
 
@@ -176,6 +175,7 @@ Dated, one line each, in date order (newest at the bottom). A line that was late
 - 2026-11-27 — **Hetzner servers stay off Tailscale, also for the phone** (Ruggero: "hetzner: ok"); the rest of the access review (Hetzner leftovers, Rocket.net 2FA, playbook passwords) is paused. `hosting/ACCESS-REVIEW-2026-11-27.md`.
 - 2026-11-27 — **Review restart with Kristin** (Ruggero): send shoes now, new format ready by the time she writes; she gets a shortlist and picks (stability + one neutral); run log with feel per pace/distance from day one; video = short b-roll set as standard, talking review optional. `content/README.md`.
 - 2026-11-27 — **Reviewer photo guide** (Ruggero): his 11 shots stay; added Details (at least three, reviewer finds them), In use, Beauty (free), After testing; no scale shot, no old-vs-new, outdoors with backgrounds, originals unedited; lives as an unlisted `/ex/` page on RSG (staging only). `content/reviewer-photo-guide/README.md`.
+- 2026-11-28 — **Photo guide after Ruggero's test shoot**: on-foot, lacing and mid-stride photos leave the photo list (stills come from the video clips); Details examples = his ACG Pegasus Trail photos; Beauty needs its own outing in good light. Reviewer files arrive by one Dropbox file request per shoe, not Airtable. `content/reviewer-photo-guide/README.md`.
 
 ## Open questions (decide, then move above)
 - **List prices per currency** (reviewed 19 Nov, not decided): existing WordPress fields, one per currency (EUR = `rrp_de`), DFS lookup by currency; feeds' own list prices propose raises only, approved before writing; no brand-site scrapers. US test run: 10 proposals. `dfs/LIST-PRICES-2026-11-19.md` (replaces the 24 Jun scraper plan if agreed).
