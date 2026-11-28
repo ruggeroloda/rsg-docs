@@ -36,7 +36,7 @@ Split 303 on / 275 off (fine), 1 browser in both groups, no `x`, no JS errors.
 Block clicks add journeys (2nd page without block clicks ~27 vs 28 %). Seen by 50 % of phone visits vs 77–94 % desktop. Read on 8 Dec (~2,800 visits per group: detects ~±3 points on 2nd page, ~±1 point on shop clicks).
 
 ## Raptive by page type (Performance by Page; 14 Oct–14 Nov vs 17–22 Nov)
-Files: `data-drops/raptive/` (uploads 24 Nov). The 14 Oct–14 Nov export covers 100 % of that period's earnings (pages down to 10 views). Page type = `rsg.page_type_map`, else `rsg.guess_page_type`.
+Files: `data-drops/raptive/` (uploads 24 Nov). **From 28 Nov (Ruggero): no more exports; the same read comes from the API table `rsg.raptive_page_day` (every page, per day, no view minimum).** The 14 Oct–14 Nov export covers 100 % of that period's earnings (pages down to 10 views). Page type = `rsg.page_type_map`, else `rsg.guess_page_type`.
 
 | Page type | $ / 1,000 views 17–22 Nov | Share of earnings | Same pages: before → after |
 |---|---|---|---|

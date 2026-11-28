@@ -180,3 +180,4 @@ Dated, one line each, in date order (newest at the bottom). A line that was late
 - **List prices per currency** (reviewed 19 Nov, not decided): existing WordPress fields, one per currency (EUR = `rrp_de`), DFS lookup by currency; feeds' own list prices propose raises only, approved before writing; no brand-site scrapers. US test run: 10 proposals. `dfs/LIST-PRICES-2026-11-19.md` (replaces the 24 Jun scraper plan if agreed).
 - Email platform: MailerLite vs EmailOctopus vs Listmonk + Amazon SES (after list cleanup).
 - Automations: Make scenarios → n8n or plain Python (after the bank import move).
+- 2026-11-28 — **Raptive data: API only, no more By Page / Earnings downloads** (Ruggero): per-page reads use `rsg.raptive_page_day` (every page, per day, 2–3 days late); exports only for what the API lacks (monetized RPM), if ever needed. `analytics/README.md` "Raptive".
